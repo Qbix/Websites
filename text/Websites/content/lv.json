@@ -1,0 +1,74 @@
+{
+    "advert": {
+        "campaign": {
+            "placeholders": {
+                "link": "Saite reklamēšanai",
+                "startDate": "Sākuma datums",
+                "startTime": "Sākuma laiks",
+                "endDate": "Beigu datums",
+                "endTime": "Beigu laiks",
+                "budget": "Budžets"
+            },
+            "interests": {
+                "Title": "Filtrēt pēc interesēm",
+                "FilterInterests": "Sāciet rakstīt interesi..."
+            },
+            "Interest": "Interese",
+            "Location": "Atrašanās vieta"
+        }
+    },
+    "webpage": {
+        "composer": {
+            "Go": "Aiziet",
+            "PasteLinkHere": "https:\/\/...",
+            "BrowseTheWeb": "Pārlūkot",
+            "WriteToStartConversation": "Uzrakstiet savas domas, lai sāktu sarunu",
+            "StartConversation": "Sāciet sarunu",
+            "GotoConversation": "Dodieties uz sadaļu Saruna",
+            "reset": "Atiestatīt",
+            "edit": "Rediģēt",
+            "link": "Saite",
+            "setUrl": "Iestatīt URL",
+            "save": "Saglabāt",
+            "setClip": "Izgriezt klipu",
+            "invalidURL": "Nederīgs URL"
+        },
+        "FileTooLarge": "Fails ir pārāk liels, lai saglabātu kešatmiņu. Maksimālais faila lielums {{size}}",
+        "InvalidPDF": "Fails nav derīgs PDF",
+        "StartTypingTitleOrKeywords": "Sāciet rakstīt virsrakstu vai atslēgvārdus..."
+    },
+    "types": {
+        "Websites\/article": {
+            "description": "HTML dokuments, ko var apskatīt un rediģēt dažādi lietotāji",
+            "displayType": "Raksts"
+        },
+        "Websites\/slide": {
+            "description": "Prezentācijas slaids var ietvert HTML, audio utt.",
+            "displayType": "Slidkalniņš"
+        },
+        "Websites\/presentation": {
+            "description": "Prezentācija, kas sastāv no dažādiem slaidiem",
+            "displayType": "Prezentācija"
+        },
+        "Websites\/advert\/unit": {
+            "description": "Reklāmas vienība tīmekļa vietnē",
+            "displayType": "Reklāmas vienība"
+        },
+        "Websites\/advert\/placement": {
+            "description": "Veids, kā grupēt reklāmas vienības zem nosaukuma",
+            "displayType": "Reklāmas izvietošana"
+        },
+        "Websites\/advert\/creative": {
+            "description": "Reklāmas saturs",
+            "displayType": "Reklāma radoši"
+        },
+        "Websites\/advert\/campaign": {
+            "description": "Reklāmas kampaņa",
+            "displayType": "Reklāmas kampaņa"
+        },
+        "Websites\/webpage": {
+            "description": "Apzīmē vietni, kuras metadati tika notīrīti",
+            "displayType": "Web lapa"
+        }
+    }
+}

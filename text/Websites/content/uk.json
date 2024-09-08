@@ -1,0 +1,74 @@
+{
+    "advert": {
+        "campaign": {
+            "placeholders": {
+                "link": "Посилання для просування",
+                "startDate": "Дата початку",
+                "startTime": "Час початку",
+                "endDate": "Дата закінчення",
+                "endTime": "Час закінчення",
+                "budget": "Бюджет"
+            },
+            "interests": {
+                "Title": "Фільтрувати за інтересами",
+                "FilterInterests": "Почніть вводити інтерес..."
+            },
+            "Interest": "Інтерес",
+            "Location": "Місцезнаходження"
+        }
+    },
+    "webpage": {
+        "composer": {
+            "Go": "Іди",
+            "PasteLinkHere": "https:\/\/...",
+            "BrowseTheWeb": "переглядати",
+            "WriteToStartConversation": "Напишіть свої думки, щоб почати розмову",
+            "StartConversation": "Розпочати розмову",
+            "GotoConversation": "Перейдіть до розмови",
+            "reset": "Скинути",
+            "edit": "Редагувати",
+            "link": "Посилання",
+            "setUrl": "Встановити URL",
+            "save": "зберегти",
+            "setClip": "Вирізати кліп",
+            "invalidURL": "Недійсний URL"
+        },
+        "FileTooLarge": "Файл завеликий для кешування. Максимальний розмір файлу {{size}}",
+        "InvalidPDF": "Файл не є дійсним PDF",
+        "StartTypingTitleOrKeywords": "Почніть вводити заголовок або ключові слова..."
+    },
+    "types": {
+        "Websites\/article": {
+            "description": "Документ HTML, який різні користувачі можуть переглядати та редагувати",
+            "displayType": "ст"
+        },
+        "Websites\/slide": {
+            "description": "Слайд у презентації може містити HTML, аудіо тощо.",
+            "displayType": "слайд"
+        },
+        "Websites\/presentation": {
+            "description": "Презентація, що складається з різних слайдів",
+            "displayType": "Презентація"
+        },
+        "Websites\/advert\/unit": {
+            "description": "Рекламний блок на сайті",
+            "displayType": "Рекламний блок"
+        },
+        "Websites\/advert\/placement": {
+            "description": "Спосіб групування рекламних одиниць під назвою",
+            "displayType": "Розміщення реклами"
+        },
+        "Websites\/advert\/creative": {
+            "description": "Контент для реклами",
+            "displayType": "Рекламний креатив"
+        },
+        "Websites\/advert\/campaign": {
+            "description": "Рекламна кампанія",
+            "displayType": "Рекламна кампанія"
+        },
+        "Websites\/webpage": {
+            "description": "Представляє веб-сайт, метадані якого було зібрано",
+            "displayType": "веб-сторінка"
+        }
+    }
+}

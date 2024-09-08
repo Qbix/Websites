@@ -1,0 +1,74 @@
+{
+    "advert": {
+        "campaign": {
+            "placeholders": {
+                "link": "Link a promócióhoz",
+                "startDate": "Kezdő dátum",
+                "startTime": "Kezdési idő",
+                "endDate": "Befejezés dátuma",
+                "endTime": "Idő vége",
+                "budget": "Költségvetés"
+            },
+            "interests": {
+                "Title": "Szűrés érdeklődés szerint",
+                "FilterInterests": "Kezdje el beírni az érdeklődési kört..."
+            },
+            "Interest": "Érdeklődés",
+            "Location": "Elhelyezkedés"
+        }
+    },
+    "webpage": {
+        "composer": {
+            "Go": "Megy",
+            "PasteLinkHere": "https:\/\/...",
+            "BrowseTheWeb": "Tallózás",
+            "WriteToStartConversation": "A beszélgetés elindításához írja le gondolatait",
+            "StartConversation": "Beszélgetés indítása",
+            "GotoConversation": "Nyissa meg a Beszélgetést",
+            "reset": "Visszaállítás",
+            "edit": "Szerkesztés",
+            "link": "Link",
+            "setUrl": "Állítsa be az URL-t",
+            "save": "Megment",
+            "setClip": "Kivágott klip",
+            "invalidURL": "érvénytelen URL"
+        },
+        "FileTooLarge": "A fájl túl nagy a gyorsítótárazáshoz. Max fájlméret {{size}}",
+        "InvalidPDF": "A fájl nem érvényes PDF",
+        "StartTypingTitleOrKeywords": "Kezdje el beírni a címet vagy a kulcsszavakat..."
+    },
+    "types": {
+        "Websites\/article": {
+            "description": "Egy HTML-dokumentum, amelyet különböző felhasználók megtekinthetnek és szerkeszthetnek",
+            "displayType": "Cikk"
+        },
+        "Websites\/slide": {
+            "description": "A prezentációban lévő dia tartalmazhat HTML-t, hangot stb.",
+            "displayType": "Csúszik"
+        },
+        "Websites\/presentation": {
+            "description": "Különböző diákból álló prezentáció",
+            "displayType": "Bemutatás"
+        },
+        "Websites\/advert\/unit": {
+            "description": "Hirdetési egység egy weboldalon",
+            "displayType": "Hirdetési egység"
+        },
+        "Websites\/advert\/placement": {
+            "description": "A hirdetési egységek név alatti csoportosításának módja",
+            "displayType": "Reklám elhelyezés"
+        },
+        "Websites\/advert\/creative": {
+            "description": "Tartalom egy hirdetéshez",
+            "displayType": "Reklám kreatív"
+        },
+        "Websites\/advert\/campaign": {
+            "description": "Reklámkampány",
+            "displayType": "Reklámkampány"
+        },
+        "Websites\/webpage": {
+            "description": "Olyan webhelyet jelöl, amelynek metaadatait lekaparták",
+            "displayType": "honlap"
+        }
+    }
+}

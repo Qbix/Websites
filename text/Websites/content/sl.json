@@ -1,0 +1,74 @@
+{
+    "advert": {
+        "campaign": {
+            "placeholders": {
+                "link": "Povezava za promocijo",
+                "startDate": "Začetni datum",
+                "startTime": "Začetni čas",
+                "endDate": "Končni datum",
+                "endTime": "Končni čas",
+                "budget": "Proračun"
+            },
+            "interests": {
+                "Title": "Filtriraj po zanimanju",
+                "FilterInterests": "Začnite vnašati zanimanje ..."
+            },
+            "Interest": "Obresti",
+            "Location": "Lokacija"
+        }
+    },
+    "webpage": {
+        "composer": {
+            "Go": "pojdi",
+            "PasteLinkHere": "https:\/\/...",
+            "BrowseTheWeb": "Prebrskaj",
+            "WriteToStartConversation": "Napišite svoje misli, da začnete pogovor",
+            "StartConversation": "Začnite pogovor",
+            "GotoConversation": "Pojdite na Pogovor",
+            "reset": "Ponastaviti",
+            "edit": "Uredi",
+            "link": "Povezava",
+            "setUrl": "Nastavite URL",
+            "save": "Shrani",
+            "setClip": "Izrezani posnetek",
+            "invalidURL": "Neveljaven URL"
+        },
+        "FileTooLarge": "Datoteka je prevelika za predpomnjenje. Največja velikost datoteke {{size}}",
+        "InvalidPDF": "Datoteka ni veljaven PDF",
+        "StartTypingTitleOrKeywords": "Začnite vnašati naslov ali ključne besede ..."
+    },
+    "types": {
+        "Websites\/article": {
+            "description": "Dokument HTML, ki si ga lahko ogledujejo in urejajo različni uporabniki",
+            "displayType": "Članek"
+        },
+        "Websites\/slide": {
+            "description": "Diapozitiv v predstavitvi lahko vključuje HTML, zvok itd.",
+            "displayType": "Zdrs"
+        },
+        "Websites\/presentation": {
+            "description": "Predstavitev, sestavljena iz različnih diapozitivov",
+            "displayType": "Predstavitev"
+        },
+        "Websites\/advert\/unit": {
+            "description": "Oglasna enota na spletni strani",
+            "displayType": "Oglasna enota"
+        },
+        "Websites\/advert\/placement": {
+            "description": "Način združevanja oglasnih enot pod imenom",
+            "displayType": "Postavitev oglasa"
+        },
+        "Websites\/advert\/creative": {
+            "description": "Vsebina za oglas",
+            "displayType": "Oglasna kreativa"
+        },
+        "Websites\/advert\/campaign": {
+            "description": "Oglaševalska kampanja",
+            "displayType": "Oglasna kampanja"
+        },
+        "Websites\/webpage": {
+            "description": "Predstavlja spletno stran, katere metapodatki so bili postrgani",
+            "displayType": "Spletna stran"
+        }
+    }
+}

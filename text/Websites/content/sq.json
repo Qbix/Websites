@@ -1,0 +1,74 @@
+{
+    "advert": {
+        "campaign": {
+            "placeholders": {
+                "link": "Link për të promovuar",
+                "startDate": "Data e fillimit",
+                "startTime": "Koha e nisjes",
+                "endDate": "Data e përfundimit",
+                "endTime": "Koha e Fundit",
+                "budget": "Buxheti"
+            },
+            "interests": {
+                "Title": "Filtro sipas interesit",
+                "FilterInterests": "Filloni të shkruani një interes..."
+            },
+            "Interest": "Interesi",
+            "Location": "Vendndodhja"
+        }
+    },
+    "webpage": {
+        "composer": {
+            "Go": "Shkoni",
+            "PasteLinkHere": "https:\/\/...",
+            "BrowseTheWeb": "Shfletoni",
+            "WriteToStartConversation": "Shkruani mendimet tuaja për të nisur bisedën",
+            "StartConversation": "Filloni Bisedën",
+            "GotoConversation": "Shkoni te Biseda",
+            "reset": "Rivendos",
+            "edit": "Redakto",
+            "link": "Lidhje",
+            "setUrl": "Cakto URL-në",
+            "save": "Ruaj",
+            "setClip": "Klip i prerë",
+            "invalidURL": "URL e pavlefshme"
+        },
+        "FileTooLarge": "Skedari shumë i madh për memorie. Madhësia maksimale e skedarit {{size}}",
+        "InvalidPDF": "Skedari nuk është një PDF i vlefshëm",
+        "StartTypingTitleOrKeywords": "Filloni të shkruani titullin ose fjalët kyçe..."
+    },
+    "types": {
+        "Websites\/article": {
+            "description": "Një dokument HTML që përdorues të ndryshëm mund ta shikojnë dhe modifikojnë",
+            "displayType": "Neni"
+        },
+        "Websites\/slide": {
+            "description": "Një rrëshqitje në një prezantim, mund të përfshijë HTML, audio etj.",
+            "displayType": "Rrëshqitje"
+        },
+        "Websites\/presentation": {
+            "description": "Një prezantim i përbërë nga sllajde të ndryshme",
+            "displayType": "Prezantimi"
+        },
+        "Websites\/advert\/unit": {
+            "description": "Një njësi reklamimi në një faqe interneti",
+            "displayType": "Njësia e reklamave"
+        },
+        "Websites\/advert\/placement": {
+            "description": "Një mënyrë e grupimit të njësive reklamuese nën një emër",
+            "displayType": "Vendosja e reklamave"
+        },
+        "Websites\/advert\/creative": {
+            "description": "Përmbajtja për një reklamë",
+            "displayType": "Reklama krijuese"
+        },
+        "Websites\/advert\/campaign": {
+            "description": "Një fushatë reklamuese",
+            "displayType": "Fushata reklamuese"
+        },
+        "Websites\/webpage": {
+            "description": "Përfaqëson një faqe interneti, të dhënat meta të së cilës janë fshirë",
+            "displayType": "faqe interneti"
+        }
+    }
+}

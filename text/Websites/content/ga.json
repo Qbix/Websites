@@ -1,0 +1,74 @@
+{
+    "advert": {
+        "campaign": {
+            "placeholders": {
+                "link": "Nasc le cur chun cinn",
+                "startDate": "Dáta tosaigh",
+                "startTime": "Am Tosaigh",
+                "endDate": "Dáta deiridh",
+                "endTime": "Am Deiridh",
+                "budget": "Buiséad"
+            },
+            "interests": {
+                "Title": "Scag De réir Úis",
+                "FilterInterests": "Tosaigh ag clóscríobh spéise..."
+            },
+            "Interest": "Ús",
+            "Location": "Suíomh"
+        }
+    },
+    "webpage": {
+        "composer": {
+            "Go": "Téigh",
+            "PasteLinkHere": "https:\/\/...",
+            "BrowseTheWeb": "Brabhsáil",
+            "WriteToStartConversation": "Scríobh do chuid smaointe chun tús a chur leis an gcomhrá",
+            "StartConversation": "Tosaigh Comhrá",
+            "GotoConversation": "Téigh go Comhrá",
+            "reset": "Athshocraigh",
+            "edit": "Cuir in eagar",
+            "link": "Nasc",
+            "setUrl": "Socraigh URL",
+            "save": "Sábháil",
+            "setClip": "Gearr Amach Clip",
+            "invalidURL": "URL neamhbhailí"
+        },
+        "FileTooLarge": "Comhad rómhór le haghaidh taisce. Uasmhéid comhaid {{size}}",
+        "InvalidPDF": "Ní PDF bailí é an comhad",
+        "StartTypingTitleOrKeywords": "Tosaigh ag clóscríobh teidil nó eochairfhocail..."
+    },
+    "types": {
+        "Websites\/article": {
+            "description": "Doiciméad HTML is féidir le húsáideoirí éagsúla a fheiceáil agus a chur in eagar",
+            "displayType": "Airteagal"
+        },
+        "Websites\/slide": {
+            "description": "Sleamhnán i gcur i láthair, is féidir HTML, fuaime etc.",
+            "displayType": "Sleamhnán"
+        },
+        "Websites\/presentation": {
+            "description": "Cur i láthair ina bhfuil sleamhnáin éagsúla",
+            "displayType": "cur i láthair"
+        },
+        "Websites\/advert\/unit": {
+            "description": "Aonad fógraíochta ar shuíomh Gréasáin",
+            "displayType": "Aonad fógraíochta"
+        },
+        "Websites\/advert\/placement": {
+            "description": "Bealach chun aonaid fógraíochta a ghrúpáil faoi ainm",
+            "displayType": "Socrúchán fógraí"
+        },
+        "Websites\/advert\/creative": {
+            "description": "Ábhar le haghaidh fógraíochta",
+            "displayType": "Fógra cruthaitheach"
+        },
+        "Websites\/advert\/campaign": {
+            "description": "Feachtas fógraíochta",
+            "displayType": "Feachtas fógraíochta"
+        },
+        "Websites\/webpage": {
+            "description": "Is ionann é agus suíomh Gréasáin ar scríobtar meiteashonraí air",
+            "displayType": "leathanach gréasáin"
+        }
+    }
+}

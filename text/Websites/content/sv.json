@@ -1,0 +1,74 @@
+{
+    "advert": {
+        "campaign": {
+            "placeholders": {
+                "link": "Länk att marknadsföra",
+                "startDate": "Start datum",
+                "startTime": "Starttid",
+                "endDate": "Slutdatum",
+                "endTime": "Sluttid",
+                "budget": "Budget"
+            },
+            "interests": {
+                "Title": "Filtrera efter intresse",
+                "FilterInterests": "Börja skriva ett intresse..."
+            },
+            "Interest": "Intressera",
+            "Location": "Plats"
+        }
+    },
+    "webpage": {
+        "composer": {
+            "Go": "Gå",
+            "PasteLinkHere": "https:\/\/...",
+            "BrowseTheWeb": "Bläddra",
+            "WriteToStartConversation": "Skriv dina tankar för att börja konversationen",
+            "StartConversation": "Starta konversation",
+            "GotoConversation": "Gå till Konversation",
+            "reset": "Återställa",
+            "edit": "Redigera",
+            "link": "Länk",
+            "setUrl": "Ange URL",
+            "save": "Spara",
+            "setClip": "Klipp ut klipp",
+            "invalidURL": "Ogiltig URL"
+        },
+        "FileTooLarge": "Filen är för stor för cachelagring. Max filstorlek {{size}}",
+        "InvalidPDF": "Filen är inte en giltig PDF",
+        "StartTypingTitleOrKeywords": "Börja skriva rubrik eller nyckelord..."
+    },
+    "types": {
+        "Websites\/article": {
+            "description": "Ett HTML-dokument som olika användare kan visa och redigera",
+            "displayType": "Artikel"
+        },
+        "Websites\/slide": {
+            "description": "En bild i en presentation kan innehålla HTML, ljud etc.",
+            "displayType": "Glida"
+        },
+        "Websites\/presentation": {
+            "description": "En presentation bestående av olika bilder",
+            "displayType": "Presentation"
+        },
+        "Websites\/advert\/unit": {
+            "description": "En annonsenhet på en webbplats",
+            "displayType": "Annonsenhet"
+        },
+        "Websites\/advert\/placement": {
+            "description": "Ett sätt att gruppera annonsenheter under ett namn",
+            "displayType": "Annonsplacering"
+        },
+        "Websites\/advert\/creative": {
+            "description": "Innehåll för en annons",
+            "displayType": "Annons kreativ"
+        },
+        "Websites\/advert\/campaign": {
+            "description": "En reklamkampanj",
+            "displayType": "Annonskampanj"
+        },
+        "Websites\/webpage": {
+            "description": "Representerar en webbplats vars metadata har skrapats",
+            "displayType": "webbsida"
+        }
+    }
+}

@@ -1,0 +1,74 @@
+{
+    "advert": {
+        "campaign": {
+            "placeholders": {
+                "link": "Линк за промоција",
+                "startDate": "Почетен датум",
+                "startTime": "Време на започнување",
+                "endDate": "Крајна дата",
+                "endTime": "Време на завршување",
+                "budget": "Буџет"
+            },
+            "interests": {
+                "Title": "Филтрирај според камата",
+                "FilterInterests": "Почнете да пишувате интерес..."
+            },
+            "Interest": "Каматата",
+            "Location": "Локација"
+        }
+    },
+    "webpage": {
+        "composer": {
+            "Go": "Оди",
+            "PasteLinkHere": "https:\/\/...",
+            "BrowseTheWeb": "Прелистајте",
+            "WriteToStartConversation": "Напишете ги вашите мисли за да го започнете разговорот",
+            "StartConversation": "Започнете разговор",
+            "GotoConversation": "Одете во Разговор",
+            "reset": "Ресетирај",
+            "edit": "Уредување",
+            "link": "Врска",
+            "setUrl": "Поставете URL",
+            "save": "Зачувај",
+            "setClip": "Исечете клип",
+            "invalidURL": "Неважечка URL-адреса"
+        },
+        "FileTooLarge": "Датотеката е преголема за кеширање. Максимална големина на датотека {{size}}",
+        "InvalidPDF": "Датотеката не е валиден PDF",
+        "StartTypingTitleOrKeywords": "Почнете да пишувате наслов или клучни зборови..."
+    },
+    "types": {
+        "Websites\/article": {
+            "description": "HTML документ што различни корисници можат да го гледаат и уредуваат",
+            "displayType": "Член"
+        },
+        "Websites\/slide": {
+            "description": "Слајд во презентација, може да вклучува HTML, аудио итн.",
+            "displayType": "Слајд"
+        },
+        "Websites\/presentation": {
+            "description": "Презентација составена од различни слајдови",
+            "displayType": "Презентација"
+        },
+        "Websites\/advert\/unit": {
+            "description": "Рекламна единица на веб-локација",
+            "displayType": "Единица за огласување"
+        },
+        "Websites\/advert\/placement": {
+            "description": "Начин на групирање рекламни единици под име",
+            "displayType": "Поставување оглас"
+        },
+        "Websites\/advert\/creative": {
+            "description": "Содржина за реклама",
+            "displayType": "Креативно огласување"
+        },
+        "Websites\/advert\/campaign": {
+            "description": "Рекламна кампања",
+            "displayType": "Рекламна кампања"
+        },
+        "Websites\/webpage": {
+            "description": "Претставува веб-локација чии метаподатоци се избришани",
+            "displayType": "веб страна"
+        }
+    }
+}

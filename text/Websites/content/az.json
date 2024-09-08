@@ -1,0 +1,74 @@
+{
+    "advert": {
+        "campaign": {
+            "placeholders": {
+                "link": "Təbliğ etmək üçün keçid",
+                "startDate": "Başlama tarixi",
+                "startTime": "Başlama vaxtı",
+                "endDate": "Bitmə vaxtı",
+                "endTime": "Bitmə vaxtı",
+                "budget": "Büdcə"
+            },
+            "interests": {
+                "Title": "Maraqla Filtrləyin",
+                "FilterInterests": "Maraq yazmağa başlayın..."
+            },
+            "Interest": "Maraq",
+            "Location": "Məkan"
+        }
+    },
+    "webpage": {
+        "composer": {
+            "Go": "Get",
+            "PasteLinkHere": "https:\/\/...",
+            "BrowseTheWeb": "Gözdən keçirin",
+            "WriteToStartConversation": "Söhbətə başlamaq üçün fikirlərinizi yazın",
+            "StartConversation": "Söhbətə başlayın",
+            "GotoConversation": "Söhbətə keçin",
+            "reset": "Sıfırlayın",
+            "edit": "Redaktə et",
+            "link": "Link",
+            "setUrl": "URL təyin edin",
+            "save": "Yadda saxla",
+            "setClip": "Klipi kəsin",
+            "invalidURL": "Yanlış URL"
+        },
+        "FileTooLarge": "Fayl keşləmə üçün çox böyükdür. Maksimum fayl ölçüsü {{size}}",
+        "InvalidPDF": "Fayl etibarlı PDF deyil",
+        "StartTypingTitleOrKeywords": "Başlıq və ya açar sözləri yazmağa başlayın..."
+    },
+    "types": {
+        "Websites\/article": {
+            "description": "Müxtəlif istifadəçilərin baxa və redaktə edə biləcəyi HTML sənədi",
+            "displayType": "Məqalə"
+        },
+        "Websites\/slide": {
+            "description": "Təqdimatdakı slayd HTML, audio və s. daxil ola bilər.",
+            "displayType": "Slayd"
+        },
+        "Websites\/presentation": {
+            "description": "Müxtəlif slaydlardan ibarət təqdimat",
+            "displayType": "Təqdimat"
+        },
+        "Websites\/advert\/unit": {
+            "description": "Veb saytdakı reklam bölməsi",
+            "displayType": "Reklam vahidi"
+        },
+        "Websites\/advert\/placement": {
+            "description": "Reklam vahidlərinin ad altında qruplaşdırılması üsulu",
+            "displayType": "Reklam yerləşdirilməsi"
+        },
+        "Websites\/advert\/creative": {
+            "description": "Reklam üçün məzmun",
+            "displayType": "Yaradıcı reklam"
+        },
+        "Websites\/advert\/campaign": {
+            "description": "Bir reklam kampaniyası",
+            "displayType": "Reklam kampaniyası"
+        },
+        "Websites\/webpage": {
+            "description": "Metadatası silinmiş veb saytı təmsil edir",
+            "displayType": "veb səhifə"
+        }
+    }
+}

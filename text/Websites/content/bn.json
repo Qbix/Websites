@@ -1,0 +1,74 @@
+{
+    "advert": {
+        "campaign": {
+            "placeholders": {
+                "link": "প্রচারের লিঙ্ক",
+                "startDate": "শুরুর তারিখ",
+                "startTime": "সময় শুরু",
+                "endDate": "শেষ তারিখ",
+                "endTime": "শেষ সময়",
+                "budget": "বাজেট"
+            },
+            "interests": {
+                "Title": "আগ্রহ অনুসারে ফিল্টার করুন",
+                "FilterInterests": "একটি আগ্রহ টাইপ করা শুরু করুন..."
+            },
+            "Interest": "স্বার্থ",
+            "Location": "অবস্থান"
+        }
+    },
+    "webpage": {
+        "composer": {
+            "Go": "যাওয়া",
+            "PasteLinkHere": "https:\/\/...",
+            "BrowseTheWeb": "ব্রাউজ করুন",
+            "WriteToStartConversation": "কথোপকথন শুরু করতে আপনার চিন্তা লিখুন",
+            "StartConversation": "কথোপকথন শুরু করুন",
+            "GotoConversation": "কথোপকথনে যান",
+            "reset": "রিসেট",
+            "edit": "সম্পাদনা করুন",
+            "link": "লিঙ্ক",
+            "setUrl": "URL সেট করুন",
+            "save": "সংরক্ষণ",
+            "setClip": "কাট আউট ক্লিপ",
+            "invalidURL": "অবৈধ URL"
+        },
+        "FileTooLarge": "ক্যাশে করার জন্য ফাইলটি খুব বড়। সর্বোচ্চ ফাইলের আকার {{size}}",
+        "InvalidPDF": "ফাইলটি একটি বৈধ PDF নয়",
+        "StartTypingTitleOrKeywords": "শিরোনাম বা কীওয়ার্ড টাইপ করা শুরু করুন..."
+    },
+    "types": {
+        "Websites\/article": {
+            "description": "একটি HTML নথি যা বিভিন্ন ব্যবহারকারী দেখতে এবং সম্পাদনা করতে পারে",
+            "displayType": "প্রবন্ধ"
+        },
+        "Websites\/slide": {
+            "description": "একটি উপস্থাপনার একটি স্লাইড, এইচটিএমএল, অডিও ইত্যাদি অন্তর্ভুক্ত করতে পারে।",
+            "displayType": "স্লাইড"
+        },
+        "Websites\/presentation": {
+            "description": "বিভিন্ন স্লাইড সমন্বিত একটি উপস্থাপনা",
+            "displayType": "উপস্থাপনা"
+        },
+        "Websites\/advert\/unit": {
+            "description": "একটি ওয়েবসাইটে একটি বিজ্ঞাপন ইউনিট",
+            "displayType": "বিজ্ঞাপন ইউনিট"
+        },
+        "Websites\/advert\/placement": {
+            "description": "একটি নামের অধীনে বিজ্ঞাপন ইউনিট গোষ্ঠীবদ্ধ করার একটি উপায়",
+            "displayType": "বিজ্ঞাপন বসানো"
+        },
+        "Websites\/advert\/creative": {
+            "description": "একটি বিজ্ঞাপনের জন্য বিষয়বস্তু",
+            "displayType": "সৃজনশীল বিজ্ঞাপন"
+        },
+        "Websites\/advert\/campaign": {
+            "description": "একটি বিজ্ঞাপন প্রচারাভিযান",
+            "displayType": "বিজ্ঞাপন প্রচার"
+        },
+        "Websites\/webpage": {
+            "description": "এমন একটি ওয়েবসাইটের প্রতিনিধিত্ব করে যার মেটাডেটা স্ক্র্যাপ করা হয়েছে",
+            "displayType": "ওয়েব পেজ"
+        }
+    }
+}

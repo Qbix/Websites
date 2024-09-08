@@ -1,0 +1,74 @@
+{
+    "advert": {
+        "campaign": {
+            "placeholders": {
+                "link": "홍보 링크",
+                "startDate": "시작일",
+                "startTime": "시작 시간",
+                "endDate": "종료 날짜",
+                "endTime": "종료 시간",
+                "budget": "예산"
+            },
+            "interests": {
+                "Title": "관심사로 필터링",
+                "FilterInterests": "관심사 입력 시작..."
+            },
+            "Interest": "관심",
+            "Location": "위치"
+        }
+    },
+    "webpage": {
+        "composer": {
+            "Go": "가다",
+            "PasteLinkHere": "https:\/\/...",
+            "BrowseTheWeb": "검색",
+            "WriteToStartConversation": "대화를 시작하기 위해 생각을 쓰십시오",
+            "StartConversation": "대화 시작",
+            "GotoConversation": "대화로 이동",
+            "reset": "초기화",
+            "edit": "편집하다",
+            "link": "링크",
+            "setUrl": "URL 설정",
+            "save": "구하다",
+            "setClip": "컷아웃 클립",
+            "invalidURL": "잘못된 URL"
+        },
+        "FileTooLarge": "파일이 너무 커서 캐싱할 수 없습니다. 최대 파일 크기 {{size}}",
+        "InvalidPDF": "파일이 유효한 PDF가 아닙니다.",
+        "StartTypingTitleOrKeywords": "제목 또는 키워드 입력 시작..."
+    },
+    "types": {
+        "Websites\/article": {
+            "description": "다양한 사용자가 보고 편집할 수 있는 HTML 문서",
+            "displayType": "기사"
+        },
+        "Websites\/slide": {
+            "description": "프레젠테이션의 슬라이드에는 HTML, 오디오 등이 포함될 수 있습니다.",
+            "displayType": "미끄러지 다"
+        },
+        "Websites\/presentation": {
+            "description": "다양한 슬라이드로 구성된 프레젠테이션",
+            "displayType": "프레젠테이션"
+        },
+        "Websites\/advert\/unit": {
+            "description": "웹사이트의 광고 단위",
+            "displayType": "광고 단위"
+        },
+        "Websites\/advert\/placement": {
+            "description": "이름 아래 광고 단위를 그룹화하는 방법",
+            "displayType": "광고 배치"
+        },
+        "Websites\/advert\/creative": {
+            "description": "광고용 콘텐츠",
+            "displayType": "광고 소재"
+        },
+        "Websites\/advert\/campaign": {
+            "description": "광고 캠페인",
+            "displayType": "광고 캠페인"
+        },
+        "Websites\/webpage": {
+            "description": "메타데이터가 스크랩된 웹사이트를 나타냅니다.",
+            "displayType": "웹 페이지"
+        }
+    }
+}

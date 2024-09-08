@@ -1,0 +1,74 @@
+{
+    "advert": {
+        "campaign": {
+            "placeholders": {
+                "link": "Odkaz na propagáciu",
+                "startDate": "Dátum začiatku",
+                "startTime": "Doba spustenia",
+                "endDate": "Dátum ukončenia",
+                "endTime": "Čas ukončenia",
+                "budget": "Rozpočet"
+            },
+            "interests": {
+                "Title": "Filtrovať podľa záujmu",
+                "FilterInterests": "Začnite písať záujem..."
+            },
+            "Interest": "Záujem",
+            "Location": "Poloha"
+        }
+    },
+    "webpage": {
+        "composer": {
+            "Go": "Choď",
+            "PasteLinkHere": "https:\/\/...",
+            "BrowseTheWeb": "Prehľadávať",
+            "WriteToStartConversation": "Napíšte svoje myšlienky, aby ste mohli začať konverzáciu",
+            "StartConversation": "Začať konverzáciu",
+            "GotoConversation": "Prejdite na konverzáciu",
+            "reset": "Resetovať",
+            "edit": "Upraviť",
+            "link": "Odkaz",
+            "setUrl": "Nastaviť URL",
+            "save": "Uložiť",
+            "setClip": "Vystrihnúť klip",
+            "invalidURL": "neplatná URL adresa"
+        },
+        "FileTooLarge": "Súbor je príliš veľký na ukladanie do vyrovnávacej pamäte. Maximálna veľkosť súboru {{size}}",
+        "InvalidPDF": "Súbor nie je platným PDF",
+        "StartTypingTitleOrKeywords": "Začnite písať názov alebo kľúčové slová..."
+    },
+    "types": {
+        "Websites\/article": {
+            "description": "HTML dokument, ktorý si môžu prezerať a upravovať rôzni používatelia",
+            "displayType": "Článok"
+        },
+        "Websites\/slide": {
+            "description": "Snímka v prezentácii môže obsahovať HTML, zvuk atď.",
+            "displayType": "Šmykľavka"
+        },
+        "Websites\/presentation": {
+            "description": "Prezentácia pozostávajúca z rôznych snímok",
+            "displayType": "Prezentácia"
+        },
+        "Websites\/advert\/unit": {
+            "description": "Reklamná jednotka na webovej stránke",
+            "displayType": "Reklamná jednotka"
+        },
+        "Websites\/advert\/placement": {
+            "description": "Spôsob zoskupovania reklamných jednotiek pod názvom",
+            "displayType": "Umiestnenie reklamy"
+        },
+        "Websites\/advert\/creative": {
+            "description": "Obsah pre reklamu",
+            "displayType": "Reklamná kreatíva"
+        },
+        "Websites\/advert\/campaign": {
+            "description": "Reklamná kampaň",
+            "displayType": "Reklamná kampaň"
+        },
+        "Websites\/webpage": {
+            "description": "Predstavuje webovú stránku, ktorej metadáta boli skopírované",
+            "displayType": "webstránka"
+        }
+    }
+}

@@ -1,0 +1,74 @@
+{
+    "advert": {
+        "campaign": {
+            "placeholders": {
+                "link": "فروغ دینے کے لیے لنک",
+                "startDate": "شروع کرنے کی تاریخ",
+                "startTime": "وقت آغاز",
+                "endDate": "آخری تاریخ",
+                "endTime": "آخر وقت",
+                "budget": "بجٹ"
+            },
+            "interests": {
+                "Title": "دلچسپی کے لحاظ سے فلٹر کریں۔",
+                "FilterInterests": "دلچسپی ٹائپ کرنا شروع کریں..."
+            },
+            "Interest": "دلچسپی",
+            "Location": "مقام"
+        }
+    },
+    "webpage": {
+        "composer": {
+            "Go": "جاؤ",
+            "PasteLinkHere": "https:\/\/...",
+            "BrowseTheWeb": "براؤز کریں۔",
+            "WriteToStartConversation": "گفتگو شروع کرنے کے لیے اپنے خیالات لکھیں۔",
+            "StartConversation": "بات چیت شروع کریں۔",
+            "GotoConversation": "گفتگو پر جائیں۔",
+            "reset": "دوبارہ ترتیب دیں۔",
+            "edit": "ترمیم",
+            "link": "لنک",
+            "setUrl": "URL سیٹ کریں۔",
+            "save": "محفوظ کریں۔",
+            "setClip": "کٹ آؤٹ کلپ",
+            "invalidURL": "غلط URL"
+        },
+        "FileTooLarge": "کیشنگ کے لیے فائل بہت بڑی ہے۔ زیادہ سے زیادہ فائل سائز {{size}}",
+        "InvalidPDF": "فائل ایک درست PDF نہیں ہے۔",
+        "StartTypingTitleOrKeywords": "عنوان یا مطلوبہ الفاظ ٹائپ کرنا شروع کریں..."
+    },
+    "types": {
+        "Websites\/article": {
+            "description": "ایک HTML دستاویز جسے مختلف صارفین دیکھ اور ترمیم کر سکتے ہیں۔",
+            "displayType": "مضمون"
+        },
+        "Websites\/slide": {
+            "description": "پریزنٹیشن میں ایک سلائیڈ، ایچ ٹی ایم ایل، آڈیو وغیرہ کو شامل کر سکتی ہے۔",
+            "displayType": "سلائیڈ"
+        },
+        "Websites\/presentation": {
+            "description": "مختلف سلائیڈوں پر مشتمل ایک پریزنٹیشن",
+            "displayType": "پریزنٹیشن"
+        },
+        "Websites\/advert\/unit": {
+            "description": "ویب سائٹ پر ایک اشتہاری یونٹ",
+            "displayType": "اشتہار یونٹ"
+        },
+        "Websites\/advert\/placement": {
+            "description": "ایک نام کے تحت اشتہاری اکائیوں کو گروپ کرنے کا ایک طریقہ",
+            "displayType": "اشتہار کی جگہ کا تعین"
+        },
+        "Websites\/advert\/creative": {
+            "description": "اشتہار کے لیے مواد",
+            "displayType": "تخلیقی اشتہار دیں۔"
+        },
+        "Websites\/advert\/campaign": {
+            "description": "ایک اشتہاری مہم",
+            "displayType": "اشتہاری مہم"
+        },
+        "Websites\/webpage": {
+            "description": "ایک ایسی ویب سائٹ کی نمائندگی کرتا ہے جس کا میٹا ڈیٹا سکریپ کیا گیا تھا۔",
+            "displayType": "ویب صفحہ"
+        }
+    }
+}

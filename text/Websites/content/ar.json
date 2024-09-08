@@ -1,0 +1,74 @@
+{
+    "advert": {
+        "campaign": {
+            "placeholders": {
+                "link": "رابط للترويج",
+                "startDate": "تاريخ البدء",
+                "startTime": "وقت البدء",
+                "endDate": "تاريخ الانتهاء",
+                "endTime": "وقت النهاية",
+                "budget": "ميزانية"
+            },
+            "interests": {
+                "Title": "تصفية حسب الفائدة",
+                "FilterInterests": "ابدأ بكتابة اهتمام ..."
+            },
+            "Interest": "اهتمام",
+            "Location": "موقع"
+        }
+    },
+    "webpage": {
+        "composer": {
+            "Go": "يذهب",
+            "PasteLinkHere": "https: \/\/ ...",
+            "BrowseTheWeb": "تصفح",
+            "WriteToStartConversation": "اكتب أفكارك لبدء المحادثة",
+            "StartConversation": "ابدأ المحادثة",
+            "GotoConversation": "اذهب إلى المحادثة",
+            "reset": "إعادة ضبط",
+            "edit": "يحرر",
+            "link": "وصلة",
+            "setUrl": "تعيين URL",
+            "save": "يحفظ",
+            "setClip": "قطع مقطع",
+            "invalidURL": "URL غير صالح"
+        },
+        "FileTooLarge": "الملف كبير جدًا للتخزين المؤقت. الحد الأقصى لحجم الملف {{size}}",
+        "InvalidPDF": "الملف ليس ملف PDF صالحًا",
+        "StartTypingTitleOrKeywords": "ابدأ في كتابة العنوان أو الكلمات الأساسية ..."
+    },
+    "types": {
+        "Websites\/article": {
+            "description": "مستند HTML يمكن للعديد من المستخدمين عرضه وتحريره",
+            "displayType": "شرط"
+        },
+        "Websites\/slide": {
+            "description": "شريحة في عرض تقديمي ، يمكن أن تتضمن HTML والصوت وما إلى ذلك.",
+            "displayType": "الانزلاق"
+        },
+        "Websites\/presentation": {
+            "description": "عرض تقديمي يتكون من شرائح مختلفة",
+            "displayType": "عرض تقديمي"
+        },
+        "Websites\/advert\/unit": {
+            "description": "وحدة إعلانية على موقع على شبكة الإنترنت",
+            "displayType": "وحدة الاعلان"
+        },
+        "Websites\/advert\/placement": {
+            "description": "طريقة لتجميع الوحدات الإعلانية تحت اسم",
+            "displayType": "التنسيب الإعلان"
+        },
+        "Websites\/advert\/creative": {
+            "description": "محتوى للإعلان",
+            "displayType": "إعلان إبداعي"
+        },
+        "Websites\/advert\/campaign": {
+            "description": "حملة إعلانية",
+            "displayType": "حملة إعلانية"
+        },
+        "Websites\/webpage": {
+            "description": "يمثل موقع ويب تم كشط بياناته الوصفية",
+            "displayType": "صفحة على الإنترنت"
+        }
+    }
+}

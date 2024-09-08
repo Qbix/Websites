@@ -1,0 +1,74 @@
+{
+    "advert": {
+        "campaign": {
+            "placeholders": {
+                "link": "ለማስተዋወቅ አገናኝ",
+                "startDate": "የመጀመሪያ ቀን",
+                "startTime": "የመነሻ ጊዜ",
+                "endDate": "የመጨረሻ ቀን",
+                "endTime": "የመጨረሻ ጊዜ",
+                "budget": "በጀት"
+            },
+            "interests": {
+                "Title": "በፍላጎት አጣራ",
+                "FilterInterests": "ፍላጎት መተየብ ጀምር..."
+            },
+            "Interest": "ፍላጎት",
+            "Location": "አካባቢ"
+        }
+    },
+    "webpage": {
+        "composer": {
+            "Go": "ሂድ",
+            "PasteLinkHere": "https:\/\/...",
+            "BrowseTheWeb": "አስስ",
+            "WriteToStartConversation": "ውይይቱን ለመጀመር ሀሳብዎን ይፃፉ",
+            "StartConversation": "ውይይት ጀምር",
+            "GotoConversation": "ወደ ውይይት ይሂዱ",
+            "reset": "ዳግም አስጀምር",
+            "edit": "አርትዕ",
+            "link": "አገናኝ",
+            "setUrl": "URL አዘጋጅ",
+            "save": "አስቀምጥ",
+            "setClip": "ቁረጥ ክሊፕ",
+            "invalidURL": "ልክ ያልሆነ URL"
+        },
+        "FileTooLarge": "ፋይል ለመሸጎጥ በጣም ትልቅ ነው። ከፍተኛው የፋይል መጠን {{size}}",
+        "InvalidPDF": "ፋይል የሚሰራ ፒዲኤፍ አይደለም።",
+        "StartTypingTitleOrKeywords": "ርዕስ ወይም ቁልፍ ቃላትን መተየብ ጀምር..."
+    },
+    "types": {
+        "Websites\/article": {
+            "description": "የተለያዩ ተጠቃሚዎች ማየት እና ማረም የሚችሉት የኤችቲኤምኤል ሰነድ",
+            "displayType": "አንቀጽ"
+        },
+        "Websites\/slide": {
+            "description": "የዝግጅት አቀራረብ ስላይድ፣ HTML፣ ኦዲዮ ወዘተ ሊያካትት ይችላል።",
+            "displayType": "ስላይድ"
+        },
+        "Websites\/presentation": {
+            "description": "የተለያዩ ስላይዶችን ያካተተ የዝግጅት አቀራረብ",
+            "displayType": "የዝግጅት አቀራረብ"
+        },
+        "Websites\/advert\/unit": {
+            "description": "በድር ጣቢያ ላይ የማስታወቂያ ክፍል",
+            "displayType": "የማስታወቂያ ክፍል"
+        },
+        "Websites\/advert\/placement": {
+            "description": "የማስታወቂያ ክፍሎችን በስም የመቧደን መንገድ",
+            "displayType": "የማስታወቂያ አቀማመጥ"
+        },
+        "Websites\/advert\/creative": {
+            "description": "የማስታወቂያ ይዘት",
+            "displayType": "ፈጠራን ያስተዋውቁ"
+        },
+        "Websites\/advert\/campaign": {
+            "description": "የማስታወቂያ ዘመቻ",
+            "displayType": "የማስታወቂያ ዘመቻ"
+        },
+        "Websites\/webpage": {
+            "description": "ሜታዳታው የተቦረቦረ ድር ጣቢያን ይወክላል",
+            "displayType": "ድረ ገጽ"
+        }
+    }
+}

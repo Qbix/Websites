@@ -1,0 +1,74 @@
+{
+    "advert": {
+        "campaign": {
+            "placeholders": {
+                "link": "Link pentru promovare",
+                "startDate": "Data de început",
+                "startTime": "Timpul de începere",
+                "endDate": "Data de încheiere",
+                "endTime": "Sfârșitul timpului",
+                "budget": "Buget"
+            },
+            "interests": {
+                "Title": "Filtrați după interes",
+                "FilterInterests": "Începeți să scrieți un interes..."
+            },
+            "Interest": "Interes",
+            "Location": "Locație"
+        }
+    },
+    "webpage": {
+        "composer": {
+            "Go": "Merge",
+            "PasteLinkHere": "https:\/\/...",
+            "BrowseTheWeb": "Naviga",
+            "WriteToStartConversation": "Scrie-ți gândurile pentru a începe conversația",
+            "StartConversation": "Începe conversația",
+            "GotoConversation": "Accesați Conversație",
+            "reset": "Resetați",
+            "edit": "Editați | ×",
+            "link": "Legătură",
+            "setUrl": "Setați adresa URL",
+            "save": "Salvați",
+            "setClip": "Clipul decupat",
+            "invalidURL": "URL invalid"
+        },
+        "FileTooLarge": "Fișier prea mare pentru stocare în cache. Dimensiunea maximă a fișierului {{size}}",
+        "InvalidPDF": "Fișierul nu este un PDF valid",
+        "StartTypingTitleOrKeywords": "Începeți să introduceți titlul sau cuvintele cheie..."
+    },
+    "types": {
+        "Websites\/article": {
+            "description": "Un document HTML pe care diverși utilizatori îl pot vizualiza și edita",
+            "displayType": "Articol"
+        },
+        "Websites\/slide": {
+            "description": "Un diapozitiv dintr-o prezentare poate include HTML, audio etc.",
+            "displayType": "Slide"
+        },
+        "Websites\/presentation": {
+            "description": "O prezentare formată din diferite diapozitive",
+            "displayType": "Prezentare"
+        },
+        "Websites\/advert\/unit": {
+            "description": "O unitate de publicitate pe un site web",
+            "displayType": "Unitate de publicitate"
+        },
+        "Websites\/advert\/placement": {
+            "description": "O modalitate de grupare a unităților de publicitate sub un nume",
+            "displayType": "Plasarea reclamei"
+        },
+        "Websites\/advert\/creative": {
+            "description": "Conținut pentru o reclamă",
+            "displayType": "Reclamă creativă"
+        },
+        "Websites\/advert\/campaign": {
+            "description": "O campanie de publicitate",
+            "displayType": "Campanie publicitara"
+        },
+        "Websites\/webpage": {
+            "description": "Reprezintă un site web ale cărui metadate au fost răzuite",
+            "displayType": "Pagină web"
+        }
+    }
+}

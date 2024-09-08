@@ -1,0 +1,74 @@
+{
+    "advert": {
+        "campaign": {
+            "placeholders": {
+                "link": "Ссылка для продвижения",
+                "startDate": "Дата начала",
+                "startTime": "Время начала",
+                "endDate": "Дата окончания",
+                "endTime": "Время окончания",
+                "budget": "Бюджет"
+            },
+            "interests": {
+                "Title": "Фильтровать по интересам",
+                "FilterInterests": "Начните вводить интерес..."
+            },
+            "Interest": "Интерес",
+            "Location": "Расположение"
+        }
+    },
+    "webpage": {
+        "composer": {
+            "Go": "Идти",
+            "PasteLinkHere": "https:\/\/...",
+            "BrowseTheWeb": "Просматривать",
+            "WriteToStartConversation": "Напишите свои мысли, чтобы начать разговор",
+            "StartConversation": "Начать разговор",
+            "GotoConversation": "Перейти к беседе",
+            "reset": "Перезагрузить",
+            "edit": "Редактировать",
+            "link": "Связь",
+            "setUrl": "Установить URL-адрес",
+            "save": "Сохранять",
+            "setClip": "Вырезать клип",
+            "invalidURL": "Неверная ссылка"
+        },
+        "FileTooLarge": "Файл слишком велик для кэширования. Максимальный размер файла {{size}}",
+        "InvalidPDF": "Файл не является допустимым PDF",
+        "StartTypingTitleOrKeywords": "Начните вводить заголовок или ключевые слова..."
+    },
+    "types": {
+        "Websites\/article": {
+            "description": "HTML-документ, который могут просматривать и редактировать различные пользователи.",
+            "displayType": "Статья"
+        },
+        "Websites\/slide": {
+            "description": "Слайд в презентации может включать HTML, аудио и т. д.",
+            "displayType": "Горка"
+        },
+        "Websites\/presentation": {
+            "description": "Презентация, состоящая из различных слайдов.",
+            "displayType": "Презентация"
+        },
+        "Websites\/advert\/unit": {
+            "description": "Рекламный блок на сайте",
+            "displayType": "Рекламный блок"
+        },
+        "Websites\/advert\/placement": {
+            "description": "Способ группировки рекламных блоков под названием",
+            "displayType": "Размещение рекламы"
+        },
+        "Websites\/advert\/creative": {
+            "description": "Контент для рекламы",
+            "displayType": "Рекламный креатив"
+        },
+        "Websites\/advert\/campaign": {
+            "description": "Рекламная кампания",
+            "displayType": "Рекламная кампания"
+        },
+        "Websites\/webpage": {
+            "description": "Представляет веб-сайт, метаданные которого были удалены.",
+            "displayType": "веб-страница"
+        }
+    }
+}

@@ -1,0 +1,74 @@
+{
+    "advert": {
+        "campaign": {
+            "placeholders": {
+                "link": "Enlace para promocionar",
+                "startDate": "Data de inicio",
+                "startTime": "Hora de inicio",
+                "endDate": "Data de finalización",
+                "endTime": "Tempo de Fin",
+                "budget": "Orzamento"
+            },
+            "interests": {
+                "Title": "Filtrar por intereses",
+                "FilterInterests": "Comeza a escribir un interese..."
+            },
+            "Interest": "Interese",
+            "Location": "Localización"
+        }
+    },
+    "webpage": {
+        "composer": {
+            "Go": "Vaia",
+            "PasteLinkHere": "https:\/\/...",
+            "BrowseTheWeb": "Explorar",
+            "WriteToStartConversation": "Escribe os teus pensamentos para comezar a conversa",
+            "StartConversation": "Iniciar conversa",
+            "GotoConversation": "Vaia a Conversa",
+            "reset": "Restablecer",
+            "edit": "Editar",
+            "link": "Ligazón",
+            "setUrl": "Establecer URL",
+            "save": "Gardar",
+            "setClip": "Recortar Clip",
+            "invalidURL": "URL non válido"
+        },
+        "FileTooLarge": "Ficheiro demasiado grande para almacenar na caché. Tamaño máximo do ficheiro {{size}}",
+        "InvalidPDF": "O ficheiro non é un PDF válido",
+        "StartTypingTitleOrKeywords": "Comeza a escribir título ou palabras clave..."
+    },
+    "types": {
+        "Websites\/article": {
+            "description": "Un documento HTML que varios usuarios poden ver e editar",
+            "displayType": "Artigo"
+        },
+        "Websites\/slide": {
+            "description": "Unha diapositiva nunha presentación pode incluír HTML, audio, etc.",
+            "displayType": "Diapositiva"
+        },
+        "Websites\/presentation": {
+            "description": "Unha presentación composta por varias diapositivas",
+            "displayType": "Presentación"
+        },
+        "Websites\/advert\/unit": {
+            "description": "Unha unidade publicitaria nun sitio web",
+            "displayType": "Unidade publicitaria"
+        },
+        "Websites\/advert\/placement": {
+            "description": "Unha forma de agrupar unidades publicitarias baixo un nome",
+            "displayType": "Colocación de anuncios"
+        },
+        "Websites\/advert\/creative": {
+            "description": "Contido para un anuncio",
+            "displayType": "Anuncio creativo"
+        },
+        "Websites\/advert\/campaign": {
+            "description": "Unha campaña publicitaria",
+            "displayType": "Campaña publicitaria"
+        },
+        "Websites\/webpage": {
+            "description": "Representa un sitio web cuxos metadatos foron eliminados",
+            "displayType": "páxina web"
+        }
+    }
+}

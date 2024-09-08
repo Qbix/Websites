@@ -1,0 +1,74 @@
+{
+    "advert": {
+        "campaign": {
+            "placeholders": {
+                "link": "Dolen i hyrwyddo",
+                "startDate": "Dyddiad cychwyn",
+                "startTime": "Amser Dechrau",
+                "endDate": "Dyddiad Gorffen",
+                "endTime": "Amser Gorffen",
+                "budget": "Cyllideb"
+            },
+            "interests": {
+                "Title": "Hidlo Yn ôl Llog",
+                "FilterInterests": "Dechreuwch deipio diddordeb..."
+            },
+            "Interest": "Llog",
+            "Location": "Lleoliad"
+        }
+    },
+    "webpage": {
+        "composer": {
+            "Go": "Ewch",
+            "PasteLinkHere": "https:\/\/...",
+            "BrowseTheWeb": "Pori",
+            "WriteToStartConversation": "Ysgrifennwch eich meddyliau i ddechrau&#39;r sgwrs",
+            "StartConversation": "Dechrau Sgwrs",
+            "GotoConversation": "Ewch i Sgwrs",
+            "reset": "Ail gychwyn",
+            "edit": "Golygu",
+            "link": "Dolen",
+            "setUrl": "Gosod URL",
+            "save": "Arbed",
+            "setClip": "Clip Torri Allan",
+            "invalidURL": "URL annilys"
+        },
+        "FileTooLarge": "Ffeil yn rhy fawr ar gyfer caching. Maint ffeil mwyaf {{size}}",
+        "InvalidPDF": "Nid yw&#39;r ffeil yn PDF dilys",
+        "StartTypingTitleOrKeywords": "Dechreuwch deipio teitl neu eiriau allweddol..."
+    },
+    "types": {
+        "Websites\/article": {
+            "description": "Dogfen HTML y gall defnyddwyr amrywiol ei gweld a&#39;i golygu",
+            "displayType": "Erthygl"
+        },
+        "Websites\/slide": {
+            "description": "Gall sleid mewn cyflwyniad gynnwys HTML, sain ac ati.",
+            "displayType": "Llithro"
+        },
+        "Websites\/presentation": {
+            "description": "Cyflwyniad yn cynnwys sleidiau amrywiol",
+            "displayType": "Cyflwyniad"
+        },
+        "Websites\/advert\/unit": {
+            "description": "Uned hysbysebu ar wefan",
+            "displayType": "Uned hysbysebu"
+        },
+        "Websites\/advert\/placement": {
+            "description": "Ffordd o grwpio unedau hysbysebu o dan enw",
+            "displayType": "Lleoliad hysbyseb"
+        },
+        "Websites\/advert\/creative": {
+            "description": "Cynnwys ar gyfer hysbyseb",
+            "displayType": "Hysbyseb creadigol"
+        },
+        "Websites\/advert\/campaign": {
+            "description": "Ymgyrch hysbysebu",
+            "displayType": "Ymgyrch hysbysebu"
+        },
+        "Websites\/webpage": {
+            "description": "Yn cynrychioli gwefan y cafodd ei metadata ei grafu",
+            "displayType": "tudalen we"
+        }
+    }
+}

@@ -1,0 +1,74 @@
+{
+    "advert": {
+        "campaign": {
+            "placeholders": {
+                "link": "Linkki mainostamiseen",
+                "startDate": "Aloituspäivämäärä",
+                "startTime": "Aloitusaika",
+                "endDate": "Päättymispäivä",
+                "endTime": "Loppu aika",
+                "budget": "Budjetti"
+            },
+            "interests": {
+                "Title": "Suodata kiinnostuksen kohteiden mukaan",
+                "FilterInterests": "Aloita kiinnostuksen kohteen kirjoittaminen..."
+            },
+            "Interest": "Kiinnostuksen kohde",
+            "Location": "Sijainti"
+        }
+    },
+    "webpage": {
+        "composer": {
+            "Go": "Mennä",
+            "PasteLinkHere": "https:\/\/...",
+            "BrowseTheWeb": "Selaa",
+            "WriteToStartConversation": "Kirjoita ajatuksesi aloittaaksesi keskustelun",
+            "StartConversation": "Aloita keskustelu",
+            "GotoConversation": "Siirry kohtaan Keskustelu",
+            "reset": "Nollaa",
+            "edit": "Muokata",
+            "link": "Linkki",
+            "setUrl": "Aseta URL-osoite",
+            "save": "Tallentaa",
+            "setClip": "Leikkaa pois klipsi",
+            "invalidURL": "Virheellinen URL"
+        },
+        "FileTooLarge": "Tiedosto on liian suuri välimuistiin tallentamiseen. Tiedoston enimmäiskoko {{size}}",
+        "InvalidPDF": "Tiedosto ei ole kelvollinen PDF",
+        "StartTypingTitleOrKeywords": "Ala kirjoittaa otsikkoa tai avainsanoja..."
+    },
+    "types": {
+        "Websites\/article": {
+            "description": "HTML-dokumentti, jota useat käyttäjät voivat tarkastella ja muokata",
+            "displayType": "Artikla"
+        },
+        "Websites\/slide": {
+            "description": "Esityksen dia, joka voi sisältää HTML:n, äänen jne.",
+            "displayType": "Liuku"
+        },
+        "Websites\/presentation": {
+            "description": "Eri dioista koostuva esitys",
+            "displayType": "Esittely"
+        },
+        "Websites\/advert\/unit": {
+            "description": "Mainosyksikkö verkkosivustolla",
+            "displayType": "Mainosyksikkö"
+        },
+        "Websites\/advert\/placement": {
+            "description": "Tapa ryhmitellä mainosyksiköt nimen alle",
+            "displayType": "Mainoksen sijoitus"
+        },
+        "Websites\/advert\/creative": {
+            "description": "Sisältöä mainokseen",
+            "displayType": "Mainosta luovaa"
+        },
+        "Websites\/advert\/campaign": {
+            "description": "Mainoskampanja",
+            "displayType": "Mainoskampanja"
+        },
+        "Websites\/webpage": {
+            "description": "Edustaa verkkosivustoa, jonka metatiedot on kaavittu",
+            "displayType": "Nettisivu"
+        }
+    }
+}

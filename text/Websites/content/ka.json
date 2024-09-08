@@ -1,0 +1,74 @@
+{
+    "advert": {
+        "campaign": {
+            "placeholders": {
+                "link": "ბმული პოპულარიზაციისთვის",
+                "startDate": "Დაწყების თარიღი",
+                "startTime": "დაწყების დრო",
+                "endDate": "Დასრულების თარიღი",
+                "endTime": "Დროის დასასრული",
+                "budget": "ბიუჯეტი"
+            },
+            "interests": {
+                "Title": "გაფილტვრა ინტერესის მიხედვით",
+                "FilterInterests": "დაიწყეთ ინტერესის აკრეფა..."
+            },
+            "Interest": "ინტერესი",
+            "Location": "მდებარეობა"
+        }
+    },
+    "webpage": {
+        "composer": {
+            "Go": "წადი",
+            "PasteLinkHere": "https:\/\/...",
+            "BrowseTheWeb": "დათვალიერება",
+            "WriteToStartConversation": "დაწერეთ თქვენი აზრები საუბრის დასაწყებად",
+            "StartConversation": "დაიწყეთ საუბარი",
+            "GotoConversation": "გადადით საუბარში",
+            "reset": "გადატვირთვა",
+            "edit": "რედაქტირება",
+            "link": "Ბმული",
+            "setUrl": "URL-ის დაყენება",
+            "save": "Გადარჩენა",
+            "setClip": "ამოჭრა კლიპი",
+            "invalidURL": "არასწორი ლინკი"
+        },
+        "FileTooLarge": "ფაილი ძალიან დიდია ქეშირებისთვის. ფაილის მაქსიმალური ზომა {{size}}",
+        "InvalidPDF": "ფაილი არ არის სწორი PDF",
+        "StartTypingTitleOrKeywords": "დაიწყეთ სათაურის ან საკვანძო სიტყვების აკრეფა..."
+    },
+    "types": {
+        "Websites\/article": {
+            "description": "HTML დოკუმენტი, რომლის ნახვა და რედაქტირება შეუძლია სხვადასხვა მომხმარებლებს",
+            "displayType": "სტატია"
+        },
+        "Websites\/slide": {
+            "description": "სლაიდი პრეზენტაციაში, შეიძლება შეიცავდეს HTML, აუდიო და ა.შ.",
+            "displayType": "სლაიდი"
+        },
+        "Websites\/presentation": {
+            "description": "პრეზენტაცია, რომელიც შედგება სხვადასხვა სლაიდებისგან",
+            "displayType": "პრეზენტაცია"
+        },
+        "Websites\/advert\/unit": {
+            "description": "სარეკლამო ერთეული ვებსაიტზე",
+            "displayType": "სარეკლამო ერთეული"
+        },
+        "Websites\/advert\/placement": {
+            "description": "სარეკლამო ერთეულების სახელით დაჯგუფების გზა",
+            "displayType": "რეკლამის განთავსება"
+        },
+        "Websites\/advert\/creative": {
+            "description": "შინაარსი რეკლამისთვის",
+            "displayType": "კრეატიული რეკლამა"
+        },
+        "Websites\/advert\/campaign": {
+            "description": "სარეკლამო კამპანია",
+            "displayType": "სარეკლამო კამპანია"
+        },
+        "Websites\/webpage": {
+            "description": "წარმოადგენს ვებსაიტს, რომლის მეტამონაცემები გაფუჭდა",
+            "displayType": "ვებ გვერდი"
+        }
+    }
+}

@@ -1,0 +1,74 @@
+{
+    "advert": {
+        "campaign": {
+            "placeholders": {
+                "link": "لینک برای تبلیغ",
+                "startDate": "تاریخ شروع",
+                "startTime": "زمان شروع",
+                "endDate": "تاریخ پایان",
+                "endTime": "زمان پایان",
+                "budget": "بودجه"
+            },
+            "interests": {
+                "Title": "فیلتر بر اساس علاقه",
+                "FilterInterests": "شروع به تایپ علاقه..."
+            },
+            "Interest": "علاقه",
+            "Location": "محل"
+        }
+    },
+    "webpage": {
+        "composer": {
+            "Go": "برو",
+            "PasteLinkHere": "https:\/\/...",
+            "BrowseTheWeb": "مرور کردن",
+            "WriteToStartConversation": "برای شروع گفتگو، افکار خود را بنویسید",
+            "StartConversation": "شروع مکالمه",
+            "GotoConversation": "به گفتگو بروید",
+            "reset": "بازنشانی کنید",
+            "edit": "ویرایش کنید",
+            "link": "ارتباط دادن",
+            "setUrl": "URL را تنظیم کنید",
+            "save": "صرفه جویی",
+            "setClip": "برش کلیپ",
+            "invalidURL": "URL نامعتبر است"
+        },
+        "FileTooLarge": "فایل برای ذخیره سازی خیلی بزرگ است. حداکثر حجم فایل {{size}}",
+        "InvalidPDF": "فایل یک PDF معتبر نیست",
+        "StartTypingTitleOrKeywords": "شروع به تایپ عنوان یا کلمات کلیدی کنید..."
+    },
+    "types": {
+        "Websites\/article": {
+            "description": "یک سند HTML که کاربران مختلف می توانند آن را مشاهده و ویرایش کنند",
+            "displayType": "مقاله"
+        },
+        "Websites\/slide": {
+            "description": "یک اسلاید در یک ارائه، می تواند شامل HTML، صدا و غیره باشد.",
+            "displayType": "اسلاید"
+        },
+        "Websites\/presentation": {
+            "description": "ارائه ای متشکل از اسلایدهای مختلف",
+            "displayType": "ارائه"
+        },
+        "Websites\/advert\/unit": {
+            "description": "یک واحد تبلیغاتی در یک وب سایت",
+            "displayType": "واحد تبلیغات"
+        },
+        "Websites\/advert\/placement": {
+            "description": "روشی برای گروه بندی واحدهای تبلیغاتی تحت یک نام",
+            "displayType": "قرار دادن آگهی"
+        },
+        "Websites\/advert\/creative": {
+            "description": "محتوای یک تبلیغ",
+            "displayType": "تبلیغات خلاقانه"
+        },
+        "Websites\/advert\/campaign": {
+            "description": "یک کمپین تبلیغاتی",
+            "displayType": "کمپین تبلیغاتی"
+        },
+        "Websites\/webpage": {
+            "description": "نشان دهنده وب سایتی است که ابرداده آن خراشیده شده است",
+            "displayType": "صفحه وب"
+        }
+    }
+}

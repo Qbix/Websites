@@ -1,0 +1,74 @@
+{
+    "advert": {
+        "campaign": {
+            "placeholders": {
+                "link": "Спасылка для прасоўвання",
+                "startDate": "Дата пачатку",
+                "startTime": "Час пачатку",
+                "endDate": "Дата заканчэння",
+                "endTime": "Час заканчэння",
+                "budget": "Бюджэт"
+            },
+            "interests": {
+                "Title": "Фільтр па інтарэсах",
+                "FilterInterests": "Пачніце ўводзіць цікавасць..."
+            },
+            "Interest": "Цікавасць",
+            "Location": "Размяшчэнне"
+        }
+    },
+    "webpage": {
+        "composer": {
+            "Go": "Ідзі",
+            "PasteLinkHere": "https:\/\/...",
+            "BrowseTheWeb": "Праглядзіце",
+            "WriteToStartConversation": "Напішыце свае думкі, каб пачаць размову",
+            "StartConversation": "Пачаць размову",
+            "GotoConversation": "Перайсці да размовы",
+            "reset": "Скінуць",
+            "edit": "Рэдагаваць",
+            "link": "Спасылка",
+            "setUrl": "Задаць URL",
+            "save": "Захаваць",
+            "setClip": "Выразаць кліп",
+            "invalidURL": "Няправільны URL"
+        },
+        "FileTooLarge": "Файл занадта вялікі для кэшавання. Максімальны памер файла {{size}}",
+        "InvalidPDF": "Файл не з&#39;яўляецца сапраўдным PDF",
+        "StartTypingTitleOrKeywords": "Пачніце ўводзіць назву або ключавыя словы..."
+    },
+    "types": {
+        "Websites\/article": {
+            "description": "Дакумент HTML, які розныя карыстальнікі могуць праглядаць і рэдагаваць",
+            "displayType": "Артыкул"
+        },
+        "Websites\/slide": {
+            "description": "Слайд у прэзентацыі можа ўключаць HTML, аўдыя і г.д.",
+            "displayType": "слайд"
+        },
+        "Websites\/presentation": {
+            "description": "Прэзентацыя, якая складаецца з розных слайдаў",
+            "displayType": "Прэзентацыя"
+        },
+        "Websites\/advert\/unit": {
+            "description": "Рэкламны блок на сайце",
+            "displayType": "Рэкламны блок"
+        },
+        "Websites\/advert\/placement": {
+            "description": "Спосаб групоўкі рэкламных адзінак пад назвай",
+            "displayType": "Размяшчэнне рэкламы"
+        },
+        "Websites\/advert\/creative": {
+            "description": "Кантэнт для рэкламы",
+            "displayType": "Рэкламны крэатыў"
+        },
+        "Websites\/advert\/campaign": {
+            "description": "Рэкламная кампанія",
+            "displayType": "Рэкламная кампанія"
+        },
+        "Websites\/webpage": {
+            "description": "Прадстаўляе вэб-сайт, метаданыя якога былі скрапаваныя",
+            "displayType": "вэб-старонка"
+        }
+    }
+}

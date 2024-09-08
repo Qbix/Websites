@@ -1,0 +1,74 @@
+{
+    "advert": {
+        "campaign": {
+            "placeholders": {
+                "link": "Link til promovering",
+                "startDate": "Start dato",
+                "startTime": "Starttidspunkt",
+                "endDate": "Slutdato",
+                "endTime": "Sluttid",
+                "budget": "Budget"
+            },
+            "interests": {
+                "Title": "Filtrer efter interesse",
+                "FilterInterests": "Begynd at skrive en interesse..."
+            },
+            "Interest": "Interesse",
+            "Location": "Beliggenhed"
+        }
+    },
+    "webpage": {
+        "composer": {
+            "Go": "Gå",
+            "PasteLinkHere": "https:\/\/...",
+            "BrowseTheWeb": "Gennemse",
+            "WriteToStartConversation": "Skriv dine tanker for at starte samtalen",
+            "StartConversation": "Start samtale",
+            "GotoConversation": "Gå til Samtale",
+            "reset": "Nulstil",
+            "edit": "Redigere",
+            "link": "Link",
+            "setUrl": "Indstil URL",
+            "save": "Gemme",
+            "setClip": "Udskåret klip",
+            "invalidURL": "ugyldig URL"
+        },
+        "FileTooLarge": "Filen er for stor til cachelagring. Maks filstørrelse {{size}}",
+        "InvalidPDF": "Filen er ikke en gyldig PDF",
+        "StartTypingTitleOrKeywords": "Begynd at skrive overskrift eller søgeord..."
+    },
+    "types": {
+        "Websites\/article": {
+            "description": "Et HTML-dokument, som forskellige brugere kan se og redigere",
+            "displayType": "Artikel"
+        },
+        "Websites\/slide": {
+            "description": "Et dias i en præsentation, kan indeholde HTML, lyd osv.",
+            "displayType": "Glide"
+        },
+        "Websites\/presentation": {
+            "description": "En præsentation bestående af forskellige slides",
+            "displayType": "Præsentation"
+        },
+        "Websites\/advert\/unit": {
+            "description": "En annonceenhed på et websted",
+            "displayType": "Annonceenhed"
+        },
+        "Websites\/advert\/placement": {
+            "description": "En måde at gruppere reklameenheder under et navn",
+            "displayType": "Annonceplacering"
+        },
+        "Websites\/advert\/creative": {
+            "description": "Indhold til en annonce",
+            "displayType": "Annonce kreativ"
+        },
+        "Websites\/advert\/campaign": {
+            "description": "En reklamekampagne",
+            "displayType": "Annoncekampagne"
+        },
+        "Websites\/webpage": {
+            "description": "Repræsenterer et websted, hvis metadata blev skrabet",
+            "displayType": "hjemmeside"
+        }
+    }
+}

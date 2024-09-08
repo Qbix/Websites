@@ -1,0 +1,74 @@
+{
+    "advert": {
+        "campaign": {
+            "placeholders": {
+                "link": "Enllaç per promocionar",
+                "startDate": "Data d&#39;inici",
+                "startTime": "L&#39;hora d&#39;inici",
+                "endDate": "Data de finalització",
+                "endTime": "Fi del temps",
+                "budget": "Pressupost"
+            },
+            "interests": {
+                "Title": "Filtra per interessos",
+                "FilterInterests": "Comença a escriure un interès..."
+            },
+            "Interest": "Interès",
+            "Location": "Ubicació"
+        }
+    },
+    "webpage": {
+        "composer": {
+            "Go": "Vés",
+            "PasteLinkHere": "https:\/\/...",
+            "BrowseTheWeb": "Navega",
+            "WriteToStartConversation": "Escriu els teus pensaments per començar la conversa",
+            "StartConversation": "Inicia la conversa",
+            "GotoConversation": "Vés a Conversa",
+            "reset": "Restableix",
+            "edit": "Edita",
+            "link": "Enllaç",
+            "setUrl": "Estableix l&#39;URL",
+            "save": "Desa",
+            "setClip": "Retalla el clip",
+            "invalidURL": "URL no vàlid"
+        },
+        "FileTooLarge": "Fitxer massa gran per a la memòria cau. Mida màxima del fitxer {{size}}",
+        "InvalidPDF": "El fitxer no és un PDF vàlid",
+        "StartTypingTitleOrKeywords": "Comenceu a escriure títol o paraules clau..."
+    },
+    "types": {
+        "Websites\/article": {
+            "description": "Un document HTML que diversos usuaris poden veure i editar",
+            "displayType": "Article"
+        },
+        "Websites\/slide": {
+            "description": "Una diapositiva en una presentació, pot incloure HTML, àudio, etc.",
+            "displayType": "Diapositiva"
+        },
+        "Websites\/presentation": {
+            "description": "Una presentació que consta de diverses diapositives",
+            "displayType": "Presentació"
+        },
+        "Websites\/advert\/unit": {
+            "description": "Una unitat publicitària en un lloc web",
+            "displayType": "Unitat publicitària"
+        },
+        "Websites\/advert\/placement": {
+            "description": "Una manera d&#39;agrupar unitats publicitàries sota un nom",
+            "displayType": "Col·locació de l&#39;anunci"
+        },
+        "Websites\/advert\/creative": {
+            "description": "Contingut per a un anunci",
+            "displayType": "Anunci creatiu"
+        },
+        "Websites\/advert\/campaign": {
+            "description": "Una campanya publicitària",
+            "displayType": "Campanya publicitària"
+        },
+        "Websites\/webpage": {
+            "description": "Representa un lloc web les metadades del qual s&#39;han esborrat",
+            "displayType": "pàgina web"
+        }
+    }
+}

@@ -1,0 +1,74 @@
+{
+    "advert": {
+        "campaign": {
+            "placeholders": {
+                "link": "Skakel om te bevorder",
+                "startDate": "Begindatum",
+                "startTime": "Begin Tyd",
+                "endDate": "Einddatum",
+                "endTime": "Eind tyd",
+                "budget": "Begroting"
+            },
+            "interests": {
+                "Title": "Filtreer volgens belangstelling",
+                "FilterInterests": "Begin &#39;n belangstelling tik..."
+            },
+            "Interest": "Belangstelling",
+            "Location": "Ligging"
+        }
+    },
+    "webpage": {
+        "composer": {
+            "Go": "Gaan",
+            "PasteLinkHere": "https:\/\/...",
+            "BrowseTheWeb": "Snuffel",
+            "WriteToStartConversation": "Skryf jou gedagtes neer om die gesprek te begin",
+            "StartConversation": "Begin Gesprek",
+            "GotoConversation": "Gaan na Gesprek",
+            "reset": "Stel terug",
+            "edit": "Wysig",
+            "link": "Skakel",
+            "setUrl": "Stel URL",
+            "save": "Stoor",
+            "setClip": "Knip uit",
+            "invalidURL": "Ongeldige URL"
+        },
+        "FileTooLarge": "Lêer te groot vir kas. Maksimum lêergrootte {{size}}",
+        "InvalidPDF": "Lêer is nie &#39;n geldige PDF nie",
+        "StartTypingTitleOrKeywords": "Begin titel of sleutelwoorde tik..."
+    },
+    "types": {
+        "Websites\/article": {
+            "description": "&#39;n HTML-dokument wat verskeie gebruikers kan sien en redigeer",
+            "displayType": "Artikel"
+        },
+        "Websites\/slide": {
+            "description": "&#39;n Skyfie in &#39;n aanbieding, kan HTML, oudio ens.",
+            "displayType": "Skyfie"
+        },
+        "Websites\/presentation": {
+            "description": "&#39;n Voorlegging wat uit verskeie skyfies bestaan",
+            "displayType": "Voorlegging"
+        },
+        "Websites\/advert\/unit": {
+            "description": "&#39;n Advertensie-eenheid op &#39;n webwerf",
+            "displayType": "Advertensie-eenheid"
+        },
+        "Websites\/advert\/placement": {
+            "description": "&#39;n Manier om advertensie-eenhede onder &#39;n naam te groepeer",
+            "displayType": "Advertensieplasing"
+        },
+        "Websites\/advert\/creative": {
+            "description": "Inhoud vir &#39;n advertensie",
+            "displayType": "Advertensie kreatief"
+        },
+        "Websites\/advert\/campaign": {
+            "description": "&#39;n Advertensieveldtog",
+            "displayType": "Advertensie veldtog"
+        },
+        "Websites\/webpage": {
+            "description": "Verteenwoordig &#39;n webwerf waarvan die metadata geskraap is",
+            "displayType": "webblad"
+        }
+    }
+}

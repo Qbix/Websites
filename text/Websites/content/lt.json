@@ -1,0 +1,74 @@
+{
+    "advert": {
+        "campaign": {
+            "placeholders": {
+                "link": "Nuoroda reklamuoti",
+                "startDate": "Pradžios data",
+                "startTime": "Pradžios laikas",
+                "endDate": "Pabaigos data",
+                "endTime": "Pabaigos laikas",
+                "budget": "Biudžetas"
+            },
+            "interests": {
+                "Title": "Filtruoti pagal pomėgius",
+                "FilterInterests": "Pradėkite rašyti pomėgį..."
+            },
+            "Interest": "Palūkanos",
+            "Location": "Vieta"
+        }
+    },
+    "webpage": {
+        "composer": {
+            "Go": "Eik",
+            "PasteLinkHere": "https:\/\/...",
+            "BrowseTheWeb": "Naršyti",
+            "WriteToStartConversation": "Užrašykite savo mintis, kad pradėtumėte pokalbį",
+            "StartConversation": "Pradėti pokalbį",
+            "GotoConversation": "Eikite į Pokalbis",
+            "reset": "Nustatyti iš naujo",
+            "edit": "Redaguoti",
+            "link": "Nuoroda",
+            "setUrl": "Nustatyti URL",
+            "save": "Sutaupyti",
+            "setClip": "Iškirptas klipas",
+            "invalidURL": "neteisingas URL"
+        },
+        "FileTooLarge": "Failas per didelis, kad būtų galima laikyti talpykloje. Maksimalus failo dydis {{size}}",
+        "InvalidPDF": "Failas nėra tinkamas PDF",
+        "StartTypingTitleOrKeywords": "Pradėkite rašyti pavadinimą arba raktinius žodžius..."
+    },
+    "types": {
+        "Websites\/article": {
+            "description": "HTML dokumentas, kurį gali peržiūrėti ir redaguoti įvairūs vartotojai",
+            "displayType": "Straipsnis"
+        },
+        "Websites\/slide": {
+            "description": "Pristatymo skaidrėje gali būti HTML, garso ir kt.",
+            "displayType": "Skaidrė"
+        },
+        "Websites\/presentation": {
+            "description": "Pristatymas, susidedantis iš įvairių skaidrių",
+            "displayType": "Pristatymas"
+        },
+        "Websites\/advert\/unit": {
+            "description": "Reklamos vienetas svetainėje",
+            "displayType": "Reklamos vienetas"
+        },
+        "Websites\/advert\/placement": {
+            "description": "Reklamos vienetų grupavimo pagal pavadinimą būdas",
+            "displayType": "Reklamos talpinimas"
+        },
+        "Websites\/advert\/creative": {
+            "description": "Turinys reklamai",
+            "displayType": "Reklamuoti kūrybiškumą"
+        },
+        "Websites\/advert\/campaign": {
+            "description": "Reklaminė kampanija",
+            "displayType": "Reklaminė kampanija"
+        },
+        "Websites\/webpage": {
+            "description": "Nurodo svetainę, kurios metaduomenys buvo iškrapštyti",
+            "displayType": "tinklo puslapis"
+        }
+    }
+}

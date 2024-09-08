@@ -1,0 +1,192 @@
+.Websites_webpage_preview_tool {
+	white-space: nowrap;
+	padding: 0;
+	position: relative;
+	border-radius: 7px;
+	border: none;
+	text-align: left;
+}
+.Websites_webpage_preview_tool[data-mode=title] {
+	margin: 0;
+	box-shadow: none;
+}
+.Websites_webpage_preview_tool[data-mode=title] {
+	cursor: pointer;
+}
+.Websites_webpage_preview_tool[data-mode=title] .Users_pile_tool,
+.Websites_webpage_preview_tool[data-mode=title] .streams_chat_unseen {
+	display: none;
+}
+.Websites_webpage_preview_tool.Streams_chat_preview_noParticipants {
+	display: none;
+}
+.Websites_webpage_preview_tool .Users_pile_tool {
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	transform: translate(0, -50%);
+}
+.Websites_webpage_preview_tool {
+	cursor: pointer;
+}
+.Websites_webpage_preview_tool .Streams_aspect_url a:link,
+.Websites_webpage_preview_tool .Streams_aspect_url a:visited,
+.Websites_webpage_preview_tool .Streams_aspect_url a:focus {
+	color: blue;
+	text-decoration: underline;
+	font-size: 14px;
+}
+.Websites_webpage_preview_tool:not(.Streams_preview_composer) .Streams_preview_contents {
+	width: calc(100% - 70px);
+}
+.Websites_webpage_preview_tool[data-participants] .Streams_preview_contents {
+	width: calc(100% - 110px);
+}
+.Websites_webpage_preview_tool .Streams_preview_contents,
+.Websites_webpage_preview_tool .Streams_preview_contents > * {
+	overflow: hidden;
+	text-overflow:ellipsis;
+}
+.Websites_webpage_preview_tool .Streams_preview_contents > .Users_pile_tool {
+	overflow: visible;
+}
+.Q_columns_title_container .Websites_webpage_preview_tool h3.Streams_preview_title,
+.Websites_webpage_preview_tool h3.Streams_preview_title {
+	position: unset;
+	top: unset;
+	transform: unset;
+	font-size: 16px;
+	height: 24px;
+}
+.Websites_webpage_preview_tool .Streams_aspect_description {
+	font-size: 12px;
+	color: var(--html-color);
+	line-height: normal;
+}
+.Websites_webpage_preview_tool .Streams_aspect_interests a:link,
+.Websites_webpage_preview_tool .Streams_aspect_interests a:visited {
+	color: var(--html-link-color);
+}
+.Websites_webpage_preview_tool .Streams_aspect_interests {
+	font-size: 12px;
+	font-weight: normal;
+	white-space: nowrap;
+	line-height: 20px;
+}
+.Websites_webpage_preview_tool[data-mode=title] .Streams_aspect_interests {
+	background: #ccccee;
+	border-radius: 5px;
+	padding: 2px;
+}
+.Websites_webpage_preview_tool .Streams_aspect_interests img {
+	width: auto;
+	height: 18px;
+	margin-right: 2%;
+}
+.Websites_webpage_preview_tool ._Streams_aspect_interests::before {
+	font-family: 'qplatform-communities' !important;
+	content: "\e90d";
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-size: 15px;
+	position: relative;
+	top: -1px;
+	vertical-align: middle;
+}
+.Websites_webpage_preview_tool .Streams_preview_icon {
+	margin: 2%;
+	vertical-align: top;
+}
+
+/********** <Composer> *************/
+.Websites_dialog_webpage {
+	min-width: 330px;
+}
+.Websites_dialog_webpage .Websites_webpage_composer {
+	padding: 10px;
+	position: relative;
+}
+.Websites_dialog_webpage .Websites_webpage_composer .Q_tabbing_item[data-content=record] {
+	position: relative;
+}
+
+.Websites_dialog_webpage .Websites_webpage_composer button {
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+}
+.Websites_dialog_webpage .Websites_webpage_composer label[for=url] {
+	margin-top: 10px;
+	display: block;
+	white-space: nowrap;
+}
+.Websites_dialog_webpage .Websites_webpage_composer label[for=url] button,
+.Websites_dialog_webpage .Websites_webpage_composer label[for=url] input {
+	display: inline-block;
+}
+.Websites_dialog_webpage .Websites_webpage_composer label[for=url] input {
+	width: 60%;
+	margin-right: 5px;
+}
+
+.Websites_dialog_webpage .Q_tabbing_container .Q_tabbing_item {
+	min-height: 100px;
+}
+.Websites_dialog_webpage .Q_tabbing_container .Q_tabbing_item[data-content=link] label {
+	display: block;
+	margin: 30px auto 0;
+	width: 90%;
+	white-space: nowrap;
+}
+.Websites_dialog_webpage .Q_tabbing_container .Q_tabbing_item[data-content=link] label button {
+	display: inline;
+}
+.Websites_dialog_webpage .Websites_webpage_composer[data-tabs="1"] .Q_tabbing_tabs {
+	display: none;
+}
+.Websites_dialog_webpage .Websites_webpage_composer[data-tabs="1"] .Q_tabbing_container {
+	border: none;
+}
+.Websites_dialog_webpage .Websites_webpage_composer .Q_tabbing_tabs > .Q_tabbing_tab {
+	width: 60px;
+	background-repeat: no-repeat;
+	background-position: top center;
+	padding-top: 40px;
+}
+.Websites_dialog_webpage .Websites_webpage_composer .Q_tabbing_tabs > .Q_tabbing_tab[data-name=edit] {
+	background-image: url(../../../../Q/img/audio/edit/40.png);
+}
+.Websites_dialog_webpage .Websites_webpage_composer[data-composer=true] .Q_tabbing_tabs .Q_tabbing_tab[data-name=edit],
+.Websites_dialog_webpage .Websites_webpage_composer[data-composer=true] .Q_tabbing_container .Q_tabbing_item[data-content=edit] {
+	display: none;
+}
+.Websites_dialog_webpage .Websites_webpage_composer .Q_tabbing_tabs > .Q_tabbing_tab[data-name=link] {
+	background-image: url(../../../../Q/img/audio/link/40.png);
+}
+
+.Websites_dialog_webpage .Websites_webpage_composer .Websites_webpage_composer_submit {
+	text-align: center;
+	white-space: nowrap;
+	margin-top: 10px;
+}
+.Websites_dialog_webpage .Websites_webpage_composer .Websites_webpage_composer_submit button {
+	display: inline-block;
+	margin: 0 2%;
+}
+.Websites_dialog_webpage button,
+.Websites_dialog_webpage input {
+	height: 40px;
+}
+.Websites_dialog_webpage input[name=url] {
+	width: 100%;
+}
+.Websites_dialog_webpage .Websites_webpage_composer_submit button[name=reset] {
+	display: none;
+}
+/********** </Composer> *************/
