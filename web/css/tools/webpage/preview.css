@@ -77,6 +77,7 @@
 	background: #ccccee;
 	border-radius: 5px;
 	padding: 2px;
+	margin-bottom: 1px;
 }
 .Websites_webpage_preview_tool .Streams_aspect_interests img {
 	width: auto;
@@ -100,7 +101,7 @@
 	vertical-align: middle;
 }
 .Websites_webpage_preview_tool .Streams_preview_icon {
-	margin: 2%;
+	margin: 5px;
 	vertical-align: top;
 }
 
