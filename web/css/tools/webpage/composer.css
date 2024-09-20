@@ -1,6 +1,10 @@
 .Websites_webpage_composer_tool {
 	white-space: nowrap;
 	border: none;
+	padding: 5px;
+}
+.Websites_webpage_composer_tool button {
+	height: 40px;
 }
 .Websites_webpage_composer_tool .Websites_webpage_composer_input {
 	width: calc(100% - 70px);
