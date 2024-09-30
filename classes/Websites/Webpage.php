@@ -659,8 +659,7 @@ class Websites_Webpage extends Base_Websites_Webpage
             throw new Q_Exception('Error reading remote file using fopen');
         }
 
-        include_once(Q_CLASSES_DIR.DS.'Audio'.DS.'getid3'.DS.'getid3.php');
-        $getID3 = new getID3();
+        $getID3 = new Audio_getID3();
         $metaData = $getID3->analyze($path);
         getid3_lib::CopyTagsToComments($metaData);
 
