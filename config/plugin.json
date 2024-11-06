@@ -4,7 +4,7 @@
 			"Websites": {
 				"version": "1.0.7",
 				"compatible": "0.8",
-				"requires": {"Streams": "1.0", "Audio": "1.0"},
+				"requires": {"Streams": "1.0"},
 				"connections": ["Users", "Streams", "Websites"]
 			}
 		},
