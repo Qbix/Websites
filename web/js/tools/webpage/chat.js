@@ -237,7 +237,7 @@
 				if (instructions.streamType) {
 					streamType = instructions.streamType;
 				} else if (instructions.streamName) {
-					streamType = instructions.streamName.substr(0, instructions.streamName.lastIndexOf("/")) + '/preview';
+					streamType = instructions.streamName.substring(0, instructions.streamName.lastIndexOf("/")) + '/preview';
 				} else {
 					streamType = Q.Websites.getStreamType(instructions.url) + '/preview';
 				}
