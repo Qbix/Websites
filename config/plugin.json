@@ -80,6 +80,9 @@
 		}
 	},
 	"Streams": {
+		"userStreams": {
+			"Websites": "streams.json"
+		},
 		"types": {
 			"*": {
 				"relatedTo": {

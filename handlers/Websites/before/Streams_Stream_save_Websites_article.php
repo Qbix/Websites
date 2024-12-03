@@ -4,6 +4,13 @@ function Websites_before_Streams_Stream_save_Websites_article($params)
 {
 	$stream = $params['stream'];
 	$modifiedFields = $params['modifiedFields'];
+
+	if (!empty($modifiedFields['article'])) {
+		$tree = Q_Tree::createAndLoad(Q_CONFIG_DIR.DS.'sanitize'.DS.'html.json');
+		$whitelist = $tree->expect('sanitize', 'whitelist');
+		$stream->article = Q_Html::sanitize($stream->article, $whitelist);
+	}
+
 	if ($stream->wasRetrieved()) {
 		return;
 	}

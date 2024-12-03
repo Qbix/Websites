@@ -41,6 +41,13 @@
 		"writeLevel": 10,
 		"adminLevel": 20
 	},
+	"Websites/article/user/bio": {
+		"title": "About",
+		"type": "Websites/article",
+		"readLevel": 40,
+		"writeLevel": 10,
+		"adminLevel": 20
+	},
 	"Websites/slogan": {
 		"title": "Website slogan",
 		"type": "Streams/text/small",
