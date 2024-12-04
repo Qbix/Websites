@@ -61,5 +61,12 @@
 		"readLevel": 40,
 		"writeLevel": 10,
 		"adminLevel": 20
+	},
+	"Websites/bios": {
+		"title": "User Bios",
+		"type": "Streams/category",
+		"readLevel": 40,
+		"writeLevel": 10,
+		"adminLevel": 20
 	}
 }
