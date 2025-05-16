@@ -597,7 +597,7 @@
 							var result = response.slots.result;
 
 							$webpageElement.tool("Q/webpage", {
-								action: "implement",
+								action: "player",
 								url: result.destinationUrl
 							}).activate(function () {
 								var toolPreview = this;
