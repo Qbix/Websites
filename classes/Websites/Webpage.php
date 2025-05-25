@@ -380,7 +380,10 @@ class Websites_Webpage extends Base_Websites_Webpage
 					if (is_array($tags) && count($tags)) {
 						$keywords = implode(',', $tags);
 					}
-
+					$videoId = Q::ifset($item, "id", "videoId", Q::ifset($item, "id", null));
+					if (!is_string($videoId)) {
+						continue;
+					}
 					$result = array(
 						"title" => $snippet["title"],
 						"icon" => Q::ifset($snippet, "thumbnails", "default", "url", null),
@@ -389,7 +392,7 @@ class Websites_Webpage extends Base_Websites_Webpage
 						"description" => $snippet["description"],
 						"keywords" => $keywords,
 						"publishTime" => strtotime(Q::ifset($snippet, "publishTime", Q::ifset($snippet, "publishedAt", "now"))),
-						"url" => "https://www.youtube.com/watch?v=".Q::ifset($item, "id", "videoId", Q::ifset($item, "id", null))
+						"url" => "https://www.youtube.com/watch?v=$videoId"
 					);
 
 					// cache data for video
