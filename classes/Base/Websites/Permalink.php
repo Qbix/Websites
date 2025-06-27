@@ -476,6 +476,12 @@ return array (
 						
 		// convention: we'll have updatedTime = insertedTime if just created.
 		$this->updatedTime = $value['updatedTime'] = new Db_Expression('CURRENT_TIMESTAMP');
+		if (!isset($value["uri"])) {
+			$this->uri = $value["uri"] = "";
+		}
+		if (!isset($value["url"])) {
+			$this->url = $value["url"] = "";
+		}
 		return $value;			
 	}
 

@@ -403,6 +403,12 @@ Base.prototype.beforeSave = function (value) {
 
 	// convention: we'll have updatedTime = insertedTime if just created.
 	this['updatedTime'] = value['updatedTime'] = new Db.Expression('CURRENT_TIMESTAMP');
+	if (this.fields["uri"] == undefined) {
+		this.fields["uri"] = value["uri"] = "";
+	}
+	if (this.fields["url"] == undefined) {
+		this.fields["url"] = value["url"] = "";
+	}
 	return value;
 };
 
