@@ -611,10 +611,10 @@ return array (
 		}						
 		// convention: we'll have updatedTime = insertedTime if just created.
 		$this->updatedTime = $value['updatedTime'] = new Db_Expression('CURRENT_TIMESTAMP');
-		if (!isset($value["url"])) {
+		if (!isset($this->fields["url"]) and !isset($value["url"])) {
 			$this->url = $value["url"] = "";
 		}
-		if (!isset($value["duration"])) {
+		if (!isset($this->fields["duration"]) and !isset($value["duration"])) {
 			$this->duration = $value["duration"] = 2592000;
 		}
 		return $value;			
