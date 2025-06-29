@@ -506,9 +506,6 @@ Base.prototype.beforeSave = function (value) {
 	if (this.fields["url"] == undefined && value["url"] == undefined) {
 		this.fields["url"] = value["url"] = "";
 	}
-	if (this.fields["duration"] == undefined && value["duration"] == undefined) {
-		this.fields["duration"] = value["duration"] = 2592000;
-	}
 	return value;
 };
 

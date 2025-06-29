@@ -573,9 +573,6 @@ return array (
 		if (!isset($this->fields["article"]) and !isset($value["article"])) {
 			$this->article = $value["article"] = "";
 		}
-		if (!isset($this->fields["getintouch"]) and !isset($value["getintouch"])) {
-			$this->getintouch = $value["getintouch"] = "{}";
-		}
 		return $value;			
 	}
 

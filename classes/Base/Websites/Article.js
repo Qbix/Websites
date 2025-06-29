@@ -500,9 +500,6 @@ Base.prototype.beforeSave = function (value) {
 	if (this.fields["article"] == undefined && value["article"] == undefined) {
 		this.fields["article"] = value["article"] = "";
 	}
-	if (this.fields["getintouch"] == undefined && value["getintouch"] == undefined) {
-		this.fields["getintouch"] = value["getintouch"] = "{}";
-	}
 	return value;
 };
 

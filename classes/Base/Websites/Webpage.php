@@ -614,9 +614,6 @@ return array (
 		if (!isset($this->fields["url"]) and !isset($value["url"])) {
 			$this->url = $value["url"] = "";
 		}
-		if (!isset($this->fields["duration"]) and !isset($value["duration"])) {
-			$this->duration = $value["duration"] = 2592000;
-		}
 		return $value;			
 	}
 
