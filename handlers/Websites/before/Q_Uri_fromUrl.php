@@ -4,7 +4,7 @@ function Websites_before_Q_Uri_fromUrl($params, &$result)
 {
 	$enabled = Q_Config::get('Websites', 'permalinks', 'enabled', false);
 	if (!$enabled || !Q::$bootstrapped
-	|| $params['url'] === Q_Request::serviceWorkerURL()) {
+	|| $params['url'] === Q_Uri::serviceWorkerURL()) {
 		return;
 	}
 	if ($regex = Q_Config::get('Websites', 'permalinks', 'regex', null)) {
