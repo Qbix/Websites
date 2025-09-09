@@ -1,4 +1,7 @@
 <?php
+
+use HeadlessChromium\BrowserFactory;
+
 /**
  * @module Websites
  */
@@ -997,5 +1000,345 @@ class Websites_Webpage extends Base_Websites_Webpage
 			->fetchDbRows();
 
 		return $rows;
+	}
+
+	/**
+	 * Load a URL in headless Chrome, inject analyze.js and cssprobe.js,
+	 * and return computed styles, fonts, dominant colors, and nav heuristics.
+	 * Also crawls CSS (server-side) to follow @import and collect @font-face blocks.
+	 *
+	 * @method analyze
+	 * @static
+	 * @param {string} $url The webpage URL to analyze.
+	 * @return {array} Analysis result object with the following keys:
+	 *
+	 *   {
+	 *     title: {string}          The page title.
+	 *     url: {string}            Final navigated URL (after redirects).
+	 *
+	 *     stylesBySelector: {object}   Map of sample selectors (e.g. "h1", "p") to computed style subsets.
+	 *     fonts: {array<string>}       List of font-family strings observed on page elements.
+	 *     dominantColors: {array<object>}  List of {hex, count} for common colors seen (text/bg/borders).
+	 *     rootThemeColors: {object}    Map of CSS variable name → resolved hex color (from :root).
+	 *
+	 *     navCandidates: {array<object>}  Candidate nav elements scored by heuristics.
+	 *         Each candidate: {
+	 *           selector: {string}   CSS path to element.
+	 *           score: {number}      Heuristic score.
+	 *           rect: {object}       {top, left, width, height} bounding box.
+	 *           links: {array<object>}  Array of {text, href}.
+	 *         }
+	 *     detectedNav: {object|null} The best nav candidate, same shape as above.
+	 *
+	 *     colorRoles: {object} {
+	 *       foreground: {array<object>}   Top foreground text colors {hex, count}.
+	 *       background: {array<object>}   Top background colors {hex, count}.
+	 *     }
+	 *
+	 *     _assets: {object} {
+	 *       cssUrls: {array<string>}      Stylesheet hrefs discovered.
+	 *       fetchedCss: {object}          Map of cssUrl → byte length fetched server-side.
+	 *       fontFaces: {array<object>}    Parsed @font-face blocks:
+	 *           { family: {string}, style: {string}, weight: {string}, src: {array<string>} }
+	 *       fontFiles: {array<string>}    Absolute or data: URLs of font files.
+	 *     }
+	 *
+	 *     largestBlocks: {array<object>}  Largest visual blocks scanned with {selector, rect, color, backgroundColor}.
+	 *
+	 *     _analyzer: {object} {
+	 *       path: {string}   Path to analyze.js used.
+	 *       ts: {number}     Unix timestamp when run.
+	 *     }
+	 *   }
+	 *
+	 * @throws Exception If Chrome is not reachable or scripts not found.
+	 */
+	public static function analyze($url)
+	{
+		// Normalize URL
+		$parts = explode('#', $url);
+		$url = reset($parts);
+		if (parse_url($url, PHP_URL_SCHEME) === null) {
+			$url = 'http://' . $url;
+		}
+		if (!Q_Valid::url($url)) {
+			throw new Exception("Invalid URL");
+		}
+
+		// Locate JS analyzers
+		if (!defined('WEBSITES_PLUGIN_WEB_DIR')) {
+			throw new Exception('WEBSITES_PLUGIN_WEB_DIR is not defined');
+		}
+		$analyzerPath = WEBSITES_PLUGIN_WEB_DIR . DS . 'js' . DS . 'analyze.js';
+		$cssProbePath = WEBSITES_PLUGIN_WEB_DIR . DS . 'js' . DS . 'cssprobe.js';
+
+		foreach (array($analyzerPath, $cssProbePath) as $path) {
+			if (!is_file($path)) {
+				throw new Exception("Analyzer script not found at: " . $path);
+			}
+		}
+
+		$analyzerJs = file_get_contents($analyzerPath);
+		$cssProbeJs = file_get_contents($cssProbePath);
+		if ($analyzerJs === false || $analyzerJs === '' || $cssProbeJs === false || $cssProbeJs === '') {
+			throw new Exception("Failed to read analyzer scripts");
+		}
+
+		// Connect to Chrome
+		$browser = self::_chromeConnect();
+
+		try {
+			$page = $browser->createPage();
+			$page->navigate($url)->waitForNavigation();
+
+			// Run analyze.js
+			$wrapped = '(function(){' . $analyzerJs . '})()';
+			$evaluation = $page->evaluate($wrapped);
+			$evaluation->waitForResponse(20000);
+			$result = $evaluation->getReturnValue();
+
+			if (!is_array($result)) {
+				$evaluation = $page->evaluate('window.__WebsitesAnalyze ? window.__WebsitesAnalyze() : null;');
+				$evaluation->waitForResponse(20000);
+				$result = $evaluation->getReturnValue();
+			}
+			if (!is_array($result)) {
+				$out = array(
+					'url'   => $url,
+					'error' => 'Analyzer returned non-array result',
+					'raw'   => $result
+				);
+				$browser->close();
+				return $out;
+			}
+
+			// Run cssprobe.js (returns css hrefs + fg/bg tallies)
+			$probeEval = $page->evaluate($cssProbeJs);
+			$probeEval->waitForResponse(12000);
+			$probeVal = $probeEval->getReturnValue();
+
+			$sheetUrls = (is_array($probeVal) && isset($probeVal['css']) && is_array($probeVal['css']))
+				? $probeVal['css'] : array();
+			$colorRoles = (is_array($probeVal) && isset($probeVal['colors']) && is_array($probeVal['colors']))
+				? $probeVal['colors'] : array('foreground'=>array(), 'background'=>array());
+
+			// Server-side CSS crawl
+			$seen    = array(); // set of css urls
+			$fetched = array(); // cssUrl => length
+			$faces   = array(); // list of parsed @font-face blocks
+			$fontSet = array(); // set of font file urls
+
+			for ($i=0; $i<count($sheetUrls); $i++) {
+				$cssUrl = $sheetUrls[$i];
+				self::_crawlCss($cssUrl, $seen, $fetched, $faces, $fontSet);
+			}
+
+			// Pack up assets
+			$fontList = array();
+			foreach ($fontSet as $fu => $t) { $fontList[] = $fu; }
+
+			$result['_assets'] = array(
+				'cssUrls'    => $sheetUrls,
+				'fetchedCss' => $fetched,
+				'fontFaces'  => $faces,
+				'fontFiles'  => $fontList
+			);
+
+			$result['colorRoles'] = array(
+				'foreground' => isset($colorRoles['foreground']) ? $colorRoles['foreground'] : array(),
+				'background' => isset($colorRoles['background']) ? $colorRoles['background'] : array()
+			);
+
+			$result['_analyzer'] = array(
+				'path' => $analyzerPath,
+				'cssProbe' => $cssProbePath,
+				'ts' => time()
+			);
+
+			$browser->close();
+			return $result;
+
+		} catch (Exception $e) {
+			if ($browser) { try { $browser->close(); } catch (Exception $e2) {} }
+			throw $e;
+		}
+	}
+
+	/**
+	 * Private helper: connect to an already-running headless Chrome
+	 * (e.g., Docker container bound to 127.0.0.1:9222).
+	 *
+	 * Reads CHROME_HOST/CHROME_PORT if present.
+	 *
+	 * @return \HeadlessChromium\Browser
+	 * @throws Exception
+	 */
+	private static function _chromeConnect()
+	{
+		$host = getenv('CHROME_HOST') ? getenv('CHROME_HOST') : '127.0.0.1';
+		$port = getenv('CHROME_PORT') ? (int)getenv('CHROME_PORT') : 9222;
+		$versionUrl = 'http://' . $host . ':' . $port . '/json/version';
+
+		// Fetch via curl if available, else file_get_contents
+		$metaJson = null;
+		if (function_exists('curl_init')) {
+			$ch = curl_init($versionUrl);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+			curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 3);
+			curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+			$metaJson = curl_exec($ch);
+			curl_close($ch);
+		} else {
+			$ctx = stream_context_create(array('http' => array('timeout' => 5)));
+			$metaJson = @file_get_contents($versionUrl, false, $ctx);
+		}
+
+		if (!$metaJson) {
+			throw new Exception('Cannot reach Chrome DevTools at ' . $versionUrl);
+		}
+
+		$meta = json_decode($metaJson, true);
+		if (!is_array($meta) || !isset($meta['webSocketDebuggerUrl'])) {
+			throw new Exception('webSocketDebuggerUrl not found at ' . $versionUrl);
+		}
+
+		if (!class_exists('HeadlessChromium\\BrowserFactory')) {
+			throw new Exception("HeadlessChromium library not installed. Run composer require chrome-php/chrome.");
+		}
+
+		// Connect without spawning a local Chrome
+		return BrowserFactory::connectToBrowser($meta['webSocketDebuggerUrl'], array(
+			'sendSyncDefaultTimeout' => 20000 // ms
+			// 'debugLogger' => 'php://stdout',
+		));
+	}
+
+	// Resolve a possibly-relative URL against a base URL (handles protocol-relative, root, ../)
+	private static function _absUrl($base, $rel)
+	{
+		if (!$rel) return $rel;
+		$p = parse_url($base);
+		if (preg_match('#^https?:#i', $rel)) return $rel;
+		if (strpos($rel, '//') === 0) return $p['scheme'].':'.$rel;
+
+		$host = $p['scheme'].'://'.$p['host'].(isset($p['port']) ? ':'.$p['port'] : '');
+		if ($rel[0] === '/') return $host.$rel;
+
+		$path = isset($p['path']) ? $p['path'] : '/';
+		$dir  = $host . rtrim(dirname($path), '/').'/';
+		$full = $dir.$rel;
+
+		$parts = explode('/', $full);
+		$out = array();
+		$i = 0; for ($i=0; $i<count($parts); $i++) {
+			$seg = $parts[$i];
+			if ($seg === '' || $seg === '.') continue;
+			if ($seg === '..') { if (!empty($out)) array_pop($out); continue; }
+			$out[] = $seg;
+		}
+		return '/'.implode('/', $out);
+	}
+
+	// Fetch a URL body (curl preferred; falls back to file_get_contents), permissive SSL.
+	private static function _fetch($url, $timeout)
+	{
+		if (function_exists('curl_init')) {
+			$ch = curl_init($url);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+			curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
+			curl_setopt($ch, CURLOPT_TIMEOUT, $timeout);
+			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+			curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+			$body = curl_exec($ch);
+			curl_close($ch);
+			return $body;
+		}
+		$ctx = stream_context_create(array('http' => array('timeout' => $timeout)));
+		return @file_get_contents($url, false, $ctx);
+	}
+
+	/**
+	 * Recursively crawl CSS starting from $cssUrl:
+	 *  - follow @import
+	 *  - collect @font-face blocks (family, weight, style, src[] urls)
+	 *  - collect every font file url (absolute or data:)
+	 *
+	 * @param string $cssUrl
+	 * @param array  &$seen     set of visited css urls
+	 * @param array  &$fetched  map cssUrl => byte length
+	 * @param array  &$faces    list of parsed font-face blocks
+	 * @param array  &$fontSet  set of font file urls (url => true)
+	 */
+	private static function _crawlCss($cssUrl, &$seen, &$fetched, &$faces, &$fontSet)
+	{
+		if (isset($seen[$cssUrl])) return;
+		$seen[$cssUrl] = true;
+
+		$css = self::_fetch($cssUrl, 12);
+		if (!is_string($css) || $css === '') return;
+
+		$fetched[$cssUrl] = strlen($css);
+
+		// 1) Follow @import (url(...) or "...")
+		if (preg_match_all('#@import\s+(?:url\(\s*([^\)]+)\s*\)|([\'"])(.*?)\2)\s*[^;]*;#i', $css, $imports, PREG_SET_ORDER)) {
+			$i = 0; for ($i=0; $i<count($imports); $i++) {
+				$raw = isset($imports[$i][1]) && $imports[$i][1] ? $imports[$i][1] : $imports[$i][3];
+				$raw = trim($raw, " \t\n\r\0\x0B\"'");
+				$child = self::_absUrl($cssUrl, $raw);
+				self::_crawlCss($child, $seen, $fetched, $faces, $fontSet);
+			}
+		}
+
+		// 2) Parse @font-face blocks
+		if (preg_match_all('#@font-face\s*\{(.*?)\}#is', $css, $blocks, PREG_SET_ORDER)) {
+			$j = 0; for ($j=0; $j<count($blocks); $j++) {
+				$block = $blocks[$j][1];
+
+				// Extract descriptors
+				$family = null; $style = null; $weight = null; $srcRaw = null;
+
+				if (preg_match('#font-family\s*:\s*([^;]+);#i', $block, $m)) {
+					$family = trim($m[1]);
+					$family = trim($family, "\"' \t\r\n");
+				}
+				if (preg_match('#font-style\s*:\s*([^;]+);#i', $block, $m)) {
+					$style = trim($m[1]);
+				}
+				if (preg_match('#font-weight\s*:\s*([^;]+);#i', $block, $m)) {
+					$weight = trim($m[1]);
+				}
+				if (preg_match('#src\s*:\s*([^;]+);#is', $block, $m)) {
+					$srcRaw = $m[1];
+				}
+
+				// Extract all url(...) inside src (or whole block, to catch multiple src locations)
+				$urlsBlock = $srcRaw ? $srcRaw : $block;
+				$srcs = array();
+				if (preg_match_all('#url\(\s*([^\)]+)\s*\)#i', $urlsBlock, $uMatches)) {
+					$k = 0; for ($k=0; $k<count($uMatches[1]); $k++) {
+						$u = trim($uMatches[1][$k], " \t\n\r\0\x0B\"'");
+						if (stripos($u, 'data:') === 0) {
+							// data: URI — keep as is
+							$srcs[] = $u;
+							$fontSet[$u] = true;
+						} else {
+							// resolve relative to current CSS file
+							$abs = self::_absUrl($cssUrl, $u);
+							$srcs[] = $abs;
+							$fontSet[$abs] = true;
+						}
+					}
+				}
+
+				$faces[] = array(
+					'family' => $family,
+					'style'  => $style,
+					'weight' => $weight,
+					'src'    => $srcs
+				);
+			}
+		}
 	}
 }
