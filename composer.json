@@ -1,0 +1,11 @@
+{
+	"name": "qbix/websites",
+	"authors": [
+		{
+			"name": "Qbix"
+		}
+	],
+	"require": {
+		"chrome-php/chrome": "^1.3"
+	}
+}
