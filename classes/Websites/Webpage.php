@@ -1341,4 +1341,130 @@ class Websites_Webpage extends Base_Websites_Webpage
 			}
 		}
 	}
+
+	/**
+	 * Generate a variable-only CSS file from the analyze() payload.
+	 *
+	 * PHP 5.3 compatible.
+	 *
+	 * @param array $analysis Output of Websites_Webpage::analyze($url)
+	 * @param array $options  {
+	 *   scope: string  CSS scope selector (default ':root'; often '[data-theme="imported"]')
+	 *   includeFonts: bool Include @font-face blocks (default true)
+	 *   maxFonts: int Limit number of font families emitted (default 6)
+	 *   baseFontFamily: string Fallback stack (default system-ui...)
+	 *   preferAnalysisFonts: bool If true, prefer first discovered font (default true)
+	 * }
+	 * @return string CSS text containing only variables (+ optional font-face)
+	 */
+	public static function generateThemeCss($analysis, $options = array())
+	{
+		$scope               = isset($options['scope']) ? $options['scope'] : ':root';
+		$includeFonts        = array_key_exists('includeFonts', $options) ? (bool)$options['includeFonts'] : true;
+		$maxFonts            = isset($options['maxFonts']) ? (int)$options['maxFonts'] : 6;
+		$baseFontFamily      = isset($options['baseFontFamily']) ? $options['baseFontFamily']
+								: 'system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif';
+		$preferAnalysisFonts = array_key_exists('preferAnalysisFonts', $options) ? (bool)$options['preferAnalysisFonts'] : true;
+
+		$get = function ($arr /*, k1, k2... */) {
+			$args = func_get_args();
+			array_shift($args);
+			foreach ($args as $k) {
+				if (!is_array($arr) || !array_key_exists($k, $arr)) return null;
+				$arr = $arr[$k];
+			}
+			return $arr;
+		};
+
+		$q = function ($s) {
+			$s = trim($s);
+			if ($s === '') return $s;
+			if (preg_match('/^[a-zA-Z0-9\-]+$/', $s)) return $s;
+			return '"' . str_replace('"', '\\"', $s) . '"';
+		};
+
+		$firstHex = function ($arr) {
+			if (!is_array($arr)) return null;
+			foreach ($arr as $e) {
+				if (is_array($e) && isset($e['hex'])) return strtolower($e['hex']);
+				if (is_string($e) && preg_match('/^#([0-9a-f]{6})$/i', $e)) return strtolower($e);
+			}
+			return null;
+		};
+
+		// ---------- Extract palette ----------
+		$fgTop = $firstHex($get($analysis, 'colorRoles', 'foreground'));
+		$bgTop = $firstHex($get($analysis, 'colorRoles', 'background'));
+		$dom   = $get($analysis, 'dominantColors');
+
+		if (!$fgTop && isset($dom[0]['hex'])) $fgTop = $dom[0]['hex'];
+		if (!$bgTop && isset($dom[1]['hex'])) $bgTop = $dom[1]['hex'];
+		if (!$fgTop) $fgTop = '#222222';
+		if (!$bgTop) $bgTop = '#ffffff';
+
+		$fgList = $get($analysis, 'colorRoles', 'foreground');
+		$acc1 = isset($fgList[1]['hex']) ? $fgList[1]['hex'] : '#4a90e2';
+		$acc2 = isset($fgList[2]['hex']) ? $fgList[2]['hex'] : '#e67e22';
+
+		$nav = $get($analysis, 'detectedNav');
+		$navFg = is_array($nav) && isset($nav['color']) ? $nav['color'] : $fgTop;
+		$navBg = is_array($nav) && isset($nav['backgroundColor']) ? $nav['backgroundColor'] : $bgTop;
+
+		// ---------- Fonts ----------
+		$fonts = $get($analysis, 'fonts');
+		$bodyFamily = $baseFontFamily;
+		if ($preferAnalysisFonts && is_array($fonts) && count($fonts)) {
+			$raw = $fonts[0];
+			$primary = trim(strtok($raw, ','));
+			if ($primary) $bodyFamily = $q($primary) . ', ' . $baseFontFamily;
+		}
+
+		// ---------- Variable block ----------
+		$vars  = "/* Theme variables generated from analysis */\n";
+		$vars .= $scope . " {\n";
+		$vars .= "  --theme-fg: {$fgTop};\n";
+		$vars .= "  --theme-bg: {$bgTop};\n";
+		$vars .= "  --theme-accent-1: {$acc1};\n";
+		$vars .= "  --theme-accent-2: {$acc2};\n";
+		$vars .= "  --theme-nav-bg: {$navBg};\n";
+		$vars .= "  --theme-nav-fg: {$navFg};\n";
+		$vars .= "  --theme-font: {$bodyFamily};\n";
+		$vars .= "}\n\n";
+
+		// ---------- Optional fonts ----------
+		$fontBlocks = array();
+		if ($includeFonts) {
+			$faces = $get($analysis, '_assets', 'fontFaces');
+			if (is_array($faces)) {
+				$c = 0;
+				foreach ($faces as $face) {
+					if ($c++ >= $maxFonts) break;
+					$fam = $q((string)$get($face, 'family'));
+					if (!$fam) continue;
+					$style  = $get($face, 'style') ? $get($face, 'style') : 'normal';
+					$weight = $get($face, 'weight') ? $get($face, 'weight') : '400';
+					$srcs = $get($face, 'src');
+					$urls = array();
+					if (is_array($srcs)) {
+						foreach ($srcs as $u) {
+							if (!is_string($u) || !$u) continue;
+							$urls[] = "url('".$u."')";
+						}
+					}
+					if (count($urls)) {
+						$fontBlocks[] =
+	"@font-face {
+	font-family: {$fam};
+	font-style: {$style};
+	font-weight: {$weight};
+	src: " . implode(",\n       ", $urls) . ";
+	}";
+					}
+				}
+			}
+		}
+		if (count($fontBlocks)) $vars .= implode("\n\n", $fontBlocks) . "\n";
+
+		return $vars;
+	}
 }
