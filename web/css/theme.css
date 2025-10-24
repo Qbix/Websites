@@ -1,35 +1,33 @@
-@layer qbix-theme {
-	[data-theme] {
-		color: var(--theme-fg, #222) !important;
-		background-color: var(--theme-bg, #fff) !important;
-		font-family: var(--theme-font, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif) !important;
-	}
-	[data-theme] a {
-		color: var(--theme-accent-1, #0071e3) !important;
-		text-decoration: none !important;
-	}
-	[data-theme] a:hover,
-	[data-theme] a:focus {
-		color: var(--theme-accent-2, #e67e22) !important;
-		text-decoration: underline !important;
-	}
-	[data-theme] nav {
-		background-color: var(--theme-nav-bg, var(--theme-bg, #fff)) !important;
-		color: var(--theme-nav-fg, var(--theme-fg, #222)) !important;
-	}
-	[data-theme] nav a {
-		color: var(--theme-nav-fg, var(--theme-fg, #222)) !important;
-		text-decoration: none !important;
-		padding: 0.4em 0.8em;
-		display: inline-block;
-	}
-	[data-theme] nav a:hover {
-		text-decoration: underline !important;
-	}
-	.theme-block-1,
-	.theme-block-2,
-	.theme-block-3 {
-		padding: 1em;
-		border-radius: 0.3em;
-	}
+[data-theme] {
+    color: var(--theme-fg, #222) !important;
+    background-color: var(--theme-bg, #fff) !important;
+    font-family: var(--theme-font, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif) !important;
+}
+[data-theme] a {
+    color: var(--theme-accent-1, #0071e3) !important;
+    text-decoration: none !important;
+}
+[data-theme] a:hover,
+[data-theme] a:focus {
+    color: var(--theme-accent-2, #e67e22) !important;
+    text-decoration: underline !important;
+}
+[data-theme] nav {
+    background-color: var(--theme-nav-bg, var(--theme-bg, #fff)) !important;
+    color: var(--theme-nav-fg, var(--theme-fg, #222)) !important;
+}
+[data-theme] nav a {
+    color: var(--theme-nav-fg, var(--theme-fg, #222)) !important;
+    text-decoration: none !important;
+    padding: 0.4em 0.8em;
+    display: inline-block;
+}
+[data-theme] nav a:hover {
+    text-decoration: underline !important;
+}
+.theme-block-1,
+.theme-block-2,
+.theme-block-3 {
+    padding: 1em;
+    border-radius: 0.3em;
 }
