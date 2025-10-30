@@ -28,7 +28,7 @@ class Websites_Webpage extends Base_Websites_Webpage
 
 		// add scheme to url if not exist
 		if (parse_url($url, PHP_URL_SCHEME) === null) {
-			$url = 'http://'.$url;
+			$url = 'https://'.$url;
 		}
 
 		if (!Q_Valid::url($url)) {
@@ -508,6 +508,10 @@ class Websites_Webpage extends Base_Websites_Webpage
 	static function normalizeHref ($href, $baseUrl) {
 		$parts = parse_url($baseUrl);
 
+		if ($parts['scheme'] == 'https' && parse_url($href, PHP_URL_SCHEME) == 'http') {
+			$href = preg_replace("/^http/i", "https", $href);
+		}
+
 		if (preg_match("#^\\/\\/#", $href)) {
 			return $parts['scheme'].':'.$href;
 		}
@@ -772,7 +776,7 @@ class Websites_Webpage extends Base_Websites_Webpage
 		
 		// add scheme to url if not exist
 		if (parse_url($url, PHP_URL_SCHEME) === null) {
-			$url = 'http://'.$url;
+			$url = 'https://'.$url;
 		}
 
 		if (!Q_Valid::url($url)) {
@@ -1059,7 +1063,7 @@ class Websites_Webpage extends Base_Websites_Webpage
 		$parts = explode('#', $url);
 		$url = reset($parts);
 		if (parse_url($url, PHP_URL_SCHEME) === null) {
-			$url = 'http://' . $url;
+			$url = 'https://' . $url;
 		}
 		if (!Q_Valid::url($url)) {
 			throw new Exception("Invalid URL");
