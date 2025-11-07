@@ -142,7 +142,6 @@ abstract class Base_Websites_Webpage extends Db_Row
 			}
 			$fields = implode(',', $fieldNames);
 		}
-		$alias = isset($alias) ? ' '.$alias : '';
 		$q = self::db()->select($fields, self::table(true, $alias));
 		$q->className = 'Websites_Webpage';
 		return $q;

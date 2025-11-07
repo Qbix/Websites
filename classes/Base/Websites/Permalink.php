@@ -128,7 +128,6 @@ abstract class Base_Websites_Permalink extends Db_Row
 			}
 			$fields = implode(',', $fieldNames);
 		}
-		$alias = isset($alias) ? ' '.$alias : '';
 		$q = self::db()->select($fields, self::table(true, $alias));
 		$q->className = 'Websites_Permalink';
 		return $q;
@@ -460,7 +459,7 @@ return array (
 return array (
   0 => 
   array (
-    0 => 'timestamp',
+    0 => 'datetime',
     1 => NULL,
     2 => NULL,
     3 => NULL,
