@@ -70,6 +70,8 @@
 						Q.each(results, function (i, result) {
 							var $tr = $('<tr class="Q_filter_result Websites_lookup_result" />').appendTo($content);
 							$tr.attr({
+								"data-platform": result.platform,
+								"data-videoId": result.videoId,
 								"data-url": result.url,
 								"data-time": result.insertedTime || result.publishTime
 							});

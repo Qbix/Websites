@@ -388,6 +388,9 @@ class Websites_Webpage extends Base_Websites_Webpage
 						continue;
 					}
 					$result = array(
+						"platform" => "youtube",
+						"videoId" => $videoId,
+						"extended" => false, // means extended youtube data
 						"title" => $snippet["title"],
 						"icon" => Q::ifset($snippet, "thumbnails", "default", "url", null),
 						"iconBig" => Q::ifset($snippet, "thumbnails", "high", "url", null),
@@ -476,11 +479,6 @@ class Websites_Webpage extends Base_Websites_Webpage
 	 * @param integer [$duration=null] cache life time in seconds
 	 */
 	static function cacheSet ($url, $result, $duration = null) {
-		// check if already exists
-		if (self::cacheGet($url)) {
-			return;
-		}
-
 		$webpageCache = new Websites_Webpage();
 		$webpageCache->url = $url;
 
@@ -494,7 +492,7 @@ class Websites_Webpage extends Base_Websites_Webpage
 			'icon' => Q::ifset($result, "iconSmall", Q::ifset($result, "icon", Q::ifset($result, "iconBig", null)))
 		);
 		$webpageCache->results = json_encode($result);
-		$webpageCache->save();
+		$webpageCache->save(true);
 	}
 	/**
 	 * Normalize href like '//path/to' or '/path/to' to valid URL
