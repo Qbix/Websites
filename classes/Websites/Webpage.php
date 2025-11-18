@@ -16,7 +16,7 @@ class Websites_Webpage extends Base_Websites_Webpage
 	 * Get URL, load page and crape info to array
 	 * @method scrape
 	 * @static
-	 * @param string $url Page source to load
+	 * @param {string} $url Page source to load
 	 * @throws Q_Exception
 	 * @return array
 	 */
@@ -106,7 +106,7 @@ class Websites_Webpage extends Base_Websites_Webpage
 
 
             $result = array_merge($result, array(
-                'title' => Q::ifset($fileInfo, 'comments', 'name', null),
+                'title' => html_entity_decode(Q::ifset($fileInfo, 'comments', 'name', null), ENT_QUOTES, 'UTF-8'),
                 'url' => $url,
                 'iconBig' => $icon,
                 'iconSmall' => $icon,
@@ -195,7 +195,7 @@ class Websites_Webpage extends Base_Websites_Webpage
 
 		// get title
 		$titleNode = $xpath->query('//title')->item(0);
-		$result['title'] = $titleNode ? $titleNode->textContent : 'Untitled Webpage';
+		$result['title'] = $titleNode ? html_entity_decode($titleNode->textContent, ENT_QUOTES, 'UTF-8') : 'Untitled Webpage';
 
 		$elements = $xpath->query('//*/link');
 		$icons = array();
@@ -391,11 +391,11 @@ class Websites_Webpage extends Base_Websites_Webpage
 						"platform" => "youtube",
 						"videoId" => $videoId,
 						"extended" => false, // means extended youtube data
-						"title" => $snippet["title"],
+						"title" => html_entity_decode($snippet["title"], ENT_QUOTES, 'UTF-8'),
 						"icon" => Q::ifset($snippet, "thumbnails", "default", "url", null),
 						"iconBig" => Q::ifset($snippet, "thumbnails", "high", "url", null),
 						"iconSmall" => "{{Websites}}/img/icons/Websites/youtube/32.png",
-						"description" => $snippet["description"],
+						"description" => html_entity_decode($snippet["description"], ENT_QUOTES, 'UTF-8'),
 						"keywords" => $keywords,
 						"publishTime" => strtotime(Q::ifset($snippet, "publishTime", Q::ifset($snippet, "publishedAt", "now"))),
 						"url" => "https://www.youtube.com/watch?v=$videoId"
