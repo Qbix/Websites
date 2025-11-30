@@ -73,9 +73,21 @@
 	line-height: 20px;
 }
 .Websites_webpage_preview_tool[data-mode=title] .Streams_aspect_interests {
-	background: #ccccee;
+	background: rgba(100, 100, 100, 0); /* start transparent */
 	border-radius: 5px;
 	padding: 2px;
+	animation: Websites_interestsPulse 5s ease-in-out infinite;
+}
+@keyframes Websites_interestsPulse {
+	0% {
+		background: rgba(100, 100, 100, 0);
+	}
+	50% {
+		background: rgba(100, 100, 100, 0.1);
+	}
+	100% {
+		background: rgba(100, 100, 100, 0);
+	}
 }
 .Websites_webpage_preview_tool .Streams_aspect_interests img {
 	width: auto;

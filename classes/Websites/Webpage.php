@@ -1347,8 +1347,6 @@ class Websites_Webpage extends Base_Websites_Webpage
 	/**
 	 * Generate a variable-only CSS file from the analyze() payload.
 	 *
-	 * PHP 5.3 compatible.
-	 *
 	 * @param array $analysis Output of Websites_Webpage::analyze($url)
 	 * @param array $options  {
 	 *   scope: string  CSS scope selector (default ':root'; often '[data-theme="imported"]')
