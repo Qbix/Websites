@@ -26,7 +26,7 @@ function Websites_before_Streams_Stream_save_Websites_metadata($params)
 		$url = Q_Html::themedUrl($url);
 		if (!isset($wp->url) or $wp->url !== $url) {
 			$wp->url = $url;
-			$wp->save();
+			$wp->save(true);
 		}
 	} else {
 		$wp->remove();
