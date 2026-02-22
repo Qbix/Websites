@@ -186,7 +186,8 @@
 					"Streams/chat/message": {
 						"post": true
 					}
-				}
+				},
+				"syncRelations": ["from"]
 			},
 			"Websites/news": {
 				"emoji": "📰",
@@ -209,7 +210,8 @@
 					"Streams/chat/message": {
 						"post": true
 					}
-				}
+				},
+				"syncRelations": ["from"]
 			}
 		}
 	},
