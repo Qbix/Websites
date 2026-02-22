@@ -121,7 +121,7 @@ class Websites_News
 				'Streams/category/news',
 				true,
 				array(
-					'prefix'          => 'Websites/webpage/',
+					'prefix'          => 'Websites/news/',
 					'limit'           => 1,
 					'skipAccess'      => true,
 					'streamsOnly'     => true,
