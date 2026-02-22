@@ -65,7 +65,6 @@ class Websites_News_Newsapi extends Websites_News implements Websites_News_Inter
 		$url = $url . '?' . http_build_query($params);
 
 		$response = Q_Utils::get($url, null, array(), null, 30);
-		echo $response;exit;
 		$data = Q::json_decode($response, true);
 
 		if (!is_array($data)) {

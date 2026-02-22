@@ -70,15 +70,29 @@ class Websites_News
 	 */
 	function fetch(array $options = array())
 	{
-		$provider = Q::ifset($options, 'provider', Q_Config::get('Websites', 'news', 'provider', 'newsapi'));
+		$defaults = array(
+			'provider'      => Q_Config::get('Websites', 'news', 'provider', 'newsapi'),
+			'type'          => 'top',
+			'country'       => 'us',
+			'language'      => 'en',
+			'keyword'       => null,
+			'max'           => 12,
+			'createStreams' => true,
+			'force'         => false
+		);
 
-		$type     = Q::ifset($options, 'type', 'top');
-		$country  = Q::ifset($options, 'country', 'us');
-		$language = Q::ifset($options, 'language', 'en');
-		$keyword  = Q::ifset($options, 'keyword', null);
-		$max      = (int) Q::ifset($options, 'max', 12);
-		$create   = Q::ifset($options, 'createStreams', true);
-		$force    = Q::ifset($options, 'force', false);
+		$opts = Q::take($options, $defaults);
+
+		$provider = (string) $opts['provider'];
+		$type     = $opts['type'];
+		$country  = $opts['country'];
+		$language = $opts['language'];
+		$keyword  = $opts['keyword'];
+		$max      = (int) $opts['max'];
+		$create   = (bool) $opts['createStreams'];
+		$force    = (bool) $opts['force'];
+
+		$appId = Q::app();
 
 		// Idempotent daily guard: return existing Streams unless forced
 		if (!$force && $create) {
@@ -102,9 +116,9 @@ class Websites_News
 			}
 
 			$existing = Streams::related(
-				Q::app(),
-				Q::app(),
-				'Streams/category/webpages',
+				$appId,
+				$appId,
+				'Streams/category/news',
 				true,
 				array(
 					'prefix'          => 'Websites/webpage/',
@@ -121,16 +135,28 @@ class Websites_News
 			}
 		}
 
-		$adapter = self::adapter($provider);
+		// Cache ONLY the external API call (adapter->fetchNews)
+		$apiCacheKey = 'websites:news:api:'
+			. $appId . ':'
+			. $provider . ':'
+			. $type . ':'
+			. ($country ?: 'none') . ':'
+			. ($language ?: 'none') . ':'
+			. md5((string) $keyword) . ':'
+			. $max;
 
-		$items = $adapter->fetchNews(array_merge($options, array(
-			'type'     => $type,
-			'country'  => $country,
-			'language' => $language,
-			'keyword'  => $keyword,
-			'max'      => $max
-		)));
-		Q::log($items, 'items');
+		if (!$force) {
+			$cachedItems = Q_Cache::get($apiCacheKey);
+			if (is_array($cachedItems)) {
+				$items = $cachedItems;
+			}
+		}
+
+		if (!isset($items)) {
+			$adapter = self::adapter($provider);
+			$items = $adapter->fetchNews($opts);
+			Q_Cache::set($apiCacheKey, $items, 600); // cache API results only
+		}
 
 		if (!$create) {
 			return $items;
@@ -138,7 +164,7 @@ class Websites_News
 
 		$streams = array();
 		foreach ($items as $item) {
-			$s = self::upsertArticleStream($item, $options);
+			$s = self::fetchOrCreateStream($item, $opts);
 			if ($s) $streams[] = $s;
 		}
 
@@ -195,26 +221,134 @@ class Websites_News
 
 		return $adapter;
 	}
-
+	
 	/**
-	 * Create or update canonical Stream for a normalized article item.
+	 * Fetches or creates a Websites/news stream for a normalized URL.
 	 *
-	 * Persists attributes, title/content, and imports the article image
-	 * as the Stream icon when available.
+	 * This method normalizes the provided URL (adds scheme if missing, validates it,
+	 * and canonicalizes it via normalizeUrl), then uses Streams_Stream::fetchOrCreate
+	 * to idempotently retrieve or create the corresponding stream.
 	 *
-	 * @method upsertArticleStream
+	 * No scraping or remote fetching is performed. Only URL normalization and
+	 * stream creation/retrieval occurs.
+	 *
+	 * @method stream
+	 * @static
+	 * @param {string} $url
+	 *  The URL to normalize and map to a stream. If missing a scheme, https:// is assumed.
+	 * @param {array} [$fields={}]
+	 *  Fields to set on creation (title, content, icon, attributes, etc).
+	 * @param {Object} [$options={}]
+	 * @param {String} [$options.asUserId]
+	 *  The user performing the operation. Defaults to the currently logged-in user.
+	 * @param {String} [$options.publisherId]
+	 *  The publisher of the stream. Defaults to the currently logged-in user.
+	 * @param {Boolean} [$options.skipAccess=false]
+	 *  Whether to skip access and quota checks when creating the stream.
+	 * @return {Streams_Stream}
+	 *  The fetched or newly created stream corresponding to the normalized URL.
+	 * @throws {Exception}
+	 *  Thrown if the URL is invalid.
+	 */
+	/**
+	 * Fetches or creates a Websites/news stream for a normalized URL.
+	 *
+	 * Normalizes the URL and idempotently fetches or creates the stream.
+	 * No scraping. No remote fetching. Lightweight cache for stream identity only.
+	 *
+	 * @method stream
+	 * @static
+	 * @param {string} $url
+	 * @param {array} [$fields={}]
+	 * @param {array} [$options={}]
+	 * @return {Streams_Stream}
+	 * @throws {Exception}
+	 */
+	static function stream($url, array $fields = array(), $options = array())
+	{
+		if (!$url) {
+			throw new Exception("Missing URL");
+		}
+
+		if (parse_url($url, PHP_URL_SCHEME) === null) {
+			$url = 'https://' . $url;
+		}
+
+		if (!Q_Valid::url($url)) {
+			throw new Exception("Invalid URL");
+		}
+
+		$user = Users::loggedInUser();
+		$asUserId    = Q::ifset($options, 'asUserId', Q::ifset($user, 'id', null));
+		$publisherId = Q::ifset($options, 'publisherId', Q::ifset($user, 'id', null));
+		$skipAccess  = (bool) Q::ifset($options, 'skipAccess', false);
+
+		$streamType = 'Websites/news';
+		$normalized = self::normalizeUrl($url);
+		$streamName = $streamType . '/' . $normalized;
+
+		$cacheKey = 'websites:news:stream:' . md5($publisherId . ':' . $streamName);
+
+		// Fast path: cached identity
+		if ($cached = Q_Cache::get($cacheKey)) {
+			$s = Streams_Stream::fetch($asUserId, $cached['publisherId'], $cached['name']);
+			if ($s) {
+				return $s;
+			}
+			// stale cache → fall through to fetchOrCreate
+		}
+
+		$results = array();
+
+		$stream = Streams_Stream::fetchOrCreate(
+			$asUserId,
+			$publisherId,
+			$streamName,
+			array(
+				'type' => $streamType,
+				'fields' => array_merge($fields, array(
+					'attributes' => array_merge(
+						array('url' => $url),
+						Q::ifset($fields, 'attributes', array())
+					)
+				)),
+				'skipAccess' => $skipAccess,
+				'subscribe'  => !Users::isCommunityId($publisherId)
+			),
+			$results
+		);
+
+		if ($stream) {
+			Q_Cache::set($cacheKey, array(
+				'publisherId' => $stream->publisherId,
+				'name'        => $stream->name
+			), 3600);
+		}
+
+		return $stream;
+	}
+	
+	/**
+	 * Create or fetch canonical Stream for a normalized article item.
+	 *
+	 * TEMPORARY: Upserts title/content to repair previously created bad streams.
+	 * After data is fixed, this can revert to create-only semantics.
+	 *
+	 * Persists attributes. No scraping. No icon importing here.
+	 *
+	 * @method fetchOrCreateStream
 	 * @protected
 	 * @static
 	 * @param {array} $item Normalized article item
 	 * @param {array} $options Fetch options
 	 * @return {Streams_Stream|null}
 	 */
-	protected static function upsertArticleStream(array $item, array $options)
+	protected static function fetchOrCreateStream(array $item, array $options)
 	{
 		$url = Q::ifset($item, 'url', null);
 		if (!$url) return null;
 
-		// Extract core attributes using Q::take
+		// Extract core attributes
 		$attributes = Q::take($item, array(
 			'source'      => null,
 			'language'    => Q::ifset($options, 'language', 'en'),
@@ -228,7 +362,7 @@ class Websites_News
 			$attributes['keywords'] = array_values(array_unique($item['keywords']));
 		}
 
-		// Optional LLM keyword enrichment (single call)
+		// Optional LLM keyword enrichment (best-effort)
 		if (empty($attributes['keywords']) && !empty($item['title'])) {
 			$llm = AI_LLM::create(Q::ifset($options, 'llm', null));
 			if ($llm) {
@@ -246,108 +380,32 @@ class Websites_News
 						$attributes['keywordsNative'] = $native;
 					}
 				} catch (Exception $e) {
-					// Best-effort enrichment; failures are non-fatal
+					// best-effort; ignore failures
 				}
 			}
 		}
 
-        $appId = Q::app();
-        $streams = Websites_News::stream(array(
-            'asUserId' => $appId,
-            'publisherId' => $appId,
-            'icon' => $item['image'],
-            'url' => $url, 
-            'skipAccess' => true
-        ));
+		$appId = Q::app();
 
+		// Fetch or create canonical Websites/news stream by normalized URL
+		$stream = Websites_News::stream(
+			$url,
+			array(
+				'title'      => Q::ifset($item, 'title', null),
+				'content'    => Q::ifset($item, 'summary', Q::ifset($item, 'description', null)),
+				'icon'       => Q::ifset($item, 'image', null), // remote URL icon
+				'attributes' => $attributes
+			),
+			array(
+				'asUserId'    => $appId,
+				'publisherId' => $appId,
+				'skipAccess'  => true
+			)
+		);
 
-		if (!$stream) return null;
-
-		if (!empty($item['title'])) {
-			$stream->title = mb_substr($item['title'], 0, $stream->maxSize_title(), 'UTF-8');
-		}
-		if (!empty($item['summary'])) {
-			$stream->content = mb_substr($item['summary'], 0, $stream->maxSize_content(), 'UTF-8');
-		}
-
-		$stream->save();
-
-		if (!empty($item['image'])) {
-			try {
-				Streams::importIcon($stream->publisherId, $stream->name, $item['image'], 'Websites/image');
-			} catch (Exception $e) {}
-		}
-
-		return $stream;
+		return $stream ? $stream : null;
 	}
-
-    /**
-     * Fetches or creates a Websites/news stream for a normalized URL.
-     *
-     * This method normalizes the provided URL (adds scheme if missing, validates it,
-     * and canonicalizes it via normalizeUrl), then uses Streams_Stream::fetchOrCreate
-     * to idempotently retrieve or create the corresponding stream.
-     *
-     * No scraping or remote fetching is performed. Only URL normalization and
-     * stream creation/retrieval occurs.
-     *
-     * @method stream
-     * @static
-     * @param {string} $url
-     *  The URL to normalize and map to a stream. If missing a scheme, https:// is assumed.
-     * @param {array} [$fields={}]
-     *   for creating or fetching the stream.
-     * @param {String} [$options.asUserId]
-     *  The user performing the operation. Defaults to the currently logged-in user.
-     * @param {String} [$options.publisherId]
-     *  The publisher of the stream. Defaults to the currently logged-in user.
-     * @param {Boolean} [$options.skipAccess=false]
-     *  Whether to skip access and quota checks when creating the stream.
-     * @return {Streams_Stream}
-     *  The fetched or newly created stream corresponding to the normalized URL.
-     * @throws {Exception}
-     *  Thrown if the URL is invalid.
-     */
-    static function stream($url, array $fields = array(), $options = array())
-    {
-        $url = Q::ifset($params, 'url', null);
-        $icon = Q::ifset($params, 'icon', null);
-
-        if ($url && parse_url($url, PHP_URL_SCHEME) === null) {
-            $url = 'https://' . $url;
-        }
-
-        if (!Q_Valid::url($url)) {
-            throw new Exception("Invalid URL");
-        }
-
-        $user = Users::loggedInUser();
-		$asUserId = Q::ifset($params, "asUserId", Q::ifset($user, 'id', null));
-		$publisherId = Q::ifset($params, "publisherId", Q::ifset($user, 'id', null));
-
-        $streamName = $streamType . '/' . self::normalizeUrl($url);
-
-        $results = array();
-        $webpageStream = Streams_Stream::fetchOrCreate(
-            $asUserId,
-            $publisherId,
-            $streamName,
-            array(
-                'type' => $streamType,
-                'fields' => array_merge($fields, array(
-                    'icon' => $icon,
-                    'attributes' => array_merge(array(
-                        'url'       => $url
-                    ), $attributes)
-                )),
-                'skipAccess' => $skipAccess,
-                'subscribe'  => !Users::isCommunityId($publisherId)
-            ),
-            $results
-        );
-
-        return $webpageStream;
-    }
+	
     
 	/**
 	 * Normalize url to use as part of stream name like Websites/webpage/[normalized]
