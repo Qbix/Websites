@@ -553,7 +553,7 @@ class Websites_Webpage extends Base_Websites_Webpage
 	 */
 	static function normalizeUrl($url) {
 		// we have "name" field max size 255, Websites/webpage/ = 18 chars
-		return substr(Q_Utils::normalize($url), 0, 230);
+		return substr(Q_Utils::normalize($url), 0, 200);
 	}
 	/**
 	 * If Websites/webpage stream for this $url already exists - return one.
@@ -797,10 +797,9 @@ class Websites_Webpage extends Base_Websites_Webpage
 		$siteData = self::scrape($url);
 
 		$urlParsed = parse_url($url);
-		$loggedUserId = Users::loggedInUser(true)->id;
-
-		$asUserId = Q::ifset($params, "asUserId", $loggedUserId);
-		$publisherId = Q::ifset($params, "publisherId", $loggedUserId);
+		$user = Users::loggedInUser();
+		$asUserId = Q::ifset($params, "asUserId", Q::ifset($user, 'id', null));
+		$publisherId = Q::ifset($params, "publisherId", Q::ifset($user, 'id', null));
 
 		$streamType = self::getStreamType($url);
 

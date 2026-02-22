@@ -18,7 +18,7 @@ class Websites_News_Newsapi extends Websites_News implements Websites_News_Inter
 
 	public function __construct($options = array())
 	{
-		$this->apiKey = Q_Config::expect('AI', 'newsapi', 'key');
+		$this->apiKey = Q_Config::expect('Websites', 'newsapi', 'key');
 	}
 
 	public function fetchNews(array $options = array())
@@ -61,14 +61,18 @@ class Websites_News_Newsapi extends Websites_News implements Websites_News_Inter
 			}
 		}
 
-		$response = Q_Utils::get($url, $params, null, null, null, 30);
-		$data = json_decode($response, true);
+		// FIX: Q_Utils::get does not take params — append query string
+		$url = $url . '?' . http_build_query($params);
+
+		$response = Q_Utils::get($url, null, array(), null, 30);
+		echo $response;exit;
+		$data = Q::json_decode($response, true);
 
 		if (!is_array($data)) {
 			throw new Exception("Invalid NewsAPI response");
 		}
 		if (!empty($data['status']) && $data['status'] !== 'ok') {
-			throw new Exception("NewsAPI error: " . json_encode($data));
+			throw new Exception("NewsAPI error: " . Q::json_encode($data));
 		}
 
 		$items = array();

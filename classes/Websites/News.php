@@ -53,23 +53,24 @@ class Websites_News
 	 *
 	 * @method fetch
 	 * @param {array} $options
-	 * @param {string}  [$options.type="top"]       "top" | "search"
-	 * @param {string}  [$options.keyword]          Keyword query when type="search"
-	 * @param {string}  [$options.country="us"]     ISO-2 country code
-	 * @param {string}  [$options.language="en"]    ISO-2 language code
-	 * @param {integer} [$options.max=12]           Max number of articles
-	 * @param {string}  [$options.from]             YYYY-MM-DD (search only)
-	 * @param {string}  [$options.to]               YYYY-MM-DD (search only)
-	 * @param {string}  [$options.category]         Category (best-effort)
-	 * @param {string}  [$options.sources]          Source filter (best-effort)
+	 * @param {string}  [$options.provider="newsapi"] The news provider service
+	 * @param {string}  [$options.type="top"]         "top" | "search"
+	 * @param {string}  [$options.keyword]            Keyword query when type="search"
+	 * @param {string}  [$options.country="us"]       ISO-2 country code
+	 * @param {string}  [$options.language="en"]      ISO-2 language code
+	 * @param {integer} [$options.max=12]             Max number of articles
+	 * @param {string}  [$options.from]               YYYY-MM-DD (search only)
+	 * @param {string}  [$options.to]                 YYYY-MM-DD (search only)
+	 * @param {string}  [$options.category]           Category (best-effort)
+	 * @param {string}  [$options.sources]            Source filter (best-effort)
 	 * @param {boolean} [$options.createStreams=true] Create/update Streams entries
-	 * @param {boolean} [$options.force=false]      Force refetch even if today's Streams exist
-	 * @param {string|object} [$options.llm]        LLM adapter name or instance (e.g. "openai")
+	 * @param {boolean} [$options.force=false]        Force refetch even if today's Streams exist
+	 * @param {string|object} [$options.llm]          LLM adapter name or instance (e.g. "openai")
 	 * @return {array} Streams_Stream[] OR raw items (if createStreams=false)
 	 */
 	function fetch(array $options = array())
 	{
-		$provider = Q_Config::get('Websites', 'news', 'provider', 'gnews');
+		$provider = Q::ifset($options, 'provider', Q_Config::get('Websites', 'news', 'provider', 'newsapi'));
 
 		$type     = Q::ifset($options, 'type', 'top');
 		$country  = Q::ifset($options, 'country', 'us');
@@ -129,6 +130,7 @@ class Websites_News
 			'keyword'  => $keyword,
 			'max'      => $max
 		)));
+		Q::log($items, 'items');
 
 		if (!$create) {
 			return $items;
@@ -249,12 +251,15 @@ class Websites_News
 			}
 		}
 
-		$stream = Websites_Webpage::createStream(array(
-			'url'         => $url,
-			'asUserId'    => Q::app(),
-			'publisherId' => Q::app(),
-			'attributes'  => $attributes
-		), null, true);
+        $appId = Q::app();
+        $streams = Websites_News::stream(array(
+            'asUserId' => $appId,
+            'publisherId' => $appId,
+            'icon' => $item['image'],
+            'url' => $url, 
+            'skipAccess' => true
+        ));
+
 
 		if (!$stream) return null;
 
@@ -274,6 +279,86 @@ class Websites_News
 		}
 
 		return $stream;
+	}
+
+    /**
+     * Fetches or creates a Websites/news stream for a normalized URL.
+     *
+     * This method normalizes the provided URL (adds scheme if missing, validates it,
+     * and canonicalizes it via normalizeUrl), then uses Streams_Stream::fetchOrCreate
+     * to idempotently retrieve or create the corresponding stream.
+     *
+     * No scraping or remote fetching is performed. Only URL normalization and
+     * stream creation/retrieval occurs.
+     *
+     * @method stream
+     * @static
+     * @param {string} $url
+     *  The URL to normalize and map to a stream. If missing a scheme, https:// is assumed.
+     * @param {array} [$fields={}]
+     *   for creating or fetching the stream.
+     * @param {String} [$options.asUserId]
+     *  The user performing the operation. Defaults to the currently logged-in user.
+     * @param {String} [$options.publisherId]
+     *  The publisher of the stream. Defaults to the currently logged-in user.
+     * @param {Boolean} [$options.skipAccess=false]
+     *  Whether to skip access and quota checks when creating the stream.
+     * @return {Streams_Stream}
+     *  The fetched or newly created stream corresponding to the normalized URL.
+     * @throws {Exception}
+     *  Thrown if the URL is invalid.
+     */
+    static function stream($url, array $fields = array(), $options = array())
+    {
+        $url = Q::ifset($params, 'url', null);
+        $icon = Q::ifset($params, 'icon', null);
+
+        if ($url && parse_url($url, PHP_URL_SCHEME) === null) {
+            $url = 'https://' . $url;
+        }
+
+        if (!Q_Valid::url($url)) {
+            throw new Exception("Invalid URL");
+        }
+
+        $user = Users::loggedInUser();
+		$asUserId = Q::ifset($params, "asUserId", Q::ifset($user, 'id', null));
+		$publisherId = Q::ifset($params, "publisherId", Q::ifset($user, 'id', null));
+
+        $streamName = $streamType . '/' . self::normalizeUrl($url);
+
+        $results = array();
+        $webpageStream = Streams_Stream::fetchOrCreate(
+            $asUserId,
+            $publisherId,
+            $streamName,
+            array(
+                'type' => $streamType,
+                'fields' => array_merge($fields, array(
+                    'icon' => $icon,
+                    'attributes' => array_merge(array(
+                        'url'       => $url
+                    ), $attributes)
+                )),
+                'skipAccess' => $skipAccess,
+                'subscribe'  => !Users::isCommunityId($publisherId)
+            ),
+            $results
+        );
+
+        return $webpageStream;
+    }
+    
+	/**
+	 * Normalize url to use as part of stream name like Websites/webpage/[normalized]
+	 * @method normalizeUrl
+	 * @static
+	 * @param {string} $url
+	 * @return string
+	 */
+	static function normalizeUrl($url) {
+		// we have "name" field max size 255, Websites/news/ = 15 chars
+		return substr(Q_Utils::normalize($url), 0, 200);
 	}
 
 	/**

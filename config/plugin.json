@@ -187,6 +187,29 @@
 						"post": true
 					}
 				}
+			},
+			"Websites/news": {
+				"emoji": "📰",
+				"create": true, /* only PHP scrape method can create it */
+				"edit": ["title", "content"], /* cannot edit everything */
+				"participating": ["Websites/participating/news"],
+				"relatedFrom": {
+					"Websites/news": {
+						"url": "{{fromUrl}}"
+					}
+				},
+				"defaults": {
+					"title": "News Article",
+					"icon": "{{Websites}}/img/icons/Websites/news",
+					"readLevel": 40,
+					"writeLevel": 23,
+					"adminLevel": 20
+				},
+				"messages": {
+					"Streams/chat/message": {
+						"post": true
+					}
+				}
 			}
 		}
 	},
@@ -197,6 +220,9 @@
 			"regex": "/^[^\\/]*$/", /* if not null, used to filter URLs before checking permalinks */
 			"routes": {}, /* whitelist of possible destinations */
 			"actions": {} /* whitelist of possible actions */
+		},
+		"news": {
+			"provider": "newsapi"
 		},
 		"videoHosts": ["youtube.com", "youtu.be", "vimeo.com"],
 		"videoExtensions": ["MPG", "MP2", "MPEG", "MP4", "AVI", "WMV", "MOV", "FLV", "SWF"],
