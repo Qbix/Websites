@@ -18,15 +18,9 @@ class Websites_News_Gnews extends Websites_News implements Websites_News_Interfa
 	public function __construct($options = array())
 	{
 		$this->apiKey = Q_Config::expect('Websites', 'gnews', 'key');
-
-		if (!$this->apiKey) {
-			throw new Q_Exception_RequiredField(array(
-				'field' => 'Websites.news.gnewsApiKey'
-			));
-		}
 	}
 
-	public function fetch(array $options = array())
+	public function fetchNews(array $options = array())
 	{
 		// Normalize options
 		$opts = Q::take($options, array(

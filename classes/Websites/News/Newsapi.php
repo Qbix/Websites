@@ -18,17 +18,10 @@ class Websites_News_Newsapi extends Websites_News implements Websites_News_Inter
 
 	public function __construct($options = array())
 	{
-		// Support factory passing either string key or options array
 		$this->apiKey = Q_Config::expect('AI', 'newsapi', 'key');
-
-		if (!$this->apiKey) {
-			throw new Q_Exception_RequiredField(array(
-				'field' => 'Websites.news.newsapiApiKey'
-			));
-		}
 	}
 
-	public function fetch(array $options = array())
+	public function fetchNews(array $options = array())
 	{
 		// Normalize options
 		$opts = Q::take($options, array(

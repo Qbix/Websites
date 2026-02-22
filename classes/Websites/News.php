@@ -21,11 +21,11 @@ interface Websites_News_Interface
 	 * with keys such as: id, url, title, summary, content, image,
 	 * publishedAt, source, language, country, keywords.
 	 *
-	 * @method fetch
+	 * @method fetchNews
 	 * @param {array} $options Provider-agnostic options
 	 * @return {array} Normalized article items
 	 */
-	public function fetch(array $options = array());
+	public function fetchNews(array $options = array());
 }
 
 /**
@@ -52,7 +52,6 @@ class Websites_News
 	 * - Pass `force => true` to always refetch from the provider.
 	 *
 	 * @method fetch
-	 * @static
 	 * @param {array} $options
 	 * @param {string}  [$options.type="top"]       "top" | "search"
 	 * @param {string}  [$options.keyword]          Keyword query when type="search"
@@ -68,7 +67,7 @@ class Websites_News
 	 * @param {string|object} [$options.llm]        LLM adapter name or instance (e.g. "openai")
 	 * @return {array} Streams_Stream[] OR raw items (if createStreams=false)
 	 */
-	static function fetch(array $options = array())
+	function fetch(array $options = array())
 	{
 		$provider = Q_Config::get('Websites', 'news', 'provider', 'gnews');
 
@@ -123,7 +122,7 @@ class Websites_News
 
 		$adapter = self::adapter($provider);
 
-		$items = $adapter->fetch(array_merge($options, array(
+		$items = $adapter->fetchNews(array_merge($options, array(
 			'type'     => $type,
 			'country'  => $country,
 			'language' => $language,
