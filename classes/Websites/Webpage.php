@@ -334,7 +334,8 @@ class Websites_Webpage extends Base_Websites_Webpage
 	 * @param {integer} [$options.cacheDuration] response cache life time in seconds
 	 * @return {array|boolean} decoded json if found or false
 	 */
-	static function youtube ($options) {
+	static function youtube ($options)
+	{
 		$apiKey = Q_Config::expect("Websites", "youtube", "keys", "server");
 		$videoId = Q::ifset($options, "videoId", null);
 		$query = Q::ifset($options, "query", null);
@@ -348,7 +349,7 @@ class Websites_Webpage extends Base_Websites_Webpage
 		$endPoint = "https://youtube.googleapis.com/youtube/v3/".$type;
 
 		$ytQuery = is_array($query) ? $query : array(
-			"part" => "snippet"
+			"part" => ($type === "videos" ? "snippet,topicDetails" : "snippet")
 		);
 
 		if ($type == "search") {
@@ -366,72 +367,84 @@ class Websites_Webpage extends Base_Websites_Webpage
 			$ytQuery["id"] = $videoId;
 		}
 
-		if (!function_exists('returnYoutube')) {
-			function returnYoutube ($data, $pureResult) {
-
-				if ($pureResult) {
-					return $data;
-				}
-
-				$results = array();
-
-				foreach ($data["items"] as $item) {
-					$snippet = $item["snippet"];
-
-					$tags = Q::ifset($snippet, 'tags', null);
-					$keywords = "";
-					if (is_array($tags) && count($tags)) {
-						$keywords = implode(',', $tags);
-					}
-					$videoId = Q::ifset($item, "id", "videoId", Q::ifset($item, "id", null));
-					if (!is_string($videoId)) {
-						continue;
-					}
-					$result = array(
-						"platform" => "youtube",
-						"videoId" => $videoId,
-						"extended" => false, // means extended youtube data
-						"title" => html_entity_decode($snippet["title"], ENT_QUOTES, 'UTF-8'),
-						"icon" => Q::ifset($snippet, "thumbnails", "default", "url", null),
-						"iconBig" => Q::ifset($snippet, "thumbnails", "high", "url", null),
-						"iconSmall" => "{{Websites}}/img/icons/Websites/youtube/32.png",
-						"description" => html_entity_decode($snippet["description"], ENT_QUOTES, 'UTF-8'),
-						"keywords" => $keywords,
-						"publishTime" => strtotime(Q::ifset($snippet, "publishTime", Q::ifset($snippet, "publishedAt", "now"))),
-						"url" => "https://www.youtube.com/watch?v=$videoId"
-					);
-
-					// cache data for video
-					Websites_Webpage::cacheSet($result["url"], $result);
-
-					$results[] = $result;
-				}
-
-				return $results;
-			}
-		}
-
-		$cacheUrl = $endPoint.'?'.http_build_query($ytQuery);
+		$cacheKey = $endPoint . '?' . http_build_query(array_merge($ytQuery, [
+			'_type' => $type
+		]));
 
 		// check for cache
-		$cached = Websites_Webpage::cacheGet($cacheUrl);
+		$cached = Websites_Webpage::cacheGet($cacheKey);
 		if ($cached) {
-			return returnYoutube($cached, $pureResult);
+			return self::_returnYoutube($cached, $pureResult);
 		}
 
 		$ytQuery["key"] = $apiKey;
 
-		// docs: https://developers.google.com/youtube/v3/docs/search/list
 		$youtubeApiUrl = $endPoint.'?'.http_build_query($ytQuery);
 		$result = Q::json_decode(Q_Utils::get($youtubeApiUrl), true);
 		if (Q::ifset($result, "error", null)) {
 			throw new Exception("Youtube API error: ".Q::ifset($result, "error", "message", null));
 		}
-		$cacheDuration = $type == "search" ? Q::ifset($options, "cacheDuration", Q_Config::get("Websites", "youtube", "list", "cacheDuration", 43200)) : null; // for youtube search results cache duration 12 hours
-		Websites_Webpage::cacheSet($cacheUrl, $result, $cacheDuration);
 
-		return returnYoutube($result, $pureResult);
+		$cacheDuration = $type == "search"
+			? Q::ifset($options, "cacheDuration", Q_Config::get("Websites", "youtube", "list", "cacheDuration", 43200))
+			: null;
+
+		Websites_Webpage::cacheSet($cacheKey, $result, $cacheDuration);
+
+		return self::_returnYoutube($result, $pureResult);
 	}
+
+	/**
+	 * Normalize YouTube API response.
+	 * @method _returnYoutube
+	 * @static
+	 * @protected
+	 * @param {array} $data
+	 * @param {boolean} $pureResult
+	 * @return {array}
+	 */
+	protected static function _returnYoutube(array $data, $pureResult)
+	{
+		if ($pureResult) {
+			return $data;
+		}
+
+		$results = array();
+
+		foreach ($data["items"] as $item) {
+			$snippet = $item["snippet"];
+
+			$tags = Q::ifset($snippet, 'tags', null);
+			$keywords = is_array($tags) && count($tags)
+				? implode(',', $tags)
+				: "";
+
+			$videoId = Q::ifset($item, "id", "videoId", Q::ifset($item, "id", null));
+			if (!is_string($videoId)) {
+				continue;
+			}
+
+			$result = array(
+				"platform" => "youtube",
+				"videoId" => $videoId,
+				"extended" => false,
+				"title" => html_entity_decode($snippet["title"], ENT_QUOTES, 'UTF-8'),
+				"icon" => Q::ifset($snippet, "thumbnails", "default", "url", null),
+				"iconBig" => Q::ifset($snippet, "thumbnails", "high", "url", null),
+				"iconSmall" => "{{Websites}}/img/icons/Websites/youtube/32.png",
+				"description" => html_entity_decode($snippet["description"], ENT_QUOTES, 'UTF-8'),
+				"keywords" => $keywords,
+				"publishTime" => strtotime(Q::ifset($snippet, "publishTime", Q::ifset($snippet, "publishedAt", "now"))),
+				"url" => "https://www.youtube.com/watch?v=$videoId"
+			);
+
+			Websites_Webpage::cacheSet($result["url"], $result);
+			$results[] = $result;
+		}
+
+		return $results;
+	}
+
 	/**
 	 * Get cached url response
 	 * @method cacheGet
@@ -955,6 +968,7 @@ class Websites_Webpage extends Base_Websites_Webpage
 
 		return $webpageStream;
 	}
+
 	/**
 	 * Get stream interests in one array with items having properties
 	 *  {publisherId, streamName, title}

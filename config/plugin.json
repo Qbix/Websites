@@ -204,5 +204,10 @@
 		"audioExtensions": ["MP3", "WAV", "AIFF", "soundcloud:sound"],
 		"cacheFileLimit": 5242880, /* 5 Mb */
 		"cacheDirectoryLimit":  52428800 /* 50 Mb */
+	},
+	"AI": {
+		"observations": {
+			"Websites": ["observations.json"]
+		}
 	}
 }
