@@ -798,8 +798,8 @@ class Websites_Webpage extends Base_Websites_Webpage
 		}
 
 		$quota = null;
-		if (!$skipAccess) {
-			// check quota
+		if (!$skipAccess && $quotaName) {
+		// check quota
 			$roles = Users::roles();
 			$quota = Users_Quota::check($asUserId, '', $quotaName, true, 1, array_keys($roles));
 		}
