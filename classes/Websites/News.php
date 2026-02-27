@@ -322,7 +322,7 @@ class Websites_News
 			Q_Cache::set($cacheKey, array(
 				'publisherId' => $stream->publisherId,
 				'name'        => $stream->name
-			), 3600);
+			), 86400);
 		}
 
 		return $stream;
