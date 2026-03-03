@@ -91,6 +91,7 @@ class Websites_News
 		$max      = (int) $opts['max'];
 		$create   = (bool) $opts['createStreams'];
 		$force    = (bool) $opts['force'];
+		$force = true;
 
 		$appId = Q::app();
 
@@ -388,11 +389,14 @@ class Websites_News
 		$appId = Q::app();
 
 		// Fetch or create canonical Websites/news stream by normalized URL
+		$summary = Q::ifset($item, 'summary', Q::ifset($item, 'description', null));
+		$summary = html_entity_decode(strip_tags($summary), ENT_QUOTES | ENT_HTML5, 'UTF-8');
+		$summary = trim(str_replace("facebook icon", "", $summary));
 		$stream = Websites_News::stream(
 			$url,
 			array(
 				'title'      => Q::ifset($item, 'title', null),
-				'content'    => Q::ifset($item, 'summary', Q::ifset($item, 'description', null)),
+				'content'    => substr($summary, 0, 200),
 				'icon'       => Q::ifset($item, 'image', null), // remote URL icon
 				'attributes' => $attributes
 			),

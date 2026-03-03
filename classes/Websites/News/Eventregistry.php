@@ -18,10 +18,10 @@ class Websites_News_Eventregistry extends Websites_News implements Websites_News
 
 	protected static $languages = null;
 	protected static $countries = null;
+	protected static $countryNameToIso2 = null;
 
 	public function __construct($options = array())
 	{
-		// Supports adapter factory passing key
 		if (is_string($options) && $options) {
 			$this->apiKey = $options;
 		} else {
@@ -79,16 +79,12 @@ class Websites_News_Eventregistry extends Websites_News implements Websites_News
 			}
 		}
 
-		$headers = array(
-			'Content-Type: application/json'
-		);
-
 		$response = Q_Utils::post(
 			$this->endpoint,
 			json_encode($body),
 			null,
 			array(),
-			$headers,
+			array('Content-Type: application/json'),
 			30
 		);
 
@@ -107,7 +103,7 @@ class Websites_News_Eventregistry extends Websites_News implements Websites_News
 		return $items;
 	}
 
-	protected function normalize(array $a, $language, $country)
+	protected function normalize(array $a, $requestedLanguage, $requestedCountry)
 	{
 		$item = Q::take($a, array(
 			'uri'         => null,
@@ -133,11 +129,75 @@ class Websites_News_Eventregistry extends Websites_News implements Websites_News
 			'uri'   => 'url'
 		));
 
-		$item['language'] = $language;
-		$item['country']  = $country;
+		// -------- REAL LANGUAGE (ISO-3 → ISO-2) --------
+		$lang3 = Q::ifset($a, 'lang', null);
+		$derivedLang = $this->iso2FromIso3($lang3);
+
+		if ($derivedLang) {
+			$item['language'] = $derivedLang;
+		} else {
+			$item['language'] = $requestedLanguage
+				? explode('-', $requestedLanguage)[0]
+				: null;
+		}
+
+		// -------- REAL COUNTRY --------
+		$locationUri = Q::ifset($a, 'source', 'locationUri', null);
+		$derivedCountry = $this->countryFromLocationUri($locationUri);
+
+		$item['country'] = $derivedCountry ?: $requestedCountry;
 		$item['keywords'] = array();
 
 		return $item;
+	}
+
+	protected function iso2FromIso3($iso3)
+	{
+		if (!$iso3) return null;
+
+		if (!self::$languages) {
+			$file = Q_FILES_DIR . DS . 'Q' . DS . 'languages.json';
+			$tree = Q_Tree::createAndLoad($file);
+			self::$languages = $tree->getAll();
+		}
+
+		foreach (self::$languages as $code => $info) {
+			if (strtolower(Q::ifset($info, 'ISO-639-2B', '')) === strtolower($iso3)) {
+				return strtolower(Q::ifset($info, 'ISO-639-1', null));
+			}
+		}
+
+		return null;
+	}
+
+	protected function countryFromLocationUri($uri)
+	{
+		if (!$uri) return null;
+
+		if (!self::$countries) {
+			self::$countries = Q_Text::get('Places/countries', array(
+				'language' => 'en'
+			));
+		}
+
+		if (!self::$countryNameToIso2) {
+			self::$countryNameToIso2 = array();
+			foreach (self::$countries as $cc => $info) {
+				$name = Q::ifset($info, 0, null);
+				if ($name) {
+					self::$countryNameToIso2[strtolower($name)] = strtoupper($cc);
+				}
+			}
+		}
+
+		if (preg_match('~/wiki/([^/]+)$~', $uri, $m)) {
+			$name = strtolower(str_replace('_', ' ', $m[1]));
+			if (isset(self::$countryNameToIso2[$name])) {
+				return self::$countryNameToIso2[$name];
+			}
+		}
+
+		return null;
 	}
 
 	/**
