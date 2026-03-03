@@ -46,38 +46,64 @@ class Websites_News_Eventregistry extends Websites_News implements Websites_News
 			));
 		}
 
-		$body = array(
-			'action'                 => 'getArticles',
-			'resultType'             => 'articles',
-			'articlesPage'           => (int) $opts['page'],
-			'articlesCount'          => min(100, max(1, (int) $opts['max'])),
-			'articlesSortBy'         => 'date',
-			'articlesSortByAsc'      => false,
-			'dataType'               => array('news'),
-			'forceMaxDataTimeWindow' => 31,
-			'includeArticleBody'     => true,
-			'includeArticleImage'    => true,
-			'includeSourceTitle'     => true,
-			'apiKey'                 => $this->apiKey
-		);
+		// -------------------------------------------------
+		// Build strict structured EventRegistry query
+		// -------------------------------------------------
 
-		if ($opts['keyword']) {
-			$body['keyword'] = $opts['keyword'];
-		}
+		$queryParts = array();
 
-		if ($opts['language']) {
-			$iso3 = $this->iso3($opts['language']);
-			if ($iso3) {
-				$body['lang'] = $iso3;
-			}
-		}
-
+		// Country filter (publication location)
 		if ($opts['country']) {
 			$uri = $this->countryUri($opts['country']);
 			if ($uri) {
-				$body['sourceLocationUri'] = array($uri);
+				$queryParts[] = array(
+					"sourceLocationUri" => $uri
+				);
 			}
 		}
+
+		// Language filter
+		if ($opts['language']) {
+			$iso3 = $this->iso3($opts['language']);
+			if ($iso3) {
+				$queryParts[] = array(
+					"lang" => $iso3
+				);
+			}
+		}
+
+		// Keyword filter (search mode)
+		if ($opts['keyword']) {
+			$queryParts[] = array(
+				"keyword" => $opts['keyword']
+			);
+		}
+
+		$body = array(
+			"query" => array(
+				"\$query" => array(
+					// If no filters, avoid empty $and
+					!empty($queryParts)
+						? "\$and"
+						: "dummy" => !empty($queryParts)
+							? $queryParts
+							: array("lang" => $this->iso3($opts['language'] ?: 'en'))
+				),
+				"\$filter" => array(
+					"forceMaxDataTimeWindow" => "31"
+				)
+			),
+			"resultType"          => "articles",
+			"articlesSortBy"      => "date",
+			"articlesSortByAsc"   => false,
+			"articlesCount"       => min(100, max(1, (int) $opts['max'])),
+			"articlesPage"        => (int) $opts['page'],
+			"dataType"            => array("news"),
+			"includeArticleBody"  => true,
+			"includeArticleImage" => true,
+			"includeSourceTitle"  => true,
+			"apiKey"              => $this->apiKey
+		);
 
 		$response = Q_Utils::post(
 			$this->endpoint,
