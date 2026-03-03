@@ -390,8 +390,26 @@ class Websites_News
 
 		// Fetch or create canonical Websites/news stream by normalized URL
 		$summary = Q::ifset($item, 'summary', Q::ifset($item, 'description', null));
-		$summary = html_entity_decode(strip_tags($summary), ENT_QUOTES | ENT_HTML5, 'UTF-8');
-		$summary = trim(str_replace("facebook icon", "", $summary));
+		$subtitle = (string) ($stream->content ?: '');
+
+		// Remove HTML safely
+		$summary = strip_tags($subtitle);
+
+		// Decode entities
+		$summary = html_entity_decode($subtitle, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+
+		// Normalize whitespace (remove newlines, tabs, etc.)
+		$summary = preg_replace('/\s+/u', ' ', $subtitle);
+
+		// Remove unwanted artifacts
+		$summary = str_replace('facebook icon', '', $subtitle);
+
+		// Trim
+		$subtitle = trim($subtitle);
+
+		// Hard length limit (safe for UI + JSON)
+		$subtitle = mb_substr($subtitle, 0, 300, 'UTF-8');
+		
 		$stream = Websites_News::stream(
 			$url,
 			array(
