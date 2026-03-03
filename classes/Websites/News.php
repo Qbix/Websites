@@ -91,7 +91,6 @@ class Websites_News
 		$max      = (int) $opts['max'];
 		$create   = (bool) $opts['createStreams'];
 		$force    = (bool) $opts['force'];
-		$force = true;
 
 		$appId = Q::app();
 
