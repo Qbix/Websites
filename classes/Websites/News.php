@@ -155,7 +155,7 @@ class Websites_News
 		if (!isset($items)) {
 			$adapter = self::adapter($provider);
 			$items = $adapter->fetchNews($opts);
-			Q_Cache::set($apiCacheKey, $items, 600); // cache API results only
+			Q_Cache::set($apiCacheKey, $items, 86400); // cache API results only
 		}
 
 		if (!$create) {
