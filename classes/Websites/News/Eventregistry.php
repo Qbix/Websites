@@ -16,9 +16,17 @@ class Websites_News_Eventregistry extends Websites_News implements Websites_News
 	protected $apiKey;
 	protected $endpoint = 'https://eventregistry.org/api/v1/article/getArticles';
 
+	protected static $languages = null;
+	protected static $countries = null;
+
 	public function __construct($options = array())
 	{
-		$this->apiKey = Q_Config::expect('Websites', 'eventregistry', 'key');
+		// Supports adapter factory passing key
+		if (is_string($options) && $options) {
+			$this->apiKey = $options;
+		} else {
+			$this->apiKey = Q_Config::expect('Websites', 'news', 'eventregistryApiKey');
+		}
 	}
 
 	public function fetchNews(array $options = array())
@@ -28,9 +36,15 @@ class Websites_News_Eventregistry extends Websites_News implements Websites_News
 			'country'  => 'us',
 			'language' => 'en',
 			'keyword'  => null,
-			'max'      => 5,
+			'max'      => 12,
 			'page'     => 1
 		));
+
+		if ($opts['type'] === 'search' && !$opts['keyword']) {
+			throw new Q_Exception_RequiredField(array(
+				'field' => 'options.keyword'
+			));
+		}
 
 		$body = array(
 			'action'                 => 'getArticles',
@@ -40,7 +54,10 @@ class Websites_News_Eventregistry extends Websites_News implements Websites_News
 			'articlesSortBy'         => 'date',
 			'articlesSortByAsc'      => false,
 			'dataType'               => array('news'),
-			'forceMaxDataTimeWindow' => 1,
+			'forceMaxDataTimeWindow' => 31,
+			'includeArticleBody'     => true,
+			'includeArticleImage'    => true,
+			'includeSourceTitle'     => true,
 			'apiKey'                 => $this->apiKey
 		);
 
@@ -49,13 +66,17 @@ class Websites_News_Eventregistry extends Websites_News implements Websites_News
 		}
 
 		if ($opts['language']) {
-			$body['lang'] = $opts['language'];
+			$iso3 = $this->iso3($opts['language']);
+			if ($iso3) {
+				$body['lang'] = $iso3;
+			}
 		}
 
 		if ($opts['country']) {
-			$body['sourceLocationUri'] = array(
-				'http://en.wikipedia.org/wiki/' . $this->_countryWiki($opts['country'])
-			);
+			$uri = $this->countryUri($opts['country']);
+			if ($uri) {
+				$body['sourceLocationUri'] = array($uri);
+			}
 		}
 
 		$headers = array(
@@ -66,7 +87,7 @@ class Websites_News_Eventregistry extends Websites_News implements Websites_News
 			$this->endpoint,
 			json_encode($body),
 			null,
-			array(),     // curl opts
+			array(),
 			$headers,
 			30
 		);
@@ -119,22 +140,46 @@ class Websites_News_Eventregistry extends Websites_News implements Websites_News
 		return $item;
 	}
 
-	protected function _countryWiki($cc)
+	/**
+	 * Convert ISO-2 → ISO-3 using Q/languages.json
+	 */
+	protected function iso3($iso2)
 	{
-		static $map = array(
-			'us' => 'United_States',
-			'uk' => 'United_Kingdom',
-			'ca' => 'Canada',
-			'de' => 'Germany',
-			'fr' => 'France',
-			'it' => 'Italy',
-			'es' => 'Spain',
-			'ru' => 'Russia',
-			'ua' => 'Ukraine',
-			'il' => 'Israel'
-		);
+		$iso2 = strtolower($iso2);
 
-		$cc = strtolower($cc);
-		return Q::ifset($map, $cc, strtoupper($cc));
+		if (!self::$languages) {
+			$file = Q_FILES_DIR . DS . 'Q' . DS . 'languages.json';
+			$tree = Q_Tree::createAndLoad($file);
+			self::$languages = $tree->getAll();
+		}
+
+		foreach (self::$languages as $code => $info) {
+			if (strtolower(Q::ifset($info, 'ISO-639-1', '')) === $iso2) {
+				return strtolower(Q::ifset($info, 'ISO-639-2B', null));
+			}
+		}
+
+		return null;
+	}
+
+	/**
+	 * Convert ISO-2 country → Wikipedia URI using Places/countries
+	 */
+	protected function countryUri($cc)
+	{
+		$cc = strtoupper($cc);
+
+		if (!self::$countries) {
+			self::$countries = Q_Text::get('Places/countries', array(
+				'language' => 'en'
+			));
+		}
+
+		$name = Q::ifset(self::$countries, $cc, 0, null);
+		if (!$name) return null;
+
+		$name = str_replace(' ', '_', $name);
+
+		return 'http://en.wikipedia.org/wiki/' . $name;
 	}
 }
