@@ -25,7 +25,7 @@ class Websites_News_Eventregistry extends Websites_News implements Websites_News
 		if (is_string($options) && $options) {
 			$this->apiKey = $options;
 		} else {
-			$this->apiKey = Q_Config::expect('Websites', 'news', 'eventregistry', 'key');
+			$this->apiKey = Q_Config::expect('Websites', 'eventregistry', 'key');
 		}
 	}
 
