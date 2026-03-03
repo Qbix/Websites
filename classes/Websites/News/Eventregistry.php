@@ -79,16 +79,22 @@ class Websites_News_Eventregistry extends Websites_News implements Websites_News
 			);
 		}
 
+		// Properly construct $query section
+		if (!empty($queryParts)) {
+			$querySection = array(
+				"\$and" => $queryParts
+			);
+		} else {
+			// Fallback to language filter to avoid global noise
+			$fallbackLang = $this->iso3($opts['language'] ?: 'en');
+			$querySection = $fallbackLang
+				? array("lang" => $fallbackLang)
+				: array();
+		}
+
 		$body = array(
 			"query" => array(
-				"\$query" => array(
-					// If no filters, avoid empty $and
-					!empty($queryParts)
-						? "\$and"
-						: "dummy" => !empty($queryParts)
-							? $queryParts
-							: array("lang" => $this->iso3($opts['language'] ?: 'en'))
-				),
+				"\$query" => $querySection,
 				"\$filter" => array(
 					"forceMaxDataTimeWindow" => "31"
 				)

@@ -42,26 +42,59 @@ class Websites_News_Newsapi extends Websites_News implements Websites_News_Inter
 		);
 
 		if ($opts['type'] === 'search') {
+
 			if (!$opts['keyword']) {
 				throw new Q_Exception_RequiredField(array(
 					'field' => 'options.keyword'
 				));
 			}
+
 			$url = $this->endpoint . '/everything';
+
 			$params['q'] = $opts['keyword'];
-			$params['language'] = $opts['language'];
-			if ($opts['from']) $params['from'] = $opts['from'];
-			if ($opts['to'])   $params['to']   = $opts['to'];
-			if ($opts['sources']) $params['sources'] = $opts['sources'];
+
+			// Language is supported for /everything
+			if ($opts['language']) {
+				$params['language'] = explode('-', $opts['language'])[0];
+			}
+
+			if ($opts['from']) {
+				$params['from'] = $opts['from'];
+			}
+
+			if ($opts['to']) {
+				$params['to'] = $opts['to'];
+			}
+
+			if ($opts['sources']) {
+				$params['sources'] = $opts['sources'];
+			}
+
 		} else {
+
 			$url = $this->endpoint . '/top-headlines';
-			$params['country'] = $opts['country'];
+
+			// NewsAPI rule:
+			// - If country is set, do NOT also set language
+			// - If country is empty, use language instead
+
+			if ($opts['country']) {
+				$params['country'] = strtolower($opts['country']);
+			} else {
+				if ($opts['language']) {
+					$params['language'] = explode('-', $opts['language'])[0];
+				}
+			}
+
 			if ($opts['category']) {
 				$params['category'] = $opts['category'];
 			}
+
+			if ($opts['sources']) {
+				$params['sources'] = $opts['sources'];
+			}
 		}
 
-		// FIX: Q_Utils::get does not take params — append query string
 		$url = $url . '?' . http_build_query($params);
 
 		$response = Q_Utils::get($url, null, array(), null, 30);
@@ -70,6 +103,7 @@ class Websites_News_Newsapi extends Websites_News implements Websites_News_Inter
 		if (!is_array($data)) {
 			throw new Exception("Invalid NewsAPI response");
 		}
+
 		if (!empty($data['status']) && $data['status'] !== 'ok') {
 			throw new Exception("NewsAPI error: " . Q::json_encode($data));
 		}
