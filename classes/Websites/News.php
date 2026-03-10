@@ -147,7 +147,7 @@ class Websites_News
 
 		if (!$force) {
 			$cachedItems = Q_Cache::get($apiCacheKey);
-			if (is_array($cachedItems)) {
+			if ($cachedItems !== null) {
 				$items = $cachedItems;
 			}
 		}
@@ -155,6 +155,7 @@ class Websites_News
 		if (!isset($items)) {
 			$adapter = self::adapter($provider);
 			$items = $adapter->fetchNews($opts);
+			$items = is_array($items) ? $items : array();
 			Q_Cache::set($apiCacheKey, $items, 86400); // cache API results only
 		}
 
