@@ -1068,9 +1068,8 @@ class Websites_Webpage extends Base_Websites_Webpage
 	 *
 	 * @throws Exception If Chrome is not reachable or scripts not found.
 	 */
-	public static function analyze($url)
+	public static function analyze($url, $options = array())
 	{
-		// Normalize URL
 		$parts = explode('#', $url);
 		$url = reset($parts);
 		if (parse_url($url, PHP_URL_SCHEME) === null) {
@@ -1080,7 +1079,6 @@ class Websites_Webpage extends Base_Websites_Webpage
 			throw new Exception("Invalid URL");
 		}
 
-		// Locate JS analyzers
 		if (!defined('WEBSITES_PLUGIN_WEB_DIR')) {
 			throw new Exception('WEBSITES_PLUGIN_WEB_DIR is not defined');
 		}
@@ -1095,21 +1093,45 @@ class Websites_Webpage extends Base_Websites_Webpage
 
 		$analyzerJs = file_get_contents($analyzerPath);
 		$cssProbeJs = file_get_contents($cssProbePath);
-		if ($analyzerJs === false || $analyzerJs === '' || $cssProbeJs === false || $cssProbeJs === '') {
+		if (!$analyzerJs || !$cssProbeJs) {
 			throw new Exception("Failed to read analyzer scripts");
 		}
 
-		// Connect to Chrome
 		$browser = self::_chromeConnect();
 
 		try {
 			$page = $browser->createPage();
+
+			// Set viewport if specified
+			if (!empty($options['viewport'])) {
+				$vp = $options['viewport'];
+				try {
+					$page->setViewport((int)$vp['width'], (int)$vp['height'])->await();
+				} catch (Exception $e) {
+					// Some chrome-php versions don't expose setViewport;
+					// fall through. The analyzer still works at default size.
+				}
+				if ($vp['width'] <= 480) {
+					try {
+						$page->setUserAgent(
+							'Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X) '
+							. 'AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.0 '
+							. 'Mobile/15E148 Safari/604.1'
+						);
+					} catch (Exception $e) {}
+				}
+			}
+
 			$page->navigate($url)->waitForNavigation();
+
+			// Wait for fonts/async CSS to finish loading
+			$waitMs = isset($options['waitMs']) ? (int)$options['waitMs'] : 3000;
+			usleep($waitMs * 1000);
 
 			// Run analyze.js
 			$wrapped = '(function(){' . $analyzerJs . '})()';
 			$evaluation = $page->evaluate($wrapped);
-			$evaluation->waitForResponse(20000);
+			$evaluation->waitForResponse(30000);
 			$result = $evaluation->getReturnValue();
 
 			if (!is_array($result)) {
@@ -1119,15 +1141,15 @@ class Websites_Webpage extends Base_Websites_Webpage
 			}
 			if (!is_array($result)) {
 				$out = array(
-					'url'   => $url,
+					'url' => $url,
 					'error' => 'Analyzer returned non-array result',
-					'raw'   => $result
+					'raw' => $result
 				);
-				$browser->close();
+				try { $page->close(); } catch (Exception $e) {}
 				return $out;
 			}
 
-			// Run cssprobe.js (returns css hrefs + fg/bg tallies)
+			// Run cssprobe.js
 			$probeEval = $page->evaluate($cssProbeJs);
 			$probeEval->waitForResponse(12000);
 			$probeVal = $probeEval->getReturnValue();
@@ -1135,46 +1157,45 @@ class Websites_Webpage extends Base_Websites_Webpage
 			$sheetUrls = (is_array($probeVal) && isset($probeVal['css']) && is_array($probeVal['css']))
 				? $probeVal['css'] : array();
 			$colorRoles = (is_array($probeVal) && isset($probeVal['colors']) && is_array($probeVal['colors']))
-				? $probeVal['colors'] : array('foreground'=>array(), 'background'=>array());
+				? $probeVal['colors'] : array('foreground' => array(), 'background' => array());
 
 			// Server-side CSS crawl
-			$seen    = array(); // set of css urls
-			$fetched = array(); // cssUrl => length
-			$faces   = array(); // list of parsed @font-face blocks
-			$fontSet = array(); // set of font file urls
-
-			for ($i=0; $i<count($sheetUrls); $i++) {
-				$cssUrl = $sheetUrls[$i];
-				self::_crawlCss($cssUrl, $seen, $fetched, $faces, $fontSet);
+			$seen = array();
+			$fetched = array();
+			$faces = array();
+			$fontSet = array();
+			for ($i = 0; $i < count($sheetUrls); $i++) {
+				self::_crawlCss($sheetUrls[$i], $seen, $fetched, $faces, $fontSet);
+			}
+			$fontList = array();
+			foreach ($fontSet as $fu => $t) {
+				$fontList[] = $fu;
 			}
 
-			// Pack up assets
-			$fontList = array();
-			foreach ($fontSet as $fu => $t) { $fontList[] = $fu; }
-
 			$result['_assets'] = array(
-				'cssUrls'    => $sheetUrls,
+				'cssUrls' => $sheetUrls,
 				'fetchedCss' => $fetched,
-				'fontFaces'  => $faces,
-				'fontFiles'  => $fontList
+				'fontFaces' => $faces,
+				'fontFiles' => $fontList
 			);
-
 			$result['colorRoles'] = array(
 				'foreground' => isset($colorRoles['foreground']) ? $colorRoles['foreground'] : array(),
 				'background' => isset($colorRoles['background']) ? $colorRoles['background'] : array()
 			);
-
 			$result['_analyzer'] = array(
 				'path' => $analyzerPath,
 				'cssProbe' => $cssProbePath,
+				'viewport' => isset($options['viewport']) ? $options['viewport'] : null,
 				'ts' => time()
 			);
 
-			$browser->close();
+			try { $page->close(); } catch (Exception $e) {}
 			return $result;
 
 		} catch (Exception $e) {
-			if ($browser) { try { $browser->close(); } catch (Exception $e2) {} }
+			if ($page) {
+				try { $page->close(); } catch (Exception $e2) {}
+			}
 			throw $e;
 		}
 	}
@@ -1358,28 +1379,29 @@ class Websites_Webpage extends Base_Websites_Webpage
 	}
 
 	/**
-	 * Generate a variable-only CSS file from the analyze() payload.
+	 * Generate a variable-only CSS file from analyze() output.
 	 *
-	 * @param array $analysis Output of Websites_Webpage::analyze($url)
-	 * @param array $options  {
-	 *   scope: string  CSS scope selector (default ':root'; often '[data-theme="imported"]')
-	 *   includeFonts: bool Include @font-face blocks (default true)
-	 *   maxFonts: int Limit number of font families emitted (default 6)
-	 *   baseFontFamily: string Fallback stack (default system-ui...)
-	 *   preferAnalysisFonts: bool If true, prefer first discovered font (default true)
-	 * }
-	 * @return string CSS text containing only variables (+ optional font-face)
+	 * @method generateThemeCss
+	 * @static
+	 * @param {array} $analysis Output of Websites_Webpage::analyze()
+	 * @param {array} [$options]
+	 * @param {string} [$options.scope=':root']
+	 * @param {boolean} [$options.includeFonts=true]
+	 * @param {integer} [$options.maxFonts=6]
+	 * @param {string} [$options.baseFontFamily]
+	 * @return {string} CSS text
 	 */
 	public static function generateThemeCss($analysis, $options = array())
 	{
-		$scope               = isset($options['scope']) ? $options['scope'] : ':root';
-		$includeFonts        = array_key_exists('includeFonts', $options) ? (bool)$options['includeFonts'] : true;
-		$maxFonts            = isset($options['maxFonts']) ? (int)$options['maxFonts'] : 6;
-		$baseFontFamily      = isset($options['baseFontFamily']) ? $options['baseFontFamily']
-								: 'system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif';
-		$preferAnalysisFonts = array_key_exists('preferAnalysisFonts', $options) ? (bool)$options['preferAnalysisFonts'] : true;
+		$scope = isset($options['scope']) ? $options['scope'] : ':root';
+		$includeFonts = array_key_exists('includeFonts', $options)
+			? (bool)$options['includeFonts'] : true;
+		$maxFonts = isset($options['maxFonts']) ? (int)$options['maxFonts'] : 6;
+		$baseFontFamily = isset($options['baseFontFamily'])
+			? $options['baseFontFamily']
+			: 'system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif';
 
-		$get = function ($arr /*, k1, k2... */) {
+		$get = function ($arr) {
 			$args = func_get_args();
 			array_shift($args);
 			foreach ($args as $k) {
@@ -1396,55 +1418,73 @@ class Websites_Webpage extends Base_Websites_Webpage
 			return '"' . str_replace('"', '\\"', $s) . '"';
 		};
 
-		$firstHex = function ($arr) {
-			if (!is_array($arr)) return null;
-			foreach ($arr as $e) {
-				if (is_array($e) && isset($e['hex'])) return strtolower($e['hex']);
-				if (is_string($e) && preg_match('/^#([0-9a-f]{6})$/i', $e)) return strtolower($e);
-			}
-			return null;
+		$normalizeFamily = function ($family) use ($q, $baseFontFamily) {
+			if (!$family) return $baseFontFamily;
+			$primary = trim(strtok($family, ','));
+			$primary = trim($primary, "\"' \t\r\n");
+			if (!$primary) return $baseFontFamily;
+			return $q($primary) . ', ' . $baseFontFamily;
 		};
 
-		// ---------- Extract palette ----------
-		$fgTop = $firstHex($get($analysis, 'colorRoles', 'foreground'));
-		$bgTop = $firstHex($get($analysis, 'colorRoles', 'background'));
-		$dom   = $get($analysis, 'dominantColors');
+		// Colors
+		$fg = $get($analysis, 'bodyForeground');
+		if (!$fg) $fg = $get($analysis, 'colorRoles', 'foreground', 0, 'hex');
+		if (!$fg) $fg = '#222222';
 
-		if (!$fgTop && isset($dom[0]['hex'])) $fgTop = $dom[0]['hex'];
-		if (!$bgTop && isset($dom[1]['hex'])) $bgTop = $dom[1]['hex'];
-		if (!$fgTop) $fgTop = '#222222';
-		if (!$bgTop) $bgTop = '#ffffff';
+		$bg = $get($analysis, 'bodyBackground');
+		if (!$bg) $bg = $get($analysis, 'colorRoles', 'background', 0, 'hex');
+		if (!$bg) $bg = '#ffffff';
 
-		$fgList = $get($analysis, 'colorRoles', 'foreground');
-		$acc1 = isset($fgList[1]['hex']) ? $fgList[1]['hex'] : '#4a90e2';
-		$acc2 = isset($fgList[2]['hex']) ? $fgList[2]['hex'] : '#e67e22';
+		$brand = $get($analysis, 'brandColor');
+		if (!$brand) $brand = $get($analysis, 'colorRoles', 'foreground', 1, 'hex');
+		if (!$brand) $brand = '#4a90e2';
+
+		$link = $get($analysis, 'linkColor');
+		if (!$link) $link = $brand;
+
+		$accent2 = $get($analysis, 'colorRoles', 'foreground', 2, 'hex');
+		if (!$accent2) $accent2 = '#e67e22';
 
 		$nav = $get($analysis, 'detectedNav');
-		$navFg = is_array($nav) && isset($nav['color']) ? $nav['color'] : $fgTop;
-		$navBg = is_array($nav) && isset($nav['backgroundColor']) ? $nav['backgroundColor'] : $bgTop;
+		$navFg = is_array($nav) && isset($nav['color']) && $nav['color'] ? $nav['color'] : $fg;
+		$navBg = is_array($nav) && isset($nav['backgroundColor']) && $nav['backgroundColor'] ? $nav['backgroundColor'] : $bg;
 
-		// ---------- Fonts ----------
-		$fonts = $get($analysis, 'fonts');
-		$bodyFamily = $baseFontFamily;
-		if ($preferAnalysisFonts && is_array($fonts) && count($fonts)) {
-			$raw = $fonts[0];
-			$primary = trim(strtok($raw, ','));
-			if ($primary) $bodyFamily = $q($primary) . ', ' . $baseFontFamily;
+		// Fonts
+		$bodyFamily = $normalizeFamily($get($analysis, 'bodyFont'));
+		$headingFamily = $normalizeFamily($get($analysis, 'headingFont'));
+		if (!$get($analysis, 'bodyFont') && !$get($analysis, 'headingFont')) {
+			// Fallback to legacy 'fonts' array
+			$fonts = $get($analysis, 'fonts');
+			if (is_array($fonts) && count($fonts)) {
+				$bodyFamily = $normalizeFamily($fonts[0]);
+				$headingFamily = $bodyFamily;
+			}
 		}
 
-		// ---------- Variable block ----------
-		$vars  = "/* Theme variables generated from analysis */\n";
+		$bodyWeight = $get($analysis, 'bodyFontWeight');
+		$headingWeight = $get($analysis, 'headingFontWeight');
+		if (!$bodyWeight) $bodyWeight = '400';
+		if (!$headingWeight) $headingWeight = '700';
+
+		$vars = "/* Theme variables generated " . date('c') . " */\n";
 		$vars .= $scope . " {\n";
-		$vars .= "  --theme-fg: {$fgTop};\n";
-		$vars .= "  --theme-bg: {$bgTop};\n";
-		$vars .= "  --theme-accent-1: {$acc1};\n";
-		$vars .= "  --theme-accent-2: {$acc2};\n";
+		// New names
+		$vars .= "  --theme-fg: {$fg};\n";
+		$vars .= "  --theme-bg: {$bg};\n";
+		$vars .= "  --theme-brand: {$brand};\n";
+		$vars .= "  --theme-link: {$link};\n";
 		$vars .= "  --theme-nav-bg: {$navBg};\n";
 		$vars .= "  --theme-nav-fg: {$navFg};\n";
+		$vars .= "  --theme-font-body: {$bodyFamily};\n";
+		$vars .= "  --theme-font-heading: {$headingFamily};\n";
+		$vars .= "  --theme-font-weight-body: {$bodyWeight};\n";
+		$vars .= "  --theme-font-weight-heading: {$headingWeight};\n";
+		// Aliases for backward compatibility with the previous version
+		$vars .= "  --theme-accent-1: {$brand};\n";
+		$vars .= "  --theme-accent-2: {$accent2};\n";
 		$vars .= "  --theme-font: {$bodyFamily};\n";
 		$vars .= "}\n\n";
 
-		// ---------- Optional fonts ----------
 		$fontBlocks = array();
 		if ($includeFonts) {
 			$faces = $get($analysis, '_assets', 'fontFaces');
@@ -1454,24 +1494,23 @@ class Websites_Webpage extends Base_Websites_Webpage
 					if ($c++ >= $maxFonts) break;
 					$fam = $q((string)$get($face, 'family'));
 					if (!$fam) continue;
-					$style  = $get($face, 'style') ? $get($face, 'style') : 'normal';
+					$style = $get($face, 'style') ? $get($face, 'style') : 'normal';
 					$weight = $get($face, 'weight') ? $get($face, 'weight') : '400';
 					$srcs = $get($face, 'src');
 					$urls = array();
 					if (is_array($srcs)) {
 						foreach ($srcs as $u) {
 							if (!is_string($u) || !$u) continue;
-							$urls[] = "url('".$u."')";
+							$urls[] = "url('" . $u . "')";
 						}
 					}
 					if (count($urls)) {
-						$fontBlocks[] =
-	"@font-face {
-	font-family: {$fam};
-	font-style: {$style};
-	font-weight: {$weight};
-	src: " . implode(",\n       ", $urls) . ";
-	}";
+						$fontBlocks[] = "@font-face {\n"
+							. "  font-family: {$fam};\n"
+							. "  font-style: {$style};\n"
+							. "  font-weight: {$weight};\n"
+							. "  src: " . implode(",\n       ", $urls) . ";\n"
+							. "}";
 					}
 				}
 			}
@@ -1479,5 +1518,132 @@ class Websites_Webpage extends Base_Websites_Webpage
 		if (count($fontBlocks)) $vars .= implode("\n\n", $fontBlocks) . "\n";
 
 		return $vars;
+	}
+
+	/**
+	 * Get the filesystem path to the theme CSS for a URL+formFactor.
+	 * If the file doesn't exist, or if $options['reanalyze'] is true, scrapes
+	 * inline (blocking), writes the file, then returns the path.
+	 *
+	 * @method getThemeCssPath
+	 * @static
+	 * @param {string} $url The customer URL whose theme to extract
+	 * @param {string} $formFactor One of 'mobile', 'tablet', 'desktop'
+	 * @param {array} [$options]
+	 * @param {boolean} [$options.reanalyze=false] Force a fresh scrape
+	 * @return {string} Filesystem path to the generated CSS file
+	 * @throws Exception If scrape fails
+	 */
+	static function getThemeCssPath($url, $formFactor, $options = array())
+	{
+		$reanalyze = !empty($options['reanalyze']);
+		$dir = self::themeDir($url);
+		$cssPath = $dir . DS . $formFactor . '.css';
+		$errPath = $dir . DS . $formFactor . '.error';
+
+		if (!is_dir($dir)) {
+			Q_Utils::canWriteToPath($dir, null, true);
+		}
+
+		// Respect a recent failure marker unless explicitly re-analyzing
+		if (!$reanalyze && is_file($errPath)) {
+			$errTtl = (int)Q_Config::get('Websites', 'theme', 'errorCacheSeconds', 300);
+			$age = time() - filemtime($errPath);
+			if ($age < $errTtl) {
+				throw new Exception(
+					"Websites_Webpage: recent scrape failure for $url ($formFactor); "
+					. "wait " . ($errTtl - $age) . "s or pass reanalyze=1"
+				);
+			}
+			@unlink($errPath);
+		}
+
+		if (!is_file($cssPath) || $reanalyze) {
+			try {
+				self::_doScrapeAndWrite($url, $formFactor, $cssPath);
+			} catch (Exception $e) {
+				// Record the failure so we don't immediately retry
+				@file_put_contents($errPath, $e->getMessage());
+				throw $e;
+			}
+		}
+
+		return $cssPath;
+	}
+
+	/**
+	 * Compute the per-URL theme directory.
+	 *
+	 * Default: $uploads/Websites/theme/$host/
+	 *
+	 * One theme per site is the right default — restaurants and small businesses
+	 * have a single brand across all pages. Per-page theming is rare enough to
+	 * not warrant complicating the default key.
+	 *
+	 * To override for the rare multi-tenant case (one host, multiple brands),
+	 * hook 'Websites/Webpage/themeDir' with 'before' and return a different
+	 * absolute path. The hook receives the full $url so it can route based on
+	 * path, query, subdomain, or anything else it cares about.
+	 *
+	 * @method themeDir
+	 * @static
+	 * @param {string} $url
+	 * @return {string} Absolute filesystem path (may not yet exist)
+	 */
+	static function themeDir($url)
+	{
+		$result = Q::event('Websites/Webpage/themeDir', compact('url'), 'before');
+		if (isset($result)) {
+			return $result;
+		}
+
+		$parts = parse_url($url);
+		$host = isset($parts['host']) ? strtolower($parts['host']) : 'unknown';
+		$host = preg_replace('/[^a-z0-9.\-]/', '', $host);
+		if ($host === '') $host = 'unknown';
+
+		return APP_FILES_DIR . DS . Q::app() . DS . 'uploads'
+			. DS . 'Websites' . DS . 'theme'
+			. DS . $host;
+	}
+
+	/**
+	 * Internal: perform the scrape and write the CSS file.
+	 * @method _doScrapeAndWrite
+	 * @static
+	 * @protected
+	 * @param {string} $url
+	 * @param {string} $formFactor
+	 * @param {string} $cssPath
+	 */
+	protected static function _doScrapeAndWrite($url, $formFactor, $cssPath)
+	{
+		$viewports = Q_Config::get('Websites', 'theme', 'viewports', array(
+			'mobile' => array('width' => 375, 'height' => 812),
+			'tablet' => array('width' => 768, 'height' => 1024),
+			'desktop' => array('width' => 1440, 'height' => 900)
+		));
+		if (empty($viewports[$formFactor])) {
+			throw new Exception("Websites_Webpage: unknown formFactor: $formFactor");
+		}
+
+		$analysis = self::analyze($url, array(
+			'viewport' => $viewports[$formFactor]
+		));
+
+		$scope = Q_Config::get('Websites', 'theme', 'scope', ':root');
+		$css = self::generateThemeCss($analysis, array(
+			'scope' => $scope,
+			'includeFonts' => true,
+			'maxFonts' => (int)Q_Config::get('Websites', 'theme', 'maxFonts', 6)
+		));
+
+		$dir = dirname($cssPath);
+		if (!is_dir($dir)) {
+			Q_Utils::canWriteToPath($dir, null, true);
+		}
+		if (false === @file_put_contents($cssPath, $css, LOCK_EX)) {
+			throw new Exception("Websites_Webpage: could not write $cssPath");
+		}
 	}
 }
