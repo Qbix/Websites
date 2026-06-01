@@ -1,0 +1,250 @@
+/* Websites/webpage/sources — citation badges + popup
+   ────────────────────────────────────────────────────────────────────────
+   Every element has a class so consumers can fully restyle.
+   Default look is dark + minimal; override .Websites_sources to fit your
+   surrounding card aesthetic.
+*/
+
+.Websites_sources {
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255,255,255,.08);
+}
+
+.Websites_sources_label {
+    font-size: 10px;
+    color: rgba(255,255,255,.4);
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    margin-bottom: 8px;
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+.Websites_sources_list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+}
+
+.Websites_sources_item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px 4px 6px;
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 100px;
+    font-size: 12px;
+    color: rgba(216,216,224,.85);
+    text-decoration: none;
+    cursor: pointer;
+    transition: background .12s, border-color .12s, color .12s;
+    max-width: 240px;
+}
+.Websites_sources_item:hover {
+    background: rgba(59,130,246,.12);
+    border-color: rgba(59,130,246,.4);
+    color: #fff;
+    text-decoration: none;
+}
+
+.Websites_sources_num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: rgba(255,255,255,.45);
+    min-width: 14px;
+    text-align: center;
+    background: rgba(255,255,255,.06);
+    border-radius: 50%;
+    padding: 1px 0;
+    flex-shrink: 0;
+}
+
+.Websites_sources_icon {
+    width: 14px;
+    height: 14px;
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+.Websites_sources_domain {
+    font-size: 11px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 160px;
+}
+
+.Websites_sources_title {
+    font-size: 11px;
+    color: rgba(216,216,224,.6);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 220px;
+}
+
+.Websites_sources_more {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: rgba(255,255,255,.35);
+    padding: 4px 10px;
+    background: rgba(255,255,255,.03);
+    border-radius: 100px;
+    border: 1px solid rgba(255,255,255,.06);
+}
+
+/* ── POPUP / LIGHTBOX ─────────────────────────────────────────────────── */
+
+.Websites_sources_popup {
+    position: absolute;
+    z-index: 9999;
+    background: #1e1e24;
+    border: 1px solid #3a3a4a;
+    border-radius: 8px;
+    padding: 14px;
+    max-width: 380px;
+    min-width: 240px;
+    box-shadow: 0 8px 32px rgba(0,0,0,.6);
+    color: #d8d8e0;
+    font-family: -apple-system, system-ui, sans-serif;
+    line-height: 1.5;
+}
+
+.Websites_sources_popup_head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.Websites_sources_popup_favicon {
+    width: 18px;
+    height: 18px;
+    border-radius: 3px;
+    flex-shrink: 0;
+}
+.Websites_sources_popup_domain {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: rgba(216,216,224,.85);
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.Websites_sources_popup_link {
+    color: #3B82F6;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+.Websites_sources_popup_link:hover {
+    background: rgba(59,130,246,.15);
+    text-decoration: none;
+}
+
+.Websites_sources_popup_title {
+    font-size: 13px;
+    font-weight: 500;
+    color: #f0eeea;
+    margin-bottom: 8px;
+}
+
+.Websites_sources_popup_quote {
+    font-size: 12px;
+    color: rgba(216,216,224,.78);
+    font-style: italic;
+    line-height: 1.55;
+    margin-bottom: 8px;
+    padding: 8px 10px;
+    background: rgba(255,255,255,.03);
+    border-left: 2px solid rgba(232,160,32,.6);
+    border-radius: 0 4px 4px 0;
+}
+
+.Websites_sources_popup_preview {
+    margin-top: 8px;
+}
+
+/* ── ALWAYS-ON MODE (hover:false) ─────────────────────────────────────── */
+
+.Websites_sources_alwayson {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.Websites_sources_alwayson_item {
+    display: flex;
+    gap: 10px;
+    padding: 8px 10px;
+    background: rgba(255,255,255,.025);
+    border: 1px solid rgba(255,255,255,.05);
+    border-radius: 6px;
+}
+.Websites_sources_alwayson_icon {
+    width: 18px;
+    height: 18px;
+    border-radius: 3px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+.Websites_sources_alwayson_meta {
+    flex: 1;
+    min-width: 0;
+}
+.Websites_sources_alwayson_domain {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: rgba(216,216,224,.7);
+    margin-bottom: 2px;
+}
+.Websites_sources_alwayson_title {
+    font-size: 12px;
+    color: #f0eeea;
+    margin-bottom: 4px;
+}
+.Websites_sources_alwayson_quote {
+    font-size: 11px;
+    color: rgba(216,216,224,.62);
+    font-style: italic;
+    line-height: 1.5;
+    padding-left: 8px;
+    border-left: 2px solid rgba(232,160,32,.5);
+    margin-bottom: 4px;
+}
+.Websites_sources_alwayson_link {
+    font-size: 11px;
+    color: #3B82F6;
+    text-decoration: none;
+}
+.Websites_sources_alwayson_link:hover { text-decoration: underline; }
+
+/* ── MOBILE ──────────────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+    .Websites_sources_item {
+        font-size: 11px;
+        padding: 3px 8px 3px 4px;
+        gap: 4px;
+        max-width: calc(50vw - 20px);
+    }
+    .Websites_sources_domain { font-size: 10px; max-width: 100px; }
+    .Websites_sources_title  { display: none; }
+
+    /* Popup becomes a bottom sheet on phones */
+    .Websites_sources_popup {
+        position: fixed !important;
+        left: 12px !important;
+        right: 12px !important;
+        top: auto !important;
+        bottom: 12px !important;
+        max-width: none;
+        max-height: 60vh;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
