@@ -1,17 +1,17 @@
-/* Websites/webpage/sources — citation badges + popup
+/* Websites/citations — citation badges + popup
    ────────────────────────────────────────────────────────────────────────
    Every element has a class so consumers can fully restyle.
-   Default look is dark + minimal; override .Websites_sources to fit your
+   Default look is dark + minimal; override .Websites_citations to fit your
    surrounding card aesthetic.
 */
 
-.Websites_sources {
+.Websites_citations {
     margin-top: 12px;
     padding-top: 10px;
     border-top: 1px solid rgba(255,255,255,.08);
 }
 
-.Websites_sources_label {
+.Websites_citations_label {
     font-size: 10px;
     color: rgba(255,255,255,.4);
     text-transform: uppercase;
@@ -20,14 +20,14 @@
     font-family: 'IBM Plex Mono', monospace;
 }
 
-.Websites_sources_list {
+.Websites_citations_list {
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
     align-items: center;
 }
 
-.Websites_sources_item {
+.Websites_citations_item {
     display: inline-flex;
     align-items: center;
     gap: 6px;
@@ -42,14 +42,14 @@
     transition: background .12s, border-color .12s, color .12s;
     max-width: 240px;
 }
-.Websites_sources_item:hover {
+.Websites_citations_item:hover {
     background: rgba(59,130,246,.12);
     border-color: rgba(59,130,246,.4);
     color: #fff;
     text-decoration: none;
 }
 
-.Websites_sources_num {
+.Websites_citations_num {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 10px;
     color: rgba(255,255,255,.45);
@@ -61,14 +61,14 @@
     flex-shrink: 0;
 }
 
-.Websites_sources_icon {
+.Websites_citations_icon {
     width: 14px;
     height: 14px;
     border-radius: 2px;
     flex-shrink: 0;
 }
 
-.Websites_sources_domain {
+.Websites_citations_domain {
     font-size: 11px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -76,7 +76,7 @@
     max-width: 160px;
 }
 
-.Websites_sources_title {
+.Websites_citations_title {
     font-size: 11px;
     color: rgba(216,216,224,.6);
     overflow: hidden;
@@ -85,7 +85,7 @@
     max-width: 220px;
 }
 
-.Websites_sources_more {
+.Websites_citations_more {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 10px;
     color: rgba(255,255,255,.35);
@@ -97,7 +97,7 @@
 
 /* ── POPUP / LIGHTBOX ─────────────────────────────────────────────────── */
 
-.Websites_sources_popup {
+.Websites_citations_popup {
     position: absolute;
     z-index: 9999;
     background: #1e1e24;
@@ -112,7 +112,7 @@
     line-height: 1.5;
 }
 
-.Websites_sources_popup_head {
+.Websites_citations_popup_head {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -120,13 +120,13 @@
     padding-bottom: 8px;
     border-bottom: 1px solid rgba(255,255,255,.08);
 }
-.Websites_sources_popup_favicon {
+.Websites_citations_popup_favicon {
     width: 18px;
     height: 18px;
     border-radius: 3px;
     flex-shrink: 0;
 }
-.Websites_sources_popup_domain {
+.Websites_citations_popup_domain {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 12px;
     color: rgba(216,216,224,.85);
@@ -135,26 +135,26 @@
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-.Websites_sources_popup_link {
+.Websites_citations_popup_link {
     color: #3B82F6;
     font-size: 14px;
     text-decoration: none;
     padding: 2px 8px;
     border-radius: 4px;
 }
-.Websites_sources_popup_link:hover {
+.Websites_citations_popup_link:hover {
     background: rgba(59,130,246,.15);
     text-decoration: none;
 }
 
-.Websites_sources_popup_title {
+.Websites_citations_popup_title {
     font-size: 13px;
     font-weight: 500;
     color: #f0eeea;
     margin-bottom: 8px;
 }
 
-.Websites_sources_popup_quote {
+.Websites_citations_popup_quote {
     font-size: 12px;
     color: rgba(216,216,224,.78);
     font-style: italic;
@@ -166,19 +166,19 @@
     border-radius: 0 4px 4px 0;
 }
 
-.Websites_sources_popup_preview {
+.Websites_citations_popup_preview {
     margin-top: 8px;
 }
 
 /* ── ALWAYS-ON MODE (hover:false) ─────────────────────────────────────── */
 
-.Websites_sources_alwayson {
+.Websites_citations_alwayson {
     margin-top: 12px;
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
-.Websites_sources_alwayson_item {
+.Websites_citations_alwayson_item {
     display: flex;
     gap: 10px;
     padding: 8px 10px;
@@ -186,29 +186,29 @@
     border: 1px solid rgba(255,255,255,.05);
     border-radius: 6px;
 }
-.Websites_sources_alwayson_icon {
+.Websites_citations_alwayson_icon {
     width: 18px;
     height: 18px;
     border-radius: 3px;
     flex-shrink: 0;
     margin-top: 2px;
 }
-.Websites_sources_alwayson_meta {
+.Websites_citations_alwayson_meta {
     flex: 1;
     min-width: 0;
 }
-.Websites_sources_alwayson_domain {
+.Websites_citations_alwayson_domain {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 11px;
     color: rgba(216,216,224,.7);
     margin-bottom: 2px;
 }
-.Websites_sources_alwayson_title {
+.Websites_citations_alwayson_title {
     font-size: 12px;
     color: #f0eeea;
     margin-bottom: 4px;
 }
-.Websites_sources_alwayson_quote {
+.Websites_citations_alwayson_quote {
     font-size: 11px;
     color: rgba(216,216,224,.62);
     font-style: italic;
@@ -217,26 +217,26 @@
     border-left: 2px solid rgba(232,160,32,.5);
     margin-bottom: 4px;
 }
-.Websites_sources_alwayson_link {
+.Websites_citations_alwayson_link {
     font-size: 11px;
     color: #3B82F6;
     text-decoration: none;
 }
-.Websites_sources_alwayson_link:hover { text-decoration: underline; }
+.Websites_citations_alwayson_link:hover { text-decoration: underline; }
 
 /* ── MOBILE ──────────────────────────────────────────────────────────── */
 @media (max-width: 480px) {
-    .Websites_sources_item {
+    .Websites_citations_item {
         font-size: 11px;
         padding: 3px 8px 3px 4px;
         gap: 4px;
         max-width: calc(50vw - 20px);
     }
-    .Websites_sources_domain { font-size: 10px; max-width: 100px; }
-    .Websites_sources_title  { display: none; }
+    .Websites_citations_domain { font-size: 10px; max-width: 100px; }
+    .Websites_citations_title  { display: none; }
 
     /* Popup becomes a bottom sheet on phones */
-    .Websites_sources_popup {
+    .Websites_citations_popup {
         position: fixed !important;
         left: 12px !important;
         right: 12px !important;

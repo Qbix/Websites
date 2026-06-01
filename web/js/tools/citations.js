@@ -5,16 +5,16 @@
  */
 
 /**
- * Renders a row of source citation badges with an optional hover/tap popup
+ * Renders a row of citation badges with an optional hover/tap popup
  * showing the cited quote, favicon, domain, and a Websites/webpage/preview.
  *
- * Designed to drop in under any AI-generated card or article that has source
+ * Designed to drop in under any AI-generated card or article that has
  * citations attached. Handles both desktop (hover) and touchscreen (tap-toggle).
  *
- * @class Websites/webpage/sources
+ * @class Websites/citations
  * @constructor
  * @param {Object} [options]
- *   @param {Array}    [options.sources=[]]   [{url, title, quote, domain, favicon}]
+ *   @param {Array}    [options.citations=[]] [{url, title, quote, domain, favicon}]
  *   @param {Boolean}  [options.icons=true]
  *   @param {Boolean}  [options.domains=true]
  *   @param {Boolean}  [options.titles=false]
@@ -22,18 +22,18 @@
  *   @param {Number}   [options.max=5]
  *   @param {Q.Event}  [options.onInvoke]
  */
-Q.Tool.define("Websites/webpage/sources", function () {
+Q.Tool.define("Websites/citations", function () {
     var tool = this;
 
     // Load CSS once
-    Q.addStylesheet('{{Websites}}/css/tools/webpage/sources.css',
+    Q.addStylesheet('{{Websites}}/css/tools/citations.css',
         { slotName: 'Websites' });
 
     tool.refresh();
 },
 
 {
-    sources: [],
+    citations: [],
     icons:   true,
     domains: true,
     titles:  false,
@@ -49,21 +49,21 @@ Q.Tool.define("Websites/webpage/sources", function () {
         var $el   = $(tool.element);
         $el.empty();
 
-        var sources = (state.sources || []).filter(function (s) {
+        var citations = (state.citations || []).filter(function (s) {
             return s && s.url;
         });
-        if (!sources.length) { $el.hide(); return; }
+        if (!citations.length) { $el.hide(); return; }
         $el.show();
-        $el.addClass('Websites_sources');
+        $el.addClass('Websites_citations');
 
-        var $label = $('<div class="Websites_sources_label">Sources</div>');
+        var $label = $('<div class="Websites_citations_label">Sources</div>');
         $el.append($label);
 
-        var $list = $('<div class="Websites_sources_list"></div>');
+        var $list = $('<div class="Websites_citations_list"></div>');
         $el.append($list);
 
-        var shown  = sources.slice(0, state.max);
-        var hidden = sources.length - shown.length;
+        var shown  = citations.slice(0, state.max);
+        var hidden = citations.length - shown.length;
 
         shown.forEach(function (src, i) {
             $list.append(tool._buildItem(src, i));
@@ -71,14 +71,14 @@ Q.Tool.define("Websites/webpage/sources", function () {
 
         if (hidden > 0) {
             $list.append(
-                '<span class="Websites_sources_more">+'
+                '<span class="Websites_citations_more">+'
                 + hidden + ' more</span>'
             );
         }
 
         if (!state.hover) {
             // Always-on inline mode — render expanded blocks below the badges
-            var $alwaysOn = $('<div class="Websites_sources_alwayson"></div>');
+            var $alwaysOn = $('<div class="Websites_citations_alwayson"></div>');
             $el.append($alwaysOn);
             shown.forEach(function (src) {
                 $alwaysOn.append(tool._buildAlwaysOn(src));
@@ -91,16 +91,16 @@ Q.Tool.define("Websites/webpage/sources", function () {
         var state = tool.state;
         var isTouch = Q.info && Q.info.isTouchscreen;
 
-        var $item = $('<a class="Websites_sources_item" target="_blank" rel="noopener noreferrer"></a>');
+        var $item = $('<a class="Websites_citations_item" target="_blank" rel="noopener noreferrer"></a>');
         $item.attr('href', src.url);
         $item.attr('data-domain', src.domain || '');
         $item.attr('data-index',  i + 1);
 
         // Numbered prefix — always shown (good for screen readers, references)
-        $item.append('<span class="Websites_sources_num">' + (i + 1) + '</span>');
+        $item.append('<span class="Websites_citations_num">' + (i + 1) + '</span>');
 
         if (state.icons && src.favicon) {
-            var $icon = $('<img class="Websites_sources_icon" alt="" />');
+            var $icon = $('<img class="Websites_citations_icon" alt="" />');
             $icon.attr('src', src.favicon);
             $icon.on('error', function () { $(this).hide(); });
             $item.append($icon);
@@ -108,14 +108,14 @@ Q.Tool.define("Websites/webpage/sources", function () {
 
         if (state.domains && src.domain) {
             $item.append(
-                '<span class="Websites_sources_domain">'
+                '<span class="Websites_citations_domain">'
                 + Q.Html.text(src.domain) + '</span>'
             );
         }
 
         if (state.titles && src.title) {
             $item.append(
-                '<span class="Websites_sources_title">'
+                '<span class="Websites_citations_title">'
                 + Q.Html.text(src.title) + '</span>'
             );
         }
@@ -130,7 +130,7 @@ Q.Tool.define("Websites/webpage/sources", function () {
     _attachPopup: function ($item, src, isTouch) {
         var tool   = this;
         var $popup = null;
-        var docId  = 'Websites_sources_' + Math.random().toString(36).slice(2, 10);
+        var docId  = 'Websites_citations_' + Math.random().toString(36).slice(2, 10);
 
         function show() {
             if ($popup) return;
@@ -184,22 +184,22 @@ Q.Tool.define("Websites/webpage/sources", function () {
     },
 
     _buildPopup: function (src) {
-        var $popup = $('<div class="Websites_sources_popup"></div>');
+        var $popup = $('<div class="Websites_citations_popup"></div>');
 
         // Header — favicon + domain + open-link
-        var $head = $('<div class="Websites_sources_popup_head"></div>');
+        var $head = $('<div class="Websites_citations_popup_head"></div>');
         if (src.favicon) {
             $head.append(
-                '<img class="Websites_sources_popup_favicon" src="'
+                '<img class="Websites_citations_popup_favicon" src="'
                 + Q.Html.text(src.favicon) + '" alt="" />'
             );
         }
         $head.append(
-            '<span class="Websites_sources_popup_domain">'
+            '<span class="Websites_citations_popup_domain">'
             + Q.Html.text(src.domain || '') + '</span>'
         );
         $head.append(
-            '<a class="Websites_sources_popup_link" href="'
+            '<a class="Websites_citations_popup_link" href="'
             + Q.Html.text(src.url)
             + '" target="_blank" rel="noopener noreferrer">↗</a>'
         );
@@ -207,14 +207,14 @@ Q.Tool.define("Websites/webpage/sources", function () {
 
         if (src.title) {
             $popup.append(
-                '<div class="Websites_sources_popup_title">'
+                '<div class="Websites_citations_popup_title">'
                 + Q.Html.text(src.title) + '</div>'
             );
         }
 
         if (src.quote) {
             $popup.append(
-                '<div class="Websites_sources_popup_quote">"'
+                '<div class="Websites_citations_popup_quote">"'
                 + Q.Html.text(src.quote) + '"</div>'
             );
         }
@@ -222,7 +222,7 @@ Q.Tool.define("Websites/webpage/sources", function () {
         // Lazy-load Websites/webpage/preview for richer metadata
         // (favicon variants, OG image, description, etc.)
         if (Q.Tool.constructors['Websites/webpage/preview']) {
-            var $preview = $('<div class="Websites_sources_popup_preview"></div>');
+            var $preview = $('<div class="Websites_citations_popup_preview"></div>');
             $popup.append($preview);
             $preview.tool('Websites/webpage/preview', {
                 url: src.url,
@@ -236,28 +236,28 @@ Q.Tool.define("Websites/webpage/sources", function () {
     },
 
     _buildAlwaysOn: function (src) {
-        var $b = $('<div class="Websites_sources_alwayson_item"></div>');
+        var $b = $('<div class="Websites_citations_alwayson_item"></div>');
         if (src.favicon) {
             $b.append(
-                '<img class="Websites_sources_alwayson_icon" src="'
+                '<img class="Websites_citations_alwayson_icon" src="'
                 + Q.Html.text(src.favicon) + '" alt="" />'
             );
         }
-        var $meta = $('<div class="Websites_sources_alwayson_meta"></div>');
+        var $meta = $('<div class="Websites_citations_alwayson_meta"></div>');
         if (src.domain) $meta.append(
-            '<div class="Websites_sources_alwayson_domain">'
+            '<div class="Websites_citations_alwayson_domain">'
             + Q.Html.text(src.domain) + '</div>'
         );
         if (src.title) $meta.append(
-            '<div class="Websites_sources_alwayson_title">'
+            '<div class="Websites_citations_alwayson_title">'
             + Q.Html.text(src.title) + '</div>'
         );
         if (src.quote) $meta.append(
-            '<div class="Websites_sources_alwayson_quote">"'
+            '<div class="Websites_citations_alwayson_quote">"'
             + Q.Html.text(src.quote) + '"</div>'
         );
         $meta.append(
-            '<a class="Websites_sources_alwayson_link" href="'
+            '<a class="Websites_citations_alwayson_link" href="'
             + Q.Html.text(src.url)
             + '" target="_blank" rel="noopener noreferrer">Open source →</a>'
         );
@@ -291,7 +291,7 @@ Q.Tool.define("Websites/webpage/sources", function () {
 
     Q: {
         beforeRemove: function () {
-            $('.Websites_sources_popup').remove();
+            $('.Websites_citations_popup').remove();
         }
     }
 });
