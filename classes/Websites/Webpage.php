@@ -1202,7 +1202,7 @@ class Websites_Webpage extends Base_Websites_Webpage
 
 	/**
 	 * Private helper: connect to an already-running headless Chrome
-	 * (e.g., Docker container bound to 127.0.0.1:9222).
+	 * (e.g., Docker container bound to 127.0.0.1:9222), or launch one locally.
 	 *
 	 * Reads CHROME_HOST/CHROME_PORT if present.
 	 *
@@ -1211,9 +1211,19 @@ class Websites_Webpage extends Base_Websites_Webpage
 	 */
 	private static function _chromeConnect()
 	{
+		if (!class_exists('HeadlessChromium\\BrowserFactory')) {
+			throw new Exception("HeadlessChromium library not installed. Run composer require chrome-php/chrome.");
+		}
+
 		$host = getenv('CHROME_HOST') ? getenv('CHROME_HOST') : '127.0.0.1';
 		$port = getenv('CHROME_PORT') ? (int)getenv('CHROME_PORT') : 9222;
 		$versionUrl = 'http://' . $host . ':' . $port . '/json/version';
+
+		$factory = new BrowserFactory();
+		$connectOptions = array(
+			'sendSyncDefaultTimeout' => 20000 // ms
+			// 'debugLogger' => 'php://stdout',
+		);
 
 		// Fetch via curl if available, else file_get_contents
 		$metaJson = null;
@@ -1230,24 +1240,27 @@ class Websites_Webpage extends Base_Websites_Webpage
 			$metaJson = @file_get_contents($versionUrl, false, $ctx);
 		}
 
-		if (!$metaJson) {
-			throw new Exception('Cannot reach Chrome DevTools at ' . $versionUrl);
+		$meta = $metaJson ? json_decode($metaJson, true) : null;
+		if (is_array($meta) && isset($meta['webSocketDebuggerUrl'])) {
+			return BrowserFactory::connectToBrowser($meta['webSocketDebuggerUrl'], $connectOptions);
 		}
 
-		$meta = json_decode($metaJson, true);
-		if (!is_array($meta) || !isset($meta['webSocketDebuggerUrl'])) {
-			throw new Exception('webSocketDebuggerUrl not found at ' . $versionUrl);
+		try {
+			return $factory->createBrowser(array_merge($connectOptions, array(
+				'headless' => true,
+				'noSandbox' => true,
+				'startupTimeout' => 60,
+				'windowSize' => array(1920, 1080),
+			)));
+		} catch (Exception $e) {
+			$reason = 'Cannot reach Chrome DevTools at ' . $versionUrl;
+			if (!is_array($meta)) {
+				$reason .= ' and failed to launch local Chrome';
+			} else {
+				$reason .= ' and no valid websocket endpoint was returned';
+			}
+			throw new Exception($reason . ': ' . $e->getMessage(), 0, $e);
 		}
-
-		if (!class_exists('HeadlessChromium\\BrowserFactory')) {
-			throw new Exception("HeadlessChromium library not installed. Run composer require chrome-php/chrome.");
-		}
-
-		// Connect without spawning a local Chrome
-		return BrowserFactory::connectToBrowser($meta['webSocketDebuggerUrl'], array(
-			'sendSyncDefaultTimeout' => 20000 // ms
-			// 'debugLogger' => 'php://stdout',
-		));
 	}
 
 	// Resolve a possibly-relative URL against a base URL (handles protocol-relative, root, ../)
