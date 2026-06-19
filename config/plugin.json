@@ -34,7 +34,8 @@
 			}
 		},
 		"routes@start": {
-			"Websites/:action/:articleId": {"module": "Websites"}
+			"Websites/:action/:articleId": {"module": "Websites"},
+			"Websites/theme.css": {"module": "Websites", "action": "theme"}
 		}
 	},
 	"Users": {
@@ -231,7 +232,21 @@
 		"audioHosts": ["soundcloud.com"],
 		"audioExtensions": ["MP3", "WAV", "AIFF", "soundcloud:sound"],
 		"cacheFileLimit": 5242880, /* 5 Mb */
-		"cacheDirectoryLimit":  52428800 /* 50 Mb */
+		"cacheDirectoryLimit":  52428800, /* 50 Mb */
+		"theme": {
+            "scope": ":root",
+            "maxFonts": 6,
+            "browserCacheSeconds": 300,
+            "pathSegmentMaxLength": 64,
+            "pathSegmentShaLength": 8,
+            "reanalyzeRoles": ["Websites/admins", "Q/admins"],
+            "reanalyzeAllowAll": false,
+            "viewports": {
+                "mobile":  { "width": 375,  "height": 812 },
+                "tablet":  { "width": 768,  "height": 1024 },
+                "desktop": { "width": 1440, "height": 900 }
+            }
+        }
 	},
 	"AI": {
 		"observations": {
