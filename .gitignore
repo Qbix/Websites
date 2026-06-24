@@ -1,3 +1,6 @@
 **/.DS_Store
-vendor
+vendor/
 composer.lock
+package-lock.json
+node_modules/
+web/img/icons
