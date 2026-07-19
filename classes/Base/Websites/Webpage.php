@@ -293,7 +293,7 @@ abstract class Base_Websites_Webpage extends Db_Row
 		}
 		if (!is_string($value) and !is_numeric($value))
 			throw new Exception('Must pass a string to '.$this->getTable().".url");
-		if (strlen($value) > 191)
+		if (mb_strlen($value) > 191)
 			throw new Exception('Exceedingly long value being assigned to '.$this->getTable().".url");
 		return array('url', $value);			
 	}
@@ -348,7 +348,7 @@ return array (
 		}
 		if (!is_string($value) and !is_numeric($value))
 			throw new Exception('Must pass a string to '.$this->getTable().".cache");
-		if (strlen($value) > 255)
+		if (mb_strlen($value) > 255)
 			throw new Exception('Exceedingly long value being assigned to '.$this->getTable().".cache");
 		return array('cache', $value);			
 	}
@@ -500,7 +500,7 @@ return array (
 		}
 		if (!is_string($value) and !is_numeric($value))
 			throw new Exception('Must pass a string to '.$this->getTable().".results");
-		if (strlen($value) > 65535)
+		if (mb_strlen($value) > 65535)
 			throw new Exception('Exceedingly long value being assigned to '.$this->getTable().".results");
 		return array('results', $value);			
 	}
