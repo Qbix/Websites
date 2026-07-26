@@ -1,0 +1,202 @@
+/* ═══════════════════════════════════════════════════════════
+   Websites/page/preview
+   ═══════════════════════════════════════════════════════════ */
+.Websites_page_preview_container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border-radius: 10px;
+    transition: background 0.15s;
+    cursor: pointer;
+}
+.Websites_page_preview_container:hover { background: rgba(0,0,0,0.03); }
+@media (prefers-color-scheme: dark) {
+    .Websites_page_preview_container:hover { background: rgba(255,255,255,0.05); }
+}
+.Websites_page_preview_icon {
+    width: 48px; height: 48px;
+    border-radius: 8px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+.Websites_page_preview_contents { flex: 1; min-width: 0; }
+.Websites_page_preview_title {
+    font-size: 15px; font-weight: 600; margin: 0 0 2px;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.Websites_page_preview_desc {
+    font-size: 13px; margin: 0; opacity: 0.6;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Websites/section/preview
+   ═══════════════════════════════════════════════════════════ */
+.Websites_section_preview {
+    margin-bottom: 8px;
+}
+
+/* ── View mode ── */
+.Websites_section_view {
+    padding: 24px 16px;
+    text-align: center;
+}
+.Websites_section_view_title {
+    font-size: 18px; font-weight: 600; margin: 0 0 8px;
+}
+.Websites_section_view_content {
+    font-size: 15px; line-height: 1.6; opacity: 0.8;
+}
+.Websites_section_view_content p { margin: 0 0 10px; }
+.Websites_section_view_content p:last-child { margin-bottom: 0; }
+.Websites_section_view_content a { color: var(--theme-brand, #4a90e2); text-decoration: none; }
+.Websites_section_view_content a:hover { text-decoration: underline; }
+.Websites_section_view_content img { max-width: 100%; height: auto; border-radius: 8px; }
+
+/* ── Edit mode ── */
+.Websites_section_edit {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    padding: 12px 14px;
+    border: 1px dashed rgba(128,128,128,0.3);
+    border-radius: 12px;
+    transition: border-color 0.15s;
+}
+.Websites_section_edit:hover { border-color: var(--theme-brand, #6366f1); }
+
+.Websites_section_drag {
+    cursor: grab; font-size: 16px; opacity: 0.3;
+    user-select: none; flex-shrink: 0; margin-top: 4px;
+}
+.Websites_section_drag:hover { opacity: 0.7; }
+.Websites_section_body { flex: 1; min-width: 0; }
+.Websites_section_title { margin-bottom: 6px; }
+.Websites_section_title .Q_inplace_tool_static {
+    font-weight: 600; font-size: 16px;
+    border-bottom: 1px dashed rgba(128,128,128,0.3);
+    cursor: text;
+}
+.Websites_section_content { min-height: 30px; }
+.Websites_section_blocks { margin-top: 8px; }
+
+/* ── Block layouts within sections ── */
+.Websites_section_blocks_full .Streams_related_tool { }
+.Websites_section_blocks_two-col .Streams_related_tool {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+.Websites_section_blocks_three-col .Streams_related_tool {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+}
+.Websites_section_blocks_sidebar-left .Streams_related_tool {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 16px;
+}
+.Websites_section_blocks_sidebar-right .Streams_related_tool {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 16px;
+}
+
+/* Stack on mobile */
+@media (max-width: 768px) {
+    .Websites_section_blocks_two-col .Streams_related_tool,
+    .Websites_section_blocks_three-col .Streams_related_tool,
+    .Websites_section_blocks_sidebar-left .Streams_related_tool,
+    .Websites_section_blocks_sidebar-right .Streams_related_tool {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Websites/block/preview
+   ═══════════════════════════════════════════════════════════ */
+.Websites_block_preview {
+    margin-bottom: 6px;
+}
+
+/* ── View mode ── */
+.Websites_block_view { padding: 8px 0; }
+.Websites_block_view_title {
+    font-size: 16px; font-weight: 600; margin: 0 0 4px;
+}
+.Websites_block_view_content {
+    font-size: 14px; line-height: 1.55;
+}
+.Websites_block_view_content p { margin: 0 0 8px; }
+.Websites_block_view_content p:last-child { margin-bottom: 0; }
+.Websites_block_view_content img { max-width: 100%; height: auto; border-radius: 6px; }
+
+/* ── Edit mode ── */
+.Websites_block_edit {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    padding: 10px 12px;
+    border: 1px dashed rgba(128,128,128,0.2);
+    border-radius: 10px;
+    transition: border-color 0.15s;
+}
+.Websites_block_edit:hover { border-color: var(--theme-brand, #6366f1); }
+.Websites_block_drag {
+    cursor: grab; font-size: 14px; opacity: 0.25;
+    user-select: none; flex-shrink: 0; margin-top: 3px;
+}
+.Websites_block_drag:hover { opacity: 0.6; }
+.Websites_block_body { flex: 1; min-width: 0; }
+.Websites_block_title { margin-bottom: 4px; }
+.Websites_block_title .Q_inplace_tool_static {
+    font-weight: 600; font-size: 15px;
+    border-bottom: 1px dashed rgba(128,128,128,0.2);
+    cursor: text;
+}
+.Websites_block_content { min-height: 24px; }
+
+/* ═══════════════════════════════════════════════════════════
+   Composer dialogs (shared)
+   ═══════════════════════════════════════════════════════════ */
+.Websites_section_composer,
+.Websites_block_composer {
+    padding: 4px 0;
+}
+.Websites_section_composer label,
+.Websites_block_composer label {
+    display: block; font-size: 13px; font-weight: 500;
+    margin: 12px 0 4px;
+}
+.Websites_section_composer label:first-child,
+.Websites_block_composer label:first-child { margin-top: 0; }
+.Websites_section_composer input,
+.Websites_section_composer textarea,
+.Websites_section_composer select,
+.Websites_block_composer input,
+.Websites_block_composer textarea {
+    display: block; width: 100%;
+    padding: 10px 12px;
+    border: 1px solid rgba(128,128,128,0.3);
+    border-radius: 8px;
+    font-size: 15px;
+    box-sizing: border-box;
+    font-family: inherit;
+    background: transparent;
+    color: inherit;
+}
+.Websites_section_composer textarea,
+.Websites_block_composer textarea {
+    resize: vertical; min-height: 60px;
+}
+.Websites_section_composer select {
+    appearance: auto;
+}
+.Websites_section_composer .Q_button,
+.Websites_block_composer .Q_button {
+    display: block; width: 100%; margin-top: 16px;
+    padding: 12px; border: none; border-radius: 8px;
+    font-size: 15px; font-weight: 600; cursor: pointer;
+}

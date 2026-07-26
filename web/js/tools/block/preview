@@ -1,0 +1,151 @@
+(function (Q, $, window, undefined) {
+
+/**
+ * Preview for Websites/block streams — content units within a section.
+ * View mode: renders content with data-span for CSS grid placement.
+ * Edit mode: Streams/html for rich text editing.
+ * @class Websites/block/preview
+ * @constructor
+ */
+Q.Tool.define("Websites/block/preview", ["Streams/preview"],
+
+function _Websites_block_preview(options, preview) {
+    var tool = this;
+    tool.preview = preview;
+    preview.state.onRefresh.add(tool.refresh.bind(tool), tool);
+    preview.state.onComposer.add(tool.composer.bind(tool), tool);
+},
+
+{
+    onRefresh: new Q.Event()
+},
+
+{
+    refresh: function (stream, onLoad) {
+        var tool = this;
+        var ps = tool.preview.state;
+        var editable = stream.testWriteLevel('edit');
+        var content = stream.fields.content || '';
+        var title = stream.fields.title || '';
+        var attrs = stream.getAllAttributes();
+        var format = attrs.format || 'html';
+        var span = attrs.span || 1;
+        var align = attrs.align || 'left';
+
+        var container = document.createElement('div');
+        container.className = 'Websites_block_preview'
+            + (editable ? ' Websites_block_edit' : ' Websites_block_view');
+        container.setAttribute('data-span', span);
+        container.setAttribute('data-align', align);
+
+        if (editable) {
+            var drag = document.createElement('span');
+            drag.className = 'Websites_block_drag';
+            drag.textContent = '⠿';
+            container.appendChild(drag);
+
+            var body = document.createElement('div');
+            body.className = 'Websites_block_body';
+
+            // Title
+            if (title || true) {
+                var titleEl = Q.Tool.setUpElement('div', 'Streams/inplace', {
+                    publisherId: ps.publisherId,
+                    streamName: ps.streamName,
+                    field: 'title',
+                    inplaceType: 'text',
+                    editable: true,
+                    placeholder: tool.text.block.TitlePlaceholder || 'Block title (optional)'
+                }, null, tool.prefix);
+                titleEl.className = 'Websites_block_title';
+                body.appendChild(titleEl);
+            }
+
+            // Content
+            var contentEl = Q.Tool.setUpElement('div', 'Streams/html', {
+                publisherId: ps.publisherId,
+                streamName: ps.streamName,
+                field: 'content',
+                placeholder: tool.text.block.ContentPlaceholder || 'Block content...',
+                editor: 'froala',
+                froala: {
+                    toolbarInline: true,
+                    charCounterCount: false,
+                    toolbarButtons: [
+                        'bold', 'italic', 'underline',
+                        '|', 'insertLink', 'insertImage',
+                        '|', 'clearFormatting'
+                    ],
+                    heightMin: 30
+                }
+            }, null, tool.prefix);
+            contentEl.className = 'Websites_block_content';
+            body.appendChild(contentEl);
+
+            container.appendChild(body);
+        } else {
+            if (title) {
+                var h = document.createElement('h4');
+                h.className = 'Websites_block_view_title';
+                h.textContent = title;
+                container.appendChild(h);
+            }
+            if (content) {
+                var div = document.createElement('div');
+                div.className = 'Websites_block_view_content';
+                if (format === 'markdown' && window.marked) {
+                    div.innerHTML = marked.parse(content);
+                } else {
+                    div.innerHTML = content;
+                }
+                container.appendChild(div);
+            }
+        }
+
+        Q.Tool.clear(tool.element);
+        tool.element.innerHTML = '';
+        tool.element.appendChild(container);
+        Q.activate(tool.element, function () {
+            Q.handle(tool.state.onRefresh, tool, [stream]);
+            Q.handle(onLoad, tool);
+        });
+    },
+
+    composer: function () {
+        var tool = this;
+        var ps = tool.preview.state;
+        var text = tool.text.block || {};
+
+        ps.creatable.preprocess = function (proceed) {
+            Q.Dialogs.push({
+                title: text.Add || 'Add Block',
+                className: 'Websites_block_composer_dialog',
+                content: '<div class="Websites_block_composer">'
+                    + '<label>' + (text.Title || 'Title') + '</label>'
+                    + '<input type="text" class="Websites_bc_title" '
+                    + 'placeholder="' + (text.TitlePlaceholder || 'Block title (optional)') + '" />'
+                    + '<label>' + (text.Content || 'Content') + '</label>'
+                    + '<textarea class="Websites_bc_text" rows="3" '
+                    + 'placeholder="' + (text.ContentPlaceholder || 'Content...') + '"></textarea>'
+                    + '<button class="Q_button Websites_bc_submit">'
+                    + (text.Add || 'Add Block') + '</button>'
+                    + '</div>',
+                onActivate: function (dialog) {
+                    $(dialog).find('.Websites_bc_submit').on(Q.Pointer.fastclick, function () {
+                        var title = $(dialog).find('.Websites_bc_title').val().trim();
+                        var content = $(dialog).find('.Websites_bc_text').val().trim();
+                        Q.Dialogs.pop();
+                        proceed({
+                            title: title,
+                            content: content ? '<p>' + content.replace(/\n/g, '</p><p>') + '</p>' : '',
+                            attributes: JSON.stringify({ format: 'html', span: 1 })
+                        });
+                    });
+                }
+            });
+        };
+        return false;
+    }
+});
+
+})(Q, Q.jQuery, window);

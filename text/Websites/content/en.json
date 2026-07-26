@@ -37,6 +37,35 @@
         "InvalidPDF": "File is not a valid PDF",
         "StartTypingTitleOrKeywords": "Start typing title or keywords..."
     },
+    "page": {
+        "Add": "Add Page",
+        "Title": "Page Title",
+        "Description": "Description",
+        "TitlePlaceholder": "Untitled Page",
+        "DescriptionPlaceholder": "Page description..."
+    },
+    "section": {
+        "Add": "Add Section",
+        "Heading": "Heading",
+        "HeadingPlaceholder": "Section heading (optional)",
+        "Layout": "Layout",
+        "Content": "Content",
+        "ContentPlaceholder": "Write content here...",
+        "layouts": {
+            "full": "Full width",
+            "two-col": "Two columns",
+            "three-col": "Three columns",
+            "sidebar-left": "Sidebar left",
+            "sidebar-right": "Sidebar right"
+        }
+    },
+    "block": {
+        "Add": "Add Block",
+        "Title": "Title",
+        "TitlePlaceholder": "Block title (optional)",
+        "Content": "Content",
+        "ContentPlaceholder": "Block content..."
+    },
     "types": {
         "Websites\/article": {
             "description": "An HTML document that various users can view and edit",

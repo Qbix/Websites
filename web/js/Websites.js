@@ -111,6 +111,21 @@ Q.onInit.set(function () {
 	'Websites/', ["Websites/content"]
 );
 Q.Tool.define({
+	 "Websites/page/preview": {
+        js: "{{Websites}}/js/tools/pagepreview.js",
+        css: "{{Websites}}/css/tools/page.css",
+        text: ["Websites/content"]
+    },
+    "Websites/section/preview": {
+        js: "{{Websites}}/js/tools/sectionpreview.js",
+        css: "{{Websites}}/css/tools/page.css",
+        text: ["Websites/content"]
+    },
+    "Websites/block/preview": {
+        js: "js/tools/blockpreview.js",
+        css: "css/tools/page.css",
+        text: ["Websites/content"]
+    },
 	"Websites/metadata": "{{Websites}}/js/tools/metadata.js",
 	"Websites/presentation": "{{Websites}}/js/tools/presentation.js",
 	"Websites/slide": "{{Websites}}/js/tools/slide.js",
