@@ -200,3 +200,237 @@
     padding: 12px; border: none; border-radius: 8px;
     font-size: 15px; font-weight: 600; cursor: pointer;
 }
+
+/* ═══════════════════════════════════════════════════════════
+   Section grid — responsive via data attributes
+   ═══════════════════════════════════════════════════════════ */
+.Websites_section_grid {
+    display: grid;
+    width: 100%;
+}
+
+@media (max-width: 1024px) {
+    .Websites_section_grid[data-grid-tablet] {
+        grid-template-columns: attr(data-grid-tablet) !important;
+    }
+}
+@media (max-width: 768px) {
+    .Websites_section_grid[data-grid-mobile] {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Section controls */
+.Websites_section_controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+.Websites_section_drag {
+    cursor: grab; font-size: 16px; opacity: 0.3;
+    user-select: none;
+}
+.Websites_section_drag:hover { opacity: 0.7; }
+.Websites_section_layout_btn {
+    padding: 4px 12px;
+    border: 1px solid rgba(128,128,128,0.25);
+    background: transparent;
+    border-radius: 6px;
+    font-size: 12px;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.15s;
+}
+.Websites_section_layout_btn:hover { opacity: 1; }
+
+.Websites_section_content_editor {
+    margin-bottom: 12px;
+    min-height: 20px;
+}
+
+.Websites_section_divider {
+    border: none;
+    border-top: 1px solid rgba(128,128,128,0.2);
+    margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Block role styling hints
+   ═══════════════════════════════════════════════════════════ */
+.Websites_block_role_heading .Websites_block_view_title_heading,
+.Websites_block_role_heading .Websites_block_title_heading .Q_inplace_tool_static {
+    font-size: 28px; font-weight: 700;
+}
+.Websites_block_role_stat {
+    text-align: center;
+}
+.Websites_block_role_stat .Websites_block_view_title_stat,
+.Websites_block_role_stat .Websites_block_title_stat .Q_inplace_tool_static {
+    font-size: 32px; font-weight: 700;
+}
+.Websites_block_role_quote .Websites_block_view_content {
+    font-size: 18px; font-style: italic; line-height: 1.6;
+}
+.Websites_block_role_attribution {
+    font-size: 14px; opacity: 0.7;
+}
+.Websites_block_role_logo img,
+.Websites_block_view_img_logo {
+    max-height: 48px; object-fit: contain; opacity: 0.6;
+}
+.Websites_block_role_logo:hover img,
+.Websites_block_view_img_logo:hover {
+    opacity: 1;
+}
+.Websites_block_view_img {
+    width: 100%; height: auto; border-radius: 8px;
+    object-fit: cover;
+}
+.Websites_block_role_card {
+    padding: 24px 20px;
+    border: 1px solid rgba(128,128,128,0.15);
+    border-radius: 12px;
+    transition: box-shadow 0.2s;
+}
+.Websites_block_role_card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+.Websites_block_role_pricing-card {
+    padding: 28px 24px;
+    border: 1px solid rgba(128,128,128,0.15);
+    border-radius: 14px;
+    text-align: center;
+}
+.Websites_block_role_team-member {
+    text-align: center;
+}
+.Websites_block_role_faq-item {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(128,128,128,0.12);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Layout picker dialog
+   ═══════════════════════════════════════════════════════════ */
+.Websites_layout_picker {
+    max-height: 60vh;
+    overflow-y: auto;
+    padding: 4px 0;
+}
+.Websites_lp_cat {
+    margin-bottom: 20px;
+}
+.Websites_lp_cat_title {
+    font-size: 13px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.05em; opacity: 0.5;
+    margin: 0 0 8px; padding: 0;
+}
+.Websites_lp_cat_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 8px;
+}
+.Websites_lp_option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 8px;
+    border: 1px solid rgba(128,128,128,0.2);
+    border-radius: 8px;
+    background: transparent;
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s;
+}
+.Websites_lp_option:hover {
+    border-color: var(--theme-brand, #6366f1);
+    background: rgba(99, 102, 241, 0.05);
+}
+.Websites_lp_thumb {
+    width: 72px;
+    height: 40px;
+    display: grid;
+    gap: 2px;
+    padding: 3px;
+    background: rgba(128,128,128,0.06);
+    border-radius: 4px;
+}
+.Websites_lp_thumb[data-cols="1"] { grid-template-columns: 1fr; }
+.Websites_lp_thumb[data-cols="2"] { grid-template-columns: 1fr 1fr; }
+.Websites_lp_thumb[data-cols="3"] { grid-template-columns: 1fr 1fr 1fr; }
+.Websites_lp_thumb[data-cols="4"] { grid-template-columns: 1fr 1fr 1fr 1fr; }
+.Websites_lp_thumb[data-cols="5"] { grid-template-columns: 1fr 1fr 1fr 1fr 1fr; }
+.Websites_lp_thumb[data-cols="6"] { grid-template-columns: repeat(6, 1fr); }
+.Websites_lp_thumb span {
+    background: rgba(128,128,128,0.2);
+    border-radius: 2px;
+    min-height: 8px;
+}
+.Websites_lp_name {
+    font-size: 10px; opacity: 0.6;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    max-width: 100%;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Websites/referral/preview
+   ═══════════════════════════════════════════════════════════ */
+.Websites_rp_container {
+    display: flex; align-items: center; gap: 10px;
+    padding: 12px 14px;
+    background: var(--theme-nav-bg, #fff);
+    border: 1px solid var(--theme-accent-1, #e2e8f0);
+    border-radius: 12px;
+    transition: transform 0.15s, box-shadow 0.15s;
+    cursor: pointer; margin-bottom: 6px;
+}
+.Websites_rp_container:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.Websites_rp_drag { cursor: grab; font-size: 16px; opacity: 0.3; user-select: none; flex-shrink: 0; }
+.Websites_rp_drag:hover { opacity: 0.7; }
+.Websites_rp_favicon { width: 28px; height: 28px; border-radius: 6px; flex-shrink: 0; object-fit: contain; }
+.Websites_rp_favicon_ph { width: 28px; height: 28px; line-height: 28px; text-align: center; font-size: 16px; flex-shrink: 0; }
+.Websites_rp_body { flex: 1; min-width: 0; }
+.Websites_rp_title { display: block; font-size: 15px; font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.Websites_rp_desc { display: block; font-size: 12px; opacity: 0.6; margin-top: 2px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.Websites_rp_dest { display: block; font-size: 11px; opacity: 0.4; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.Websites_rp_copy {
+    padding: 5px 12px; border: 1px solid rgba(128,128,128,0.25);
+    background: transparent; border-radius: 6px; font-size: 12px;
+    cursor: pointer; flex-shrink: 0; transition: background 0.15s;
+}
+.Websites_rp_copy:hover { background: rgba(128,128,128,0.08); }
+.Websites_rp_composer label { display: block; font-size: 13px; font-weight: 500; margin: 12px 0 4px; }
+.Websites_rp_composer label:first-child { margin-top: 0; }
+.Websites_rp_composer input {
+    display: block; width: 100%; padding: 10px 12px;
+    border: 1px solid rgba(128,128,128,0.3); border-radius: 8px;
+    font-size: 15px; box-sizing: border-box; background: transparent; color: inherit;
+}
+.Websites_rp_composer .Q_button {
+    display: block; width: 100%; margin-top: 16px; padding: 12px;
+    border: none; border-radius: 8px; font-size: 15px; font-weight: 600; cursor: pointer;
+}
+
+/* Block tool selector */
+.Websites_block_controls {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 4px;
+}
+.Websites_block_tool_select {
+    padding: 2px 8px;
+    border: 1px solid rgba(128,128,128,0.2);
+    border-radius: 4px;
+    font-size: 11px;
+    background: transparent;
+    color: inherit;
+    opacity: 0.4;
+    cursor: pointer;
+    transition: opacity 0.15s;
+}
+.Websites_block_tool_select:hover { opacity: 1; }
+.Websites_block_edit:hover .Websites_block_tool_select { opacity: 0.7; }

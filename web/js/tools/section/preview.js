@@ -1,11 +1,12 @@
 (function (Q, $, window, undefined) {
 
+var _layouts = null; // cached layouts.json
+
 /**
- * Preview for Websites/section streams — full-width content bands.
- * View mode: renders HTML or Markdown content.
- * Edit mode: Streams/inplace for heading, Streams/html for content,
- *   layout selector, background/padding controls.
- * Contains Websites/blocks as children via Streams/related.
+ * Preview for Websites/section streams.
+ * Reads layout from attributes, applies CSS grid,
+ * pre-creates blocks on first render, supports layout switching.
+ * Blocks edited by tapping (Streams/html or Streams/markdown).
  * @class Websites/section/preview
  * @constructor
  */
@@ -19,59 +20,134 @@ function _Websites_section_preview(options, preview) {
 },
 
 {
+    layoutsUrl: '{{Websites}}/data/layouts.json',
     onRefresh: new Q.Event()
 },
 
 {
     refresh: function (stream, onLoad) {
         var tool = this;
+        tool._stream = stream;
+        tool._loadLayouts(function (layouts) {
+            tool._render(stream, layouts, onLoad);
+        });
+    },
+
+    _loadLayouts: function (callback) {
+        if (_layouts) return callback(_layouts);
+        Q.request(this.state.layoutsUrl, function (err, data) {
+            _layouts = data || {};
+            callback(_layouts);
+        }, { skipNonce: true });
+    },
+
+    _render: function (stream, layouts, onLoad) {
+        var tool = this;
         var ps = tool.preview.state;
         var editable = stream.testWriteLevel('edit');
+        var attrs = stream.getAllAttributes();
+        var layoutKey = attrs.layout || 'text-full';
+        var layout = layouts[layoutKey] || layouts['text-full'] || {};
+        var bg = attrs.background || '';
+        var customPadding = attrs.padding || layout.padding || '60px 24px';
         var content = stream.fields.content || '';
         var title = stream.fields.title || '';
-        var attrs = stream.getAllAttributes();
-        var format = attrs.format || 'html';
-        var layout = attrs.layout || 'full';
-        var bg = attrs.background || '';
-        var padding = attrs.padding || '';
+        var text = tool.text || {};
+        var sectionsText = Q.getObject('Websites.sections', Q.text) || {};
 
         var container = document.createElement('div');
         container.className = 'Websites_section_preview'
-            + (editable ? ' Websites_section_edit' : ' Websites_section_view')
-            + ' Websites_section_layout_' + layout;
+            + (editable ? ' Websites_section_edit' : ' Websites_section_view');
+        container.setAttribute('data-layout', layoutKey);
         if (bg) container.style.background = bg;
-        if (padding) container.style.padding = padding;
+        container.style.padding = customPadding;
 
+        if (layout.align) container.style.textAlign = layout.align;
+        if (layout.maxWidth) {
+            container.style.maxWidth = layout.maxWidth;
+            container.style.marginLeft = 'auto';
+            container.style.marginRight = 'auto';
+        }
+        if (layout.minHeight) container.style.minHeight = layout.minHeight;
+
+        // Special layouts
+        if (layout.separator) {
+            container.innerHTML = '<hr class="Websites_section_divider">';
+            tool.element.innerHTML = '';
+            tool.element.appendChild(container);
+            Q.handle(onLoad, tool);
+            return;
+        }
+        if (layout.empty) {
+            tool.element.innerHTML = '';
+            tool.element.appendChild(container);
+            Q.handle(onLoad, tool);
+            return;
+        }
+
+        // ── Edit controls ──
         if (editable) {
-            // Drag handle
-            var drag = document.createElement('span');
-            drag.className = 'Websites_section_drag';
-            drag.title = 'Drag to reorder';
-            drag.textContent = '⠿';
-            container.appendChild(drag);
+            var controls = document.createElement('div');
+            controls.className = 'Websites_section_controls';
 
-            var body = document.createElement('div');
-            body.className = 'Websites_section_body';
+            var dragHandle = document.createElement('span');
+            dragHandle.className = 'Websites_section_drag';
+            dragHandle.textContent = '⠿';
+            controls.appendChild(dragHandle);
 
-            // Title via Streams/inplace
+            // Layout change button
+            var layoutBtn = document.createElement('button');
+            layoutBtn.className = 'Websites_section_layout_btn';
+            layoutBtn.textContent = (sectionsText.actions && sectionsText.actions.ChangeLayout) || 'Layout';
+            layoutBtn.addEventListener(Q.Pointer.fastclick, function () {
+                tool._showLayoutPicker(layouts, sectionsText);
+            });
+            controls.appendChild(layoutBtn);
+
+            container.appendChild(controls);
+        }
+
+        // ── Section heading (if present or editable) ──
+        if (editable && !layout.separator && !layout.empty) {
             var titleEl = Q.Tool.setUpElement('div', 'Streams/inplace', {
                 publisherId: ps.publisherId,
                 streamName: ps.streamName,
                 field: 'title',
                 inplaceType: 'text',
                 editable: true,
-                placeholder: tool.text.section.HeadingPlaceholder || 'Section heading (optional)'
+                placeholder: (sectionsText.actions && sectionsText.actions.HeadingPlaceholder)
+                    || 'Section heading (optional)'
             }, null, tool.prefix);
             titleEl.className = 'Websites_section_title';
-            body.appendChild(titleEl);
+            container.appendChild(titleEl);
+        } else if (title) {
+            var h = document.createElement('h3');
+            h.className = 'Websites_section_view_title';
+            h.textContent = title;
+            container.appendChild(h);
+        }
 
-            // Content via Streams/html
-            var contentEl = Q.Tool.setUpElement('div', 'Streams/html', {
+        // ── Section own content (optional preamble) ──
+        if (content && !editable) {
+            var contentDiv = document.createElement('div');
+            contentDiv.className = 'Websites_section_view_content';
+            var format = attrs.format || 'html';
+            if (format === 'markdown' && window.marked) {
+                contentDiv.innerHTML = marked.parse(content);
+            } else {
+                contentDiv.innerHTML = content;
+            }
+            container.appendChild(contentDiv);
+        } else if (editable && !layout.separator && !layout.empty) {
+            var format = attrs.format || 'html';
+            var editorTool = format === 'markdown' ? 'Streams/markdown' : 'Streams/html';
+            var editorEl = Q.Tool.setUpElement('div', editorTool, {
                 publisherId: ps.publisherId,
                 streamName: ps.streamName,
                 field: 'content',
-                placeholder: tool.text.section.ContentPlaceholder || 'Section content...',
-                editor: 'froala',
+                editable: true,
+                placeholder: 'Section content (optional)...',
+                livePreview: false,
                 froala: {
                     toolbarInline: true,
                     charCounterCount: false,
@@ -84,118 +160,215 @@ function _Websites_section_preview(options, preview) {
                     heightMin: 40
                 }
             }, null, tool.prefix);
-            contentEl.className = 'Websites_section_content';
-            body.appendChild(contentEl);
-
-            // Blocks (children) via Streams/related
-            var blocksEl = Q.Tool.setUpElement('div', 'Streams/related', {
-                publisherId: ps.publisherId,
-                streamName: ps.streamName,
-                relationType: 'Websites/blocks',
-                isCategory: true,
-                editable: true,
-                closeable: true,
-                sortable: true,
-                realtime: true,
-                creatable: {
-                    'Websites/block': {
-                        title: tool.text.block.Add || 'Add Block'
-                    }
-                }
-            }, null, tool.prefix);
-            blocksEl.className = 'Websites_section_blocks';
-            body.appendChild(blocksEl);
-
-            container.appendChild(body);
-        } else {
-            // View mode
-            if (title) {
-                var h = document.createElement('h3');
-                h.className = 'Websites_section_view_title';
-                h.textContent = title;
-                container.appendChild(h);
-            }
-
-            if (content) {
-                var div = document.createElement('div');
-                div.className = 'Websites_section_view_content';
-                if (format === 'markdown' && window.marked) {
-                    div.innerHTML = marked.parse(content);
-                } else {
-                    div.innerHTML = content;
-                }
-                container.appendChild(div);
-            }
-
-            // Render blocks (read-only)
-            var blocksEl = Q.Tool.setUpElement('div', 'Streams/related', {
-                publisherId: ps.publisherId,
-                streamName: ps.streamName,
-                relationType: 'Websites/blocks',
-                isCategory: true,
-                editable: false,
-                sortable: false,
-                realtime: false
-            }, null, tool.prefix);
-            blocksEl.className = 'Websites_section_blocks Websites_section_blocks_' + layout;
-            container.appendChild(blocksEl);
+            editorEl.className = 'Websites_section_content_editor';
+            container.appendChild(editorEl);
         }
+
+        // ── Blocks grid ──
+        var gridContainer = document.createElement('div');
+        gridContainer.className = 'Websites_section_grid';
+
+        // Apply grid CSS from layout
+        if (layout.gridTemplate) {
+            gridContainer.style.gridTemplateAreas = layout.gridTemplate;
+            if (layout.gridTemplateColumns) {
+                gridContainer.style.gridTemplateColumns = layout.gridTemplateColumns;
+            }
+        } else if (layout.grid) {
+            gridContainer.style.gridTemplateColumns = layout.grid;
+        }
+        if (layout.gap) gridContainer.style.gap = layout.gap;
+        if (layout.verticalAlign) gridContainer.style.alignItems = layout.verticalAlign;
+
+        // Responsive data attributes for CSS media queries
+        if (layout.gridTablet) gridContainer.setAttribute('data-grid-tablet', layout.gridTablet);
+        if (layout.gridMobile) gridContainer.setAttribute('data-grid-mobile', layout.gridMobile);
+
+        // Render blocks via Streams/related
+        var blocksEl = Q.Tool.setUpElement('div', 'Streams/related', {
+            publisherId: ps.publisherId,
+            streamName: ps.streamName,
+            relationType: 'Websites/blocks',
+            isCategory: true,
+            editable: editable,
+            closeable: editable,
+            sortable: editable,
+            realtime: true,
+            creatable: editable ? {
+                'Websites/block': {
+                    title: (sectionsText.roles && sectionsText.roles.block) || 'Add Block'
+                }
+            } : false
+        }, null, tool.prefix);
+        gridContainer.appendChild(blocksEl);
+        container.appendChild(gridContainer);
 
         Q.Tool.clear(tool.element);
         tool.element.innerHTML = '';
         tool.element.appendChild(container);
         Q.activate(tool.element, function () {
+            // Pre-create blocks if none exist yet
+            if (editable && layout.blocks && layout.blocks.length) {
+                tool._ensureBlocks(stream, layout);
+            }
             Q.handle(tool.state.onRefresh, tool, [stream]);
             Q.handle(onLoad, tool);
+        });
+    },
+
+    _ensureBlocks: function (stream, layout) {
+        var tool = this;
+        var ps = tool.preview.state;
+        Q.Streams.related(ps.publisherId, ps.streamName, 'Websites/blocks', true, {
+            limit: 1
+        }, function () {
+            if (this.relatedStreams && Object.keys(this.relatedStreams).length > 0) {
+                return; // blocks already exist
+            }
+            layout.blocks.forEach(function (blockDef, i) {
+                Q.Streams.create({
+                    publisherId: ps.publisherId,
+                    type: 'Websites/block',
+                    title: '',
+                    content: '',
+                    attributes: { role: blockDef.role, format: 'html', span: blockDef.span || 1 },
+                    relate: {
+                        publisherId: ps.publisherId,
+                        streamName: ps.streamName,
+                        type: 'Websites/blocks',
+                        weight: (i + 1) * 1000
+                    },
+                    inheritAccess: JSON.stringify([[ps.publisherId, ps.streamName]])
+                });
+            });
+        });
+    },
+
+    _showLayoutPicker: function (layouts, sectionsText) {
+        var tool = this;
+        var categories = layouts._categories || {};
+        var catNames = (sectionsText.categories) || {};
+        var layoutNames = (sectionsText.layouts) || {};
+
+        var html = '<div class="Websites_layout_picker">';
+        var catOrder = Object.keys(categories).sort(function (a, b) {
+            return (categories[a].order || 99) - (categories[b].order || 99);
+        });
+
+        catOrder.forEach(function (cat) {
+            var catLayouts = Object.keys(layouts).filter(function (k) {
+                return k !== '_categories' && layouts[k].category === cat;
+            });
+            if (!catLayouts.length) return;
+
+            html += '<div class="Websites_lp_cat">';
+            html += '<h4 class="Websites_lp_cat_title">' + (catNames[cat] || cat) + '</h4>';
+            html += '<div class="Websites_lp_cat_grid">';
+            catLayouts.forEach(function (key) {
+                var l = layouts[key];
+                var blockCount = (l.blocks || []).length;
+                var cols = (l.grid || '1fr').split(' ').length;
+                html += '<button class="Websites_lp_option" data-layout="' + key + '">'
+                    + '<div class="Websites_lp_thumb" data-cols="' + cols + '" data-blocks="' + blockCount + '">';
+                for (var i = 0; i < Math.min(blockCount, 6); i++) {
+                    html += '<span></span>';
+                }
+                html += '</div>'
+                    + '<span class="Websites_lp_name">' + (layoutNames[key] || key) + '</span>'
+                    + '</button>';
+            });
+            html += '</div></div>';
+        });
+        html += '</div>';
+
+        Q.Dialogs.push({
+            title: (sectionsText.actions && sectionsText.actions.PickLayout) || 'Pick a layout',
+            content: html,
+            className: 'Websites_layout_picker_dialog',
+            onActivate: function (dialog) {
+                $(dialog).find('.Websites_lp_option').on(Q.Pointer.fastclick, function () {
+                    var newLayout = $(this).data('layout');
+                    var stream = tool._stream;
+                    if (stream && newLayout) {
+                        stream.setAttribute('layout', newLayout);
+                        stream.save(function () {
+                            tool.refresh.call(tool, stream);
+                        });
+                    }
+                    Q.Dialogs.pop();
+                });
+            }
         });
     },
 
     composer: function () {
         var tool = this;
         var ps = tool.preview.state;
-        var text = tool.text.section || {};
+        var sectionsText = Q.getObject('Websites.sections', Q.text) || {};
 
         ps.creatable.preprocess = function (proceed) {
-            Q.Dialogs.push({
-                title: text.Add || 'Add Section',
-                className: 'Websites_section_composer_dialog',
-                content: '<div class="Websites_section_composer">'
-                    + '<label>' + (text.Heading || 'Heading') + '</label>'
-                    + '<input type="text" class="Websites_sc_heading" '
-                    + 'placeholder="' + (text.HeadingPlaceholder || 'Section heading (optional)') + '" />'
-                    + '<label>' + (text.Layout || 'Layout') + '</label>'
-                    + '<select class="Websites_sc_layout">'
-                    + '<option value="full">Full width</option>'
-                    + '<option value="two-col">Two columns</option>'
-                    + '<option value="three-col">Three columns</option>'
-                    + '<option value="sidebar-left">Sidebar left</option>'
-                    + '<option value="sidebar-right">Sidebar right</option>'
-                    + '</select>'
-                    + '<label>' + (text.Content || 'Content') + '</label>'
-                    + '<textarea class="Websites_sc_text" rows="3" '
-                    + 'placeholder="' + (text.ContentPlaceholder || 'Write content here...') + '"></textarea>'
-                    + '<button class="Q_button Websites_sc_submit">'
-                    + (text.Add || 'Add Section') + '</button>'
-                    + '</div>',
-                onActivate: function (dialog) {
-                    $(dialog).find('.Websites_sc_submit').on(Q.Pointer.fastclick, function () {
-                        var heading = $(dialog).find('.Websites_sc_heading').val().trim();
-                        var layout = $(dialog).find('.Websites_sc_layout').val();
-                        var content = $(dialog).find('.Websites_sc_text').val().trim();
-                        Q.Dialogs.pop();
-                        proceed({
-                            title: heading,
-                            content: content ? '<p>' + content.replace(/\n/g, '</p><p>') + '</p>' : '',
-                            attributes: JSON.stringify({
-                                layout: layout,
-                                format: 'html'
-                            })
-                        });
-                    });
-                }
+            tool._loadLayouts(function (layouts) {
+                tool._showLayoutPickerForCreate(layouts, sectionsText, proceed);
             });
         };
         return false;
+    },
+
+    _showLayoutPickerForCreate: function (layouts, sectionsText, proceed) {
+        var categories = layouts._categories || {};
+        var catNames = (sectionsText.categories) || {};
+        var layoutNames = (sectionsText.layouts) || {};
+
+        var html = '<div class="Websites_layout_picker">';
+        var catOrder = Object.keys(categories).sort(function (a, b) {
+            return (categories[a].order || 99) - (categories[b].order || 99);
+        });
+
+        catOrder.forEach(function (cat) {
+            var catLayouts = Object.keys(layouts).filter(function (k) {
+                return k !== '_categories' && layouts[k].category === cat;
+            });
+            if (!catLayouts.length) return;
+
+            html += '<div class="Websites_lp_cat">';
+            html += '<h4 class="Websites_lp_cat_title">' + (catNames[cat] || cat) + '</h4>';
+            html += '<div class="Websites_lp_cat_grid">';
+            catLayouts.forEach(function (key) {
+                var l = layouts[key];
+                var blockCount = (l.blocks || []).length;
+                var cols = (l.grid || '1fr').split(' ').length;
+                html += '<button class="Websites_lp_option" data-layout="' + key + '">'
+                    + '<div class="Websites_lp_thumb" data-cols="' + cols + '" data-blocks="' + blockCount + '">';
+                for (var i = 0; i < Math.min(blockCount, 6); i++) {
+                    html += '<span></span>';
+                }
+                html += '</div>'
+                    + '<span class="Websites_lp_name">' + (layoutNames[key] || key) + '</span>'
+                    + '</button>';
+            });
+            html += '</div></div>';
+        });
+        html += '</div>';
+
+        Q.Dialogs.push({
+            title: (sectionsText.actions && sectionsText.actions.AddSection) || 'Add Section',
+            content: html,
+            className: 'Websites_layout_picker_dialog',
+            onActivate: function (dialog) {
+                $(dialog).find('.Websites_lp_option').on(Q.Pointer.fastclick, function () {
+                    var layoutKey = $(this).data('layout');
+                    Q.Dialogs.pop();
+                    proceed({
+                        title: '',
+                        content: '',
+                        attributes: JSON.stringify({
+                            layout: layoutKey,
+                            format: 'html'
+                        })
+                    });
+                });
+            }
+        });
     }
 });
 

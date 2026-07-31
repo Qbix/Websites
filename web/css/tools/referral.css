@@ -1,0 +1,189 @@
+/* ═══════════════════════════════════════════════════
+   Websites/referral tool (full dashboard)
+   ═══════════════════════════════════════════════════ */
+.Websites_ref_tool {
+    font-size: 14px;
+}
+
+/* Header */
+.Websites_ref_header {
+    margin-bottom: 20px;
+}
+.Websites_ref_url_row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    background: rgba(128,128,128,0.06);
+    border-radius: 10px;
+    margin-bottom: 6px;
+}
+.Websites_ref_url {
+    flex: 1;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 14px;
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.Websites_ref_copy {
+    padding: 5px 14px;
+    border: 1px solid rgba(128,128,128,0.25);
+    background: transparent;
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background 0.15s;
+}
+.Websites_ref_copy:hover { background: rgba(128,128,128,0.08); }
+.Websites_ref_dest {
+    font-size: 13px;
+    opacity: 0.5;
+    padding: 0 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Stats row */
+.Websites_ref_stats {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+.Websites_ref_stat {
+    flex: 1;
+    padding: 16px 14px;
+    background: rgba(128,128,128,0.04);
+    border: 1px solid rgba(128,128,128,0.12);
+    border-radius: 10px;
+    text-align: center;
+}
+.Websites_ref_stat_num {
+    display: block;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.Websites_ref_stat_label {
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    opacity: 0.5;
+}
+
+/* Panels */
+.Websites_ref_panel {
+    border: 1px solid rgba(128,128,128,0.15);
+    border-radius: 10px;
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+.Websites_ref_panel summary {
+    padding: 10px 14px;
+    background: rgba(128,128,128,0.04);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    user-select: none;
+}
+.Websites_ref_panel[open] summary {
+    border-bottom: 1px solid rgba(128,128,128,0.12);
+}
+.Websites_ref_panel_inner {
+    padding: 14px;
+}
+
+/* Metadata editor */
+.Websites_ref_meta_row {
+    margin-bottom: 10px;
+}
+.Websites_ref_meta_row label {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 3px;
+    opacity: 0.7;
+}
+.Websites_ref_meta_row input {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid rgba(128,128,128,0.25);
+    border-radius: 6px;
+    font-size: 14px;
+    background: transparent;
+    color: inherit;
+    box-sizing: border-box;
+}
+.Websites_ref_meta_row input:focus {
+    outline: none;
+    border-color: var(--theme-brand, #6366f1);
+}
+
+/* Click log */
+.Websites_ref_clicks {
+    margin-top: 16px;
+}
+.Websites_ref_section_title {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 0 10px;
+}
+.Websites_ref_click_grid {
+    border: 1px solid rgba(128,128,128,0.12);
+    border-radius: 10px;
+    overflow: hidden;
+}
+.Websites_ref_click_header,
+.Websites_ref_click_row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 8px;
+    padding: 8px 12px;
+    font-size: 13px;
+    align-items: center;
+}
+.Websites_ref_click_header {
+    background: rgba(128,128,128,0.06);
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    opacity: 0.6;
+}
+.Websites_ref_click_row {
+    border-top: 1px solid rgba(128,128,128,0.08);
+}
+.Websites_ref_click_row:nth-child(even) {
+    background: rgba(128,128,128,0.02);
+}
+.Websites_ref_click_time {
+    font-family: 'SF Mono', monospace;
+    font-size: 12px;
+    opacity: 0.7;
+}
+.Websites_ref_click_platform,
+.Websites_ref_click_device {
+    font-size: 13px;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .Websites_ref_stats {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .Websites_ref_click_header,
+    .Websites_ref_click_row {
+        grid-template-columns: 1fr 1fr;
+    }
+    .Websites_ref_click_header span:first-child,
+    .Websites_ref_click_row .Websites_ref_click_time {
+        grid-column: 1 / -1;
+    }
+}
