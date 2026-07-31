@@ -119,7 +119,47 @@ Q.Tool.define({
 	"Websites/webpage/preview": "{{Websites}}/js/tools/webpage/preview.js",
 	"Websites/webpage/chat": "{{Websites}}/js/tools/webpage/chat.js",
 	"Websites/advert/campaign/preview": "{{Websites}}/js/tools/advert/campaign/preview.js",
-	"Websites/advert/campaigns": function () {}
+	"Websites/advert/campaigns": function () {},
+	"Websites/page/preview": {
+        js: "{{Websites}}/js/tools/page/preview.js",
+        css: "{{Websites}}/css/tools/page.css",
+        text: ["Websites/content"]
+    },
+    "Websites/section/preview": {
+        js: "{{Websites}}/js/tools/section/preview.js",
+        css: "{{Websites}}/css/tools/page.css",
+        text: ["Websites/content"]
+    },
+    "Websites/block/preview": {
+        js: "{{Websites}}/js/tools/block/preview.js",
+        css: "{{Websites}}/css/tools/page.css",
+        text: ["Websites/content"]
+    },
+	"Websites/referral/preview": {
+        js: "{{Websites}}/js/tools/referral/preview.js",
+        css: "{{Websites}}/css/tools/page.css",
+        text: ["Websites/content"]
+    },
+	"Websites/referral": {
+        js: "{{Websites}}/js/tools/referral.js",
+        css: "{{Websites}}/css/tools/referral.css",
+        text: ["Websites/content"]
+    }
+});
+
+Q.Streams.define("Websites/page", function (fields) {
+    // authored page stream
+});
+
+Q.Streams.define("Websites/section", function (fields) {
+    // section stream (horizontal band)
+});
+
+Q.Streams.define("Websites/block", function (fields) {
+    // content block within a section
+});
+Q.Streams.define("Websites/referral", function (fields) {
+    // referral link stream
 });
 
 Q.Streams.Chat.extensions.push('Websites/webpage/chat');

@@ -1,0 +1,703 @@
+{
+    "_categories": {
+        "hero": { "order": 1 },
+        "content": { "order": 2 },
+        "features": { "order": 3 },
+        "cards": { "order": 4 },
+        "stats": { "order": 5 },
+        "gallery": { "order": 6 },
+        "testimonials": { "order": 7 },
+        "cta": { "order": 8 },
+        "pricing": { "order": 9 },
+        "team": { "order": 10 },
+        "faq": { "order": 11 },
+        "logo-bar": { "order": 12 },
+        "footer": { "order": 13 }
+    },
+
+    "hero-centered": {
+        "category": "hero",
+        "grid": "1fr",
+        "align": "center",
+        "blocks": [
+            { "role": "heading", "tag": "h1" },
+            { "role": "text" },
+            { "role": "action" }
+        ],
+        "minHeight": "60vh",
+        "padding": "80px 24px"
+    },
+    "hero-centered-image": {
+        "category": "hero",
+        "grid": "1fr",
+        "align": "center",
+        "blocks": [
+            { "role": "heading", "tag": "h1" },
+            { "role": "text" },
+            { "role": "action" },
+            { "role": "media", "fullWidth": true }
+        ],
+        "minHeight": "60vh",
+        "padding": "80px 24px 0"
+    },
+    "hero-split": {
+        "category": "hero",
+        "grid": "1fr 1fr",
+        "gridMobile": "1fr",
+        "gap": "48px",
+        "verticalAlign": "center",
+        "blocks": [
+            { "role": "content" },
+            { "role": "media" }
+        ],
+        "minHeight": "60vh",
+        "padding": "80px 24px"
+    },
+    "hero-split-reverse": {
+        "category": "hero",
+        "grid": "1fr 1fr",
+        "gridMobile": "1fr",
+        "gap": "48px",
+        "verticalAlign": "center",
+        "blocks": [
+            { "role": "media" },
+            { "role": "content" }
+        ],
+        "minHeight": "60vh",
+        "padding": "80px 24px"
+    },
+    "hero-full-bg": {
+        "category": "hero",
+        "grid": "1fr",
+        "align": "center",
+        "blocks": [
+            { "role": "heading", "tag": "h1" },
+            { "role": "text" },
+            { "role": "action" }
+        ],
+        "minHeight": "80vh",
+        "padding": "120px 24px",
+        "backgroundType": "image",
+        "overlay": true
+    },
+    "hero-video": {
+        "category": "hero",
+        "grid": "1fr",
+        "align": "center",
+        "blocks": [
+            { "role": "heading", "tag": "h1" },
+            { "role": "text" },
+            { "role": "action" }
+        ],
+        "minHeight": "80vh",
+        "padding": "120px 24px",
+        "backgroundType": "video",
+        "overlay": true
+    },
+
+    "text-full": {
+        "category": "content",
+        "grid": "1fr",
+        "maxWidth": "720px",
+        "blocks": [
+            { "role": "text" }
+        ],
+        "padding": "60px 24px"
+    },
+    "text-heading": {
+        "category": "content",
+        "grid": "1fr",
+        "maxWidth": "720px",
+        "blocks": [
+            { "role": "heading", "tag": "h2" },
+            { "role": "text" }
+        ],
+        "padding": "60px 24px"
+    },
+    "text-image-left": {
+        "category": "content",
+        "grid": "5fr 7fr",
+        "gridMobile": "1fr",
+        "gap": "40px",
+        "verticalAlign": "center",
+        "blocks": [
+            { "role": "media" },
+            { "role": "text" }
+        ],
+        "padding": "60px 24px"
+    },
+    "text-image-right": {
+        "category": "content",
+        "grid": "7fr 5fr",
+        "gridMobile": "1fr",
+        "gap": "40px",
+        "verticalAlign": "center",
+        "blocks": [
+            { "role": "text" },
+            { "role": "media" }
+        ],
+        "padding": "60px 24px"
+    },
+    "text-2col": {
+        "category": "content",
+        "grid": "1fr 1fr",
+        "gridMobile": "1fr",
+        "gap": "32px",
+        "blocks": [
+            { "role": "text" },
+            { "role": "text" }
+        ],
+        "padding": "60px 24px"
+    },
+    "sidebar-left": {
+        "category": "content",
+        "grid": "280px 1fr",
+        "gridMobile": "1fr",
+        "gap": "32px",
+        "blocks": [
+            { "role": "sidebar" },
+            { "role": "text" }
+        ],
+        "padding": "60px 24px"
+    },
+    "sidebar-right": {
+        "category": "content",
+        "grid": "1fr 280px",
+        "gridMobile": "1fr",
+        "gap": "32px",
+        "blocks": [
+            { "role": "text" },
+            { "role": "sidebar" }
+        ],
+        "padding": "60px 24px"
+    },
+    "text-narrow": {
+        "category": "content",
+        "grid": "1fr",
+        "maxWidth": "520px",
+        "align": "center",
+        "blocks": [
+            { "role": "heading", "tag": "h2" },
+            { "role": "text" }
+        ],
+        "padding": "60px 24px"
+    },
+
+    "features-2": {
+        "category": "features",
+        "grid": "1fr 1fr",
+        "gridMobile": "1fr",
+        "gap": "24px",
+        "blocks": [
+            { "role": "feature" },
+            { "role": "feature" }
+        ],
+        "padding": "60px 24px"
+    },
+    "features-3": {
+        "category": "features",
+        "grid": "1fr 1fr 1fr",
+        "gridTablet": "1fr 1fr",
+        "gridMobile": "1fr",
+        "gap": "24px",
+        "blocks": [
+            { "role": "feature" },
+            { "role": "feature" },
+            { "role": "feature" }
+        ],
+        "padding": "60px 24px"
+    },
+    "features-4": {
+        "category": "features",
+        "grid": "1fr 1fr 1fr 1fr",
+        "gridTablet": "1fr 1fr",
+        "gridMobile": "1fr",
+        "gap": "24px",
+        "blocks": [
+            { "role": "feature" },
+            { "role": "feature" },
+            { "role": "feature" },
+            { "role": "feature" }
+        ],
+        "padding": "60px 24px"
+    },
+    "features-heading-3": {
+        "category": "features",
+        "grid": "1fr",
+        "blocks": [
+            { "role": "heading", "tag": "h2", "align": "center" }
+        ],
+        "subgrid": {
+            "grid": "1fr 1fr 1fr",
+            "gridTablet": "1fr 1fr",
+            "gridMobile": "1fr",
+            "gap": "24px",
+            "blocks": [
+                { "role": "feature" },
+                { "role": "feature" },
+                { "role": "feature" }
+            ]
+        },
+        "padding": "60px 24px"
+    },
+    "features-large-left": {
+        "category": "features",
+        "grid": "2fr 1fr",
+        "gridMobile": "1fr",
+        "gap": "32px",
+        "verticalAlign": "center",
+        "blocks": [
+            { "role": "media" },
+            { "role": "feature-list" }
+        ],
+        "padding": "60px 24px"
+    },
+    "features-large-right": {
+        "category": "features",
+        "grid": "1fr 2fr",
+        "gridMobile": "1fr",
+        "gap": "32px",
+        "verticalAlign": "center",
+        "blocks": [
+            { "role": "feature-list" },
+            { "role": "media" }
+        ],
+        "padding": "60px 24px"
+    },
+    "features-icons-3": {
+        "category": "features",
+        "grid": "1fr 1fr 1fr",
+        "gridTablet": "1fr 1fr",
+        "gridMobile": "1fr",
+        "gap": "32px",
+        "align": "center",
+        "blocks": [
+            { "role": "icon-feature" },
+            { "role": "icon-feature" },
+            { "role": "icon-feature" }
+        ],
+        "padding": "60px 24px"
+    },
+
+    "cards-2": {
+        "category": "cards",
+        "grid": "1fr 1fr",
+        "gridMobile": "1fr",
+        "gap": "20px",
+        "blocks": [
+            { "role": "card" },
+            { "role": "card" }
+        ],
+        "padding": "60px 24px"
+    },
+    "cards-3": {
+        "category": "cards",
+        "grid": "1fr 1fr 1fr",
+        "gridTablet": "1fr 1fr",
+        "gridMobile": "1fr",
+        "gap": "20px",
+        "blocks": [
+            { "role": "card" },
+            { "role": "card" },
+            { "role": "card" }
+        ],
+        "padding": "60px 24px"
+    },
+    "cards-4": {
+        "category": "cards",
+        "grid": "1fr 1fr 1fr 1fr",
+        "gridTablet": "1fr 1fr",
+        "gridMobile": "1fr",
+        "gap": "20px",
+        "blocks": [
+            { "role": "card" },
+            { "role": "card" },
+            { "role": "card" },
+            { "role": "card" }
+        ],
+        "padding": "60px 24px"
+    },
+    "cards-heading-3": {
+        "category": "cards",
+        "grid": "1fr",
+        "blocks": [
+            { "role": "heading", "tag": "h2", "align": "center" }
+        ],
+        "subgrid": {
+            "grid": "1fr 1fr 1fr",
+            "gridTablet": "1fr 1fr",
+            "gridMobile": "1fr",
+            "gap": "20px",
+            "blocks": [
+                { "role": "card" },
+                { "role": "card" },
+                { "role": "card" }
+            ]
+        },
+        "padding": "60px 24px"
+    },
+
+    "stats-3": {
+        "category": "stats",
+        "grid": "1fr 1fr 1fr",
+        "gridMobile": "1fr",
+        "gap": "16px",
+        "align": "center",
+        "blocks": [
+            { "role": "stat" },
+            { "role": "stat" },
+            { "role": "stat" }
+        ],
+        "padding": "48px 24px"
+    },
+    "stats-4": {
+        "category": "stats",
+        "grid": "1fr 1fr 1fr 1fr",
+        "gridTablet": "1fr 1fr",
+        "gridMobile": "1fr 1fr",
+        "gap": "16px",
+        "align": "center",
+        "blocks": [
+            { "role": "stat" },
+            { "role": "stat" },
+            { "role": "stat" },
+            { "role": "stat" }
+        ],
+        "padding": "48px 24px"
+    },
+    "stats-row-bg": {
+        "category": "stats",
+        "grid": "1fr 1fr 1fr 1fr",
+        "gridTablet": "1fr 1fr",
+        "gridMobile": "1fr 1fr",
+        "gap": "16px",
+        "align": "center",
+        "blocks": [
+            { "role": "stat" },
+            { "role": "stat" },
+            { "role": "stat" },
+            { "role": "stat" }
+        ],
+        "padding": "48px 24px",
+        "backgroundType": "tinted"
+    },
+
+    "gallery-2": {
+        "category": "gallery",
+        "grid": "1fr 1fr",
+        "gridMobile": "1fr",
+        "gap": "8px",
+        "blocks": [
+            { "role": "media" },
+            { "role": "media" }
+        ],
+        "padding": "24px"
+    },
+    "gallery-3": {
+        "category": "gallery",
+        "grid": "1fr 1fr 1fr",
+        "gridMobile": "1fr",
+        "gap": "8px",
+        "blocks": [
+            { "role": "media" },
+            { "role": "media" },
+            { "role": "media" }
+        ],
+        "padding": "24px"
+    },
+    "gallery-4": {
+        "category": "gallery",
+        "grid": "1fr 1fr 1fr 1fr",
+        "gridTablet": "1fr 1fr",
+        "gridMobile": "1fr 1fr",
+        "gap": "8px",
+        "blocks": [
+            { "role": "media" },
+            { "role": "media" },
+            { "role": "media" },
+            { "role": "media" }
+        ],
+        "padding": "24px"
+    },
+    "gallery-masonry": {
+        "category": "gallery",
+        "grid": "1fr 1fr 1fr",
+        "gridMobile": "1fr 1fr",
+        "gap": "8px",
+        "masonry": true,
+        "blocks": [
+            { "role": "media" },
+            { "role": "media" },
+            { "role": "media" },
+            { "role": "media" },
+            { "role": "media" },
+            { "role": "media" }
+        ],
+        "padding": "24px"
+    },
+    "gallery-hero-grid": {
+        "category": "gallery",
+        "gridTemplate": "\"a a b\" \"a a c\"",
+        "gridTemplateColumns": "2fr 2fr 1fr",
+        "gridMobile": "1fr",
+        "gap": "8px",
+        "blocks": [
+            { "role": "media", "area": "a" },
+            { "role": "media", "area": "b" },
+            { "role": "media", "area": "c" }
+        ],
+        "padding": "24px"
+    },
+
+    "testimonial-centered": {
+        "category": "testimonials",
+        "grid": "1fr",
+        "align": "center",
+        "maxWidth": "640px",
+        "blocks": [
+            { "role": "quote" },
+            { "role": "attribution" }
+        ],
+        "padding": "60px 24px"
+    },
+    "testimonials-2": {
+        "category": "testimonials",
+        "grid": "1fr 1fr",
+        "gridMobile": "1fr",
+        "gap": "24px",
+        "blocks": [
+            { "role": "testimonial-card" },
+            { "role": "testimonial-card" }
+        ],
+        "padding": "60px 24px"
+    },
+    "testimonials-3": {
+        "category": "testimonials",
+        "grid": "1fr 1fr 1fr",
+        "gridTablet": "1fr",
+        "gridMobile": "1fr",
+        "gap": "24px",
+        "blocks": [
+            { "role": "testimonial-card" },
+            { "role": "testimonial-card" },
+            { "role": "testimonial-card" }
+        ],
+        "padding": "60px 24px"
+    },
+
+    "cta-centered": {
+        "category": "cta",
+        "grid": "1fr",
+        "align": "center",
+        "maxWidth": "600px",
+        "blocks": [
+            { "role": "heading", "tag": "h2" },
+            { "role": "text" },
+            { "role": "action" }
+        ],
+        "padding": "80px 24px"
+    },
+    "cta-split": {
+        "category": "cta",
+        "grid": "1fr auto",
+        "gridMobile": "1fr",
+        "gap": "32px",
+        "verticalAlign": "center",
+        "blocks": [
+            { "role": "text" },
+            { "role": "action" }
+        ],
+        "padding": "48px 24px"
+    },
+    "cta-banner": {
+        "category": "cta",
+        "grid": "1fr",
+        "align": "center",
+        "blocks": [
+            { "role": "heading", "tag": "h2" },
+            { "role": "action" }
+        ],
+        "padding": "60px 24px",
+        "backgroundType": "tinted"
+    },
+
+    "pricing-2": {
+        "category": "pricing",
+        "grid": "1fr 1fr",
+        "gridMobile": "1fr",
+        "gap": "24px",
+        "blocks": [
+            { "role": "pricing-card" },
+            { "role": "pricing-card" }
+        ],
+        "padding": "60px 24px"
+    },
+    "pricing-3": {
+        "category": "pricing",
+        "grid": "1fr 1fr 1fr",
+        "gridTablet": "1fr",
+        "gridMobile": "1fr",
+        "gap": "24px",
+        "blocks": [
+            { "role": "pricing-card" },
+            { "role": "pricing-card", "highlighted": true },
+            { "role": "pricing-card" }
+        ],
+        "padding": "60px 24px"
+    },
+    "pricing-heading-3": {
+        "category": "pricing",
+        "grid": "1fr",
+        "blocks": [
+            { "role": "heading", "tag": "h2", "align": "center" },
+            { "role": "text", "align": "center" }
+        ],
+        "subgrid": {
+            "grid": "1fr 1fr 1fr",
+            "gridTablet": "1fr",
+            "gridMobile": "1fr",
+            "gap": "24px",
+            "blocks": [
+                { "role": "pricing-card" },
+                { "role": "pricing-card", "highlighted": true },
+                { "role": "pricing-card" }
+            ]
+        },
+        "padding": "60px 24px"
+    },
+
+    "team-3": {
+        "category": "team",
+        "grid": "1fr 1fr 1fr",
+        "gridTablet": "1fr 1fr",
+        "gridMobile": "1fr",
+        "gap": "24px",
+        "align": "center",
+        "blocks": [
+            { "role": "team-member" },
+            { "role": "team-member" },
+            { "role": "team-member" }
+        ],
+        "padding": "60px 24px"
+    },
+    "team-4": {
+        "category": "team",
+        "grid": "1fr 1fr 1fr 1fr",
+        "gridTablet": "1fr 1fr",
+        "gridMobile": "1fr 1fr",
+        "gap": "24px",
+        "align": "center",
+        "blocks": [
+            { "role": "team-member" },
+            { "role": "team-member" },
+            { "role": "team-member" },
+            { "role": "team-member" }
+        ],
+        "padding": "60px 24px"
+    },
+
+    "faq-list": {
+        "category": "faq",
+        "grid": "1fr",
+        "maxWidth": "720px",
+        "blocks": [
+            { "role": "heading", "tag": "h2", "align": "center" },
+            { "role": "faq-item" },
+            { "role": "faq-item" },
+            { "role": "faq-item" },
+            { "role": "faq-item" }
+        ],
+        "padding": "60px 24px"
+    },
+    "faq-2col": {
+        "category": "faq",
+        "grid": "1fr 1fr",
+        "gridMobile": "1fr",
+        "gap": "16px",
+        "blocks": [
+            { "role": "faq-item" },
+            { "role": "faq-item" },
+            { "role": "faq-item" },
+            { "role": "faq-item" }
+        ],
+        "padding": "60px 24px"
+    },
+
+    "logo-bar-4": {
+        "category": "logo-bar",
+        "grid": "1fr 1fr 1fr 1fr",
+        "gridMobile": "1fr 1fr",
+        "gap": "32px",
+        "align": "center",
+        "verticalAlign": "center",
+        "blocks": [
+            { "role": "logo" },
+            { "role": "logo" },
+            { "role": "logo" },
+            { "role": "logo" }
+        ],
+        "padding": "40px 24px"
+    },
+    "logo-bar-6": {
+        "category": "logo-bar",
+        "grid": "1fr 1fr 1fr 1fr 1fr 1fr",
+        "gridTablet": "1fr 1fr 1fr",
+        "gridMobile": "1fr 1fr 1fr",
+        "gap": "32px",
+        "align": "center",
+        "verticalAlign": "center",
+        "blocks": [
+            { "role": "logo" },
+            { "role": "logo" },
+            { "role": "logo" },
+            { "role": "logo" },
+            { "role": "logo" },
+            { "role": "logo" }
+        ],
+        "padding": "40px 24px"
+    },
+
+    "footer-simple": {
+        "category": "footer",
+        "grid": "1fr auto",
+        "gridMobile": "1fr",
+        "gap": "24px",
+        "verticalAlign": "center",
+        "blocks": [
+            { "role": "text" },
+            { "role": "nav" }
+        ],
+        "padding": "24px"
+    },
+    "footer-4col": {
+        "category": "footer",
+        "grid": "2fr 1fr 1fr 1fr",
+        "gridTablet": "1fr 1fr",
+        "gridMobile": "1fr",
+        "gap": "32px",
+        "blocks": [
+            { "role": "brand" },
+            { "role": "nav" },
+            { "role": "nav" },
+            { "role": "nav" }
+        ],
+        "padding": "48px 24px"
+    },
+
+    "divider": {
+        "category": "content",
+        "grid": "1fr",
+        "maxWidth": "720px",
+        "blocks": [],
+        "padding": "0 24px",
+        "height": "1px",
+        "separator": true
+    },
+    "spacer": {
+        "category": "content",
+        "grid": "1fr",
+        "blocks": [],
+        "padding": "40px 0",
+        "empty": true
+    }
+}

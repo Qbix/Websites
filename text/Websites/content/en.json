@@ -70,5 +70,49 @@
             "description": "Represents a website whose metadata was scraped",
             "displayType": "Web page"
         }
+    },
+    "page": {
+        "Add": "Add Page",
+        "Title": "Page Title",
+        "Description": "Description",
+        "TitlePlaceholder": "Untitled Page",
+        "DescriptionPlaceholder": "Page description..."
+    },
+    "section": {
+        "Add": "Add Section",
+        "Heading": "Heading",
+        "HeadingPlaceholder": "Section heading (optional)",
+        "Layout": "Layout",
+        "Content": "Content",
+        "ContentPlaceholder": "Write content here...",
+        "layouts": {
+            "full": "Full width",
+            "two-col": "Two columns",
+            "three-col": "Three columns",
+            "sidebar-left": "Sidebar left",
+            "sidebar-right": "Sidebar right"
+        }
+    },
+    "block": {
+        "Add": "Add Block",
+        "Title": "Title",
+        "TitlePlaceholder": "Block title (optional)",
+        "Content": "Content",
+        "ContentPlaceholder": "Block content..."
+    },
+    "referral": {
+        "Create": "Create Referral Link",
+        "Destination": "Destination URL",
+        "Slug": "Slug",
+        "Title": "Title (optional)",
+        "Copy": "Copy",
+        "Copied": "Copied!",
+        "Clicks": "Clicks",
+        "Inviter": "Inviter",
+        "Metadata": "Sharing Metadata",
+        "RecentClicks": "Recent Clicks",
+        "Time": "Time",
+        "Platform": "Platform",
+        "Device": "Device"
     }
 }
