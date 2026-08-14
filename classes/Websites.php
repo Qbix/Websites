@@ -12,5 +12,5 @@
  */
 abstract class Websites extends Base_Websites
 {
-
+    public static $columns = array();
 };

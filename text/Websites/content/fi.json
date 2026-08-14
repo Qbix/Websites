@@ -1,74 +1,119 @@
 {
-    "advert": {
-        "campaign": {
-            "placeholders": {
-                "link": "Linkki mainostamiseen",
-                "startDate": "Aloituspäivämäärä",
-                "startTime": "Aloitusaika",
-                "endDate": "Päättymispäivä",
-                "endTime": "Loppu aika",
-                "budget": "Budjetti"
-            },
-            "interests": {
-                "Title": "Suodata kiinnostuksen kohteiden mukaan",
-                "FilterInterests": "Aloita kiinnostuksen kohteen kirjoittaminen..."
-            },
-            "Interest": "Kiinnostuksen kohde",
-            "Location": "Sijainti"
-        }
-    },
-    "webpage": {
-        "composer": {
-            "Go": "Mennä",
-            "PasteLinkHere": "https:\/\/...",
-            "BrowseTheWeb": "Selaa",
-            "WriteToStartConversation": "Kirjoita ajatuksesi aloittaaksesi keskustelun",
-            "StartConversation": "Aloita keskustelu",
-            "GotoConversation": "Siirry kohtaan Keskustelu",
-            "reset": "Nollaa",
-            "edit": "Muokata",
-            "link": "Linkki",
-            "setUrl": "Aseta URL-osoite",
-            "save": "Tallentaa",
-            "setClip": "Leikkaa pois klipsi",
-            "invalidURL": "Virheellinen URL"
-        },
-        "FileTooLarge": "Tiedosto on liian suuri välimuistiin tallentamiseen. Tiedoston enimmäiskoko {{size}}",
-        "InvalidPDF": "Tiedosto ei ole kelvollinen PDF",
-        "StartTypingTitleOrKeywords": "Ala kirjoittaa otsikkoa tai avainsanoja..."
-    },
-    "types": {
-        "Websites\/article": {
-            "description": "HTML-dokumentti, jota useat käyttäjät voivat tarkastella ja muokata",
-            "displayType": "Artikla"
-        },
-        "Websites\/slide": {
-            "description": "Esityksen dia, joka voi sisältää HTML:n, äänen jne.",
-            "displayType": "Liuku"
-        },
-        "Websites\/presentation": {
-            "description": "Eri dioista koostuva esitys",
-            "displayType": "Esittely"
-        },
-        "Websites\/advert\/unit": {
-            "description": "Mainosyksikkö verkkosivustolla",
-            "displayType": "Mainosyksikkö"
-        },
-        "Websites\/advert\/placement": {
-            "description": "Tapa ryhmitellä mainosyksiköt nimen alle",
-            "displayType": "Mainoksen sijoitus"
-        },
-        "Websites\/advert\/creative": {
-            "description": "Sisältöä mainokseen",
-            "displayType": "Mainosta luovaa"
-        },
-        "Websites\/advert\/campaign": {
-            "description": "Mainoskampanja",
-            "displayType": "Mainoskampanja"
-        },
-        "Websites\/webpage": {
-            "description": "Edustaa verkkosivustoa, jonka metatiedot on kaavittu",
-            "displayType": "Nettisivu"
-        }
-    }
+	"advert": {
+		"campaign": {
+			"placeholders": {
+				"link": "Linkki mainostamiseen",
+				"startDate": "Aloitusp\u00e4iv\u00e4m\u00e4\u00e4r\u00e4",
+				"startTime": "Aloitusaika",
+				"endDate": "P\u00e4\u00e4ttymisp\u00e4iv\u00e4",
+				"endTime": "Loppu aika",
+				"budget": "Budjetti"
+			},
+			"interests": {
+				"Title": "Suodata kiinnostuksen kohteiden mukaan",
+				"FilterInterests": "Aloita kiinnostuksen kohteen kirjoittaminen..."
+			},
+			"Interest": "Kiinnostuksen kohde",
+			"Location": "Sijainti"
+		}
+	},
+	"webpage": {
+		"composer": {
+			"Go": "Menn\u00e4",
+			"PasteLinkHere": "https://...",
+			"BrowseTheWeb": "Selaa",
+			"WriteToStartConversation": "Kirjoita ajatuksesi aloittaaksesi keskustelun",
+			"StartConversation": "Aloita keskustelu",
+			"GotoConversation": "Siirry kohtaan Keskustelu",
+			"reset": "Nollaa",
+			"edit": "Muokata",
+			"link": "Linkki",
+			"setUrl": "Aseta URL-osoite",
+			"save": "Tallentaa",
+			"setClip": "Leikkaa pois klipsi",
+			"invalidURL": "Virheellinen URL"
+		},
+		"FileTooLarge": "Tiedosto on liian suuri v\u00e4limuistiin tallentamiseen. Tiedoston enimm\u00e4iskoko {{size}}",
+		"InvalidPDF": "Tiedosto ei ole kelvollinen PDF",
+		"StartTypingTitleOrKeywords": "Ala kirjoittaa otsikkoa tai avainsanoja..."
+	},
+	"types": {
+		"Websites/article": {
+			"description": "HTML-dokumentti, jota useat k\u00e4ytt\u00e4j\u00e4t voivat tarkastella ja muokata",
+			"displayType": "Artikla"
+		},
+		"Websites/slide": {
+			"description": "Esityksen dia, joka voi sis\u00e4lt\u00e4\u00e4 HTML:n, \u00e4\u00e4nen jne.",
+			"displayType": "Liuku"
+		},
+		"Websites/presentation": {
+			"description": "Eri dioista koostuva esitys",
+			"displayType": "Esittely"
+		},
+		"Websites/advert/unit": {
+			"description": "Mainosyksikk\u00f6 verkkosivustolla",
+			"displayType": "Mainosyksikk\u00f6"
+		},
+		"Websites/advert/placement": {
+			"description": "Tapa ryhmitell\u00e4 mainosyksik\u00f6t nimen alle",
+			"displayType": "Mainoksen sijoitus"
+		},
+		"Websites/advert/creative": {
+			"description": "Sis\u00e4lt\u00f6\u00e4 mainokseen",
+			"displayType": "Mainosta luovaa"
+		},
+		"Websites/advert/campaign": {
+			"description": "Mainoskampanja",
+			"displayType": "Mainoskampanja"
+		},
+		"Websites/webpage": {
+			"description": "Edustaa verkkosivustoa, jonka metatiedot on kaavittu",
+			"displayType": "Nettisivu"
+		}
+	},
+	"page": {
+		"Add": "Lis\u00e4\u00e4 sivu",
+		"Title": "Sivun otsikko",
+		"Description": "Kuvaus",
+		"TitlePlaceholder": "Nimet\u00f6n sivu",
+		"DescriptionPlaceholder": "Sivun kuvaus..."
+	},
+	"section": {
+		"Add": "Lis\u00e4\u00e4 osio",
+		"Heading": "Otsikko",
+		"HeadingPlaceholder": "Osion otsikko (valinnainen)",
+		"Layout": "Layout",
+		"Content": "Sis\u00e4lt\u00f6",
+		"ContentPlaceholder": "Kirjoita t\u00e4h\u00e4n sis\u00e4lt\u00f6\u00e4...",
+		"layouts": {
+			"full": "T\u00e4ysi leveys",
+			"two-col": "Kaksi saraketta",
+			"three-col": "Kolme saraketta",
+			"sidebar-left": "Vasen sivupalkki",
+			"sidebar-right": "Oikea sivupalkki"
+		}
+	},
+	"block": {
+		"Add": "Lis\u00e4\u00e4 lohko",
+		"Title": "Otsikko",
+		"TitlePlaceholder": "Lohkon otsikko (valinnainen)",
+		"Content": "Sis\u00e4lt\u00f6",
+		"ContentPlaceholder": "Est\u00e4 sis\u00e4lt\u00f6..."
+	},
+	"referral": {
+		"Create": "Luo suosittelulinkki",
+		"Destination": "Kohde-URL-osoite",
+		"Slug": "Etana",
+		"Title": "Otsikko (valinnainen)",
+		"Copy": "Kopioida",
+		"Copied": "Kopioitu!",
+		"Clicks": "Klikkaukset",
+		"Inviter": "Kutsuja",
+		"Metadata": "Metadatan jakaminen",
+		"RecentClicks": "Viimeaikaiset klikkaukset",
+		"Time": "Aika",
+		"Platform": "Alusta",
+		"Device": "Laite",
+		"ManageLinks": "Suosittelulinkit"
+	}
 }

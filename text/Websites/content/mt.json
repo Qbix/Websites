@@ -1,74 +1,119 @@
 {
-    "advert": {
-        "campaign": {
-            "placeholders": {
-                "link": "Link għall-promozzjoni",
-                "startDate": "Data tal-Bidu",
-                "startTime": "Ħin tal-Bidu",
-                "endDate": "Data tat-Tmiem",
-                "endTime": "Ħin tat-Tmiem",
-                "budget": "Baġit"
-            },
-            "interests": {
-                "Title": "Iffiltra mill-Interess",
-                "FilterInterests": "Ibda ttajpja interess..."
-            },
-            "Interest": "Interess",
-            "Location": "Post"
-        }
-    },
-    "webpage": {
-        "composer": {
-            "Go": "Mur",
-            "PasteLinkHere": "https:\/\/...",
-            "BrowseTheWeb": "Fittex",
-            "WriteToStartConversation": "Ikteb il-ħsibijiet tiegħek biex tibda l-konversazzjoni",
-            "StartConversation": "Ibda Konversazzjoni",
-            "GotoConversation": "Mur fil-Konversazzjoni",
-            "reset": "Irrisettja",
-            "edit": "Editja",
-            "link": "Link",
-            "setUrl": "Issettja l-URL",
-            "save": "Ħlief",
-            "setClip": "Aqta&#39; Clip",
-            "invalidURL": "URL invalidu"
-        },
-        "FileTooLarge": "Fajl kbir wisq għall-caching. Daqs massimu tal-fajl {{size}}",
-        "InvalidPDF": "Il-fajl mhuwiex PDF validu",
-        "StartTypingTitleOrKeywords": "Ibda ttajpja t-titlu jew il-kliem kjavi..."
-    },
-    "types": {
-        "Websites\/article": {
-            "description": "Dokument HTML li diversi utenti jistgħu jaraw u jeditjaw",
-            "displayType": "Artikolu"
-        },
-        "Websites\/slide": {
-            "description": "Slide fi preżentazzjoni, tista &#39;tinkludi HTML, awdjo eċċ.",
-            "displayType": "Slide"
-        },
-        "Websites\/presentation": {
-            "description": "Preżentazzjoni li tikkonsisti minn diversi slides",
-            "displayType": "Preżentazzjoni"
-        },
-        "Websites\/advert\/unit": {
-            "description": "Unità ta&#39; reklamar fuq websajt",
-            "displayType": "Unità reklam"
-        },
-        "Websites\/advert\/placement": {
-            "description": "Mod ta &#39;raggruppament ta&#39; unitajiet ta &#39;reklamar taħt isem",
-            "displayType": "Tqegħid tar-reklam"
-        },
-        "Websites\/advert\/creative": {
-            "description": "Kontenut għal reklam",
-            "displayType": "Irreklama kreattiv"
-        },
-        "Websites\/advert\/campaign": {
-            "description": "Kampanja ta’ reklamar",
-            "displayType": "Kampanja reklam"
-        },
-        "Websites\/webpage": {
-            "description": "Jirrappreżenta websajt li l-metadata tagħha ġiet mibruxa",
-            "displayType": "Paġna tal-web"
-        }
-    }
+	"advert": {
+		"campaign": {
+			"placeholders": {
+				"link": "Link g\u0127all-promozzjoni",
+				"startDate": "Data tal-Bidu",
+				"startTime": "\u0126in tal-Bidu",
+				"endDate": "Data tat-Tmiem",
+				"endTime": "\u0126in tat-Tmiem",
+				"budget": "Ba\u0121it"
+			},
+			"interests": {
+				"Title": "Iffiltra mill-Interess",
+				"FilterInterests": "Ibda ttajpja interess..."
+			},
+			"Interest": "Interess",
+			"Location": "Post"
+		}
+	},
+	"webpage": {
+		"composer": {
+			"Go": "Mur",
+			"PasteLinkHere": "https://...",
+			"BrowseTheWeb": "Fittex",
+			"WriteToStartConversation": "Ikteb il-\u0127sibijiet tieg\u0127ek biex tibda l-konversazzjoni",
+			"StartConversation": "Ibda Konversazzjoni",
+			"GotoConversation": "Mur fil-Konversazzjoni",
+			"reset": "Irrisettja",
+			"edit": "Editja",
+			"link": "Link",
+			"setUrl": "Issettja l-URL",
+			"save": "\u0126lief",
+			"setClip": "Aqta&#39; Clip",
+			"invalidURL": "URL invalidu"
+		},
+		"FileTooLarge": "Fajl kbir wisq g\u0127all-caching. Daqs massimu tal-fajl {{size}}",
+		"InvalidPDF": "Il-fajl mhuwiex PDF validu",
+		"StartTypingTitleOrKeywords": "Ibda ttajpja t-titlu jew il-kliem kjavi..."
+	},
+	"types": {
+		"Websites/article": {
+			"description": "Dokument HTML li diversi utenti jistg\u0127u jaraw u jeditjaw",
+			"displayType": "Artikolu"
+		},
+		"Websites/slide": {
+			"description": "Slide fi pre\u017centazzjoni, tista &#39;tinkludi HTML, awdjo e\u010b\u010b.",
+			"displayType": "Slide"
+		},
+		"Websites/presentation": {
+			"description": "Pre\u017centazzjoni li tikkonsisti minn diversi slides",
+			"displayType": "Pre\u017centazzjoni"
+		},
+		"Websites/advert/unit": {
+			"description": "Unit\u00e0 ta&#39; reklamar fuq websajt",
+			"displayType": "Unit\u00e0 reklam"
+		},
+		"Websites/advert/placement": {
+			"description": "Mod ta &#39;raggruppament ta&#39; unitajiet ta &#39;reklamar ta\u0127t isem",
+			"displayType": "Tqeg\u0127id tar-reklam"
+		},
+		"Websites/advert/creative": {
+			"description": "Kontenut g\u0127al reklam",
+			"displayType": "Irreklama kreattiv"
+		},
+		"Websites/advert/campaign": {
+			"description": "Kampanja ta\u2019 reklamar",
+			"displayType": "Kampanja reklam"
+		},
+		"Websites/webpage": {
+			"description": "Jirrappre\u017centa websajt li l-metadata tag\u0127ha \u0121iet mibruxa",
+			"displayType": "Pa\u0121na tal-web"
+		}
+	},
+	"page": {
+		"Add": "\u017bid Pa\u0121na",
+		"Title": "Titlu tal-Pa\u0121na",
+		"Description": "Deskrizzjoni",
+		"TitlePlaceholder": "Pa\u0121na bla Titlu",
+		"DescriptionPlaceholder": "Deskrizzjoni tal-pa\u0121na..."
+	},
+	"section": {
+		"Add": "\u017bid Taqsima",
+		"Heading": "Intestatura",
+		"HeadingPlaceholder": "Intestatura tas-sezzjoni (mhux obbligatorju)",
+		"Layout": "Tqassim",
+		"Content": "Kontenut",
+		"ContentPlaceholder": "Ikteb il-kontenut hawn...",
+		"layouts": {
+			"full": "Wisa&#39; s\u0127i\u0127a",
+			"two-col": "\u017bew\u0121 kolonni",
+			"three-col": "Tliet kolonni",
+			"sidebar-left": "Barra tal-\u0121enb tax-xellug",
+			"sidebar-right": "Barra tal-\u0121enb tal-lemin"
+		}
+	},
+	"block": {
+		"Add": "\u017bid Blokk",
+		"Title": "Titlu",
+		"TitlePlaceholder": "Titlu tal-blokka (mhux obbligatorju)",
+		"Content": "Kontenut",
+		"ContentPlaceholder": "Imblokka l-kontenut..."
+	},
+	"referral": {
+		"Create": "O\u0127loq Link ta&#39; Referenza",
+		"Destination": "URL tad-Destinazzjoni",
+		"Slug": "Bebbuxu",
+		"Title": "Titlu (mhux obbligatorju)",
+		"Copy": "Kopja",
+		"Copied": "Ikkupjat!",
+		"Clicks": "Klikks",
+		"Inviter": "Stieden",
+		"Metadata": "Kondivi\u017cjoni tal-Metadata",
+		"RecentClicks": "Klikkijiet Ri\u010benti",
+		"Time": "\u0126in",
+		"Platform": "Pjattaforma",
+		"Device": "Apparat",
+		"ManageLinks": "Links ta&#39; Referenza"
+	}
 }

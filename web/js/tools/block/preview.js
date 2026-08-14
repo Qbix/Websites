@@ -81,7 +81,7 @@ function _Websites_block_preview(options, preview) {
                 'stat', 'team-member', 'pricing-card', 'faq-item'];
             if (titleRoles.indexOf(role) >= 0 || title) {
                 var tag = (role === 'heading') ? (attrs.tag || 'h2') : 'div';
-                var titleEl = Q.Tool.setUpElement(tag, 'Streams/inplace', {
+                var titleElement = Q.Tool.setUpElement(tag, 'Streams/inplace', {
                     publisherId: ps.publisherId,
                     streamName: ps.streamName,
                     field: 'title',
@@ -89,21 +89,21 @@ function _Websites_block_preview(options, preview) {
                     editable: true,
                     placeholder: tool._rolePlaceholder(role, 'title')
                 }, null, tool.prefix);
-                titleEl.className = 'Websites_block_title Websites_block_title_' + role;
-                body.appendChild(titleEl);
+                titleElement.classList.add('Websites_block_title', 'Websites_block_title_' + role);
+                body.appendChild(titleElement);
             }
 
             // Content — render the selected tool
-            var contentEl;
+            var contentElement;
             if (blockTool === 'Streams/image/preview') {
-                contentEl = Q.Tool.setUpElement('div', 'Streams/image/preview', {
+                contentElement = Q.Tool.setUpElement('div', 'Streams/image/preview', {
                     publisherId: ps.publisherId,
                     streamName: ps.streamName,
                     editable: true,
                     imagepicker: { showSize: '400x', fullSize: '1000x' }
                 }, null, tool.prefix);
             } else if (blockTool === 'Streams/markdown') {
-                contentEl = Q.Tool.setUpElement('div', 'Streams/markdown', {
+                contentElement = Q.Tool.setUpElement('div', 'Streams/markdown', {
                     publisherId: ps.publisherId,
                     streamName: ps.streamName,
                     field: 'content',
@@ -112,7 +112,7 @@ function _Websites_block_preview(options, preview) {
                     placeholder: tool._rolePlaceholder(role, 'content')
                 }, null, tool.prefix);
             } else if (blockTool === 'Streams/inplace') {
-                contentEl = Q.Tool.setUpElement('div', 'Streams/inplace', {
+                contentElement = Q.Tool.setUpElement('div', 'Streams/inplace', {
                     publisherId: ps.publisherId,
                     streamName: ps.streamName,
                     field: 'content',
@@ -122,7 +122,7 @@ function _Websites_block_preview(options, preview) {
                 }, null, tool.prefix);
             } else {
                 // Default: Streams/html (Froala)
-                contentEl = Q.Tool.setUpElement('div', 'Streams/html', {
+                contentElement = Q.Tool.setUpElement('div', 'Streams/html', {
                     publisherId: ps.publisherId,
                     streamName: ps.streamName,
                     field: 'content',
@@ -142,8 +142,8 @@ function _Websites_block_preview(options, preview) {
                     }
                 }, null, tool.prefix);
             }
-            contentEl.className = 'Websites_block_content';
-            body.appendChild(contentEl);
+            contentElement.classList.add('Websites_block_content');
+            body.appendChild(contentElement);
             container.appendChild(body);
 
         } else {

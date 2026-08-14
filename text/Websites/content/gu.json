@@ -1,74 +1,119 @@
 {
-    "advert": {
-        "campaign": {
-            "placeholders": {
-                "link": "પ્રમોટ કરવા માટે લિંક",
-                "startDate": "પ્રારંભ તારીખ",
-                "startTime": "પ્રારંભ સમય",
-                "endDate": "અંતિમ તારીખ",
-                "endTime": "સમાપ્તિ સમય",
-                "budget": "બજેટ"
-            },
-            "interests": {
-                "Title": "રસ દ્વારા ફિલ્ટર કરો",
-                "FilterInterests": "રસ લખવાનું શરૂ કરો..."
-            },
-            "Interest": "વ્યાજ",
-            "Location": "સ્થાન"
-        }
-    },
-    "webpage": {
-        "composer": {
-            "Go": "જાઓ",
-            "PasteLinkHere": "https:\/\/...",
-            "BrowseTheWeb": "બ્રાઉઝ કરો",
-            "WriteToStartConversation": "વાતચીત શરૂ કરવા માટે તમારા વિચારો લખો",
-            "StartConversation": "વાતચીત શરૂ કરો",
-            "GotoConversation": "વાતચીત પર જાઓ",
-            "reset": "રીસેટ કરો",
-            "edit": "સંપાદિત કરો",
-            "link": "લિંક",
-            "setUrl": "URL સેટ કરો",
-            "save": "સાચવો",
-            "setClip": "કટ આઉટ ક્લિપ",
-            "invalidURL": "અમાન્ય URL"
-        },
-        "FileTooLarge": "કેશીંગ માટે ફાઇલ ખૂબ મોટી છે. મહત્તમ ફાઇલ કદ {{size}}",
-        "InvalidPDF": "ફાઇલ માન્ય PDF નથી",
-        "StartTypingTitleOrKeywords": "શીર્ષક અથવા કીવર્ડ્સ લખવાનું શરૂ કરો..."
-    },
-    "types": {
-        "Websites\/article": {
-            "description": "એક HTML દસ્તાવેજ જે વિવિધ વપરાશકર્તાઓ જોઈ અને સંપાદિત કરી શકે છે",
-            "displayType": "કલમ"
-        },
-        "Websites\/slide": {
-            "description": "પ્રસ્તુતિની સ્લાઇડમાં HTML, ઓડિયો વગેરેનો સમાવેશ થઈ શકે છે.",
-            "displayType": "સ્લાઇડ"
-        },
-        "Websites\/presentation": {
-            "description": "વિવિધ સ્લાઇડ્સ ધરાવતી પ્રસ્તુતિ",
-            "displayType": "પ્રસ્તુતિ"
-        },
-        "Websites\/advert\/unit": {
-            "description": "વેબસાઇટ પર જાહેરાત એકમ",
-            "displayType": "જાહેરાત એકમ"
-        },
-        "Websites\/advert\/placement": {
-            "description": "એક નામ હેઠળ જાહેરાત એકમોને જૂથબદ્ધ કરવાની રીત",
-            "displayType": "જાહેરાત પ્લેસમેન્ટ"
-        },
-        "Websites\/advert\/creative": {
-            "description": "જાહેરાત માટેની સામગ્રી",
-            "displayType": "સર્જનાત્મક જાહેરાત"
-        },
-        "Websites\/advert\/campaign": {
-            "description": "એક જાહેરાત ઝુંબેશ",
-            "displayType": "જાહેરાત ઝુંબેશ"
-        },
-        "Websites\/webpage": {
-            "description": "એક વેબસાઇટનું પ્રતિનિધિત્વ કરે છે જેનો મેટાડેટા સ્ક્રેપ કરવામાં આવ્યો હતો",
-            "displayType": "વેબ પેજ"
-        }
-    }
+	"advert": {
+		"campaign": {
+			"placeholders": {
+				"link": "\u0aaa\u0acd\u0ab0\u0aae\u0acb\u0a9f \u0a95\u0ab0\u0ab5\u0abe \u0aae\u0abe\u0a9f\u0ac7 \u0ab2\u0abf\u0a82\u0a95",
+				"startDate": "\u0aaa\u0acd\u0ab0\u0abe\u0ab0\u0a82\u0aad \u0aa4\u0abe\u0ab0\u0ac0\u0a96",
+				"startTime": "\u0aaa\u0acd\u0ab0\u0abe\u0ab0\u0a82\u0aad \u0ab8\u0aae\u0aaf",
+				"endDate": "\u0a85\u0a82\u0aa4\u0abf\u0aae \u0aa4\u0abe\u0ab0\u0ac0\u0a96",
+				"endTime": "\u0ab8\u0aae\u0abe\u0aaa\u0acd\u0aa4\u0abf \u0ab8\u0aae\u0aaf",
+				"budget": "\u0aac\u0a9c\u0ac7\u0a9f"
+			},
+			"interests": {
+				"Title": "\u0ab0\u0ab8 \u0aa6\u0acd\u0ab5\u0abe\u0ab0\u0abe \u0aab\u0abf\u0ab2\u0acd\u0a9f\u0ab0 \u0a95\u0ab0\u0acb",
+				"FilterInterests": "\u0ab0\u0ab8 \u0ab2\u0a96\u0ab5\u0abe\u0aa8\u0ac1\u0a82 \u0ab6\u0ab0\u0ac2 \u0a95\u0ab0\u0acb..."
+			},
+			"Interest": "\u0ab5\u0acd\u0aaf\u0abe\u0a9c",
+			"Location": "\u0ab8\u0acd\u0aa5\u0abe\u0aa8"
+		}
+	},
+	"webpage": {
+		"composer": {
+			"Go": "\u0a9c\u0abe\u0a93",
+			"PasteLinkHere": "https://...",
+			"BrowseTheWeb": "\u0aac\u0acd\u0ab0\u0abe\u0a89\u0a9d \u0a95\u0ab0\u0acb",
+			"WriteToStartConversation": "\u0ab5\u0abe\u0aa4\u0a9a\u0ac0\u0aa4 \u0ab6\u0ab0\u0ac2 \u0a95\u0ab0\u0ab5\u0abe \u0aae\u0abe\u0a9f\u0ac7 \u0aa4\u0aae\u0abe\u0ab0\u0abe \u0ab5\u0abf\u0a9a\u0abe\u0ab0\u0acb \u0ab2\u0a96\u0acb",
+			"StartConversation": "\u0ab5\u0abe\u0aa4\u0a9a\u0ac0\u0aa4 \u0ab6\u0ab0\u0ac2 \u0a95\u0ab0\u0acb",
+			"GotoConversation": "\u0ab5\u0abe\u0aa4\u0a9a\u0ac0\u0aa4 \u0aaa\u0ab0 \u0a9c\u0abe\u0a93",
+			"reset": "\u0ab0\u0ac0\u0ab8\u0ac7\u0a9f \u0a95\u0ab0\u0acb",
+			"edit": "\u0ab8\u0a82\u0aaa\u0abe\u0aa6\u0abf\u0aa4 \u0a95\u0ab0\u0acb",
+			"link": "\u0ab2\u0abf\u0a82\u0a95",
+			"setUrl": "URL \u0ab8\u0ac7\u0a9f \u0a95\u0ab0\u0acb",
+			"save": "\u0ab8\u0abe\u0a9a\u0ab5\u0acb",
+			"setClip": "\u0a95\u0a9f \u0a86\u0a89\u0a9f \u0a95\u0acd\u0ab2\u0abf\u0aaa",
+			"invalidURL": "\u0a85\u0aae\u0abe\u0aa8\u0acd\u0aaf URL"
+		},
+		"FileTooLarge": "\u0a95\u0ac7\u0ab6\u0ac0\u0a82\u0a97 \u0aae\u0abe\u0a9f\u0ac7 \u0aab\u0abe\u0a87\u0ab2 \u0a96\u0ac2\u0aac \u0aae\u0acb\u0a9f\u0ac0 \u0a9b\u0ac7. \u0aae\u0ab9\u0aa4\u0acd\u0aa4\u0aae \u0aab\u0abe\u0a87\u0ab2 \u0a95\u0aa6 {{size}}",
+		"InvalidPDF": "\u0aab\u0abe\u0a87\u0ab2 \u0aae\u0abe\u0aa8\u0acd\u0aaf PDF \u0aa8\u0aa5\u0ac0",
+		"StartTypingTitleOrKeywords": "\u0ab6\u0ac0\u0ab0\u0acd\u0ab7\u0a95 \u0a85\u0aa5\u0ab5\u0abe \u0a95\u0ac0\u0ab5\u0ab0\u0acd\u0aa1\u0acd\u0ab8 \u0ab2\u0a96\u0ab5\u0abe\u0aa8\u0ac1\u0a82 \u0ab6\u0ab0\u0ac2 \u0a95\u0ab0\u0acb..."
+	},
+	"types": {
+		"Websites/article": {
+			"description": "\u0a8f\u0a95 HTML \u0aa6\u0ab8\u0acd\u0aa4\u0abe\u0ab5\u0ac7\u0a9c \u0a9c\u0ac7 \u0ab5\u0abf\u0ab5\u0abf\u0aa7 \u0ab5\u0aaa\u0ab0\u0abe\u0ab6\u0a95\u0ab0\u0acd\u0aa4\u0abe\u0a93 \u0a9c\u0acb\u0a88 \u0a85\u0aa8\u0ac7 \u0ab8\u0a82\u0aaa\u0abe\u0aa6\u0abf\u0aa4 \u0a95\u0ab0\u0ac0 \u0ab6\u0a95\u0ac7 \u0a9b\u0ac7",
+			"displayType": "\u0a95\u0ab2\u0aae"
+		},
+		"Websites/slide": {
+			"description": "\u0aaa\u0acd\u0ab0\u0ab8\u0acd\u0aa4\u0ac1\u0aa4\u0abf\u0aa8\u0ac0 \u0ab8\u0acd\u0ab2\u0abe\u0a87\u0aa1\u0aae\u0abe\u0a82 HTML, \u0a93\u0aa1\u0abf\u0aaf\u0acb \u0ab5\u0a97\u0ac7\u0ab0\u0ac7\u0aa8\u0acb \u0ab8\u0aae\u0abe\u0ab5\u0ac7\u0ab6 \u0aa5\u0a88 \u0ab6\u0a95\u0ac7 \u0a9b\u0ac7.",
+			"displayType": "\u0ab8\u0acd\u0ab2\u0abe\u0a87\u0aa1"
+		},
+		"Websites/presentation": {
+			"description": "\u0ab5\u0abf\u0ab5\u0abf\u0aa7 \u0ab8\u0acd\u0ab2\u0abe\u0a87\u0aa1\u0acd\u0ab8 \u0aa7\u0ab0\u0abe\u0ab5\u0aa4\u0ac0 \u0aaa\u0acd\u0ab0\u0ab8\u0acd\u0aa4\u0ac1\u0aa4\u0abf",
+			"displayType": "\u0aaa\u0acd\u0ab0\u0ab8\u0acd\u0aa4\u0ac1\u0aa4\u0abf"
+		},
+		"Websites/advert/unit": {
+			"description": "\u0ab5\u0ac7\u0aac\u0ab8\u0abe\u0a87\u0a9f \u0aaa\u0ab0 \u0a9c\u0abe\u0ab9\u0ac7\u0ab0\u0abe\u0aa4 \u0a8f\u0a95\u0aae",
+			"displayType": "\u0a9c\u0abe\u0ab9\u0ac7\u0ab0\u0abe\u0aa4 \u0a8f\u0a95\u0aae"
+		},
+		"Websites/advert/placement": {
+			"description": "\u0a8f\u0a95 \u0aa8\u0abe\u0aae \u0ab9\u0ac7\u0aa0\u0ab3 \u0a9c\u0abe\u0ab9\u0ac7\u0ab0\u0abe\u0aa4 \u0a8f\u0a95\u0aae\u0acb\u0aa8\u0ac7 \u0a9c\u0ac2\u0aa5\u0aac\u0aa6\u0acd\u0aa7 \u0a95\u0ab0\u0ab5\u0abe\u0aa8\u0ac0 \u0ab0\u0ac0\u0aa4",
+			"displayType": "\u0a9c\u0abe\u0ab9\u0ac7\u0ab0\u0abe\u0aa4 \u0aaa\u0acd\u0ab2\u0ac7\u0ab8\u0aae\u0ac7\u0aa8\u0acd\u0a9f"
+		},
+		"Websites/advert/creative": {
+			"description": "\u0a9c\u0abe\u0ab9\u0ac7\u0ab0\u0abe\u0aa4 \u0aae\u0abe\u0a9f\u0ac7\u0aa8\u0ac0 \u0ab8\u0abe\u0aae\u0a97\u0acd\u0ab0\u0ac0",
+			"displayType": "\u0ab8\u0ab0\u0acd\u0a9c\u0aa8\u0abe\u0aa4\u0acd\u0aae\u0a95 \u0a9c\u0abe\u0ab9\u0ac7\u0ab0\u0abe\u0aa4"
+		},
+		"Websites/advert/campaign": {
+			"description": "\u0a8f\u0a95 \u0a9c\u0abe\u0ab9\u0ac7\u0ab0\u0abe\u0aa4 \u0a9d\u0ac1\u0a82\u0aac\u0ac7\u0ab6",
+			"displayType": "\u0a9c\u0abe\u0ab9\u0ac7\u0ab0\u0abe\u0aa4 \u0a9d\u0ac1\u0a82\u0aac\u0ac7\u0ab6"
+		},
+		"Websites/webpage": {
+			"description": "\u0a8f\u0a95 \u0ab5\u0ac7\u0aac\u0ab8\u0abe\u0a87\u0a9f\u0aa8\u0ac1\u0a82 \u0aaa\u0acd\u0ab0\u0aa4\u0abf\u0aa8\u0abf\u0aa7\u0abf\u0aa4\u0acd\u0ab5 \u0a95\u0ab0\u0ac7 \u0a9b\u0ac7 \u0a9c\u0ac7\u0aa8\u0acb \u0aae\u0ac7\u0a9f\u0abe\u0aa1\u0ac7\u0a9f\u0abe \u0ab8\u0acd\u0a95\u0acd\u0ab0\u0ac7\u0aaa \u0a95\u0ab0\u0ab5\u0abe\u0aae\u0abe\u0a82 \u0a86\u0ab5\u0acd\u0aaf\u0acb \u0ab9\u0aa4\u0acb",
+			"displayType": "\u0ab5\u0ac7\u0aac \u0aaa\u0ac7\u0a9c"
+		}
+	},
+	"page": {
+		"Add": "\u0aaa\u0ac7\u0a9c \u0a89\u0aae\u0ac7\u0ab0\u0acb",
+		"Title": "\u0aaa\u0ac3\u0ab7\u0acd\u0aa0 \u0ab6\u0ac0\u0ab0\u0acd\u0ab7\u0a95",
+		"Description": "\u0ab5\u0ab0\u0acd\u0aa3\u0aa8",
+		"TitlePlaceholder": "\u0ab6\u0ac0\u0ab0\u0acd\u0ab7\u0a95 \u0ab5\u0abf\u0aa8\u0abe\u0aa8\u0ac1\u0a82 \u0aaa\u0ac3\u0ab7\u0acd\u0aa0",
+		"DescriptionPlaceholder": "\u0aaa\u0ac3\u0ab7\u0acd\u0aa0 \u0ab5\u0ab0\u0acd\u0aa3\u0aa8..."
+	},
+	"section": {
+		"Add": "\u0ab5\u0abf\u0aad\u0abe\u0a97 \u0a89\u0aae\u0ac7\u0ab0\u0acb",
+		"Heading": "\u0aae\u0aa5\u0abe\u0ab3\u0ac1\u0a82",
+		"HeadingPlaceholder": "\u0ab5\u0abf\u0aad\u0abe\u0a97\u0aa8\u0ac1\u0a82 \u0aae\u0aa5\u0abe\u0ab3\u0ac1\u0a82 (\u0ab5\u0ac8\u0a95\u0ab2\u0acd\u0aaa\u0abf\u0a95)",
+		"Layout": "\u0ab2\u0ac7\u0a86\u0a89\u0a9f",
+		"Content": "\u0ab8\u0abe\u0aae\u0a97\u0acd\u0ab0\u0ac0",
+		"ContentPlaceholder": "\u0a85\u0ab9\u0ac0\u0a82 \u0ab8\u0abe\u0aae\u0a97\u0acd\u0ab0\u0ac0 \u0ab2\u0a96\u0acb...",
+		"layouts": {
+			"full": "\u0aaa\u0ac2\u0ab0\u0acd\u0aa3 \u0aaa\u0ab9\u0acb\u0ab3\u0abe\u0a88",
+			"two-col": "\u0aac\u0ac7 \u0a95\u0ac9\u0ab2\u0aae",
+			"three-col": "\u0aa4\u0acd\u0ab0\u0aa3 \u0a95\u0ac9\u0ab2\u0aae",
+			"sidebar-left": "\u0aa1\u0abe\u0aac\u0ac0 \u0aac\u0abe\u0a9c\u0ac1\u0aa8\u0acb \u0ab8\u0abe\u0a87\u0aa1\u0aac\u0abe\u0ab0",
+			"sidebar-right": "\u0a9c\u0aae\u0aa3\u0ac0 \u0aac\u0abe\u0a9c\u0ac1 \u0ab8\u0abe\u0a87\u0aa1\u0aac\u0abe\u0ab0"
+		}
+	},
+	"block": {
+		"Add": "\u0aac\u0acd\u0ab2\u0acb\u0a95 \u0a89\u0aae\u0ac7\u0ab0\u0acb",
+		"Title": "\u0ab6\u0ac0\u0ab0\u0acd\u0ab7\u0a95",
+		"TitlePlaceholder": "\u0aac\u0acd\u0ab2\u0acb\u0a95 \u0ab6\u0ac0\u0ab0\u0acd\u0ab7\u0a95 (\u0ab5\u0ac8\u0a95\u0ab2\u0acd\u0aaa\u0abf\u0a95)",
+		"Content": "\u0ab8\u0abe\u0aae\u0a97\u0acd\u0ab0\u0ac0",
+		"ContentPlaceholder": "\u0ab8\u0abe\u0aae\u0a97\u0acd\u0ab0\u0ac0 \u0a85\u0ab5\u0ab0\u0acb\u0aa7\u0abf\u0aa4 \u0a95\u0ab0\u0acb..."
+	},
+	"referral": {
+		"Create": "\u0ab0\u0ac7\u0aab\u0ab0\u0ab2 \u0ab2\u0abf\u0a82\u0a95 \u0aac\u0aa8\u0abe\u0ab5\u0acb",
+		"Destination": "\u0a97\u0a82\u0aa4\u0ab5\u0acd\u0aaf URL",
+		"Slug": "\u0a97\u0acb\u0a95\u0ab3\u0a97\u0abe\u0aaf",
+		"Title": "\u0ab6\u0ac0\u0ab0\u0acd\u0ab7\u0a95 (\u0ab5\u0ac8\u0a95\u0ab2\u0acd\u0aaa\u0abf\u0a95)",
+		"Copy": "\u0a95\u0ac9\u0aaa\u0abf \u0a95\u0ab0\u0acb",
+		"Copied": "\u0aa8\u0a95\u0ab2 \u0a95\u0ab0\u0ac0!",
+		"Clicks": "\u0a95\u0acd\u0ab2\u0abf\u0a95\u0acd\u0ab8",
+		"Inviter": "\u0a86\u0aae\u0a82\u0aa4\u0acd\u0ab0\u0aa3 \u0a86\u0aaa\u0aa8\u0abe\u0ab0",
+		"Metadata": "\u0aae\u0ac7\u0a9f\u0abe\u0aa1\u0ac7\u0a9f\u0abe \u0ab6\u0ac7\u0ab0 \u0a95\u0ab0\u0ac0 \u0ab0\u0ab9\u0acd\u0aaf\u0abe \u0a9b\u0ac0\u0a8f",
+		"RecentClicks": "\u0aa4\u0abe\u0a9c\u0ac7\u0aa4\u0ab0\u0aa8\u0abe \u0a95\u0acd\u0ab2\u0abf\u0a95\u0acd\u0ab8",
+		"Time": "\u0ab8\u0aae\u0aaf",
+		"Platform": "\u0aaa\u0acd\u0ab2\u0ac7\u0a9f\u0aab\u0acb\u0ab0\u0acd\u0aae",
+		"Device": "\u0a89\u0aaa\u0a95\u0ab0\u0aa3",
+		"ManageLinks": "\u0ab0\u0ac7\u0aab\u0ab0\u0ab2 \u0ab2\u0abf\u0a82\u0a95\u0acd\u0ab8"
+	}
 }

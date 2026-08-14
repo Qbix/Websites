@@ -95,7 +95,7 @@ function _Websites_section_preview(options, preview) {
             dragHandle.textContent = '⠿';
             controls.appendChild(dragHandle);
 
-            // Layout change button
+            // Layout change button via Q/actions
             var layoutBtn = document.createElement('button');
             layoutBtn.className = 'Websites_section_layout_btn';
             layoutBtn.textContent = (sectionsText.actions && sectionsText.actions.ChangeLayout) || 'Layout';
@@ -109,17 +109,16 @@ function _Websites_section_preview(options, preview) {
 
         // ── Section heading (if present or editable) ──
         if (editable && !layout.separator && !layout.empty) {
-            var titleEl = Q.Tool.setUpElement('div', 'Streams/inplace', {
+            var titleElement = Q.Tool.setUpElement('div', 'Streams/inplace', {
                 publisherId: ps.publisherId,
                 streamName: ps.streamName,
                 field: 'title',
                 inplaceType: 'text',
                 editable: true,
-                placeholder: (sectionsText.actions && sectionsText.actions.HeadingPlaceholder)
-                    || 'Section heading (optional)'
+                placeholder: (sectionsText.layouts && sectionsText.actions && sectionsText.actions.HeadingPlaceholder) || 'Section heading (optional)'
             }, null, tool.prefix);
-            titleEl.className = 'Websites_section_title';
-            container.appendChild(titleEl);
+            titleElement.classList.add('Websites_section_title');
+            container.appendChild(titleElement);
         } else if (title) {
             var h = document.createElement('h3');
             h.className = 'Websites_section_view_title';
@@ -129,39 +128,28 @@ function _Websites_section_preview(options, preview) {
 
         // ── Section own content (optional preamble) ──
         if (content && !editable) {
-            var contentDiv = document.createElement('div');
-            contentDiv.className = 'Websites_section_view_content';
+            var contentElement = document.createElement('div');
+            contentElement.className = 'Websites_section_view_content';
             var format = attrs.format || 'html';
             if (format === 'markdown' && window.marked) {
-                contentDiv.innerHTML = marked.parse(content);
+                contentElement.innerHTML = marked.parse(content);
             } else {
-                contentDiv.innerHTML = content;
+                contentElement.innerHTML = content;
             }
-            container.appendChild(contentDiv);
+            container.appendChild(contentElement);
         } else if (editable && !layout.separator && !layout.empty) {
             var format = attrs.format || 'html';
             var editorTool = format === 'markdown' ? 'Streams/markdown' : 'Streams/html';
-            var editorEl = Q.Tool.setUpElement('div', editorTool, {
+            var editorElement = Q.Tool.setUpElement('div', editorTool, {
                 publisherId: ps.publisherId,
                 streamName: ps.streamName,
                 field: 'content',
                 editable: true,
                 placeholder: 'Section content (optional)...',
-                livePreview: false,
-                froala: {
-                    toolbarInline: true,
-                    charCounterCount: false,
-                    toolbarButtons: [
-                        'bold', 'italic', 'underline', 'strikeThrough',
-                        '|', 'formatOL', 'formatUL',
-                        '|', 'paragraphFormat', 'insertLink',
-                        'insertImage', '|', 'clearFormatting'
-                    ],
-                    heightMin: 40
-                }
+                livePreview: false
             }, null, tool.prefix);
-            editorEl.className = 'Websites_section_content_editor';
-            container.appendChild(editorEl);
+            editorElement.classList.add('Websites_section_content_editor');
+            container.appendChild(editorElement);
         }
 
         // ── Blocks grid ──
@@ -185,7 +173,7 @@ function _Websites_section_preview(options, preview) {
         if (layout.gridMobile) gridContainer.setAttribute('data-grid-mobile', layout.gridMobile);
 
         // Render blocks via Streams/related
-        var blocksEl = Q.Tool.setUpElement('div', 'Streams/related', {
+        var blocksElement = Q.Tool.setUpElement('div', 'Streams/related', {
             publisherId: ps.publisherId,
             streamName: ps.streamName,
             relationType: 'Websites/blocks',
@@ -200,8 +188,19 @@ function _Websites_section_preview(options, preview) {
                 }
             } : false
         }, null, tool.prefix);
-        gridContainer.appendChild(blocksEl);
+        gridContainer.appendChild(blocksElement);
         container.appendChild(gridContainer);
+
+        // Subgrid (for layouts like features-heading-3 that have a heading + grid below)
+        if (layout.subgrid) {
+            var subContainer = document.createElement('div');
+            subContainer.className = 'Websites_section_subgrid';
+            if (layout.subgrid.grid) subContainer.style.gridTemplateColumns = layout.subgrid.grid;
+            if (layout.subgrid.gap) subContainer.style.gap = layout.subgrid.gap;
+            if (layout.subgrid.gridTablet) subContainer.setAttribute('data-grid-tablet', layout.subgrid.gridTablet);
+            if (layout.subgrid.gridMobile) subContainer.setAttribute('data-grid-mobile', layout.subgrid.gridMobile);
+            gridContainer.appendChild(subContainer);
+        }
 
         Q.Tool.clear(tool.element);
         tool.element.innerHTML = '';
@@ -219,12 +218,14 @@ function _Websites_section_preview(options, preview) {
     _ensureBlocks: function (stream, layout) {
         var tool = this;
         var ps = tool.preview.state;
+        // Check if blocks already exist
         Q.Streams.related(ps.publisherId, ps.streamName, 'Websites/blocks', true, {
             limit: 1
         }, function () {
             if (this.relatedStreams && Object.keys(this.relatedStreams).length > 0) {
                 return; // blocks already exist
             }
+            // Pre-create blocks based on layout
             layout.blocks.forEach(function (blockDef, i) {
                 Q.Streams.create({
                     publisherId: ps.publisherId,
@@ -250,6 +251,7 @@ function _Websites_section_preview(options, preview) {
         var catNames = (sectionsText.categories) || {};
         var layoutNames = (sectionsText.layouts) || {};
 
+        // Build picker HTML grouped by category
         var html = '<div class="Websites_layout_picker">';
         var catOrder = Object.keys(categories).sort(function (a, b) {
             return (categories[a].order || 99) - (categories[b].order || 99);
@@ -307,6 +309,7 @@ function _Websites_section_preview(options, preview) {
         var sectionsText = Q.getObject('Websites.sections', Q.text) || {};
 
         ps.creatable.preprocess = function (proceed) {
+            // Show layout picker directly as the composer
             tool._loadLayouts(function (layouts) {
                 tool._showLayoutPickerForCreate(layouts, sectionsText, proceed);
             });

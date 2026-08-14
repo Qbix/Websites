@@ -1,74 +1,119 @@
 {
-    "advert": {
-        "campaign": {
-            "placeholders": {
-                "link": "Link za promociju",
-                "startDate": "Početni datum",
-                "startTime": "Vrijeme početka",
-                "endDate": "Datum završetka",
-                "endTime": "Vrijeme završetka",
-                "budget": "Proračun"
-            },
-            "interests": {
-                "Title": "Filtriraj po interesu",
-                "FilterInterests": "Počnite upisivati interes..."
-            },
-            "Interest": "Interes",
-            "Location": "Mjesto"
-        }
-    },
-    "webpage": {
-        "composer": {
-            "Go": "Ići",
-            "PasteLinkHere": "https:\/\/...",
-            "BrowseTheWeb": "pretraživati",
-            "WriteToStartConversation": "Napišite svoje misli kako biste započeli razgovor",
-            "StartConversation": "Započnite razgovor",
-            "GotoConversation": "Idite na Razgovor",
-            "reset": "Resetiraj",
-            "edit": "Uredi",
-            "link": "Veza",
-            "setUrl": "Postavite URL",
-            "save": "Uštedjeti",
-            "setClip": "Izrežite isječak",
-            "invalidURL": "Neispravan URL"
-        },
-        "FileTooLarge": "Datoteka je prevelika za predmemoriju. Maksimalna veličina datoteke {{size}}",
-        "InvalidPDF": "Datoteka nije važeći PDF",
-        "StartTypingTitleOrKeywords": "Počnite upisivati naslov ili ključne riječi..."
-    },
-    "types": {
-        "Websites\/article": {
-            "description": "HTML dokument koji različiti korisnici mogu pregledavati i uređivati",
-            "displayType": "Članak"
-        },
-        "Websites\/slide": {
-            "description": "Slajd u prezentaciji, može sadržavati HTML, audio itd.",
-            "displayType": "slajd"
-        },
-        "Websites\/presentation": {
-            "description": "Prezentacija koja se sastoji od različitih slajdova",
-            "displayType": "Prezentacija"
-        },
-        "Websites\/advert\/unit": {
-            "description": "Oglasna jedinica na web stranici",
-            "displayType": "Oglasna jedinica"
-        },
-        "Websites\/advert\/placement": {
-            "description": "Način grupiranja oglasnih jedinica pod imenom",
-            "displayType": "Postavljanje oglasa"
-        },
-        "Websites\/advert\/creative": {
-            "description": "Sadržaj za oglas",
-            "displayType": "Oglasni oglas"
-        },
-        "Websites\/advert\/campaign": {
-            "description": "Reklamna kampanja",
-            "displayType": "Oglasna kampanja"
-        },
-        "Websites\/webpage": {
-            "description": "Predstavlja web mjesto čiji su metapodaci skrapirani",
-            "displayType": "Web stranica"
-        }
-    }
+	"advert": {
+		"campaign": {
+			"placeholders": {
+				"link": "Link za promociju",
+				"startDate": "Po\u010detni datum",
+				"startTime": "Vrijeme po\u010detka",
+				"endDate": "Datum zavr\u0161etka",
+				"endTime": "Vrijeme zavr\u0161etka",
+				"budget": "Prora\u010dun"
+			},
+			"interests": {
+				"Title": "Filtriraj po interesu",
+				"FilterInterests": "Po\u010dnite upisivati interes..."
+			},
+			"Interest": "Interes",
+			"Location": "Mjesto"
+		}
+	},
+	"webpage": {
+		"composer": {
+			"Go": "I\u0107i",
+			"PasteLinkHere": "https://...",
+			"BrowseTheWeb": "pretra\u017eivati",
+			"WriteToStartConversation": "Napi\u0161ite svoje misli kako biste zapo\u010deli razgovor",
+			"StartConversation": "Zapo\u010dnite razgovor",
+			"GotoConversation": "Idite na Razgovor",
+			"reset": "Resetiraj",
+			"edit": "Uredi",
+			"link": "Veza",
+			"setUrl": "Postavite URL",
+			"save": "U\u0161tedjeti",
+			"setClip": "Izre\u017eite isje\u010dak",
+			"invalidURL": "Neispravan URL"
+		},
+		"FileTooLarge": "Datoteka je prevelika za predmemoriju. Maksimalna veli\u010dina datoteke {{size}}",
+		"InvalidPDF": "Datoteka nije va\u017ee\u0107i PDF",
+		"StartTypingTitleOrKeywords": "Po\u010dnite upisivati naslov ili klju\u010dne rije\u010di..."
+	},
+	"types": {
+		"Websites/article": {
+			"description": "HTML dokument koji razli\u010diti korisnici mogu pregledavati i ure\u0111ivati",
+			"displayType": "\u010clanak"
+		},
+		"Websites/slide": {
+			"description": "Slajd u prezentaciji, mo\u017ee sadr\u017eavati HTML, audio itd.",
+			"displayType": "slajd"
+		},
+		"Websites/presentation": {
+			"description": "Prezentacija koja se sastoji od razli\u010ditih slajdova",
+			"displayType": "Prezentacija"
+		},
+		"Websites/advert/unit": {
+			"description": "Oglasna jedinica na web stranici",
+			"displayType": "Oglasna jedinica"
+		},
+		"Websites/advert/placement": {
+			"description": "Na\u010din grupiranja oglasnih jedinica pod imenom",
+			"displayType": "Postavljanje oglasa"
+		},
+		"Websites/advert/creative": {
+			"description": "Sadr\u017eaj za oglas",
+			"displayType": "Oglasni oglas"
+		},
+		"Websites/advert/campaign": {
+			"description": "Reklamna kampanja",
+			"displayType": "Oglasna kampanja"
+		},
+		"Websites/webpage": {
+			"description": "Predstavlja web mjesto \u010diji su metapodaci skrapirani",
+			"displayType": "Web stranica"
+		}
+	},
+	"page": {
+		"Add": "Dodaj stranicu",
+		"Title": "Naslov stranice",
+		"Description": "Opis",
+		"TitlePlaceholder": "Neimenovana stranica",
+		"DescriptionPlaceholder": "Opis stranice..."
+	},
+	"section": {
+		"Add": "Dodaj odjeljak",
+		"Heading": "Naslov",
+		"HeadingPlaceholder": "Naslov odjeljka (neobavezno)",
+		"Layout": "Izgled",
+		"Content": "Sadr\u017eaj",
+		"ContentPlaceholder": "Ovdje napi\u0161ite sadr\u017eaj...",
+		"layouts": {
+			"full": "Puna \u0161irina",
+			"two-col": "Dva stupca",
+			"three-col": "Tri stupca",
+			"sidebar-left": "Bo\u010dna traka lijevo",
+			"sidebar-right": "Bo\u010dna traka desno"
+		}
+	},
+	"block": {
+		"Add": "Dodaj blok",
+		"Title": "Titula",
+		"TitlePlaceholder": "Naslov bloka (neobavezno)",
+		"Content": "Sadr\u017eaj",
+		"ContentPlaceholder": "Blokiraj sadr\u017eaj..."
+	},
+	"referral": {
+		"Create": "Izradi referalnu poveznicu",
+		"Destination": "Odredi\u0161ni URL",
+		"Slug": "Pu\u017e",
+		"Title": "Naslov (neobavezno)",
+		"Copy": "Kopirati",
+		"Copied": "Kopirano!",
+		"Clicks": "Klikovi",
+		"Inviter": "Pozivatelj",
+		"Metadata": "Dijeljenje metapodataka",
+		"RecentClicks": "Nedavni klikovi",
+		"Time": "Vrijeme",
+		"Platform": "Platforma",
+		"Device": "Ure\u0111aj",
+		"ManageLinks": "Referral linkovi"
+	}
 }

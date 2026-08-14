@@ -1,74 +1,119 @@
 {
-    "advert": {
-        "campaign": {
-            "placeholders": {
-                "link": "Link per promuovere",
-                "startDate": "Data d&#39;inizio",
-                "startTime": "Ora di inizio",
-                "endDate": "Data di fine",
-                "endTime": "Tempo scaduto",
-                "budget": "Bilancio"
-            },
-            "interests": {
-                "Title": "Filtra per interesse",
-                "FilterInterests": "Inizia a digitare un interesse..."
-            },
-            "Interest": "Interesse",
-            "Location": "Posizione"
-        }
-    },
-    "webpage": {
-        "composer": {
-            "Go": "Andare",
-            "PasteLinkHere": "https:\/\/...",
-            "BrowseTheWeb": "Navigare",
-            "WriteToStartConversation": "Scrivi i tuoi pensieri per iniziare la conversazione",
-            "StartConversation": "Avvia conversazione",
-            "GotoConversation": "Vai a Conversazione",
-            "reset": "Ripristina",
-            "edit": "Modificare",
-            "link": "Collegamento",
-            "setUrl": "Imposta URL",
-            "save": "Salva",
-            "setClip": "Clip ritagliata",
-            "invalidURL": "URL non valido"
-        },
-        "FileTooLarge": "File troppo grande per la memorizzazione nella cache. Dimensione massima del file {{size}}",
-        "InvalidPDF": "Il file non è un PDF valido",
-        "StartTypingTitleOrKeywords": "Inizia a digitare il titolo o le parole chiave..."
-    },
-    "types": {
-        "Websites\/article": {
-            "description": "Un documento HTML che vari utenti possono visualizzare e modificare",
-            "displayType": "Articolo"
-        },
-        "Websites\/slide": {
-            "description": "Una diapositiva in una presentazione, può includere HTML, audio ecc.",
-            "displayType": "Diapositiva"
-        },
-        "Websites\/presentation": {
-            "description": "Una presentazione composta da varie diapositive",
-            "displayType": "Presentazione"
-        },
-        "Websites\/advert\/unit": {
-            "description": "Un&#39;unità pubblicitaria su un sito web",
-            "displayType": "Unità pubblicitaria"
-        },
-        "Websites\/advert\/placement": {
-            "description": "Un modo per raggruppare le unità pubblicitarie sotto un nome",
-            "displayType": "Posizionamento dell&#39;annuncio"
-        },
-        "Websites\/advert\/creative": {
-            "description": "Contenuto per un annuncio",
-            "displayType": "Annuncio creativo"
-        },
-        "Websites\/advert\/campaign": {
-            "description": "Una campagna pubblicitaria",
-            "displayType": "Campagna pubblicitaria"
-        },
-        "Websites\/webpage": {
-            "description": "Rappresenta un sito Web i cui metadati sono stati estratti",
-            "displayType": "pagina web"
-        }
-    }
+	"advert": {
+		"campaign": {
+			"placeholders": {
+				"link": "Link per promuovere",
+				"startDate": "Data d&#39;inizio",
+				"startTime": "Ora di inizio",
+				"endDate": "Data di fine",
+				"endTime": "Tempo scaduto",
+				"budget": "Bilancio"
+			},
+			"interests": {
+				"Title": "Filtra per interesse",
+				"FilterInterests": "Inizia a digitare un interesse..."
+			},
+			"Interest": "Interesse",
+			"Location": "Posizione"
+		}
+	},
+	"webpage": {
+		"composer": {
+			"Go": "Andare",
+			"PasteLinkHere": "https://...",
+			"BrowseTheWeb": "Navigare",
+			"WriteToStartConversation": "Scrivi i tuoi pensieri per iniziare la conversazione",
+			"StartConversation": "Avvia conversazione",
+			"GotoConversation": "Vai a Conversazione",
+			"reset": "Ripristina",
+			"edit": "Modificare",
+			"link": "Collegamento",
+			"setUrl": "Imposta URL",
+			"save": "Salva",
+			"setClip": "Clip ritagliata",
+			"invalidURL": "URL non valido"
+		},
+		"FileTooLarge": "File troppo grande per la memorizzazione nella cache. Dimensione massima del file {{size}}",
+		"InvalidPDF": "Il file non \u00e8 un PDF valido",
+		"StartTypingTitleOrKeywords": "Inizia a digitare il titolo o le parole chiave..."
+	},
+	"types": {
+		"Websites/article": {
+			"description": "Un documento HTML che vari utenti possono visualizzare e modificare",
+			"displayType": "Articolo"
+		},
+		"Websites/slide": {
+			"description": "Una diapositiva in una presentazione, pu\u00f2 includere HTML, audio ecc.",
+			"displayType": "Diapositiva"
+		},
+		"Websites/presentation": {
+			"description": "Una presentazione composta da varie diapositive",
+			"displayType": "Presentazione"
+		},
+		"Websites/advert/unit": {
+			"description": "Un&#39;unit\u00e0 pubblicitaria su un sito web",
+			"displayType": "Unit\u00e0 pubblicitaria"
+		},
+		"Websites/advert/placement": {
+			"description": "Un modo per raggruppare le unit\u00e0 pubblicitarie sotto un nome",
+			"displayType": "Posizionamento dell&#39;annuncio"
+		},
+		"Websites/advert/creative": {
+			"description": "Contenuto per un annuncio",
+			"displayType": "Annuncio creativo"
+		},
+		"Websites/advert/campaign": {
+			"description": "Una campagna pubblicitaria",
+			"displayType": "Campagna pubblicitaria"
+		},
+		"Websites/webpage": {
+			"description": "Rappresenta un sito Web i cui metadati sono stati estratti",
+			"displayType": "pagina web"
+		}
+	},
+	"page": {
+		"Add": "Aggiungi pagina",
+		"Title": "Titolo della pagina",
+		"Description": "Descrizione",
+		"TitlePlaceholder": "Pagina senza titolo",
+		"DescriptionPlaceholder": "Descrizione della pagina..."
+	},
+	"section": {
+		"Add": "Aggiungi sezione",
+		"Heading": "Intestazione",
+		"HeadingPlaceholder": "Intestazione della sezione (facoltativa)",
+		"Layout": "Disposizione",
+		"Content": "Contenuto",
+		"ContentPlaceholder": "Inserisci qui il contenuto...",
+		"layouts": {
+			"full": "Larghezza intera",
+			"two-col": "Due colonne",
+			"three-col": "Tre colonne",
+			"sidebar-left": "Barra laterale sinistra",
+			"sidebar-right": "Barra laterale destra"
+		}
+	},
+	"block": {
+		"Add": "Aggiungi blocco",
+		"Title": "Titolo",
+		"TitlePlaceholder": "Titolo del blocco (facoltativo)",
+		"Content": "Contenuto",
+		"ContentPlaceholder": "Contenuto del blocco..."
+	},
+	"referral": {
+		"Create": "Crea un link di riferimento",
+		"Destination": "URL di destinazione",
+		"Slug": "Lumaca",
+		"Title": "Titolo (facoltativo)",
+		"Copy": "Copia",
+		"Copied": "Copiato!",
+		"Clicks": "Clic",
+		"Inviter": "Invitante",
+		"Metadata": "Condivisione dei metadati",
+		"RecentClicks": "Clic recenti",
+		"Time": "Tempo",
+		"Platform": "Piattaforma",
+		"Device": "Dispositivo",
+		"ManageLinks": "Link di riferimento"
+	}
 }

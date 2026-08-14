@@ -1,74 +1,119 @@
 {
-    "advert": {
-        "campaign": {
-            "placeholders": {
-                "link": "Länk att marknadsföra",
-                "startDate": "Start datum",
-                "startTime": "Starttid",
-                "endDate": "Slutdatum",
-                "endTime": "Sluttid",
-                "budget": "Budget"
-            },
-            "interests": {
-                "Title": "Filtrera efter intresse",
-                "FilterInterests": "Börja skriva ett intresse..."
-            },
-            "Interest": "Intressera",
-            "Location": "Plats"
-        }
-    },
-    "webpage": {
-        "composer": {
-            "Go": "Gå",
-            "PasteLinkHere": "https:\/\/...",
-            "BrowseTheWeb": "Bläddra",
-            "WriteToStartConversation": "Skriv dina tankar för att börja konversationen",
-            "StartConversation": "Starta konversation",
-            "GotoConversation": "Gå till Konversation",
-            "reset": "Återställa",
-            "edit": "Redigera",
-            "link": "Länk",
-            "setUrl": "Ange URL",
-            "save": "Spara",
-            "setClip": "Klipp ut klipp",
-            "invalidURL": "Ogiltig URL"
-        },
-        "FileTooLarge": "Filen är för stor för cachelagring. Max filstorlek {{size}}",
-        "InvalidPDF": "Filen är inte en giltig PDF",
-        "StartTypingTitleOrKeywords": "Börja skriva rubrik eller nyckelord..."
-    },
-    "types": {
-        "Websites\/article": {
-            "description": "Ett HTML-dokument som olika användare kan visa och redigera",
-            "displayType": "Artikel"
-        },
-        "Websites\/slide": {
-            "description": "En bild i en presentation kan innehålla HTML, ljud etc.",
-            "displayType": "Glida"
-        },
-        "Websites\/presentation": {
-            "description": "En presentation bestående av olika bilder",
-            "displayType": "Presentation"
-        },
-        "Websites\/advert\/unit": {
-            "description": "En annonsenhet på en webbplats",
-            "displayType": "Annonsenhet"
-        },
-        "Websites\/advert\/placement": {
-            "description": "Ett sätt att gruppera annonsenheter under ett namn",
-            "displayType": "Annonsplacering"
-        },
-        "Websites\/advert\/creative": {
-            "description": "Innehåll för en annons",
-            "displayType": "Annons kreativ"
-        },
-        "Websites\/advert\/campaign": {
-            "description": "En reklamkampanj",
-            "displayType": "Annonskampanj"
-        },
-        "Websites\/webpage": {
-            "description": "Representerar en webbplats vars metadata har skrapats",
-            "displayType": "webbsida"
-        }
-    }
+	"advert": {
+		"campaign": {
+			"placeholders": {
+				"link": "L\u00e4nk att marknadsf\u00f6ra",
+				"startDate": "Start datum",
+				"startTime": "Starttid",
+				"endDate": "Slutdatum",
+				"endTime": "Sluttid",
+				"budget": "Budget"
+			},
+			"interests": {
+				"Title": "Filtrera efter intresse",
+				"FilterInterests": "B\u00f6rja skriva ett intresse..."
+			},
+			"Interest": "Intressera",
+			"Location": "Plats"
+		}
+	},
+	"webpage": {
+		"composer": {
+			"Go": "G\u00e5",
+			"PasteLinkHere": "https://...",
+			"BrowseTheWeb": "Bl\u00e4ddra",
+			"WriteToStartConversation": "Skriv dina tankar f\u00f6r att b\u00f6rja konversationen",
+			"StartConversation": "Starta konversation",
+			"GotoConversation": "G\u00e5 till Konversation",
+			"reset": "\u00c5terst\u00e4lla",
+			"edit": "Redigera",
+			"link": "L\u00e4nk",
+			"setUrl": "Ange URL",
+			"save": "Spara",
+			"setClip": "Klipp ut klipp",
+			"invalidURL": "Ogiltig URL"
+		},
+		"FileTooLarge": "Filen \u00e4r f\u00f6r stor f\u00f6r cachelagring. Max filstorlek {{size}}",
+		"InvalidPDF": "Filen \u00e4r inte en giltig PDF",
+		"StartTypingTitleOrKeywords": "B\u00f6rja skriva rubrik eller nyckelord..."
+	},
+	"types": {
+		"Websites/article": {
+			"description": "Ett HTML-dokument som olika anv\u00e4ndare kan visa och redigera",
+			"displayType": "Artikel"
+		},
+		"Websites/slide": {
+			"description": "En bild i en presentation kan inneh\u00e5lla HTML, ljud etc.",
+			"displayType": "Glida"
+		},
+		"Websites/presentation": {
+			"description": "En presentation best\u00e5ende av olika bilder",
+			"displayType": "Presentation"
+		},
+		"Websites/advert/unit": {
+			"description": "En annonsenhet p\u00e5 en webbplats",
+			"displayType": "Annonsenhet"
+		},
+		"Websites/advert/placement": {
+			"description": "Ett s\u00e4tt att gruppera annonsenheter under ett namn",
+			"displayType": "Annonsplacering"
+		},
+		"Websites/advert/creative": {
+			"description": "Inneh\u00e5ll f\u00f6r en annons",
+			"displayType": "Annons kreativ"
+		},
+		"Websites/advert/campaign": {
+			"description": "En reklamkampanj",
+			"displayType": "Annonskampanj"
+		},
+		"Websites/webpage": {
+			"description": "Representerar en webbplats vars metadata har skrapats",
+			"displayType": "webbsida"
+		}
+	},
+	"page": {
+		"Add": "L\u00e4gg till sida",
+		"Title": "Sidtitel",
+		"Description": "Beskrivning",
+		"TitlePlaceholder": "Namnl\u00f6s sida",
+		"DescriptionPlaceholder": "Sidbeskrivning..."
+	},
+	"section": {
+		"Add": "L\u00e4gg till avsnitt",
+		"Heading": "Rubrik",
+		"HeadingPlaceholder": "Avsnittsrubrik (valfritt)",
+		"Layout": "Layout",
+		"Content": "Inneh\u00e5ll",
+		"ContentPlaceholder": "Skriv inneh\u00e5ll h\u00e4r...",
+		"layouts": {
+			"full": "Full bredd",
+			"two-col": "Tv\u00e5 kolumner",
+			"three-col": "Tre kolumner",
+			"sidebar-left": "Sidof\u00e4lt v\u00e4nster",
+			"sidebar-right": "Sidof\u00e4lt h\u00f6ger"
+		}
+	},
+	"block": {
+		"Add": "L\u00e4gg till block",
+		"Title": "Titel",
+		"TitlePlaceholder": "Blockrubrik (valfritt)",
+		"Content": "Inneh\u00e5ll",
+		"ContentPlaceholder": "Blockera inneh\u00e5ll..."
+	},
+	"referral": {
+		"Create": "Skapa h\u00e4nvisningsl\u00e4nk",
+		"Destination": "Destinations-URL",
+		"Slug": "Snigel",
+		"Title": "Titel (valfritt)",
+		"Copy": "Kopiera",
+		"Copied": "Kopierad!",
+		"Clicks": "Klick",
+		"Inviter": "Inbjudare",
+		"Metadata": "Dela metadata",
+		"RecentClicks": "Senaste klick",
+		"Time": "Tid",
+		"Platform": "Plattform",
+		"Device": "Anordning",
+		"ManageLinks": "Remissl\u00e4nkar"
+	}
 }

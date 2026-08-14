@@ -1,74 +1,119 @@
 {
-    "advert": {
-        "campaign": {
-            "placeholders": {
-                "link": "홍보 링크",
-                "startDate": "시작일",
-                "startTime": "시작 시간",
-                "endDate": "종료 날짜",
-                "endTime": "종료 시간",
-                "budget": "예산"
-            },
-            "interests": {
-                "Title": "관심사로 필터링",
-                "FilterInterests": "관심사 입력 시작..."
-            },
-            "Interest": "관심",
-            "Location": "위치"
-        }
-    },
-    "webpage": {
-        "composer": {
-            "Go": "가다",
-            "PasteLinkHere": "https:\/\/...",
-            "BrowseTheWeb": "검색",
-            "WriteToStartConversation": "대화를 시작하기 위해 생각을 쓰십시오",
-            "StartConversation": "대화 시작",
-            "GotoConversation": "대화로 이동",
-            "reset": "초기화",
-            "edit": "편집하다",
-            "link": "링크",
-            "setUrl": "URL 설정",
-            "save": "구하다",
-            "setClip": "컷아웃 클립",
-            "invalidURL": "잘못된 URL"
-        },
-        "FileTooLarge": "파일이 너무 커서 캐싱할 수 없습니다. 최대 파일 크기 {{size}}",
-        "InvalidPDF": "파일이 유효한 PDF가 아닙니다.",
-        "StartTypingTitleOrKeywords": "제목 또는 키워드 입력 시작..."
-    },
-    "types": {
-        "Websites\/article": {
-            "description": "다양한 사용자가 보고 편집할 수 있는 HTML 문서",
-            "displayType": "기사"
-        },
-        "Websites\/slide": {
-            "description": "프레젠테이션의 슬라이드에는 HTML, 오디오 등이 포함될 수 있습니다.",
-            "displayType": "미끄러지 다"
-        },
-        "Websites\/presentation": {
-            "description": "다양한 슬라이드로 구성된 프레젠테이션",
-            "displayType": "프레젠테이션"
-        },
-        "Websites\/advert\/unit": {
-            "description": "웹사이트의 광고 단위",
-            "displayType": "광고 단위"
-        },
-        "Websites\/advert\/placement": {
-            "description": "이름 아래 광고 단위를 그룹화하는 방법",
-            "displayType": "광고 배치"
-        },
-        "Websites\/advert\/creative": {
-            "description": "광고용 콘텐츠",
-            "displayType": "광고 소재"
-        },
-        "Websites\/advert\/campaign": {
-            "description": "광고 캠페인",
-            "displayType": "광고 캠페인"
-        },
-        "Websites\/webpage": {
-            "description": "메타데이터가 스크랩된 웹사이트를 나타냅니다.",
-            "displayType": "웹 페이지"
-        }
-    }
+	"advert": {
+		"campaign": {
+			"placeholders": {
+				"link": "\ud64d\ubcf4 \ub9c1\ud06c",
+				"startDate": "\uc2dc\uc791\uc77c",
+				"startTime": "\uc2dc\uc791 \uc2dc\uac04",
+				"endDate": "\uc885\ub8cc \ub0a0\uc9dc",
+				"endTime": "\uc885\ub8cc \uc2dc\uac04",
+				"budget": "\uc608\uc0b0"
+			},
+			"interests": {
+				"Title": "\uad00\uc2ec\uc0ac\ub85c \ud544\ud130\ub9c1",
+				"FilterInterests": "\uad00\uc2ec\uc0ac \uc785\ub825 \uc2dc\uc791..."
+			},
+			"Interest": "\uad00\uc2ec",
+			"Location": "\uc704\uce58"
+		}
+	},
+	"webpage": {
+		"composer": {
+			"Go": "\uac00\ub2e4",
+			"PasteLinkHere": "https://...",
+			"BrowseTheWeb": "\uac80\uc0c9",
+			"WriteToStartConversation": "\ub300\ud654\ub97c \uc2dc\uc791\ud558\uae30 \uc704\ud574 \uc0dd\uac01\uc744 \uc4f0\uc2ed\uc2dc\uc624",
+			"StartConversation": "\ub300\ud654 \uc2dc\uc791",
+			"GotoConversation": "\ub300\ud654\ub85c \uc774\ub3d9",
+			"reset": "\ucd08\uae30\ud654",
+			"edit": "\ud3b8\uc9d1\ud558\ub2e4",
+			"link": "\ub9c1\ud06c",
+			"setUrl": "URL \uc124\uc815",
+			"save": "\uad6c\ud558\ub2e4",
+			"setClip": "\ucef7\uc544\uc6c3 \ud074\ub9bd",
+			"invalidURL": "\uc798\ubabb\ub41c URL"
+		},
+		"FileTooLarge": "\ud30c\uc77c\uc774 \ub108\ubb34 \ucee4\uc11c \uce90\uc2f1\ud560 \uc218 \uc5c6\uc2b5\ub2c8\ub2e4. \ucd5c\ub300 \ud30c\uc77c \ud06c\uae30 {{size}}",
+		"InvalidPDF": "\ud30c\uc77c\uc774 \uc720\ud6a8\ud55c PDF\uac00 \uc544\ub2d9\ub2c8\ub2e4.",
+		"StartTypingTitleOrKeywords": "\uc81c\ubaa9 \ub610\ub294 \ud0a4\uc6cc\ub4dc \uc785\ub825 \uc2dc\uc791..."
+	},
+	"types": {
+		"Websites/article": {
+			"description": "\ub2e4\uc591\ud55c \uc0ac\uc6a9\uc790\uac00 \ubcf4\uace0 \ud3b8\uc9d1\ud560 \uc218 \uc788\ub294 HTML \ubb38\uc11c",
+			"displayType": "\uae30\uc0ac"
+		},
+		"Websites/slide": {
+			"description": "\ud504\ub808\uc820\ud14c\uc774\uc158\uc758 \uc2ac\ub77c\uc774\ub4dc\uc5d0\ub294 HTML, \uc624\ub514\uc624 \ub4f1\uc774 \ud3ec\ud568\ub420 \uc218 \uc788\uc2b5\ub2c8\ub2e4.",
+			"displayType": "\ubbf8\ub044\ub7ec\uc9c0 \ub2e4"
+		},
+		"Websites/presentation": {
+			"description": "\ub2e4\uc591\ud55c \uc2ac\ub77c\uc774\ub4dc\ub85c \uad6c\uc131\ub41c \ud504\ub808\uc820\ud14c\uc774\uc158",
+			"displayType": "\ud504\ub808\uc820\ud14c\uc774\uc158"
+		},
+		"Websites/advert/unit": {
+			"description": "\uc6f9\uc0ac\uc774\ud2b8\uc758 \uad11\uace0 \ub2e8\uc704",
+			"displayType": "\uad11\uace0 \ub2e8\uc704"
+		},
+		"Websites/advert/placement": {
+			"description": "\uc774\ub984 \uc544\ub798 \uad11\uace0 \ub2e8\uc704\ub97c \uadf8\ub8f9\ud654\ud558\ub294 \ubc29\ubc95",
+			"displayType": "\uad11\uace0 \ubc30\uce58"
+		},
+		"Websites/advert/creative": {
+			"description": "\uad11\uace0\uc6a9 \ucf58\ud150\uce20",
+			"displayType": "\uad11\uace0 \uc18c\uc7ac"
+		},
+		"Websites/advert/campaign": {
+			"description": "\uad11\uace0 \ucea0\ud398\uc778",
+			"displayType": "\uad11\uace0 \ucea0\ud398\uc778"
+		},
+		"Websites/webpage": {
+			"description": "\uba54\ud0c0\ub370\uc774\ud130\uac00 \uc2a4\ud06c\ub7a9\ub41c \uc6f9\uc0ac\uc774\ud2b8\ub97c \ub098\ud0c0\ub0c5\ub2c8\ub2e4.",
+			"displayType": "\uc6f9 \ud398\uc774\uc9c0"
+		}
+	},
+	"page": {
+		"Add": "\ud398\uc774\uc9c0 \ucd94\uac00",
+		"Title": "\ud398\uc774\uc9c0 \uc81c\ubaa9",
+		"Description": "\uc124\uba85",
+		"TitlePlaceholder": "\uc81c\ubaa9 \uc5c6\ub294 \ud398\uc774\uc9c0",
+		"DescriptionPlaceholder": "\ud398\uc774\uc9c0 \uc124\uba85..."
+	},
+	"section": {
+		"Add": "\uc139\uc158 \ucd94\uac00",
+		"Heading": "\ud45c\uc81c",
+		"HeadingPlaceholder": "\uc139\uc158 \uc81c\ubaa9 (\uc120\ud0dd \uc0ac\ud56d)",
+		"Layout": "\uacf5\ub4e4\uc5ec \ub098\uc5f4\ud55c \uac83",
+		"Content": "\ucf58\ud150\uce20",
+		"ContentPlaceholder": "\uc5ec\uae30\uc5d0 \ucf58\ud150\uce20\ub97c \uc791\uc131\ud558\uc138\uc694...",
+		"layouts": {
+			"full": "\uc804\ud3ed",
+			"two-col": "\ub450 \uac1c\uc758 \uc5f4",
+			"three-col": "\uc138 \uac1c\uc758 \uc5f4",
+			"sidebar-left": "\uc67c\ucabd \uc0ac\uc774\ub4dc\ubc14",
+			"sidebar-right": "\uc624\ub978\ucabd \uc0ac\uc774\ub4dc\ubc14"
+		}
+	},
+	"block": {
+		"Add": "\ube14\ub85d \ucd94\uac00",
+		"Title": "\uc81c\ubaa9",
+		"TitlePlaceholder": "\ube14\ub85d \uc81c\ubaa9 (\uc120\ud0dd \uc0ac\ud56d)",
+		"Content": "\ucf58\ud150\uce20",
+		"ContentPlaceholder": "\ucf58\ud150\uce20 \ucc28\ub2e8..."
+	},
+	"referral": {
+		"Create": "\ucd94\ucc9c \ub9c1\ud06c \uc0dd\uc131",
+		"Destination": "\ubaa9\uc801\uc9c0 URL",
+		"Slug": "\uac15\ud0c0",
+		"Title": "\uc81c\ubaa9 (\uc120\ud0dd \uc0ac\ud56d)",
+		"Copy": "\ubcf5\uc0ac",
+		"Copied": "\ubcf5\uc0ac\ud588\uc5b4\uc694!",
+		"Clicks": "\ud074\ub9ad",
+		"Inviter": "\ucd08\ub300\uc790",
+		"Metadata": "\uba54\ud0c0\ub370\uc774\ud130 \uacf5\uc720",
+		"RecentClicks": "\ucd5c\uadfc \ud074\ub9ad",
+		"Time": "\uc2dc\uac04",
+		"Platform": "\ud50c\ub7ab\ud3fc",
+		"Device": "\uc7a5\uce58",
+		"ManageLinks": "\ucd94\ucc9c \ub9c1\ud06c"
+	}
 }

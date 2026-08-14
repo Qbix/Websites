@@ -1,74 +1,119 @@
 {
-    "advert": {
-        "campaign": {
-            "placeholders": {
-                "link": "Link a promócióhoz",
-                "startDate": "Kezdő dátum",
-                "startTime": "Kezdési idő",
-                "endDate": "Befejezés dátuma",
-                "endTime": "Idő vége",
-                "budget": "Költségvetés"
-            },
-            "interests": {
-                "Title": "Szűrés érdeklődés szerint",
-                "FilterInterests": "Kezdje el beírni az érdeklődési kört..."
-            },
-            "Interest": "Érdeklődés",
-            "Location": "Elhelyezkedés"
-        }
-    },
-    "webpage": {
-        "composer": {
-            "Go": "Megy",
-            "PasteLinkHere": "https:\/\/...",
-            "BrowseTheWeb": "Tallózás",
-            "WriteToStartConversation": "A beszélgetés elindításához írja le gondolatait",
-            "StartConversation": "Beszélgetés indítása",
-            "GotoConversation": "Nyissa meg a Beszélgetést",
-            "reset": "Visszaállítás",
-            "edit": "Szerkesztés",
-            "link": "Link",
-            "setUrl": "Állítsa be az URL-t",
-            "save": "Megment",
-            "setClip": "Kivágott klip",
-            "invalidURL": "érvénytelen URL"
-        },
-        "FileTooLarge": "A fájl túl nagy a gyorsítótárazáshoz. Max fájlméret {{size}}",
-        "InvalidPDF": "A fájl nem érvényes PDF",
-        "StartTypingTitleOrKeywords": "Kezdje el beírni a címet vagy a kulcsszavakat..."
-    },
-    "types": {
-        "Websites\/article": {
-            "description": "Egy HTML-dokumentum, amelyet különböző felhasználók megtekinthetnek és szerkeszthetnek",
-            "displayType": "Cikk"
-        },
-        "Websites\/slide": {
-            "description": "A prezentációban lévő dia tartalmazhat HTML-t, hangot stb.",
-            "displayType": "Csúszik"
-        },
-        "Websites\/presentation": {
-            "description": "Különböző diákból álló prezentáció",
-            "displayType": "Bemutatás"
-        },
-        "Websites\/advert\/unit": {
-            "description": "Hirdetési egység egy weboldalon",
-            "displayType": "Hirdetési egység"
-        },
-        "Websites\/advert\/placement": {
-            "description": "A hirdetési egységek név alatti csoportosításának módja",
-            "displayType": "Reklám elhelyezés"
-        },
-        "Websites\/advert\/creative": {
-            "description": "Tartalom egy hirdetéshez",
-            "displayType": "Reklám kreatív"
-        },
-        "Websites\/advert\/campaign": {
-            "description": "Reklámkampány",
-            "displayType": "Reklámkampány"
-        },
-        "Websites\/webpage": {
-            "description": "Olyan webhelyet jelöl, amelynek metaadatait lekaparták",
-            "displayType": "honlap"
-        }
-    }
+	"advert": {
+		"campaign": {
+			"placeholders": {
+				"link": "Link a prom\u00f3ci\u00f3hoz",
+				"startDate": "Kezd\u0151 d\u00e1tum",
+				"startTime": "Kezd\u00e9si id\u0151",
+				"endDate": "Befejez\u00e9s d\u00e1tuma",
+				"endTime": "Id\u0151 v\u00e9ge",
+				"budget": "K\u00f6lts\u00e9gvet\u00e9s"
+			},
+			"interests": {
+				"Title": "Sz\u0171r\u00e9s \u00e9rdekl\u0151d\u00e9s szerint",
+				"FilterInterests": "Kezdje el be\u00edrni az \u00e9rdekl\u0151d\u00e9si k\u00f6rt..."
+			},
+			"Interest": "\u00c9rdekl\u0151d\u00e9s",
+			"Location": "Elhelyezked\u00e9s"
+		}
+	},
+	"webpage": {
+		"composer": {
+			"Go": "Megy",
+			"PasteLinkHere": "https://...",
+			"BrowseTheWeb": "Tall\u00f3z\u00e1s",
+			"WriteToStartConversation": "A besz\u00e9lget\u00e9s elind\u00edt\u00e1s\u00e1hoz \u00edrja le gondolatait",
+			"StartConversation": "Besz\u00e9lget\u00e9s ind\u00edt\u00e1sa",
+			"GotoConversation": "Nyissa meg a Besz\u00e9lget\u00e9st",
+			"reset": "Vissza\u00e1ll\u00edt\u00e1s",
+			"edit": "Szerkeszt\u00e9s",
+			"link": "Link",
+			"setUrl": "\u00c1ll\u00edtsa be az URL-t",
+			"save": "Megment",
+			"setClip": "Kiv\u00e1gott klip",
+			"invalidURL": "\u00e9rv\u00e9nytelen URL"
+		},
+		"FileTooLarge": "A f\u00e1jl t\u00fal nagy a gyors\u00edt\u00f3t\u00e1raz\u00e1shoz. Max f\u00e1jlm\u00e9ret {{size}}",
+		"InvalidPDF": "A f\u00e1jl nem \u00e9rv\u00e9nyes PDF",
+		"StartTypingTitleOrKeywords": "Kezdje el be\u00edrni a c\u00edmet vagy a kulcsszavakat..."
+	},
+	"types": {
+		"Websites/article": {
+			"description": "Egy HTML-dokumentum, amelyet k\u00fcl\u00f6nb\u00f6z\u0151 felhaszn\u00e1l\u00f3k megtekinthetnek \u00e9s szerkeszthetnek",
+			"displayType": "Cikk"
+		},
+		"Websites/slide": {
+			"description": "A prezent\u00e1ci\u00f3ban l\u00e9v\u0151 dia tartalmazhat HTML-t, hangot stb.",
+			"displayType": "Cs\u00faszik"
+		},
+		"Websites/presentation": {
+			"description": "K\u00fcl\u00f6nb\u00f6z\u0151 di\u00e1kb\u00f3l \u00e1ll\u00f3 prezent\u00e1ci\u00f3",
+			"displayType": "Bemutat\u00e1s"
+		},
+		"Websites/advert/unit": {
+			"description": "Hirdet\u00e9si egys\u00e9g egy weboldalon",
+			"displayType": "Hirdet\u00e9si egys\u00e9g"
+		},
+		"Websites/advert/placement": {
+			"description": "A hirdet\u00e9si egys\u00e9gek n\u00e9v alatti csoportos\u00edt\u00e1s\u00e1nak m\u00f3dja",
+			"displayType": "Rekl\u00e1m elhelyez\u00e9s"
+		},
+		"Websites/advert/creative": {
+			"description": "Tartalom egy hirdet\u00e9shez",
+			"displayType": "Rekl\u00e1m kreat\u00edv"
+		},
+		"Websites/advert/campaign": {
+			"description": "Rekl\u00e1mkamp\u00e1ny",
+			"displayType": "Rekl\u00e1mkamp\u00e1ny"
+		},
+		"Websites/webpage": {
+			"description": "Olyan webhelyet jel\u00f6l, amelynek metaadatait lekapart\u00e1k",
+			"displayType": "honlap"
+		}
+	},
+	"page": {
+		"Add": "Oldal hozz\u00e1ad\u00e1sa",
+		"Title": "Oldal c\u00edme",
+		"Description": "Le\u00edr\u00e1s",
+		"TitlePlaceholder": "N\u00e9vtelen oldal",
+		"DescriptionPlaceholder": "Oldal le\u00edr\u00e1sa..."
+	},
+	"section": {
+		"Add": "Szakasz hozz\u00e1ad\u00e1sa",
+		"Heading": "C\u00edm",
+		"HeadingPlaceholder": "Szakasz c\u00edmsora (opcion\u00e1lis)",
+		"Layout": "Elrendez\u00e9s",
+		"Content": "Tartalom",
+		"ContentPlaceholder": "\u00cdrj ide tartalmat...",
+		"layouts": {
+			"full": "Teljes sz\u00e9less\u00e9g",
+			"two-col": "K\u00e9t oszlop",
+			"three-col": "H\u00e1rom oszlop",
+			"sidebar-left": "Bal oldals\u00e1v",
+			"sidebar-right": "Jobb oldals\u00e1v"
+		}
+	},
+	"block": {
+		"Add": "Blokk hozz\u00e1ad\u00e1sa",
+		"Title": "C\u00edm",
+		"TitlePlaceholder": "Blokkc\u00edm (opcion\u00e1lis)",
+		"Content": "Tartalom",
+		"ContentPlaceholder": "Tartalom blokkol\u00e1sa..."
+	},
+	"referral": {
+		"Create": "Hivatkoz\u00e1si link l\u00e9trehoz\u00e1sa",
+		"Destination": "C\u00e9l URL",
+		"Slug": "Meztelen csiga",
+		"Title": "C\u00edm (opcion\u00e1lis)",
+		"Copy": "M\u00e1solat",
+		"Copied": "M\u00e1solva!",
+		"Clicks": "Kattint\u00e1sok",
+		"Inviter": "Megh\u00edv\u00f3",
+		"Metadata": "Metaadatok megoszt\u00e1sa",
+		"RecentClicks": "Legut\u00f3bbi kattint\u00e1sok",
+		"Time": "Id\u0151",
+		"Platform": "Platform",
+		"Device": "Eszk\u00f6z",
+		"ManageLinks": "Aj\u00e1nl\u00f3 linkek"
+	}
 }

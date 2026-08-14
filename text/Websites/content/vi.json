@@ -1,74 +1,119 @@
 {
-    "advert": {
-        "campaign": {
-            "placeholders": {
-                "link": "Liên kết để quảng bá",
-                "startDate": "Ngày bắt đầu",
-                "startTime": "Thời gian bắt đầu",
-                "endDate": "Ngày cuối",
-                "endTime": "Thời gian kết thúc",
-                "budget": "Ngân sách"
-            },
-            "interests": {
-                "Title": "Lọc theo sở thích",
-                "FilterInterests": "Bắt đầu nhập sở thích..."
-            },
-            "Interest": "Quan tâm",
-            "Location": "Vị trí"
-        }
-    },
-    "webpage": {
-        "composer": {
-            "Go": "Đi",
-            "PasteLinkHere": "https:\/\/...",
-            "BrowseTheWeb": "duyệt",
-            "WriteToStartConversation": "Viết suy nghĩ của bạn để bắt đầu cuộc trò chuyện",
-            "StartConversation": "Bắt đầu cuộc trò chuyện",
-            "GotoConversation": "Chuyển đến Cuộc trò chuyện",
-            "reset": "Cài lại",
-            "edit": "Biên tập",
-            "link": "liên kết",
-            "setUrl": "Đặt URL",
-            "save": "Cứu",
-            "setClip": "Cắt Clip",
-            "invalidURL": "URL không hợp lệ"
-        },
-        "FileTooLarge": "Tệp quá lớn để lưu vào bộ nhớ đệm. Kích thước tệp tối đa {{size}}",
-        "InvalidPDF": "Tệp không phải là tệp PDF hợp lệ",
-        "StartTypingTitleOrKeywords": "Bắt đầu nhập tiêu đề hoặc từ khóa..."
-    },
-    "types": {
-        "Websites\/article": {
-            "description": "Một tài liệu HTML mà nhiều người dùng có thể xem và chỉnh sửa",
-            "displayType": "Bài báo"
-        },
-        "Websites\/slide": {
-            "description": "Một slide trong bản trình bày, có thể bao gồm HTML, âm thanh, v.v.",
-            "displayType": "Cầu trượt"
-        },
-        "Websites\/presentation": {
-            "description": "Một bài thuyết trình bao gồm các slide khác nhau",
-            "displayType": "Bài thuyết trình"
-        },
-        "Websites\/advert\/unit": {
-            "description": "Một đơn vị quảng cáo trên một trang web",
-            "displayType": "đơn vị quảng cáo"
-        },
-        "Websites\/advert\/placement": {
-            "description": "Một cách nhóm các đơn vị quảng cáo dưới một cái tên",
-            "displayType": "Vị trí quảng cáo"
-        },
-        "Websites\/advert\/creative": {
-            "description": "Nội dung cho một quảng cáo",
-            "displayType": "Quảng cáo sáng tạo"
-        },
-        "Websites\/advert\/campaign": {
-            "description": "Một chiến dịch quảng cáo",
-            "displayType": "chiến dịch quảng cáo"
-        },
-        "Websites\/webpage": {
-            "description": "Đại diện cho một trang web có siêu dữ liệu đã bị loại bỏ",
-            "displayType": "trang web"
-        }
-    }
+	"advert": {
+		"campaign": {
+			"placeholders": {
+				"link": "Li\u00ean k\u1ebft \u0111\u1ec3 qu\u1ea3ng b\u00e1",
+				"startDate": "Ng\u00e0y b\u1eaft \u0111\u1ea7u",
+				"startTime": "Th\u1eddi gian b\u1eaft \u0111\u1ea7u",
+				"endDate": "Ng\u00e0y cu\u1ed1i",
+				"endTime": "Th\u1eddi gian k\u1ebft th\u00fac",
+				"budget": "Ng\u00e2n s\u00e1ch"
+			},
+			"interests": {
+				"Title": "L\u1ecdc theo s\u1edf th\u00edch",
+				"FilterInterests": "B\u1eaft \u0111\u1ea7u nh\u1eadp s\u1edf th\u00edch..."
+			},
+			"Interest": "Quan t\u00e2m",
+			"Location": "V\u1ecb tr\u00ed"
+		}
+	},
+	"webpage": {
+		"composer": {
+			"Go": "\u0110i",
+			"PasteLinkHere": "https://...",
+			"BrowseTheWeb": "duy\u1ec7t",
+			"WriteToStartConversation": "Vi\u1ebft suy ngh\u0129 c\u1ee7a b\u1ea1n \u0111\u1ec3 b\u1eaft \u0111\u1ea7u cu\u1ed9c tr\u00f2 chuy\u1ec7n",
+			"StartConversation": "B\u1eaft \u0111\u1ea7u cu\u1ed9c tr\u00f2 chuy\u1ec7n",
+			"GotoConversation": "Chuy\u1ec3n \u0111\u1ebfn Cu\u1ed9c tr\u00f2 chuy\u1ec7n",
+			"reset": "C\u00e0i l\u1ea1i",
+			"edit": "Bi\u00ean t\u1eadp",
+			"link": "li\u00ean k\u1ebft",
+			"setUrl": "\u0110\u1eb7t URL",
+			"save": "C\u1ee9u",
+			"setClip": "C\u1eaft Clip",
+			"invalidURL": "URL kh\u00f4ng h\u1ee3p l\u1ec7"
+		},
+		"FileTooLarge": "T\u1ec7p qu\u00e1 l\u1edbn \u0111\u1ec3 l\u01b0u v\u00e0o b\u1ed9 nh\u1edb \u0111\u1ec7m. K\u00edch th\u01b0\u1edbc t\u1ec7p t\u1ed1i \u0111a {{size}}",
+		"InvalidPDF": "T\u1ec7p kh\u00f4ng ph\u1ea3i l\u00e0 t\u1ec7p PDF h\u1ee3p l\u1ec7",
+		"StartTypingTitleOrKeywords": "B\u1eaft \u0111\u1ea7u nh\u1eadp ti\u00eau \u0111\u1ec1 ho\u1eb7c t\u1eeb kh\u00f3a..."
+	},
+	"types": {
+		"Websites/article": {
+			"description": "M\u1ed9t t\u00e0i li\u1ec7u HTML m\u00e0 nhi\u1ec1u ng\u01b0\u1eddi d\u00f9ng c\u00f3 th\u1ec3 xem v\u00e0 ch\u1ec9nh s\u1eeda",
+			"displayType": "B\u00e0i b\u00e1o"
+		},
+		"Websites/slide": {
+			"description": "M\u1ed9t slide trong b\u1ea3n tr\u00ecnh b\u00e0y, c\u00f3 th\u1ec3 bao g\u1ed3m HTML, \u00e2m thanh, v.v.",
+			"displayType": "C\u1ea7u tr\u01b0\u1ee3t"
+		},
+		"Websites/presentation": {
+			"description": "M\u1ed9t b\u00e0i thuy\u1ebft tr\u00ecnh bao g\u1ed3m c\u00e1c slide kh\u00e1c nhau",
+			"displayType": "B\u00e0i thuy\u1ebft tr\u00ecnh"
+		},
+		"Websites/advert/unit": {
+			"description": "M\u1ed9t \u0111\u01a1n v\u1ecb qu\u1ea3ng c\u00e1o tr\u00ean m\u1ed9t trang web",
+			"displayType": "\u0111\u01a1n v\u1ecb qu\u1ea3ng c\u00e1o"
+		},
+		"Websites/advert/placement": {
+			"description": "M\u1ed9t c\u00e1ch nh\u00f3m c\u00e1c \u0111\u01a1n v\u1ecb qu\u1ea3ng c\u00e1o d\u01b0\u1edbi m\u1ed9t c\u00e1i t\u00ean",
+			"displayType": "V\u1ecb tr\u00ed qu\u1ea3ng c\u00e1o"
+		},
+		"Websites/advert/creative": {
+			"description": "N\u1ed9i dung cho m\u1ed9t qu\u1ea3ng c\u00e1o",
+			"displayType": "Qu\u1ea3ng c\u00e1o s\u00e1ng t\u1ea1o"
+		},
+		"Websites/advert/campaign": {
+			"description": "M\u1ed9t chi\u1ebfn d\u1ecbch qu\u1ea3ng c\u00e1o",
+			"displayType": "chi\u1ebfn d\u1ecbch qu\u1ea3ng c\u00e1o"
+		},
+		"Websites/webpage": {
+			"description": "\u0110\u1ea1i di\u1ec7n cho m\u1ed9t trang web c\u00f3 si\u00eau d\u1eef li\u1ec7u \u0111\u00e3 b\u1ecb lo\u1ea1i b\u1ecf",
+			"displayType": "trang web"
+		}
+	},
+	"page": {
+		"Add": "Th\u00eam trang",
+		"Title": "Ti\u00eau \u0111\u1ec1 trang",
+		"Description": "S\u1ef1 mi\u00eau t\u1ea3",
+		"TitlePlaceholder": "Trang kh\u00f4ng c\u00f3 ti\u00eau \u0111\u1ec1",
+		"DescriptionPlaceholder": "M\u00f4 t\u1ea3 trang..."
+	},
+	"section": {
+		"Add": "Th\u00eam ph\u1ea7n",
+		"Heading": "Ti\u00eau \u0111\u1ec1",
+		"HeadingPlaceholder": "Ti\u00eau \u0111\u1ec1 ph\u1ea7n (t\u00f9y ch\u1ecdn)",
+		"Layout": "C\u00e1ch tr\u00ecnh b\u00e0y",
+		"Content": "N\u1ed9i dung",
+		"ContentPlaceholder": "Vi\u1ebft n\u1ed9i dung t\u1ea1i \u0111\u00e2y...",
+		"layouts": {
+			"full": "Chi\u1ec1u r\u1ed9ng \u0111\u1ea7y \u0111\u1ee7",
+			"two-col": "Hai c\u1ed9t",
+			"three-col": "Ba c\u1ed9t",
+			"sidebar-left": "Thanh b\u00ean tr\u00e1i",
+			"sidebar-right": "Thanh b\u00ean ph\u1ea3i"
+		}
+	},
+	"block": {
+		"Add": "Th\u00eam kh\u1ed1i",
+		"Title": "Ti\u00eau \u0111\u1ec1",
+		"TitlePlaceholder": "Ti\u00eau \u0111\u1ec1 kh\u1ed1i (t\u00f9y ch\u1ecdn)",
+		"Content": "N\u1ed9i dung",
+		"ContentPlaceholder": "Ch\u1eb7n n\u1ed9i dung..."
+	},
+	"referral": {
+		"Create": "T\u1ea1o li\u00ean k\u1ebft gi\u1edbi thi\u1ec7u",
+		"Destination": "URL \u0111\u00edch",
+		"Slug": "\u1ed0c s\u00ean",
+		"Title": "Ti\u00eau \u0111\u1ec1 (t\u00f9y ch\u1ecdn)",
+		"Copy": "Sao ch\u00e9p",
+		"Copied": "\u0110\u00e3 sao ch\u00e9p!",
+		"Clicks": "Nh\u1ea5p chu\u1ed9t",
+		"Inviter": "Ng\u01b0\u1eddi m\u1eddi",
+		"Metadata": "Chia s\u1ebb si\u00eau d\u1eef li\u1ec7u",
+		"RecentClicks": "L\u01b0\u1ee3t nh\u1ea5p chu\u1ed9t g\u1ea7n \u0111\u00e2y",
+		"Time": "Th\u1eddi gian",
+		"Platform": "N\u1ec1n t\u1ea3ng",
+		"Device": "Thi\u1ebft b\u1ecb",
+		"ManageLinks": "Li\u00ean k\u1ebft gi\u1edbi thi\u1ec7u"
+	}
 }

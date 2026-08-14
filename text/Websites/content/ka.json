@@ -1,74 +1,119 @@
 {
-    "advert": {
-        "campaign": {
-            "placeholders": {
-                "link": "ბმული პოპულარიზაციისთვის",
-                "startDate": "Დაწყების თარიღი",
-                "startTime": "დაწყების დრო",
-                "endDate": "Დასრულების თარიღი",
-                "endTime": "Დროის დასასრული",
-                "budget": "ბიუჯეტი"
-            },
-            "interests": {
-                "Title": "გაფილტვრა ინტერესის მიხედვით",
-                "FilterInterests": "დაიწყეთ ინტერესის აკრეფა..."
-            },
-            "Interest": "ინტერესი",
-            "Location": "მდებარეობა"
-        }
-    },
-    "webpage": {
-        "composer": {
-            "Go": "წადი",
-            "PasteLinkHere": "https:\/\/...",
-            "BrowseTheWeb": "დათვალიერება",
-            "WriteToStartConversation": "დაწერეთ თქვენი აზრები საუბრის დასაწყებად",
-            "StartConversation": "დაიწყეთ საუბარი",
-            "GotoConversation": "გადადით საუბარში",
-            "reset": "გადატვირთვა",
-            "edit": "რედაქტირება",
-            "link": "Ბმული",
-            "setUrl": "URL-ის დაყენება",
-            "save": "Გადარჩენა",
-            "setClip": "ამოჭრა კლიპი",
-            "invalidURL": "არასწორი ლინკი"
-        },
-        "FileTooLarge": "ფაილი ძალიან დიდია ქეშირებისთვის. ფაილის მაქსიმალური ზომა {{size}}",
-        "InvalidPDF": "ფაილი არ არის სწორი PDF",
-        "StartTypingTitleOrKeywords": "დაიწყეთ სათაურის ან საკვანძო სიტყვების აკრეფა..."
-    },
-    "types": {
-        "Websites\/article": {
-            "description": "HTML დოკუმენტი, რომლის ნახვა და რედაქტირება შეუძლია სხვადასხვა მომხმარებლებს",
-            "displayType": "სტატია"
-        },
-        "Websites\/slide": {
-            "description": "სლაიდი პრეზენტაციაში, შეიძლება შეიცავდეს HTML, აუდიო და ა.შ.",
-            "displayType": "სლაიდი"
-        },
-        "Websites\/presentation": {
-            "description": "პრეზენტაცია, რომელიც შედგება სხვადასხვა სლაიდებისგან",
-            "displayType": "პრეზენტაცია"
-        },
-        "Websites\/advert\/unit": {
-            "description": "სარეკლამო ერთეული ვებსაიტზე",
-            "displayType": "სარეკლამო ერთეული"
-        },
-        "Websites\/advert\/placement": {
-            "description": "სარეკლამო ერთეულების სახელით დაჯგუფების გზა",
-            "displayType": "რეკლამის განთავსება"
-        },
-        "Websites\/advert\/creative": {
-            "description": "შინაარსი რეკლამისთვის",
-            "displayType": "კრეატიული რეკლამა"
-        },
-        "Websites\/advert\/campaign": {
-            "description": "სარეკლამო კამპანია",
-            "displayType": "სარეკლამო კამპანია"
-        },
-        "Websites\/webpage": {
-            "description": "წარმოადგენს ვებსაიტს, რომლის მეტამონაცემები გაფუჭდა",
-            "displayType": "ვებ გვერდი"
-        }
-    }
+	"advert": {
+		"campaign": {
+			"placeholders": {
+				"link": "\u10d1\u10db\u10e3\u10da\u10d8 \u10de\u10dd\u10de\u10e3\u10da\u10d0\u10e0\u10d8\u10d6\u10d0\u10ea\u10d8\u10d8\u10e1\u10d7\u10d5\u10d8\u10e1",
+				"startDate": "\u1c93\u10d0\u10ec\u10e7\u10d4\u10d1\u10d8\u10e1 \u10d7\u10d0\u10e0\u10d8\u10e6\u10d8",
+				"startTime": "\u10d3\u10d0\u10ec\u10e7\u10d4\u10d1\u10d8\u10e1 \u10d3\u10e0\u10dd",
+				"endDate": "\u1c93\u10d0\u10e1\u10e0\u10e3\u10da\u10d4\u10d1\u10d8\u10e1 \u10d7\u10d0\u10e0\u10d8\u10e6\u10d8",
+				"endTime": "\u1c93\u10e0\u10dd\u10d8\u10e1 \u10d3\u10d0\u10e1\u10d0\u10e1\u10e0\u10e3\u10da\u10d8",
+				"budget": "\u10d1\u10d8\u10e3\u10ef\u10d4\u10e2\u10d8"
+			},
+			"interests": {
+				"Title": "\u10d2\u10d0\u10e4\u10d8\u10da\u10e2\u10d5\u10e0\u10d0 \u10d8\u10dc\u10e2\u10d4\u10e0\u10d4\u10e1\u10d8\u10e1 \u10db\u10d8\u10ee\u10d4\u10d3\u10d5\u10d8\u10d7",
+				"FilterInterests": "\u10d3\u10d0\u10d8\u10ec\u10e7\u10d4\u10d7 \u10d8\u10dc\u10e2\u10d4\u10e0\u10d4\u10e1\u10d8\u10e1 \u10d0\u10d9\u10e0\u10d4\u10e4\u10d0..."
+			},
+			"Interest": "\u10d8\u10dc\u10e2\u10d4\u10e0\u10d4\u10e1\u10d8",
+			"Location": "\u10db\u10d3\u10d4\u10d1\u10d0\u10e0\u10d4\u10dd\u10d1\u10d0"
+		}
+	},
+	"webpage": {
+		"composer": {
+			"Go": "\u10ec\u10d0\u10d3\u10d8",
+			"PasteLinkHere": "https://...",
+			"BrowseTheWeb": "\u10d3\u10d0\u10d7\u10d5\u10d0\u10da\u10d8\u10d4\u10e0\u10d4\u10d1\u10d0",
+			"WriteToStartConversation": "\u10d3\u10d0\u10ec\u10d4\u10e0\u10d4\u10d7 \u10d7\u10e5\u10d5\u10d4\u10dc\u10d8 \u10d0\u10d6\u10e0\u10d4\u10d1\u10d8 \u10e1\u10d0\u10e3\u10d1\u10e0\u10d8\u10e1 \u10d3\u10d0\u10e1\u10d0\u10ec\u10e7\u10d4\u10d1\u10d0\u10d3",
+			"StartConversation": "\u10d3\u10d0\u10d8\u10ec\u10e7\u10d4\u10d7 \u10e1\u10d0\u10e3\u10d1\u10d0\u10e0\u10d8",
+			"GotoConversation": "\u10d2\u10d0\u10d3\u10d0\u10d3\u10d8\u10d7 \u10e1\u10d0\u10e3\u10d1\u10d0\u10e0\u10e8\u10d8",
+			"reset": "\u10d2\u10d0\u10d3\u10d0\u10e2\u10d5\u10d8\u10e0\u10d7\u10d5\u10d0",
+			"edit": "\u10e0\u10d4\u10d3\u10d0\u10e5\u10e2\u10d8\u10e0\u10d4\u10d1\u10d0",
+			"link": "\u1c91\u10db\u10e3\u10da\u10d8",
+			"setUrl": "URL-\u10d8\u10e1 \u10d3\u10d0\u10e7\u10d4\u10dc\u10d4\u10d1\u10d0",
+			"save": "\u1c92\u10d0\u10d3\u10d0\u10e0\u10e9\u10d4\u10dc\u10d0",
+			"setClip": "\u10d0\u10db\u10dd\u10ed\u10e0\u10d0 \u10d9\u10da\u10d8\u10de\u10d8",
+			"invalidURL": "\u10d0\u10e0\u10d0\u10e1\u10ec\u10dd\u10e0\u10d8 \u10da\u10d8\u10dc\u10d9\u10d8"
+		},
+		"FileTooLarge": "\u10e4\u10d0\u10d8\u10da\u10d8 \u10eb\u10d0\u10da\u10d8\u10d0\u10dc \u10d3\u10d8\u10d3\u10d8\u10d0 \u10e5\u10d4\u10e8\u10d8\u10e0\u10d4\u10d1\u10d8\u10e1\u10d7\u10d5\u10d8\u10e1. \u10e4\u10d0\u10d8\u10da\u10d8\u10e1 \u10db\u10d0\u10e5\u10e1\u10d8\u10db\u10d0\u10da\u10e3\u10e0\u10d8 \u10d6\u10dd\u10db\u10d0 {{size}}",
+		"InvalidPDF": "\u10e4\u10d0\u10d8\u10da\u10d8 \u10d0\u10e0 \u10d0\u10e0\u10d8\u10e1 \u10e1\u10ec\u10dd\u10e0\u10d8 PDF",
+		"StartTypingTitleOrKeywords": "\u10d3\u10d0\u10d8\u10ec\u10e7\u10d4\u10d7 \u10e1\u10d0\u10d7\u10d0\u10e3\u10e0\u10d8\u10e1 \u10d0\u10dc \u10e1\u10d0\u10d9\u10d5\u10d0\u10dc\u10eb\u10dd \u10e1\u10d8\u10e2\u10e7\u10d5\u10d4\u10d1\u10d8\u10e1 \u10d0\u10d9\u10e0\u10d4\u10e4\u10d0..."
+	},
+	"types": {
+		"Websites/article": {
+			"description": "HTML \u10d3\u10dd\u10d9\u10e3\u10db\u10d4\u10dc\u10e2\u10d8, \u10e0\u10dd\u10db\u10da\u10d8\u10e1 \u10dc\u10d0\u10ee\u10d5\u10d0 \u10d3\u10d0 \u10e0\u10d4\u10d3\u10d0\u10e5\u10e2\u10d8\u10e0\u10d4\u10d1\u10d0 \u10e8\u10d4\u10e3\u10eb\u10da\u10d8\u10d0 \u10e1\u10ee\u10d5\u10d0\u10d3\u10d0\u10e1\u10ee\u10d5\u10d0 \u10db\u10dd\u10db\u10ee\u10db\u10d0\u10e0\u10d4\u10d1\u10da\u10d4\u10d1\u10e1",
+			"displayType": "\u10e1\u10e2\u10d0\u10e2\u10d8\u10d0"
+		},
+		"Websites/slide": {
+			"description": "\u10e1\u10da\u10d0\u10d8\u10d3\u10d8 \u10de\u10e0\u10d4\u10d6\u10d4\u10dc\u10e2\u10d0\u10ea\u10d8\u10d0\u10e8\u10d8, \u10e8\u10d4\u10d8\u10eb\u10da\u10d4\u10d1\u10d0 \u10e8\u10d4\u10d8\u10ea\u10d0\u10d5\u10d3\u10d4\u10e1 HTML, \u10d0\u10e3\u10d3\u10d8\u10dd \u10d3\u10d0 \u10d0.\u10e8.",
+			"displayType": "\u10e1\u10da\u10d0\u10d8\u10d3\u10d8"
+		},
+		"Websites/presentation": {
+			"description": "\u10de\u10e0\u10d4\u10d6\u10d4\u10dc\u10e2\u10d0\u10ea\u10d8\u10d0, \u10e0\u10dd\u10db\u10d4\u10da\u10d8\u10ea \u10e8\u10d4\u10d3\u10d2\u10d4\u10d1\u10d0 \u10e1\u10ee\u10d5\u10d0\u10d3\u10d0\u10e1\u10ee\u10d5\u10d0 \u10e1\u10da\u10d0\u10d8\u10d3\u10d4\u10d1\u10d8\u10e1\u10d2\u10d0\u10dc",
+			"displayType": "\u10de\u10e0\u10d4\u10d6\u10d4\u10dc\u10e2\u10d0\u10ea\u10d8\u10d0"
+		},
+		"Websites/advert/unit": {
+			"description": "\u10e1\u10d0\u10e0\u10d4\u10d9\u10da\u10d0\u10db\u10dd \u10d4\u10e0\u10d7\u10d4\u10e3\u10da\u10d8 \u10d5\u10d4\u10d1\u10e1\u10d0\u10d8\u10e2\u10d6\u10d4",
+			"displayType": "\u10e1\u10d0\u10e0\u10d4\u10d9\u10da\u10d0\u10db\u10dd \u10d4\u10e0\u10d7\u10d4\u10e3\u10da\u10d8"
+		},
+		"Websites/advert/placement": {
+			"description": "\u10e1\u10d0\u10e0\u10d4\u10d9\u10da\u10d0\u10db\u10dd \u10d4\u10e0\u10d7\u10d4\u10e3\u10da\u10d4\u10d1\u10d8\u10e1 \u10e1\u10d0\u10ee\u10d4\u10da\u10d8\u10d7 \u10d3\u10d0\u10ef\u10d2\u10e3\u10e4\u10d4\u10d1\u10d8\u10e1 \u10d2\u10d6\u10d0",
+			"displayType": "\u10e0\u10d4\u10d9\u10da\u10d0\u10db\u10d8\u10e1 \u10d2\u10d0\u10dc\u10d7\u10d0\u10d5\u10e1\u10d4\u10d1\u10d0"
+		},
+		"Websites/advert/creative": {
+			"description": "\u10e8\u10d8\u10dc\u10d0\u10d0\u10e0\u10e1\u10d8 \u10e0\u10d4\u10d9\u10da\u10d0\u10db\u10d8\u10e1\u10d7\u10d5\u10d8\u10e1",
+			"displayType": "\u10d9\u10e0\u10d4\u10d0\u10e2\u10d8\u10e3\u10da\u10d8 \u10e0\u10d4\u10d9\u10da\u10d0\u10db\u10d0"
+		},
+		"Websites/advert/campaign": {
+			"description": "\u10e1\u10d0\u10e0\u10d4\u10d9\u10da\u10d0\u10db\u10dd \u10d9\u10d0\u10db\u10de\u10d0\u10dc\u10d8\u10d0",
+			"displayType": "\u10e1\u10d0\u10e0\u10d4\u10d9\u10da\u10d0\u10db\u10dd \u10d9\u10d0\u10db\u10de\u10d0\u10dc\u10d8\u10d0"
+		},
+		"Websites/webpage": {
+			"description": "\u10ec\u10d0\u10e0\u10db\u10dd\u10d0\u10d3\u10d2\u10d4\u10dc\u10e1 \u10d5\u10d4\u10d1\u10e1\u10d0\u10d8\u10e2\u10e1, \u10e0\u10dd\u10db\u10da\u10d8\u10e1 \u10db\u10d4\u10e2\u10d0\u10db\u10dd\u10dc\u10d0\u10ea\u10d4\u10db\u10d4\u10d1\u10d8 \u10d2\u10d0\u10e4\u10e3\u10ed\u10d3\u10d0",
+			"displayType": "\u10d5\u10d4\u10d1 \u10d2\u10d5\u10d4\u10e0\u10d3\u10d8"
+		}
+	},
+	"page": {
+		"Add": "\u10d2\u10d5\u10d4\u10e0\u10d3\u10d8\u10e1 \u10d3\u10d0\u10db\u10d0\u10e2\u10d4\u10d1\u10d0",
+		"Title": "\u10d2\u10d5\u10d4\u10e0\u10d3\u10d8\u10e1 \u10e1\u10d0\u10d7\u10d0\u10e3\u10e0\u10d8",
+		"Description": "\u10d0\u10e6\u10ec\u10d4\u10e0\u10d0",
+		"TitlePlaceholder": "\u10e3\u10e1\u10d0\u10d7\u10d0\u10e3\u10e0\u10dd \u10d2\u10d5\u10d4\u10e0\u10d3\u10d8",
+		"DescriptionPlaceholder": "\u10d2\u10d5\u10d4\u10e0\u10d3\u10d8\u10e1 \u10d0\u10e6\u10ec\u10d4\u10e0\u10d0..."
+	},
+	"section": {
+		"Add": "\u10e1\u10d4\u10e5\u10ea\u10d8\u10d8\u10e1 \u10d3\u10d0\u10db\u10d0\u10e2\u10d4\u10d1\u10d0",
+		"Heading": "\u10e1\u10d0\u10d7\u10d0\u10e3\u10e0\u10d8",
+		"HeadingPlaceholder": "\u10e1\u10d4\u10e5\u10ea\u10d8\u10d8\u10e1 \u10e1\u10d0\u10d7\u10d0\u10e3\u10e0\u10d8 (\u10d0\u10e0\u10d0\u10e1\u10d0\u10d5\u10d0\u10da\u10d3\u10d4\u10d1\u10e3\u10da\u10dd)",
+		"Layout": "\u10d2\u10d0\u10dc\u10da\u10d0\u10d2\u10d4\u10d1\u10d0",
+		"Content": "\u10d9\u10dd\u10dc\u10e2\u10d4\u10dc\u10e2\u10d8",
+		"ContentPlaceholder": "\u10d9\u10dd\u10dc\u10e2\u10d4\u10dc\u10e2\u10d8 \u10d0\u10e5 \u10d3\u10d0\u10ec\u10d4\u10e0\u10d4\u10d7...",
+		"layouts": {
+			"full": "\u10e1\u10e0\u10e3\u10da\u10d8 \u10e1\u10d8\u10d2\u10d0\u10dc\u10d4",
+			"two-col": "\u10dd\u10e0\u10d8 \u10e1\u10d5\u10d4\u10e2\u10d8",
+			"three-col": "\u10e1\u10d0\u10db\u10d8 \u10e1\u10d5\u10d4\u10e2\u10d8",
+			"sidebar-left": "\u10d2\u10d5\u10d4\u10e0\u10d3\u10d8\u10d7\u10d8 \u10d6\u10dd\u10da\u10d8 \u10db\u10d0\u10e0\u10ea\u10ee\u10dc\u10d8\u10d5",
+			"sidebar-right": "\u10d2\u10d5\u10d4\u10e0\u10d3\u10d8\u10d7\u10d8 \u10d6\u10dd\u10da\u10d8 \u10db\u10d0\u10e0\u10ef\u10d5\u10dc\u10d8\u10d5"
+		}
+	},
+	"block": {
+		"Add": "\u10d1\u10da\u10dd\u10d9\u10d8\u10e1 \u10d3\u10d0\u10db\u10d0\u10e2\u10d4\u10d1\u10d0",
+		"Title": "\u10e1\u10d0\u10d7\u10d0\u10e3\u10e0\u10d8",
+		"TitlePlaceholder": "\u10d1\u10da\u10dd\u10d9\u10d8\u10e1 \u10e1\u10d0\u10d7\u10d0\u10e3\u10e0\u10d8 (\u10d0\u10e0\u10d0\u10e1\u10d0\u10d5\u10d0\u10da\u10d3\u10d4\u10d1\u10e3\u10da\u10dd)",
+		"Content": "\u10d9\u10dd\u10dc\u10e2\u10d4\u10dc\u10e2\u10d8",
+		"ContentPlaceholder": "\u10d9\u10dd\u10dc\u10e2\u10d4\u10dc\u10e2\u10d8\u10e1 \u10d3\u10d0\u10d1\u10da\u10dd\u10d9\u10d5\u10d0..."
+	},
+	"referral": {
+		"Create": "\u10e0\u10d4\u10e4\u10d4\u10e0\u10d0\u10da\u10e3\u10e0\u10d8 \u10d1\u10db\u10e3\u10da\u10d8\u10e1 \u10e8\u10d4\u10e5\u10db\u10dc\u10d0",
+		"Destination": "\u10d3\u10d0\u10dc\u10d8\u10e8\u10dc\u10e3\u10da\u10d4\u10d1\u10d8\u10e1 URL",
+		"Slug": "\u10da\u10dd\u10d9\u10dd\u10d9\u10d8\u10dc\u10d0",
+		"Title": "\u10e1\u10d0\u10d7\u10d0\u10e3\u10e0\u10d8 (\u10d0\u10e0\u10d0\u10e1\u10d0\u10d5\u10d0\u10da\u10d3\u10d4\u10d1\u10e3\u10da\u10dd)",
+		"Copy": "\u10d9\u10dd\u10de\u10d8\u10e0\u10d4\u10d1\u10d0",
+		"Copied": "\u10d9\u10dd\u10de\u10d8\u10e0\u10d4\u10d1\u10e3\u10da\u10d8\u10d0!",
+		"Clicks": "\u10d3\u10d0\u10ec\u10d9\u10d0\u10de\u10e3\u10dc\u10d4\u10d1\u10d4\u10d1\u10d8",
+		"Inviter": "\u10db\u10dd\u10ec\u10d5\u10d4\u10d5\u10d0",
+		"Metadata": "\u10db\u10d4\u10e2\u10d0\u10db\u10dd\u10dc\u10d0\u10ea\u10d4\u10db\u10d4\u10d1\u10d8\u10e1 \u10d2\u10d0\u10d6\u10d8\u10d0\u10e0\u10d4\u10d1\u10d0",
+		"RecentClicks": "\u10d1\u10dd\u10da\u10dd \u10d3\u10d0\u10ec\u10d9\u10d0\u10de\u10e3\u10dc\u10d4\u10d1\u10d4\u10d1\u10d8",
+		"Time": "\u10d3\u10e0\u10dd",
+		"Platform": "\u10de\u10da\u10d0\u10e2\u10e4\u10dd\u10e0\u10db\u10d0",
+		"Device": "\u10db\u10dd\u10ec\u10e7\u10dd\u10d1\u10d8\u10da\u10dd\u10d1\u10d0",
+		"ManageLinks": "\u10e0\u10d4\u10e4\u10d4\u10e0\u10d0\u10da\u10e3\u10e0\u10d8 \u10d1\u10db\u10e3\u10da\u10d4\u10d1\u10d8"
+	}
 }

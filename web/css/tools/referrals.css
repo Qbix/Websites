@@ -1,0 +1,52 @@
+/* ═══════════════════════════════════════════════════
+   Websites/referrals (plural) management list
+   ═══════════════════════════════════════════════════ */
+.Websites_referrals_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+.Websites_referrals_title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+}
+.Websites_referrals_list {
+    min-height: 60px;
+}
+
+/* Preview items inside the list */
+.Websites_referrals_list .Streams_related_tool {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* Create button styling within Streams/related */
+.Websites_referrals_list .Streams_related_add {
+    margin-top: 12px;
+    text-align: center;
+}
+.Websites_referrals_list .Streams_related_add button {
+    padding: 10px 24px;
+    border: 1px dashed rgba(128,128,128,0.3);
+    background: transparent;
+    border-radius: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s;
+    width: 100%;
+}
+.Websites_referrals_list .Streams_related_add button:hover {
+    border-color: var(--theme-brand, #6366f1);
+    background: rgba(99, 102, 241, 0.04);
+}
+
+/* Invoked column/dialog */
+.Websites_referral_column {
+    min-width: 360px;
+}
+.Websites_referral_invoke {
+    padding: 16px;
+}

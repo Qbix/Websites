@@ -15,7 +15,7 @@ function Websites_before_Q_Uri_fromUrl($params, &$result)
 		}
 	}
 	$wp = new Websites_Permalink();
-	$wp->url = $params['url'];
+	$wp->url = Q_Request::tail($params['url']);
 	if ($wp->retrieve()) {
 		$result = Q_Uri::from($wp->uri);
 	}

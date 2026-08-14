@@ -1,74 +1,119 @@
 {
-    "advert": {
-        "campaign": {
-            "placeholders": {
-                "link": "Odkaz na propagaci",
-                "startDate": "Datum zahájení",
-                "startTime": "Doba spuštění",
-                "endDate": "Datum ukončení",
-                "endTime": "Čas ukončení",
-                "budget": "Rozpočet"
-            },
-            "interests": {
-                "Title": "Filtrovat podle zájmu",
-                "FilterInterests": "Začněte psát zájem..."
-            },
-            "Interest": "Zájem",
-            "Location": "Umístění"
-        }
-    },
-    "webpage": {
-        "composer": {
-            "Go": "Jít",
-            "PasteLinkHere": "https:\/\/...",
-            "BrowseTheWeb": "Procházet",
-            "WriteToStartConversation": "Napište své myšlenky a začněte konverzaci",
-            "StartConversation": "Zahájit konverzaci",
-            "GotoConversation": "Přejděte do konverzace",
-            "reset": "Resetovat",
-            "edit": "Upravit",
-            "link": "Odkaz",
-            "setUrl": "Nastavit URL",
-            "save": "Uložit",
-            "setClip": "Vystřihnout klip",
-            "invalidURL": "neplatná URL"
-        },
-        "FileTooLarge": "Soubor je pro ukládání do mezipaměti příliš velký. Maximální velikost souboru {{size}}",
-        "InvalidPDF": "Soubor není platný PDF",
-        "StartTypingTitleOrKeywords": "Začněte psát název nebo klíčová slova..."
-    },
-    "types": {
-        "Websites\/article": {
-            "description": "HTML dokument, který mohou prohlížet a upravovat různí uživatelé",
-            "displayType": "Článek"
-        },
-        "Websites\/slide": {
-            "description": "Snímek v prezentaci může obsahovat HTML, zvuk atd.",
-            "displayType": "Skluzavka"
-        },
-        "Websites\/presentation": {
-            "description": "Prezentace skládající se z různých snímků",
-            "displayType": "Prezentace"
-        },
-        "Websites\/advert\/unit": {
-            "description": "Reklamní jednotka na webu",
-            "displayType": "Reklamní jednotka"
-        },
-        "Websites\/advert\/placement": {
-            "description": "Způsob seskupování reklamních jednotek pod názvem",
-            "displayType": "Umístění reklamy"
-        },
-        "Websites\/advert\/creative": {
-            "description": "Obsah pro reklamu",
-            "displayType": "Reklamní kreativa"
-        },
-        "Websites\/advert\/campaign": {
-            "description": "Reklamní kampaň",
-            "displayType": "Reklamní kampaň"
-        },
-        "Websites\/webpage": {
-            "description": "Představuje webovou stránku, jejíž metadata byla odstraněna",
-            "displayType": "webová stránka"
-        }
-    }
+	"advert": {
+		"campaign": {
+			"placeholders": {
+				"link": "Odkaz na propagaci",
+				"startDate": "Datum zah\u00e1jen\u00ed",
+				"startTime": "Doba spu\u0161t\u011bn\u00ed",
+				"endDate": "Datum ukon\u010den\u00ed",
+				"endTime": "\u010cas ukon\u010den\u00ed",
+				"budget": "Rozpo\u010det"
+			},
+			"interests": {
+				"Title": "Filtrovat podle z\u00e1jmu",
+				"FilterInterests": "Za\u010dn\u011bte ps\u00e1t z\u00e1jem..."
+			},
+			"Interest": "Z\u00e1jem",
+			"Location": "Um\u00edst\u011bn\u00ed"
+		}
+	},
+	"webpage": {
+		"composer": {
+			"Go": "J\u00edt",
+			"PasteLinkHere": "https://...",
+			"BrowseTheWeb": "Proch\u00e1zet",
+			"WriteToStartConversation": "Napi\u0161te sv\u00e9 my\u0161lenky a za\u010dn\u011bte konverzaci",
+			"StartConversation": "Zah\u00e1jit konverzaci",
+			"GotoConversation": "P\u0159ejd\u011bte do konverzace",
+			"reset": "Resetovat",
+			"edit": "Upravit",
+			"link": "Odkaz",
+			"setUrl": "Nastavit URL",
+			"save": "Ulo\u017eit",
+			"setClip": "Vyst\u0159ihnout klip",
+			"invalidURL": "neplatn\u00e1 URL"
+		},
+		"FileTooLarge": "Soubor je pro ukl\u00e1d\u00e1n\u00ed do mezipam\u011bti p\u0159\u00edli\u0161 velk\u00fd. Maxim\u00e1ln\u00ed velikost souboru {{size}}",
+		"InvalidPDF": "Soubor nen\u00ed platn\u00fd PDF",
+		"StartTypingTitleOrKeywords": "Za\u010dn\u011bte ps\u00e1t n\u00e1zev nebo kl\u00ed\u010dov\u00e1 slova..."
+	},
+	"types": {
+		"Websites/article": {
+			"description": "HTML dokument, kter\u00fd mohou prohl\u00ed\u017eet a upravovat r\u016fzn\u00ed u\u017eivatel\u00e9",
+			"displayType": "\u010cl\u00e1nek"
+		},
+		"Websites/slide": {
+			"description": "Sn\u00edmek v prezentaci m\u016f\u017ee obsahovat HTML, zvuk atd.",
+			"displayType": "Skluzavka"
+		},
+		"Websites/presentation": {
+			"description": "Prezentace skl\u00e1daj\u00edc\u00ed se z r\u016fzn\u00fdch sn\u00edmk\u016f",
+			"displayType": "Prezentace"
+		},
+		"Websites/advert/unit": {
+			"description": "Reklamn\u00ed jednotka na webu",
+			"displayType": "Reklamn\u00ed jednotka"
+		},
+		"Websites/advert/placement": {
+			"description": "Zp\u016fsob seskupov\u00e1n\u00ed reklamn\u00edch jednotek pod n\u00e1zvem",
+			"displayType": "Um\u00edst\u011bn\u00ed reklamy"
+		},
+		"Websites/advert/creative": {
+			"description": "Obsah pro reklamu",
+			"displayType": "Reklamn\u00ed kreativa"
+		},
+		"Websites/advert/campaign": {
+			"description": "Reklamn\u00ed kampa\u0148",
+			"displayType": "Reklamn\u00ed kampa\u0148"
+		},
+		"Websites/webpage": {
+			"description": "P\u0159edstavuje webovou str\u00e1nku, jej\u00ed\u017e metadata byla odstran\u011bna",
+			"displayType": "webov\u00e1 str\u00e1nka"
+		}
+	},
+	"page": {
+		"Add": "P\u0159idat str\u00e1nku",
+		"Title": "N\u00e1zev str\u00e1nky",
+		"Description": "Popis",
+		"TitlePlaceholder": "Str\u00e1nka bez n\u00e1zvu",
+		"DescriptionPlaceholder": "Popis str\u00e1nky..."
+	},
+	"section": {
+		"Add": "P\u0159idat sekci",
+		"Heading": "Z\u00e1hlav\u00ed",
+		"HeadingPlaceholder": "Nadpis sekce (voliteln\u00e9)",
+		"Layout": "Rozvr\u017een\u00ed",
+		"Content": "Obsah",
+		"ContentPlaceholder": "Pi\u0161te sem obsah...",
+		"layouts": {
+			"full": "Pln\u00e1 \u0161\u00ed\u0159ka",
+			"two-col": "Dva sloupce",
+			"three-col": "T\u0159i sloupce",
+			"sidebar-left": "Bo\u010dn\u00ed panel vlevo",
+			"sidebar-right": "Bo\u010dn\u00ed panel vpravo"
+		}
+	},
+	"block": {
+		"Add": "P\u0159idat blok",
+		"Title": "Titul",
+		"TitlePlaceholder": "N\u00e1zev bloku (voliteln\u00e9)",
+		"Content": "Obsah",
+		"ContentPlaceholder": "Blokovat obsah..."
+	},
+	"referral": {
+		"Create": "Vytvo\u0159it referen\u010dn\u00ed odkaz",
+		"Destination": "C\u00edlov\u00e1 URL",
+		"Slug": "Slim\u00e1k",
+		"Title": "Titul (voliteln\u00e9)",
+		"Copy": "Kopie",
+		"Copied": "Zkop\u00edrov\u00e1no!",
+		"Clicks": "Kliknut\u00ed",
+		"Inviter": "Zvouc\u00ed",
+		"Metadata": "Sd\u00edlen\u00ed metadat",
+		"RecentClicks": "Ned\u00e1vn\u00e1 kliknut\u00ed",
+		"Time": "\u010cas",
+		"Platform": "Platforma",
+		"Device": "Za\u0159\u00edzen\u00ed",
+		"ManageLinks": "Referen\u010dn\u00ed odkazy"
+	}
 }

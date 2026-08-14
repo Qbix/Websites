@@ -1,147 +1,119 @@
 {
-    "advert": {
-        "campaign": {
-            "placeholders": {
-                "link": "Link to promote",
-                "startDate": "Start Date",
-                "startTime": "Start Time",
-                "endDate": "End Date",
-                "endTime": "End Time",
-                "budget": "Budget"
-            },
-            "interests": {
-                "Title": "Filter By Interest",
-                "FilterInterests": "Start typing an interest..."
-            },
-            "Interest": "Interest",
-            "Location": "Location"
-        }
-    },
-    "webpage": {
-        "composer": {
-            "Go": "Go",
-            "PasteLinkHere": "https:\/\/...",
-            "BrowseTheWeb": "Browse",
-            "WriteToStartConversation": "Write your thoughts to start off the conversation",
-            "StartConversation": "Start Conversation",
-            "GotoConversation": "Go to Conversation",
-            "reset": "Reset",
-            "edit": "Edit",
-            "link": "Link",
-            "setUrl": "Set URL",
-            "save": "Save",
-            "setClip": "Cut Out Clip",
-            "invalidURL": "Invalid URL"
-        },
-        "FileTooLarge": "File too large for caching. Max file size {{size}}",
-        "InvalidPDF": "File is not a valid PDF",
-        "StartTypingTitleOrKeywords": "Start typing title or keywords..."
-    },
-    "page": {
-        "Add": "Add Page",
-        "Title": "Page Title",
-        "Description": "Description",
-        "TitlePlaceholder": "Untitled Page",
-        "DescriptionPlaceholder": "Page description..."
-    },
-    "section": {
-        "Add": "Add Section",
-        "Heading": "Heading",
-        "HeadingPlaceholder": "Section heading (optional)",
-        "Layout": "Layout",
-        "Content": "Content",
-        "ContentPlaceholder": "Write content here...",
-        "layouts": {
-            "full": "Full width",
-            "two-col": "Two columns",
-            "three-col": "Three columns",
-            "sidebar-left": "Sidebar left",
-            "sidebar-right": "Sidebar right"
-        }
-    },
-    "block": {
-        "Add": "Add Block",
-        "Title": "Title",
-        "TitlePlaceholder": "Block title (optional)",
-        "Content": "Content",
-        "ContentPlaceholder": "Block content..."
-    },
-    "types": {
-        "Websites\/article": {
-            "description": "An HTML document that various users can view and edit",
-            "displayType": "Article"
-        },
-        "Websites\/slide": {
-            "description": "A slide in a presentation, can include HTML, audio etc.",
-            "displayType": "Slide"
-        },
-        "Websites\/presentation": {
-            "description": "A presentation consisting of various slides",
-            "displayType": "Presentation"
-        },
-        "Websites\/advert\/unit": {
-            "description": "An advertising unit on a website",
-            "displayType": "Advert unit"
-        },
-        "Websites\/advert\/placement": {
-            "description": "A way of grouping advertising units under a name",
-            "displayType": "Advert placement"
-        },
-        "Websites\/advert\/creative": {
-            "description": "Content for an advertisement",
-            "displayType": "Advert creative"
-        },
-        "Websites\/advert\/campaign": {
-            "description": "An advertising campaign",
-            "displayType": "Advert campaign"
-        },
-        "Websites\/webpage": {
-            "description": "Represents a website whose metadata was scraped",
-            "displayType": "Web page"
-        }
-    },
-    "page": {
-        "Add": "Add Page",
-        "Title": "Page Title",
-        "Description": "Description",
-        "TitlePlaceholder": "Untitled Page",
-        "DescriptionPlaceholder": "Page description..."
-    },
-    "section": {
-        "Add": "Add Section",
-        "Heading": "Heading",
-        "HeadingPlaceholder": "Section heading (optional)",
-        "Layout": "Layout",
-        "Content": "Content",
-        "ContentPlaceholder": "Write content here...",
-        "layouts": {
-            "full": "Full width",
-            "two-col": "Two columns",
-            "three-col": "Three columns",
-            "sidebar-left": "Sidebar left",
-            "sidebar-right": "Sidebar right"
-        }
-    },
-    "block": {
-        "Add": "Add Block",
-        "Title": "Title",
-        "TitlePlaceholder": "Block title (optional)",
-        "Content": "Content",
-        "ContentPlaceholder": "Block content..."
-    },
-    "referral": {
-        "Create": "Create Referral Link",
-        "Destination": "Destination URL",
-        "Slug": "Slug",
-        "Title": "Title (optional)",
-        "Copy": "Copy",
-        "Copied": "Copied!",
-        "Clicks": "Clicks",
-        "Inviter": "Inviter",
-        "Metadata": "Sharing Metadata",
-        "RecentClicks": "Recent Clicks",
-        "Time": "Time",
-        "Platform": "Platform",
-        "Device": "Device"
-    }
+	"advert": {
+		"campaign": {
+			"placeholders": {
+				"link": "Link to promote",
+				"startDate": "Start Date",
+				"startTime": "Start Time",
+				"endDate": "End Date",
+				"endTime": "End Time",
+				"budget": "Budget"
+			},
+			"interests": {
+				"Title": "Filter By Interest",
+				"FilterInterests": "Start typing an interest..."
+			},
+			"Interest": "Interest",
+			"Location": "Location"
+		}
+	},
+	"webpage": {
+		"composer": {
+			"Go": "Go",
+			"PasteLinkHere": "https://...",
+			"BrowseTheWeb": "Browse",
+			"WriteToStartConversation": "Write your thoughts to start off the conversation",
+			"StartConversation": "Start Conversation",
+			"GotoConversation": "Go to Conversation",
+			"reset": "Reset",
+			"edit": "Edit",
+			"link": "Link",
+			"setUrl": "Set URL",
+			"save": "Save",
+			"setClip": "Cut Out Clip",
+			"invalidURL": "Invalid URL"
+		},
+		"FileTooLarge": "File too large for caching. Max file size {{size}}",
+		"InvalidPDF": "File is not a valid PDF",
+		"StartTypingTitleOrKeywords": "Start typing title or keywords..."
+	},
+	"page": {
+		"Add": "Add Page",
+		"Title": "Page Title",
+		"Description": "Description",
+		"TitlePlaceholder": "Untitled Page",
+		"DescriptionPlaceholder": "Page description..."
+	},
+	"section": {
+		"Add": "Add Section",
+		"Heading": "Heading",
+		"HeadingPlaceholder": "Section heading (optional)",
+		"Layout": "Layout",
+		"Content": "Content",
+		"ContentPlaceholder": "Write content here...",
+		"layouts": {
+			"full": "Full width",
+			"two-col": "Two columns",
+			"three-col": "Three columns",
+			"sidebar-left": "Sidebar left",
+			"sidebar-right": "Sidebar right"
+		}
+	},
+	"block": {
+		"Add": "Add Block",
+		"Title": "Title",
+		"TitlePlaceholder": "Block title (optional)",
+		"Content": "Content",
+		"ContentPlaceholder": "Block content..."
+	},
+	"types": {
+		"Websites/article": {
+			"description": "An HTML document that various users can view and edit",
+			"displayType": "Article"
+		},
+		"Websites/slide": {
+			"description": "A slide in a presentation, can include HTML, audio etc.",
+			"displayType": "Slide"
+		},
+		"Websites/presentation": {
+			"description": "A presentation consisting of various slides",
+			"displayType": "Presentation"
+		},
+		"Websites/advert/unit": {
+			"description": "An advertising unit on a website",
+			"displayType": "Advert unit"
+		},
+		"Websites/advert/placement": {
+			"description": "A way of grouping advertising units under a name",
+			"displayType": "Advert placement"
+		},
+		"Websites/advert/creative": {
+			"description": "Content for an advertisement",
+			"displayType": "Advert creative"
+		},
+		"Websites/advert/campaign": {
+			"description": "An advertising campaign",
+			"displayType": "Advert campaign"
+		},
+		"Websites/webpage": {
+			"description": "Represents a website whose metadata was scraped",
+			"displayType": "Web page"
+		}
+	},
+	"referral": {
+		"Create": "Create Referral Link",
+		"Destination": "Destination URL",
+		"Slug": "Slug",
+		"Title": "Title (optional)",
+		"Copy": "Copy",
+		"Copied": "Copied!",
+		"Clicks": "Clicks",
+		"Inviter": "Inviter",
+		"Metadata": "Sharing Metadata",
+		"RecentClicks": "Recent Clicks",
+		"Time": "Time",
+		"Platform": "Platform",
+		"Device": "Device",
+		"ManageLinks": "Referral Links"
+	}
 }

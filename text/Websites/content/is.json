@@ -1,74 +1,119 @@
 {
-    "advert": {
-        "campaign": {
-            "placeholders": {
-                "link": "Tengill til að kynna",
-                "startDate": "Upphafsdagur",
-                "startTime": "Byrjunartími",
-                "endDate": "Loka dagsetning",
-                "endTime": "Lokatími",
-                "budget": "Fjárhagsáætlun"
-            },
-            "interests": {
-                "Title": "Sía eftir vöxtum",
-                "FilterInterests": "Byrjaðu að skrifa áhugamál..."
-            },
-            "Interest": "Áhugi",
-            "Location": "Staðsetning"
-        }
-    },
-    "webpage": {
-        "composer": {
-            "Go": "Farðu",
-            "PasteLinkHere": "https:\/\/...",
-            "BrowseTheWeb": "Skoðaðu",
-            "WriteToStartConversation": "Skrifaðu hugsanir þínar til að hefja samtalið",
-            "StartConversation": "Byrjaðu samtal",
-            "GotoConversation": "Farðu í Samtal",
-            "reset": "Endurstilla",
-            "edit": "Breyta",
-            "link": "Tengill",
-            "setUrl": "Stilltu vefslóð",
-            "save": "Vista",
-            "setClip": "Klippa út",
-            "invalidURL": "Ógild vefslóð"
-        },
-        "FileTooLarge": "Skrá of stór fyrir skyndiminni. Hámarks skráarstærð {{size}}",
-        "InvalidPDF": "Skrá er ekki gild PDF",
-        "StartTypingTitleOrKeywords": "Byrjaðu að slá inn titil eða leitarorð..."
-    },
-    "types": {
-        "Websites\/article": {
-            "description": "HTML skjal sem ýmsir notendur geta skoðað og breytt",
-            "displayType": "gr"
-        },
-        "Websites\/slide": {
-            "description": "Skyggna í kynningu, getur innihaldið HTML, hljóð osfrv.",
-            "displayType": "Renna"
-        },
-        "Websites\/presentation": {
-            "description": "Kynning sem samanstendur af ýmsum glærum",
-            "displayType": "Kynning"
-        },
-        "Websites\/advert\/unit": {
-            "description": "Auglýsingareining á vefsíðu",
-            "displayType": "Auglýsingareining"
-        },
-        "Websites\/advert\/placement": {
-            "description": "Aðferð til að flokka auglýsingaeiningar undir nafni",
-            "displayType": "Auglýsingasetning"
-        },
-        "Websites\/advert\/creative": {
-            "description": "Efni fyrir auglýsingu",
-            "displayType": "Auglýsingar skapandi"
-        },
-        "Websites\/advert\/campaign": {
-            "description": "Auglýsingaherferð",
-            "displayType": "Auglýsingaherferð"
-        },
-        "Websites\/webpage": {
-            "description": "Táknar vefsíðu þar sem lýsigögn voru skafin",
-            "displayType": "Vefsíða"
-        }
-    }
+	"advert": {
+		"campaign": {
+			"placeholders": {
+				"link": "Tengill til a\u00f0 kynna",
+				"startDate": "Upphafsdagur",
+				"startTime": "Byrjunart\u00edmi",
+				"endDate": "Loka dagsetning",
+				"endTime": "Lokat\u00edmi",
+				"budget": "Fj\u00e1rhags\u00e1\u00e6tlun"
+			},
+			"interests": {
+				"Title": "S\u00eda eftir v\u00f6xtum",
+				"FilterInterests": "Byrja\u00f0u a\u00f0 skrifa \u00e1hugam\u00e1l..."
+			},
+			"Interest": "\u00c1hugi",
+			"Location": "Sta\u00f0setning"
+		}
+	},
+	"webpage": {
+		"composer": {
+			"Go": "Far\u00f0u",
+			"PasteLinkHere": "https://...",
+			"BrowseTheWeb": "Sko\u00f0a\u00f0u",
+			"WriteToStartConversation": "Skrifa\u00f0u hugsanir \u00fe\u00ednar til a\u00f0 hefja samtali\u00f0",
+			"StartConversation": "Byrja\u00f0u samtal",
+			"GotoConversation": "Far\u00f0u \u00ed Samtal",
+			"reset": "Endurstilla",
+			"edit": "Breyta",
+			"link": "Tengill",
+			"setUrl": "Stilltu vefsl\u00f3\u00f0",
+			"save": "Vista",
+			"setClip": "Klippa \u00fat",
+			"invalidURL": "\u00d3gild vefsl\u00f3\u00f0"
+		},
+		"FileTooLarge": "Skr\u00e1 of st\u00f3r fyrir skyndiminni. H\u00e1marks skr\u00e1arst\u00e6r\u00f0 {{size}}",
+		"InvalidPDF": "Skr\u00e1 er ekki gild PDF",
+		"StartTypingTitleOrKeywords": "Byrja\u00f0u a\u00f0 sl\u00e1 inn titil e\u00f0a leitaror\u00f0..."
+	},
+	"types": {
+		"Websites/article": {
+			"description": "HTML skjal sem \u00fdmsir notendur geta sko\u00f0a\u00f0 og breytt",
+			"displayType": "gr"
+		},
+		"Websites/slide": {
+			"description": "Skyggna \u00ed kynningu, getur innihaldi\u00f0 HTML, hlj\u00f3\u00f0 osfrv.",
+			"displayType": "Renna"
+		},
+		"Websites/presentation": {
+			"description": "Kynning sem samanstendur af \u00fdmsum gl\u00e6rum",
+			"displayType": "Kynning"
+		},
+		"Websites/advert/unit": {
+			"description": "Augl\u00fdsingareining \u00e1 vefs\u00ed\u00f0u",
+			"displayType": "Augl\u00fdsingareining"
+		},
+		"Websites/advert/placement": {
+			"description": "A\u00f0fer\u00f0 til a\u00f0 flokka augl\u00fdsingaeiningar undir nafni",
+			"displayType": "Augl\u00fdsingasetning"
+		},
+		"Websites/advert/creative": {
+			"description": "Efni fyrir augl\u00fdsingu",
+			"displayType": "Augl\u00fdsingar skapandi"
+		},
+		"Websites/advert/campaign": {
+			"description": "Augl\u00fdsingaherfer\u00f0",
+			"displayType": "Augl\u00fdsingaherfer\u00f0"
+		},
+		"Websites/webpage": {
+			"description": "T\u00e1knar vefs\u00ed\u00f0u \u00fear sem l\u00fdsig\u00f6gn voru skafin",
+			"displayType": "Vefs\u00ed\u00f0a"
+		}
+	},
+	"page": {
+		"Add": "B\u00e6ta vi\u00f0 s\u00ed\u00f0u",
+		"Title": "S\u00ed\u00f0utitill",
+		"Description": "L\u00fdsing",
+		"TitlePlaceholder": "\u00d3nefnd s\u00ed\u00f0a",
+		"DescriptionPlaceholder": "L\u00fdsing \u00e1 s\u00ed\u00f0u..."
+	},
+	"section": {
+		"Add": "B\u00e6ta vi\u00f0 kafla",
+		"Heading": "Fyrirs\u00f6gn",
+		"HeadingPlaceholder": "Fyrirs\u00f6gn kafla (valfrj\u00e1lst)",
+		"Layout": "\u00datlit",
+		"Content": "Efni",
+		"ContentPlaceholder": "Skrifa\u00f0u efni h\u00e9r...",
+		"layouts": {
+			"full": "Full breidd",
+			"two-col": "Tveir d\u00e1lkar",
+			"three-col": "\u00der\u00edr d\u00e1lkar",
+			"sidebar-left": "Hli\u00f0arstika vinstra megin",
+			"sidebar-right": "Hli\u00f0arstika h\u00e6gri"
+		}
+	},
+	"block": {
+		"Add": "B\u00e6ta vi\u00f0 blokk",
+		"Title": "Titill",
+		"TitlePlaceholder": "Blokktitill (valfrj\u00e1lst)",
+		"Content": "Efni",
+		"ContentPlaceholder": "Loka fyrir efni..."
+	},
+	"referral": {
+		"Create": "B\u00faa til tilv\u00edsunartengil",
+		"Destination": "\u00c1fangasl\u00f3\u00f0",
+		"Slug": "Snigill",
+		"Title": "Titill (valfrj\u00e1lst)",
+		"Copy": "Afrita",
+		"Copied": "Afrita\u00f0!",
+		"Clicks": "Smellur",
+		"Inviter": "Bj\u00f3\u00f0andi",
+		"Metadata": "Deiling l\u00fdsigagna",
+		"RecentClicks": "N\u00fdleg smell",
+		"Time": "T\u00edmi",
+		"Platform": "Pallur",
+		"Device": "T\u00e6ki",
+		"ManageLinks": "Tilv\u00edsunartenglar"
+	}
 }

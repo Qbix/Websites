@@ -159,6 +159,11 @@ Q.Tool.define({
         js: "{{Websites}}/js/tools/referral.js",
         css: "{{Websites}}/css/tools/referral.css",
         text: ["Websites/content"]
+    },
+	"Websites/referrals": {
+        js: "{{Websites}}/js/tools/referrals.js",
+        css: "{{Websites}}/css/tools/referrals.css",
+        text: ["Websites/content"]
     }
 });
 

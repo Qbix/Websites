@@ -15,10 +15,10 @@ function Websites_before_Q_Uri_toUrl($params, &$result)
 	$wp->uri = (string)$params['uri'];
 	if ($wp->retrieve()) {
 		if ($regex = Q_Config::get('Websites', 'permalinks', 'regex', null)) {
-			if (!preg_match($regex, $wp->url)) {
+			if (!preg_match($regex, $url)) {
 				return;
 			}
 		}
-		$result = $wp->url;
+		$result = Q_Request::baseUrl() . '/' . $wp->url;
 	}
 }

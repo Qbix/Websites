@@ -1,74 +1,119 @@
 {
-    "advert": {
-        "campaign": {
-            "placeholders": {
-                "link": "Enlace para promocionar",
-                "startDate": "Fecha de inicio",
-                "startTime": "Hora de inicio",
-                "endDate": "Fecha final",
-                "endTime": "Hora de finalización",
-                "budget": "Presupuesto"
-            },
-            "interests": {
-                "Title": "Filtrar por interés",
-                "FilterInterests": "Comience a escribir un interés..."
-            },
-            "Interest": "Interés",
-            "Location": "Ubicación"
-        }
-    },
-    "webpage": {
-        "composer": {
-            "Go": "Ir",
-            "PasteLinkHere": "https:\/\/...",
-            "BrowseTheWeb": "Navegar",
-            "WriteToStartConversation": "Escribe tus pensamientos para comenzar la conversación.",
-            "StartConversation": "Iniciar conversación",
-            "GotoConversation": "Ir a Conversación",
-            "reset": "Reiniciar",
-            "edit": "Editar",
-            "link": "Enlace",
-            "setUrl": "Establecer URL",
-            "save": "Ahorrar",
-            "setClip": "clip recortado",
-            "invalidURL": "URL invalida"
-        },
-        "FileTooLarge": "Archivo demasiado grande para el almacenamiento en caché. Tamaño máximo de archivo {{size}}",
-        "InvalidPDF": "El archivo no es un PDF válido",
-        "StartTypingTitleOrKeywords": "Comience a escribir el título o las palabras clave..."
-    },
-    "types": {
-        "Websites\/article": {
-            "description": "Un documento HTML que varios usuarios pueden ver y editar",
-            "displayType": "Artículo"
-        },
-        "Websites\/slide": {
-            "description": "Una diapositiva en una presentación, puede incluir HTML, audio, etc.",
-            "displayType": "Deslizar"
-        },
-        "Websites\/presentation": {
-            "description": "Una presentación que consta de varias diapositivas.",
-            "displayType": "Presentación"
-        },
-        "Websites\/advert\/unit": {
-            "description": "Una unidad de publicidad en un sitio web",
-            "displayType": "bloque de anuncios"
-        },
-        "Websites\/advert\/placement": {
-            "description": "Una forma de agrupar unidades publicitarias bajo un nombre",
-            "displayType": "colocación de anuncios"
-        },
-        "Websites\/advert\/creative": {
-            "description": "Contenido para un anuncio",
-            "displayType": "Publicidad creativa"
-        },
-        "Websites\/advert\/campaign": {
-            "description": "Una campaña de publicidad",
-            "displayType": "campaña publicitaria"
-        },
-        "Websites\/webpage": {
-            "description": "Representa un sitio web cuyos metadatos fueron raspados",
-            "displayType": "Página web"
-        }
-    }
+	"advert": {
+		"campaign": {
+			"placeholders": {
+				"link": "Enlace para promocionar",
+				"startDate": "Fecha de inicio",
+				"startTime": "Hora de inicio",
+				"endDate": "Fecha final",
+				"endTime": "Hora de finalizaci\u00f3n",
+				"budget": "Presupuesto"
+			},
+			"interests": {
+				"Title": "Filtrar por inter\u00e9s",
+				"FilterInterests": "Comience a escribir un inter\u00e9s..."
+			},
+			"Interest": "Inter\u00e9s",
+			"Location": "Ubicaci\u00f3n"
+		}
+	},
+	"webpage": {
+		"composer": {
+			"Go": "Ir",
+			"PasteLinkHere": "https://...",
+			"BrowseTheWeb": "Navegar",
+			"WriteToStartConversation": "Escribe tus pensamientos para comenzar la conversaci\u00f3n.",
+			"StartConversation": "Iniciar conversaci\u00f3n",
+			"GotoConversation": "Ir a Conversaci\u00f3n",
+			"reset": "Reiniciar",
+			"edit": "Editar",
+			"link": "Enlace",
+			"setUrl": "Establecer URL",
+			"save": "Ahorrar",
+			"setClip": "clip recortado",
+			"invalidURL": "URL invalida"
+		},
+		"FileTooLarge": "Archivo demasiado grande para el almacenamiento en cach\u00e9. Tama\u00f1o m\u00e1ximo de archivo {{size}}",
+		"InvalidPDF": "El archivo no es un PDF v\u00e1lido",
+		"StartTypingTitleOrKeywords": "Comience a escribir el t\u00edtulo o las palabras clave..."
+	},
+	"types": {
+		"Websites/article": {
+			"description": "Un documento HTML que varios usuarios pueden ver y editar",
+			"displayType": "Art\u00edculo"
+		},
+		"Websites/slide": {
+			"description": "Una diapositiva en una presentaci\u00f3n, puede incluir HTML, audio, etc.",
+			"displayType": "Deslizar"
+		},
+		"Websites/presentation": {
+			"description": "Una presentaci\u00f3n que consta de varias diapositivas.",
+			"displayType": "Presentaci\u00f3n"
+		},
+		"Websites/advert/unit": {
+			"description": "Una unidad de publicidad en un sitio web",
+			"displayType": "bloque de anuncios"
+		},
+		"Websites/advert/placement": {
+			"description": "Una forma de agrupar unidades publicitarias bajo un nombre",
+			"displayType": "colocaci\u00f3n de anuncios"
+		},
+		"Websites/advert/creative": {
+			"description": "Contenido para un anuncio",
+			"displayType": "Publicidad creativa"
+		},
+		"Websites/advert/campaign": {
+			"description": "Una campa\u00f1a de publicidad",
+			"displayType": "campa\u00f1a publicitaria"
+		},
+		"Websites/webpage": {
+			"description": "Representa un sitio web cuyos metadatos fueron raspados",
+			"displayType": "P\u00e1gina web"
+		}
+	},
+	"page": {
+		"Add": "Agregar p\u00e1gina",
+		"Title": "T\u00edtulo de la p\u00e1gina",
+		"Description": "Descripci\u00f3n",
+		"TitlePlaceholder": "P\u00e1gina sin t\u00edtulo",
+		"DescriptionPlaceholder": "Descripci\u00f3n de la p\u00e1gina..."
+	},
+	"section": {
+		"Add": "Agregar secci\u00f3n",
+		"Heading": "T\u00edtulo",
+		"HeadingPlaceholder": "Encabezado de secci\u00f3n (opcional)",
+		"Layout": "Disposici\u00f3n",
+		"Content": "Contenido",
+		"ContentPlaceholder": "Escribe el contenido aqu\u00ed...",
+		"layouts": {
+			"full": "Ancho completo",
+			"two-col": "Dos columnas",
+			"three-col": "Tres columnas",
+			"sidebar-left": "Barra lateral izquierda",
+			"sidebar-right": "Barra lateral derecha"
+		}
+	},
+	"block": {
+		"Add": "Agregar bloque",
+		"Title": "T\u00edtulo",
+		"TitlePlaceholder": "T\u00edtulo del bloque (opcional)",
+		"Content": "Contenido",
+		"ContentPlaceholder": "Bloquear contenido..."
+	},
+	"referral": {
+		"Create": "Crear enlace de referencia",
+		"Destination": "URL de destino",
+		"Slug": "Babosa",
+		"Title": "T\u00edtulo (opcional)",
+		"Copy": "Copiar",
+		"Copied": "\u00a1Copiado!",
+		"Clicks": "Clics",
+		"Inviter": "Invitador",
+		"Metadata": "Compartir metadatos",
+		"RecentClicks": "Clics recientes",
+		"Time": "Tiempo",
+		"Platform": "Plataforma",
+		"Device": "Dispositivo",
+		"ManageLinks": "Enlaces de referencia"
+	}
 }

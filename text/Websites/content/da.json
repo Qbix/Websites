@@ -1,74 +1,119 @@
 {
-    "advert": {
-        "campaign": {
-            "placeholders": {
-                "link": "Link til promovering",
-                "startDate": "Start dato",
-                "startTime": "Starttidspunkt",
-                "endDate": "Slutdato",
-                "endTime": "Sluttid",
-                "budget": "Budget"
-            },
-            "interests": {
-                "Title": "Filtrer efter interesse",
-                "FilterInterests": "Begynd at skrive en interesse..."
-            },
-            "Interest": "Interesse",
-            "Location": "Beliggenhed"
-        }
-    },
-    "webpage": {
-        "composer": {
-            "Go": "Gå",
-            "PasteLinkHere": "https:\/\/...",
-            "BrowseTheWeb": "Gennemse",
-            "WriteToStartConversation": "Skriv dine tanker for at starte samtalen",
-            "StartConversation": "Start samtale",
-            "GotoConversation": "Gå til Samtale",
-            "reset": "Nulstil",
-            "edit": "Redigere",
-            "link": "Link",
-            "setUrl": "Indstil URL",
-            "save": "Gemme",
-            "setClip": "Udskåret klip",
-            "invalidURL": "ugyldig URL"
-        },
-        "FileTooLarge": "Filen er for stor til cachelagring. Maks filstørrelse {{size}}",
-        "InvalidPDF": "Filen er ikke en gyldig PDF",
-        "StartTypingTitleOrKeywords": "Begynd at skrive overskrift eller søgeord..."
-    },
-    "types": {
-        "Websites\/article": {
-            "description": "Et HTML-dokument, som forskellige brugere kan se og redigere",
-            "displayType": "Artikel"
-        },
-        "Websites\/slide": {
-            "description": "Et dias i en præsentation, kan indeholde HTML, lyd osv.",
-            "displayType": "Glide"
-        },
-        "Websites\/presentation": {
-            "description": "En præsentation bestående af forskellige slides",
-            "displayType": "Præsentation"
-        },
-        "Websites\/advert\/unit": {
-            "description": "En annonceenhed på et websted",
-            "displayType": "Annonceenhed"
-        },
-        "Websites\/advert\/placement": {
-            "description": "En måde at gruppere reklameenheder under et navn",
-            "displayType": "Annonceplacering"
-        },
-        "Websites\/advert\/creative": {
-            "description": "Indhold til en annonce",
-            "displayType": "Annonce kreativ"
-        },
-        "Websites\/advert\/campaign": {
-            "description": "En reklamekampagne",
-            "displayType": "Annoncekampagne"
-        },
-        "Websites\/webpage": {
-            "description": "Repræsenterer et websted, hvis metadata blev skrabet",
-            "displayType": "hjemmeside"
-        }
-    }
+	"advert": {
+		"campaign": {
+			"placeholders": {
+				"link": "Link til promovering",
+				"startDate": "Start dato",
+				"startTime": "Starttidspunkt",
+				"endDate": "Slutdato",
+				"endTime": "Sluttid",
+				"budget": "Budget"
+			},
+			"interests": {
+				"Title": "Filtrer efter interesse",
+				"FilterInterests": "Begynd at skrive en interesse..."
+			},
+			"Interest": "Interesse",
+			"Location": "Beliggenhed"
+		}
+	},
+	"webpage": {
+		"composer": {
+			"Go": "G\u00e5",
+			"PasteLinkHere": "https://...",
+			"BrowseTheWeb": "Gennemse",
+			"WriteToStartConversation": "Skriv dine tanker for at starte samtalen",
+			"StartConversation": "Start samtale",
+			"GotoConversation": "G\u00e5 til Samtale",
+			"reset": "Nulstil",
+			"edit": "Redigere",
+			"link": "Link",
+			"setUrl": "Indstil URL",
+			"save": "Gemme",
+			"setClip": "Udsk\u00e5ret klip",
+			"invalidURL": "ugyldig URL"
+		},
+		"FileTooLarge": "Filen er for stor til cachelagring. Maks filst\u00f8rrelse {{size}}",
+		"InvalidPDF": "Filen er ikke en gyldig PDF",
+		"StartTypingTitleOrKeywords": "Begynd at skrive overskrift eller s\u00f8geord..."
+	},
+	"types": {
+		"Websites/article": {
+			"description": "Et HTML-dokument, som forskellige brugere kan se og redigere",
+			"displayType": "Artikel"
+		},
+		"Websites/slide": {
+			"description": "Et dias i en pr\u00e6sentation, kan indeholde HTML, lyd osv.",
+			"displayType": "Glide"
+		},
+		"Websites/presentation": {
+			"description": "En pr\u00e6sentation best\u00e5ende af forskellige slides",
+			"displayType": "Pr\u00e6sentation"
+		},
+		"Websites/advert/unit": {
+			"description": "En annonceenhed p\u00e5 et websted",
+			"displayType": "Annonceenhed"
+		},
+		"Websites/advert/placement": {
+			"description": "En m\u00e5de at gruppere reklameenheder under et navn",
+			"displayType": "Annonceplacering"
+		},
+		"Websites/advert/creative": {
+			"description": "Indhold til en annonce",
+			"displayType": "Annonce kreativ"
+		},
+		"Websites/advert/campaign": {
+			"description": "En reklamekampagne",
+			"displayType": "Annoncekampagne"
+		},
+		"Websites/webpage": {
+			"description": "Repr\u00e6senterer et websted, hvis metadata blev skrabet",
+			"displayType": "hjemmeside"
+		}
+	},
+	"page": {
+		"Add": "Tilf\u00f8j side",
+		"Title": "Sidetitel",
+		"Description": "Beskrivelse",
+		"TitlePlaceholder": "Unavngivet side",
+		"DescriptionPlaceholder": "Sidebeskrivelse..."
+	},
+	"section": {
+		"Add": "Tilf\u00f8j sektion",
+		"Heading": "Overskrift",
+		"HeadingPlaceholder": "Sektionsoverskrift (valgfrit)",
+		"Layout": "Layout",
+		"Content": "Tilfreds",
+		"ContentPlaceholder": "Skriv indhold her...",
+		"layouts": {
+			"full": "Fuld bredde",
+			"two-col": "To kolonner",
+			"three-col": "Tre kolonner",
+			"sidebar-left": "Sidebj\u00e6lke til venstre",
+			"sidebar-right": "Sidebj\u00e6lke til h\u00f8jre"
+		}
+	},
+	"block": {
+		"Add": "Tilf\u00f8j blok",
+		"Title": "Titel",
+		"TitlePlaceholder": "Bloktitel (valgfrit)",
+		"Content": "Tilfreds",
+		"ContentPlaceholder": "Bloker indhold..."
+	},
+	"referral": {
+		"Create": "Opret henvisningslink",
+		"Destination": "Destinations-URL",
+		"Slug": "Snegl",
+		"Title": "Titel (valgfrit)",
+		"Copy": "Kopi",
+		"Copied": "Kopieret!",
+		"Clicks": "Klik",
+		"Inviter": "Invitator",
+		"Metadata": "Deling af metadata",
+		"RecentClicks": "Seneste klik",
+		"Time": "Tid",
+		"Platform": "Platform",
+		"Device": "Enhed",
+		"ManageLinks": "Henvisningslinks"
+	}
 }

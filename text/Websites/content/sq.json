@@ -1,74 +1,119 @@
 {
-    "advert": {
-        "campaign": {
-            "placeholders": {
-                "link": "Link për të promovuar",
-                "startDate": "Data e fillimit",
-                "startTime": "Koha e nisjes",
-                "endDate": "Data e përfundimit",
-                "endTime": "Koha e Fundit",
-                "budget": "Buxheti"
-            },
-            "interests": {
-                "Title": "Filtro sipas interesit",
-                "FilterInterests": "Filloni të shkruani një interes..."
-            },
-            "Interest": "Interesi",
-            "Location": "Vendndodhja"
-        }
-    },
-    "webpage": {
-        "composer": {
-            "Go": "Shkoni",
-            "PasteLinkHere": "https:\/\/...",
-            "BrowseTheWeb": "Shfletoni",
-            "WriteToStartConversation": "Shkruani mendimet tuaja për të nisur bisedën",
-            "StartConversation": "Filloni Bisedën",
-            "GotoConversation": "Shkoni te Biseda",
-            "reset": "Rivendos",
-            "edit": "Redakto",
-            "link": "Lidhje",
-            "setUrl": "Cakto URL-në",
-            "save": "Ruaj",
-            "setClip": "Klip i prerë",
-            "invalidURL": "URL e pavlefshme"
-        },
-        "FileTooLarge": "Skedari shumë i madh për memorie. Madhësia maksimale e skedarit {{size}}",
-        "InvalidPDF": "Skedari nuk është një PDF i vlefshëm",
-        "StartTypingTitleOrKeywords": "Filloni të shkruani titullin ose fjalët kyçe..."
-    },
-    "types": {
-        "Websites\/article": {
-            "description": "Një dokument HTML që përdorues të ndryshëm mund ta shikojnë dhe modifikojnë",
-            "displayType": "Neni"
-        },
-        "Websites\/slide": {
-            "description": "Një rrëshqitje në një prezantim, mund të përfshijë HTML, audio etj.",
-            "displayType": "Rrëshqitje"
-        },
-        "Websites\/presentation": {
-            "description": "Një prezantim i përbërë nga sllajde të ndryshme",
-            "displayType": "Prezantimi"
-        },
-        "Websites\/advert\/unit": {
-            "description": "Një njësi reklamimi në një faqe interneti",
-            "displayType": "Njësia e reklamave"
-        },
-        "Websites\/advert\/placement": {
-            "description": "Një mënyrë e grupimit të njësive reklamuese nën një emër",
-            "displayType": "Vendosja e reklamave"
-        },
-        "Websites\/advert\/creative": {
-            "description": "Përmbajtja për një reklamë",
-            "displayType": "Reklama krijuese"
-        },
-        "Websites\/advert\/campaign": {
-            "description": "Një fushatë reklamuese",
-            "displayType": "Fushata reklamuese"
-        },
-        "Websites\/webpage": {
-            "description": "Përfaqëson një faqe interneti, të dhënat meta të së cilës janë fshirë",
-            "displayType": "faqe interneti"
-        }
-    }
+	"advert": {
+		"campaign": {
+			"placeholders": {
+				"link": "Link p\u00ebr t\u00eb promovuar",
+				"startDate": "Data e fillimit",
+				"startTime": "Koha e nisjes",
+				"endDate": "Data e p\u00ebrfundimit",
+				"endTime": "Koha e Fundit",
+				"budget": "Buxheti"
+			},
+			"interests": {
+				"Title": "Filtro sipas interesit",
+				"FilterInterests": "Filloni t\u00eb shkruani nj\u00eb interes..."
+			},
+			"Interest": "Interesi",
+			"Location": "Vendndodhja"
+		}
+	},
+	"webpage": {
+		"composer": {
+			"Go": "Shkoni",
+			"PasteLinkHere": "https://...",
+			"BrowseTheWeb": "Shfletoni",
+			"WriteToStartConversation": "Shkruani mendimet tuaja p\u00ebr t\u00eb nisur bised\u00ebn",
+			"StartConversation": "Filloni Bised\u00ebn",
+			"GotoConversation": "Shkoni te Biseda",
+			"reset": "Rivendos",
+			"edit": "Redakto",
+			"link": "Lidhje",
+			"setUrl": "Cakto URL-n\u00eb",
+			"save": "Ruaj",
+			"setClip": "Klip i prer\u00eb",
+			"invalidURL": "URL e pavlefshme"
+		},
+		"FileTooLarge": "Skedari shum\u00eb i madh p\u00ebr memorie. Madh\u00ebsia maksimale e skedarit {{size}}",
+		"InvalidPDF": "Skedari nuk \u00ebsht\u00eb nj\u00eb PDF i vlefsh\u00ebm",
+		"StartTypingTitleOrKeywords": "Filloni t\u00eb shkruani titullin ose fjal\u00ebt ky\u00e7e..."
+	},
+	"types": {
+		"Websites/article": {
+			"description": "Nj\u00eb dokument HTML q\u00eb p\u00ebrdorues t\u00eb ndrysh\u00ebm mund ta shikojn\u00eb dhe modifikojn\u00eb",
+			"displayType": "Neni"
+		},
+		"Websites/slide": {
+			"description": "Nj\u00eb rr\u00ebshqitje n\u00eb nj\u00eb prezantim, mund t\u00eb p\u00ebrfshij\u00eb HTML, audio etj.",
+			"displayType": "Rr\u00ebshqitje"
+		},
+		"Websites/presentation": {
+			"description": "Nj\u00eb prezantim i p\u00ebrb\u00ebr\u00eb nga sllajde t\u00eb ndryshme",
+			"displayType": "Prezantimi"
+		},
+		"Websites/advert/unit": {
+			"description": "Nj\u00eb nj\u00ebsi reklamimi n\u00eb nj\u00eb faqe interneti",
+			"displayType": "Nj\u00ebsia e reklamave"
+		},
+		"Websites/advert/placement": {
+			"description": "Nj\u00eb m\u00ebnyr\u00eb e grupimit t\u00eb nj\u00ebsive reklamuese n\u00ebn nj\u00eb em\u00ebr",
+			"displayType": "Vendosja e reklamave"
+		},
+		"Websites/advert/creative": {
+			"description": "P\u00ebrmbajtja p\u00ebr nj\u00eb reklam\u00eb",
+			"displayType": "Reklama krijuese"
+		},
+		"Websites/advert/campaign": {
+			"description": "Nj\u00eb fushat\u00eb reklamuese",
+			"displayType": "Fushata reklamuese"
+		},
+		"Websites/webpage": {
+			"description": "P\u00ebrfaq\u00ebson nj\u00eb faqe interneti, t\u00eb dh\u00ebnat meta t\u00eb s\u00eb cil\u00ebs jan\u00eb fshir\u00eb",
+			"displayType": "faqe interneti"
+		}
+	},
+	"page": {
+		"Add": "Shto faqe",
+		"Title": "Titulli i faqes",
+		"Description": "P\u00ebrshkrimi",
+		"TitlePlaceholder": "Faqe pa titull",
+		"DescriptionPlaceholder": "P\u00ebrshkrimi i faqes..."
+	},
+	"section": {
+		"Add": "Shto seksion",
+		"Heading": "Titulli",
+		"HeadingPlaceholder": "Titulli i seksionit (opsional)",
+		"Layout": "Paraqitja",
+		"Content": "P\u00ebrmbajtja",
+		"ContentPlaceholder": "Shkruaj p\u00ebrmbajtje k\u00ebtu...",
+		"layouts": {
+			"full": "Gjer\u00ebsia e plot\u00eb",
+			"two-col": "Dy kolona",
+			"three-col": "Tre kolona",
+			"sidebar-left": "Shiriti an\u00ebsor majtas",
+			"sidebar-right": "Shiriti an\u00ebsor djathtas"
+		}
+	},
+	"block": {
+		"Add": "Shto bllok",
+		"Title": "Titulli",
+		"TitlePlaceholder": "Titulli i bllokut (opsional)",
+		"Content": "P\u00ebrmbajtja",
+		"ContentPlaceholder": "Blloko p\u00ebrmbajtjen..."
+	},
+	"referral": {
+		"Create": "Krijo Lidhje Referimi",
+		"Destination": "URL-ja e destinacionit",
+		"Slug": "K\u00ebrmilli",
+		"Title": "Titulli (opsional)",
+		"Copy": "Kopjo",
+		"Copied": "Kopjuar!",
+		"Clicks": "Klikime",
+		"Inviter": "Ftues",
+		"Metadata": "Ndarja e meta t\u00eb dh\u00ebnave",
+		"RecentClicks": "Klikimet e fundit",
+		"Time": "Koha",
+		"Platform": "Platforma",
+		"Device": "Pajisja",
+		"ManageLinks": "Lidhje Referimi"
+	}
 }

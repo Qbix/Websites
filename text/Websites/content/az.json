@@ -1,74 +1,119 @@
 {
-    "advert": {
-        "campaign": {
-            "placeholders": {
-                "link": "Təbliğ etmək üçün keçid",
-                "startDate": "Başlama tarixi",
-                "startTime": "Başlama vaxtı",
-                "endDate": "Bitmə vaxtı",
-                "endTime": "Bitmə vaxtı",
-                "budget": "Büdcə"
-            },
-            "interests": {
-                "Title": "Maraqla Filtrləyin",
-                "FilterInterests": "Maraq yazmağa başlayın..."
-            },
-            "Interest": "Maraq",
-            "Location": "Məkan"
-        }
-    },
-    "webpage": {
-        "composer": {
-            "Go": "Get",
-            "PasteLinkHere": "https:\/\/...",
-            "BrowseTheWeb": "Gözdən keçirin",
-            "WriteToStartConversation": "Söhbətə başlamaq üçün fikirlərinizi yazın",
-            "StartConversation": "Söhbətə başlayın",
-            "GotoConversation": "Söhbətə keçin",
-            "reset": "Sıfırlayın",
-            "edit": "Redaktə et",
-            "link": "Link",
-            "setUrl": "URL təyin edin",
-            "save": "Yadda saxla",
-            "setClip": "Klipi kəsin",
-            "invalidURL": "Yanlış URL"
-        },
-        "FileTooLarge": "Fayl keşləmə üçün çox böyükdür. Maksimum fayl ölçüsü {{size}}",
-        "InvalidPDF": "Fayl etibarlı PDF deyil",
-        "StartTypingTitleOrKeywords": "Başlıq və ya açar sözləri yazmağa başlayın..."
-    },
-    "types": {
-        "Websites\/article": {
-            "description": "Müxtəlif istifadəçilərin baxa və redaktə edə biləcəyi HTML sənədi",
-            "displayType": "Məqalə"
-        },
-        "Websites\/slide": {
-            "description": "Təqdimatdakı slayd HTML, audio və s. daxil ola bilər.",
-            "displayType": "Slayd"
-        },
-        "Websites\/presentation": {
-            "description": "Müxtəlif slaydlardan ibarət təqdimat",
-            "displayType": "Təqdimat"
-        },
-        "Websites\/advert\/unit": {
-            "description": "Veb saytdakı reklam bölməsi",
-            "displayType": "Reklam vahidi"
-        },
-        "Websites\/advert\/placement": {
-            "description": "Reklam vahidlərinin ad altında qruplaşdırılması üsulu",
-            "displayType": "Reklam yerləşdirilməsi"
-        },
-        "Websites\/advert\/creative": {
-            "description": "Reklam üçün məzmun",
-            "displayType": "Yaradıcı reklam"
-        },
-        "Websites\/advert\/campaign": {
-            "description": "Bir reklam kampaniyası",
-            "displayType": "Reklam kampaniyası"
-        },
-        "Websites\/webpage": {
-            "description": "Metadatası silinmiş veb saytı təmsil edir",
-            "displayType": "veb səhifə"
-        }
-    }
+	"advert": {
+		"campaign": {
+			"placeholders": {
+				"link": "T\u0259bli\u011f etm\u0259k \u00fc\u00e7\u00fcn ke\u00e7id",
+				"startDate": "Ba\u015flama tarixi",
+				"startTime": "Ba\u015flama vaxt\u0131",
+				"endDate": "Bitm\u0259 vaxt\u0131",
+				"endTime": "Bitm\u0259 vaxt\u0131",
+				"budget": "B\u00fcdc\u0259"
+			},
+			"interests": {
+				"Title": "Maraqla Filtrl\u0259yin",
+				"FilterInterests": "Maraq yazma\u011fa ba\u015flay\u0131n..."
+			},
+			"Interest": "Maraq",
+			"Location": "M\u0259kan"
+		}
+	},
+	"webpage": {
+		"composer": {
+			"Go": "Get",
+			"PasteLinkHere": "https://...",
+			"BrowseTheWeb": "G\u00f6zd\u0259n ke\u00e7irin",
+			"WriteToStartConversation": "S\u00f6hb\u0259t\u0259 ba\u015flamaq \u00fc\u00e7\u00fcn fikirl\u0259rinizi yaz\u0131n",
+			"StartConversation": "S\u00f6hb\u0259t\u0259 ba\u015flay\u0131n",
+			"GotoConversation": "S\u00f6hb\u0259t\u0259 ke\u00e7in",
+			"reset": "S\u0131f\u0131rlay\u0131n",
+			"edit": "Redakt\u0259 et",
+			"link": "Link",
+			"setUrl": "URL t\u0259yin edin",
+			"save": "Yadda saxla",
+			"setClip": "Klipi k\u0259sin",
+			"invalidURL": "Yanl\u0131\u015f URL"
+		},
+		"FileTooLarge": "Fayl ke\u015fl\u0259m\u0259 \u00fc\u00e7\u00fcn \u00e7ox b\u00f6y\u00fckd\u00fcr. Maksimum fayl \u00f6l\u00e7\u00fcs\u00fc {{size}}",
+		"InvalidPDF": "Fayl etibarl\u0131 PDF deyil",
+		"StartTypingTitleOrKeywords": "Ba\u015fl\u0131q v\u0259 ya a\u00e7ar s\u00f6zl\u0259ri yazma\u011fa ba\u015flay\u0131n..."
+	},
+	"types": {
+		"Websites/article": {
+			"description": "M\u00fcxt\u0259lif istifad\u0259\u00e7il\u0259rin baxa v\u0259 redakt\u0259 ed\u0259 bil\u0259c\u0259yi HTML s\u0259n\u0259di",
+			"displayType": "M\u0259qal\u0259"
+		},
+		"Websites/slide": {
+			"description": "T\u0259qdimatdak\u0131 slayd HTML, audio v\u0259 s. daxil ola bil\u0259r.",
+			"displayType": "Slayd"
+		},
+		"Websites/presentation": {
+			"description": "M\u00fcxt\u0259lif slaydlardan ibar\u0259t t\u0259qdimat",
+			"displayType": "T\u0259qdimat"
+		},
+		"Websites/advert/unit": {
+			"description": "Veb saytdak\u0131 reklam b\u00f6lm\u0259si",
+			"displayType": "Reklam vahidi"
+		},
+		"Websites/advert/placement": {
+			"description": "Reklam vahidl\u0259rinin ad alt\u0131nda qrupla\u015fd\u0131r\u0131lmas\u0131 \u00fcsulu",
+			"displayType": "Reklam yerl\u0259\u015fdirilm\u0259si"
+		},
+		"Websites/advert/creative": {
+			"description": "Reklam \u00fc\u00e7\u00fcn m\u0259zmun",
+			"displayType": "Yarad\u0131c\u0131 reklam"
+		},
+		"Websites/advert/campaign": {
+			"description": "Bir reklam kampaniyas\u0131",
+			"displayType": "Reklam kampaniyas\u0131"
+		},
+		"Websites/webpage": {
+			"description": "Metadatas\u0131 silinmi\u015f veb sayt\u0131 t\u0259msil edir",
+			"displayType": "veb s\u0259hif\u0259"
+		}
+	},
+	"page": {
+		"Add": "S\u0259hif\u0259 \u0259lav\u0259 edin",
+		"Title": "S\u0259hif\u0259 Ba\u015fl\u0131\u011f\u0131",
+		"Description": "T\u0259svir",
+		"TitlePlaceholder": "Ba\u015fl\u0131qs\u0131z S\u0259hif\u0259",
+		"DescriptionPlaceholder": "S\u0259hif\u0259 t\u0259sviri..."
+	},
+	"section": {
+		"Add": "B\u00f6lm\u0259 \u0259lav\u0259 edin",
+		"Heading": "Ba\u015fl\u0131q",
+		"HeadingPlaceholder": "B\u00f6lm\u0259 ba\u015fl\u0131\u011f\u0131 (iste\u011fe ba\u011fl\u0131)",
+		"Layout": "D\u00fcz\u0259n",
+		"Content": "M\u0259zmun",
+		"ContentPlaceholder": "M\u0259zmunu buraya yaz\u0131n...",
+		"layouts": {
+			"full": "Tam en",
+			"two-col": "\u0130ki s\u00fctun",
+			"three-col": "\u00dc\u00e7 s\u00fctun",
+			"sidebar-left": "Yan panel solda",
+			"sidebar-right": "Yan panel sa\u011fda"
+		}
+	},
+	"block": {
+		"Add": "Blok \u0259lav\u0259 edin",
+		"Title": "Ba\u015fl\u0131q",
+		"TitlePlaceholder": "Blok ba\u015fl\u0131\u011f\u0131 (iste\u011fe ba\u011fl\u0131)",
+		"Content": "M\u0259zmun",
+		"ContentPlaceholder": "M\u0259zmunu bloklay\u0131n..."
+	},
+	"referral": {
+		"Create": "Referal Linki Yarad\u0131n",
+		"Destination": "T\u0259yinat URL-i",
+		"Slug": "\u015elak",
+		"Title": "Ba\u015fl\u0131q (iste\u011fe ba\u011fl\u0131)",
+		"Copy": "Kopyalay\u0131n",
+		"Copied": "Kopyaland\u0131!",
+		"Clicks": "Klikl\u0259r",
+		"Inviter": "D\u0259v\u0259t\u00e7i",
+		"Metadata": "Metadata Payla\u015f\u0131m\u0131",
+		"RecentClicks": "Son Klikl\u0259r",
+		"Time": "Vaxt",
+		"Platform": "Platforma",
+		"Device": "Cihaz",
+		"ManageLinks": "Referal Linkl\u0259ri"
+	}
 }

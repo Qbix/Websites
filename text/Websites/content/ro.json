@@ -1,74 +1,119 @@
 {
-    "advert": {
-        "campaign": {
-            "placeholders": {
-                "link": "Link pentru promovare",
-                "startDate": "Data de început",
-                "startTime": "Timpul de începere",
-                "endDate": "Data de încheiere",
-                "endTime": "Sfârșitul timpului",
-                "budget": "Buget"
-            },
-            "interests": {
-                "Title": "Filtrați după interes",
-                "FilterInterests": "Începeți să scrieți un interes..."
-            },
-            "Interest": "Interes",
-            "Location": "Locație"
-        }
-    },
-    "webpage": {
-        "composer": {
-            "Go": "Merge",
-            "PasteLinkHere": "https:\/\/...",
-            "BrowseTheWeb": "Naviga",
-            "WriteToStartConversation": "Scrie-ți gândurile pentru a începe conversația",
-            "StartConversation": "Începe conversația",
-            "GotoConversation": "Accesați Conversație",
-            "reset": "Resetați",
-            "edit": "Editați | ×",
-            "link": "Legătură",
-            "setUrl": "Setați adresa URL",
-            "save": "Salvați",
-            "setClip": "Clipul decupat",
-            "invalidURL": "URL invalid"
-        },
-        "FileTooLarge": "Fișier prea mare pentru stocare în cache. Dimensiunea maximă a fișierului {{size}}",
-        "InvalidPDF": "Fișierul nu este un PDF valid",
-        "StartTypingTitleOrKeywords": "Începeți să introduceți titlul sau cuvintele cheie..."
-    },
-    "types": {
-        "Websites\/article": {
-            "description": "Un document HTML pe care diverși utilizatori îl pot vizualiza și edita",
-            "displayType": "Articol"
-        },
-        "Websites\/slide": {
-            "description": "Un diapozitiv dintr-o prezentare poate include HTML, audio etc.",
-            "displayType": "Slide"
-        },
-        "Websites\/presentation": {
-            "description": "O prezentare formată din diferite diapozitive",
-            "displayType": "Prezentare"
-        },
-        "Websites\/advert\/unit": {
-            "description": "O unitate de publicitate pe un site web",
-            "displayType": "Unitate de publicitate"
-        },
-        "Websites\/advert\/placement": {
-            "description": "O modalitate de grupare a unităților de publicitate sub un nume",
-            "displayType": "Plasarea reclamei"
-        },
-        "Websites\/advert\/creative": {
-            "description": "Conținut pentru o reclamă",
-            "displayType": "Reclamă creativă"
-        },
-        "Websites\/advert\/campaign": {
-            "description": "O campanie de publicitate",
-            "displayType": "Campanie publicitara"
-        },
-        "Websites\/webpage": {
-            "description": "Reprezintă un site web ale cărui metadate au fost răzuite",
-            "displayType": "Pagină web"
-        }
-    }
+	"advert": {
+		"campaign": {
+			"placeholders": {
+				"link": "Link pentru promovare",
+				"startDate": "Data de \u00eenceput",
+				"startTime": "Timpul de \u00eencepere",
+				"endDate": "Data de \u00eencheiere",
+				"endTime": "Sf\u00e2r\u0219itul timpului",
+				"budget": "Buget"
+			},
+			"interests": {
+				"Title": "Filtra\u021bi dup\u0103 interes",
+				"FilterInterests": "\u00cencepe\u021bi s\u0103 scrie\u021bi un interes..."
+			},
+			"Interest": "Interes",
+			"Location": "Loca\u021bie"
+		}
+	},
+	"webpage": {
+		"composer": {
+			"Go": "Merge",
+			"PasteLinkHere": "https://...",
+			"BrowseTheWeb": "Naviga",
+			"WriteToStartConversation": "Scrie-\u021bi g\u00e2ndurile pentru a \u00eencepe conversa\u021bia",
+			"StartConversation": "\u00cencepe conversa\u021bia",
+			"GotoConversation": "Accesa\u021bi Conversa\u021bie",
+			"reset": "Reseta\u021bi",
+			"edit": "Edita\u021bi | \u00d7",
+			"link": "Leg\u0103tur\u0103",
+			"setUrl": "Seta\u021bi adresa URL",
+			"save": "Salva\u021bi",
+			"setClip": "Clipul decupat",
+			"invalidURL": "URL invalid"
+		},
+		"FileTooLarge": "Fi\u0219ier prea mare pentru stocare \u00een cache. Dimensiunea maxim\u0103 a fi\u0219ierului {{size}}",
+		"InvalidPDF": "Fi\u0219ierul nu este un PDF valid",
+		"StartTypingTitleOrKeywords": "\u00cencepe\u021bi s\u0103 introduce\u021bi titlul sau cuvintele cheie..."
+	},
+	"types": {
+		"Websites/article": {
+			"description": "Un document HTML pe care diver\u0219i utilizatori \u00eel pot vizualiza \u0219i edita",
+			"displayType": "Articol"
+		},
+		"Websites/slide": {
+			"description": "Un diapozitiv dintr-o prezentare poate include HTML, audio etc.",
+			"displayType": "Slide"
+		},
+		"Websites/presentation": {
+			"description": "O prezentare format\u0103 din diferite diapozitive",
+			"displayType": "Prezentare"
+		},
+		"Websites/advert/unit": {
+			"description": "O unitate de publicitate pe un site web",
+			"displayType": "Unitate de publicitate"
+		},
+		"Websites/advert/placement": {
+			"description": "O modalitate de grupare a unit\u0103\u021bilor de publicitate sub un nume",
+			"displayType": "Plasarea reclamei"
+		},
+		"Websites/advert/creative": {
+			"description": "Con\u021binut pentru o reclam\u0103",
+			"displayType": "Reclam\u0103 creativ\u0103"
+		},
+		"Websites/advert/campaign": {
+			"description": "O campanie de publicitate",
+			"displayType": "Campanie publicitara"
+		},
+		"Websites/webpage": {
+			"description": "Reprezint\u0103 un site web ale c\u0103rui metadate au fost r\u0103zuite",
+			"displayType": "Pagin\u0103 web"
+		}
+	},
+	"page": {
+		"Add": "Ad\u0103uga\u021bi o pagin\u0103",
+		"Title": "Titlul paginii",
+		"Description": "Descriere",
+		"TitlePlaceholder": "Pagin\u0103 f\u0103r\u0103 titlu",
+		"DescriptionPlaceholder": "Descrierea paginii..."
+	},
+	"section": {
+		"Add": "Ad\u0103uga\u021bi sec\u021biune",
+		"Heading": "Titlu",
+		"HeadingPlaceholder": "Titlu sec\u021biune (op\u021bional)",
+		"Layout": "Aspect",
+		"Content": "Con\u0163inut",
+		"ContentPlaceholder": "Scrie\u021bi con\u021binut aici...",
+		"layouts": {
+			"full": "L\u0103\u021bime complet\u0103",
+			"two-col": "Dou\u0103 coloane",
+			"three-col": "Trei coloane",
+			"sidebar-left": "Bara lateral\u0103 st\u00e2nga",
+			"sidebar-right": "Bara lateral\u0103 dreapta"
+		}
+	},
+	"block": {
+		"Add": "Ad\u0103uga\u021bi un bloc",
+		"Title": "Titlu",
+		"TitlePlaceholder": "Titlu bloc (op\u021bional)",
+		"Content": "Con\u0163inut",
+		"ContentPlaceholder": "Bloca\u021bi con\u021binutul..."
+	},
+	"referral": {
+		"Create": "Crea\u021bi un link de recomandare",
+		"Destination": "URL-ul de destina\u021bie",
+		"Slug": "Melc",
+		"Title": "Titlu (op\u021bional)",
+		"Copy": "Copie",
+		"Copied": "Copiat!",
+		"Clicks": "Clicuri",
+		"Inviter": "Invitator",
+		"Metadata": "Partajarea metadatelor",
+		"RecentClicks": "Clicuri recente",
+		"Time": "Timp",
+		"Platform": "Platform\u0103",
+		"Device": "Dispozitiv",
+		"ManageLinks": "Linkuri de recomandare"
+	}
 }

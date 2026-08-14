@@ -1,74 +1,119 @@
 {
-    "advert": {
-        "campaign": {
-            "placeholders": {
-                "link": "Enllaç per promocionar",
-                "startDate": "Data d&#39;inici",
-                "startTime": "L&#39;hora d&#39;inici",
-                "endDate": "Data de finalització",
-                "endTime": "Fi del temps",
-                "budget": "Pressupost"
-            },
-            "interests": {
-                "Title": "Filtra per interessos",
-                "FilterInterests": "Comença a escriure un interès..."
-            },
-            "Interest": "Interès",
-            "Location": "Ubicació"
-        }
-    },
-    "webpage": {
-        "composer": {
-            "Go": "Vés",
-            "PasteLinkHere": "https:\/\/...",
-            "BrowseTheWeb": "Navega",
-            "WriteToStartConversation": "Escriu els teus pensaments per començar la conversa",
-            "StartConversation": "Inicia la conversa",
-            "GotoConversation": "Vés a Conversa",
-            "reset": "Restableix",
-            "edit": "Edita",
-            "link": "Enllaç",
-            "setUrl": "Estableix l&#39;URL",
-            "save": "Desa",
-            "setClip": "Retalla el clip",
-            "invalidURL": "URL no vàlid"
-        },
-        "FileTooLarge": "Fitxer massa gran per a la memòria cau. Mida màxima del fitxer {{size}}",
-        "InvalidPDF": "El fitxer no és un PDF vàlid",
-        "StartTypingTitleOrKeywords": "Comenceu a escriure títol o paraules clau..."
-    },
-    "types": {
-        "Websites\/article": {
-            "description": "Un document HTML que diversos usuaris poden veure i editar",
-            "displayType": "Article"
-        },
-        "Websites\/slide": {
-            "description": "Una diapositiva en una presentació, pot incloure HTML, àudio, etc.",
-            "displayType": "Diapositiva"
-        },
-        "Websites\/presentation": {
-            "description": "Una presentació que consta de diverses diapositives",
-            "displayType": "Presentació"
-        },
-        "Websites\/advert\/unit": {
-            "description": "Una unitat publicitària en un lloc web",
-            "displayType": "Unitat publicitària"
-        },
-        "Websites\/advert\/placement": {
-            "description": "Una manera d&#39;agrupar unitats publicitàries sota un nom",
-            "displayType": "Col·locació de l&#39;anunci"
-        },
-        "Websites\/advert\/creative": {
-            "description": "Contingut per a un anunci",
-            "displayType": "Anunci creatiu"
-        },
-        "Websites\/advert\/campaign": {
-            "description": "Una campanya publicitària",
-            "displayType": "Campanya publicitària"
-        },
-        "Websites\/webpage": {
-            "description": "Representa un lloc web les metadades del qual s&#39;han esborrat",
-            "displayType": "pàgina web"
-        }
-    }
+	"advert": {
+		"campaign": {
+			"placeholders": {
+				"link": "Enlla\u00e7 per promocionar",
+				"startDate": "Data d&#39;inici",
+				"startTime": "L&#39;hora d&#39;inici",
+				"endDate": "Data de finalitzaci\u00f3",
+				"endTime": "Fi del temps",
+				"budget": "Pressupost"
+			},
+			"interests": {
+				"Title": "Filtra per interessos",
+				"FilterInterests": "Comen\u00e7a a escriure un inter\u00e8s..."
+			},
+			"Interest": "Inter\u00e8s",
+			"Location": "Ubicaci\u00f3"
+		}
+	},
+	"webpage": {
+		"composer": {
+			"Go": "V\u00e9s",
+			"PasteLinkHere": "https://...",
+			"BrowseTheWeb": "Navega",
+			"WriteToStartConversation": "Escriu els teus pensaments per comen\u00e7ar la conversa",
+			"StartConversation": "Inicia la conversa",
+			"GotoConversation": "V\u00e9s a Conversa",
+			"reset": "Restableix",
+			"edit": "Edita",
+			"link": "Enlla\u00e7",
+			"setUrl": "Estableix l&#39;URL",
+			"save": "Desa",
+			"setClip": "Retalla el clip",
+			"invalidURL": "URL no v\u00e0lid"
+		},
+		"FileTooLarge": "Fitxer massa gran per a la mem\u00f2ria cau. Mida m\u00e0xima del fitxer {{size}}",
+		"InvalidPDF": "El fitxer no \u00e9s un PDF v\u00e0lid",
+		"StartTypingTitleOrKeywords": "Comenceu a escriure t\u00edtol o paraules clau..."
+	},
+	"types": {
+		"Websites/article": {
+			"description": "Un document HTML que diversos usuaris poden veure i editar",
+			"displayType": "Article"
+		},
+		"Websites/slide": {
+			"description": "Una diapositiva en una presentaci\u00f3, pot incloure HTML, \u00e0udio, etc.",
+			"displayType": "Diapositiva"
+		},
+		"Websites/presentation": {
+			"description": "Una presentaci\u00f3 que consta de diverses diapositives",
+			"displayType": "Presentaci\u00f3"
+		},
+		"Websites/advert/unit": {
+			"description": "Una unitat publicit\u00e0ria en un lloc web",
+			"displayType": "Unitat publicit\u00e0ria"
+		},
+		"Websites/advert/placement": {
+			"description": "Una manera d&#39;agrupar unitats publicit\u00e0ries sota un nom",
+			"displayType": "Col\u00b7locaci\u00f3 de l&#39;anunci"
+		},
+		"Websites/advert/creative": {
+			"description": "Contingut per a un anunci",
+			"displayType": "Anunci creatiu"
+		},
+		"Websites/advert/campaign": {
+			"description": "Una campanya publicit\u00e0ria",
+			"displayType": "Campanya publicit\u00e0ria"
+		},
+		"Websites/webpage": {
+			"description": "Representa un lloc web les metadades del qual s&#39;han esborrat",
+			"displayType": "p\u00e0gina web"
+		}
+	},
+	"page": {
+		"Add": "Afegeix p\u00e0gina",
+		"Title": "T\u00edtol de la p\u00e0gina",
+		"Description": "Descripci\u00f3",
+		"TitlePlaceholder": "P\u00e0gina sense t\u00edtol",
+		"DescriptionPlaceholder": "Descripci\u00f3 de la p\u00e0gina..."
+	},
+	"section": {
+		"Add": "Afegeix secci\u00f3",
+		"Heading": "Encap\u00e7alament",
+		"HeadingPlaceholder": "Encap\u00e7alament de secci\u00f3 (opcional)",
+		"Layout": "Disseny",
+		"Content": "Contingut",
+		"ContentPlaceholder": "Escriu contingut aqu\u00ed...",
+		"layouts": {
+			"full": "Amplada completa",
+			"two-col": "Dues columnes",
+			"three-col": "Tres columnes",
+			"sidebar-left": "Barra lateral esquerra",
+			"sidebar-right": "Barra lateral dreta"
+		}
+	},
+	"block": {
+		"Add": "Afegeix un bloc",
+		"Title": "T\u00edtol",
+		"TitlePlaceholder": "T\u00edtol del bloc (opcional)",
+		"Content": "Contingut",
+		"ContentPlaceholder": "Bloqueja el contingut..."
+	},
+	"referral": {
+		"Create": "Crea un enlla\u00e7 de refer\u00e8ncia",
+		"Destination": "URL de destinaci\u00f3",
+		"Slug": "Llimac",
+		"Title": "T\u00edtol (opcional)",
+		"Copy": "C\u00f2pia",
+		"Copied": "Copiat!",
+		"Clicks": "Clics",
+		"Inviter": "Invitador",
+		"Metadata": "Compartir metadades",
+		"RecentClicks": "Clics recents",
+		"Time": "Temps",
+		"Platform": "Plataforma",
+		"Device": "Dispositiu",
+		"ManageLinks": "Enlla\u00e7os de refer\u00e8ncia"
+	}
 }

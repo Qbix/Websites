@@ -1,74 +1,119 @@
 {
-    "advert": {
-        "campaign": {
-            "placeholders": {
-                "link": "Link do promocji",
-                "startDate": "Data rozpoczęcia",
-                "startTime": "Czas rozpoczęcia",
-                "endDate": "Data końcowa",
-                "endTime": "Koniec czasu",
-                "budget": "Budżet"
-            },
-            "interests": {
-                "Title": "Filtruj według zainteresowań",
-                "FilterInterests": "Zacznij wpisywać zainteresowanie..."
-            },
-            "Interest": "Odsetki",
-            "Location": "Lokalizacja"
-        }
-    },
-    "webpage": {
-        "composer": {
-            "Go": "Iść",
-            "PasteLinkHere": "https:\/\/...",
-            "BrowseTheWeb": "Przeglądać",
-            "WriteToStartConversation": "Napisz swoje przemyślenia, aby rozpocząć rozmowę",
-            "StartConversation": "Rozpocznij rozmowę",
-            "GotoConversation": "Przejdź do Rozmowa",
-            "reset": "Resetowanie",
-            "edit": "Edytować",
-            "link": "Połączyć",
-            "setUrl": "Ustaw adres URL",
-            "save": "Ratować",
-            "setClip": "Wycięty klip",
-            "invalidURL": "nieprawidłowy URL"
-        },
-        "FileTooLarge": "Plik jest za duży do buforowania. Maksymalny rozmiar pliku {{size}}",
-        "InvalidPDF": "Plik nie jest prawidłowym plikiem PDF",
-        "StartTypingTitleOrKeywords": "Zacznij wpisywać tytuł lub słowa kluczowe..."
-    },
-    "types": {
-        "Websites\/article": {
-            "description": "Dokument HTML, który różni użytkownicy mogą przeglądać i edytować",
-            "displayType": "Artykuł"
-        },
-        "Websites\/slide": {
-            "description": "Slajd w prezentacji może zawierać kod HTML, dźwięk itp.",
-            "displayType": "Slajd"
-        },
-        "Websites\/presentation": {
-            "description": "Prezentacja składająca się z różnych slajdów",
-            "displayType": "Prezentacja"
-        },
-        "Websites\/advert\/unit": {
-            "description": "Jednostka reklamowa na stronie internetowej",
-            "displayType": "Jednostka reklamowa"
-        },
-        "Websites\/advert\/placement": {
-            "description": "Sposób grupowania jednostek reklamowych pod nazwą",
-            "displayType": "Umieszczenie reklamy"
-        },
-        "Websites\/advert\/creative": {
-            "description": "Treść reklamy",
-            "displayType": "Kreacja reklamowa"
-        },
-        "Websites\/advert\/campaign": {
-            "description": "Kampania reklamowa",
-            "displayType": "Kampania reklamowa"
-        },
-        "Websites\/webpage": {
-            "description": "Reprezentuje witrynę internetową, której metadane zostały zeskrobane",
-            "displayType": "Strona internetowa"
-        }
-    }
+	"advert": {
+		"campaign": {
+			"placeholders": {
+				"link": "Link do promocji",
+				"startDate": "Data rozpocz\u0119cia",
+				"startTime": "Czas rozpocz\u0119cia",
+				"endDate": "Data ko\u0144cowa",
+				"endTime": "Koniec czasu",
+				"budget": "Bud\u017cet"
+			},
+			"interests": {
+				"Title": "Filtruj wed\u0142ug zainteresowa\u0144",
+				"FilterInterests": "Zacznij wpisywa\u0107 zainteresowanie..."
+			},
+			"Interest": "Odsetki",
+			"Location": "Lokalizacja"
+		}
+	},
+	"webpage": {
+		"composer": {
+			"Go": "I\u015b\u0107",
+			"PasteLinkHere": "https://...",
+			"BrowseTheWeb": "Przegl\u0105da\u0107",
+			"WriteToStartConversation": "Napisz swoje przemy\u015blenia, aby rozpocz\u0105\u0107 rozmow\u0119",
+			"StartConversation": "Rozpocznij rozmow\u0119",
+			"GotoConversation": "Przejd\u017a do Rozmowa",
+			"reset": "Resetowanie",
+			"edit": "Edytowa\u0107",
+			"link": "Po\u0142\u0105czy\u0107",
+			"setUrl": "Ustaw adres URL",
+			"save": "Ratowa\u0107",
+			"setClip": "Wyci\u0119ty klip",
+			"invalidURL": "nieprawid\u0142owy URL"
+		},
+		"FileTooLarge": "Plik jest za du\u017cy do buforowania. Maksymalny rozmiar pliku {{size}}",
+		"InvalidPDF": "Plik nie jest prawid\u0142owym plikiem PDF",
+		"StartTypingTitleOrKeywords": "Zacznij wpisywa\u0107 tytu\u0142 lub s\u0142owa kluczowe..."
+	},
+	"types": {
+		"Websites/article": {
+			"description": "Dokument HTML, kt\u00f3ry r\u00f3\u017cni u\u017cytkownicy mog\u0105 przegl\u0105da\u0107 i edytowa\u0107",
+			"displayType": "Artyku\u0142"
+		},
+		"Websites/slide": {
+			"description": "Slajd w prezentacji mo\u017ce zawiera\u0107 kod HTML, d\u017awi\u0119k itp.",
+			"displayType": "Slajd"
+		},
+		"Websites/presentation": {
+			"description": "Prezentacja sk\u0142adaj\u0105ca si\u0119 z r\u00f3\u017cnych slajd\u00f3w",
+			"displayType": "Prezentacja"
+		},
+		"Websites/advert/unit": {
+			"description": "Jednostka reklamowa na stronie internetowej",
+			"displayType": "Jednostka reklamowa"
+		},
+		"Websites/advert/placement": {
+			"description": "Spos\u00f3b grupowania jednostek reklamowych pod nazw\u0105",
+			"displayType": "Umieszczenie reklamy"
+		},
+		"Websites/advert/creative": {
+			"description": "Tre\u015b\u0107 reklamy",
+			"displayType": "Kreacja reklamowa"
+		},
+		"Websites/advert/campaign": {
+			"description": "Kampania reklamowa",
+			"displayType": "Kampania reklamowa"
+		},
+		"Websites/webpage": {
+			"description": "Reprezentuje witryn\u0119 internetow\u0105, kt\u00f3rej metadane zosta\u0142y zeskrobane",
+			"displayType": "Strona internetowa"
+		}
+	},
+	"page": {
+		"Add": "Dodaj stron\u0119",
+		"Title": "Tytu\u0142 strony",
+		"Description": "Opis",
+		"TitlePlaceholder": "Strona bez tytu\u0142u",
+		"DescriptionPlaceholder": "Opis strony..."
+	},
+	"section": {
+		"Add": "Dodaj sekcj\u0119",
+		"Heading": "Nag\u0142\u00f3wek",
+		"HeadingPlaceholder": "Nag\u0142\u00f3wek sekcji (opcjonalnie)",
+		"Layout": "Uk\u0142ad",
+		"Content": "Tre\u015b\u0107",
+		"ContentPlaceholder": "Wpisz tutaj tre\u015b\u0107...",
+		"layouts": {
+			"full": "Pe\u0142na szeroko\u015b\u0107",
+			"two-col": "Dwie kolumny",
+			"three-col": "Trzy kolumny",
+			"sidebar-left": "Pasek boczny po lewej stronie",
+			"sidebar-right": "Pasek boczny po prawej stronie"
+		}
+	},
+	"block": {
+		"Add": "Dodaj blok",
+		"Title": "Tytu\u0142",
+		"TitlePlaceholder": "Tytu\u0142 bloku (opcjonalnie)",
+		"Content": "Tre\u015b\u0107",
+		"ContentPlaceholder": "Zablokuj zawarto\u015b\u0107..."
+	},
+	"referral": {
+		"Create": "Utw\u00f3rz link polecaj\u0105cy",
+		"Destination": "Adres URL docelowy",
+		"Slug": "\u015alimak",
+		"Title": "Tytu\u0142 (opcjonalnie)",
+		"Copy": "Kopia",
+		"Copied": "Skopiowano!",
+		"Clicks": "Klikni\u0119cia",
+		"Inviter": "Zapraszaj\u0105cy",
+		"Metadata": "Udost\u0119pnianie metadanych",
+		"RecentClicks": "Ostatnie klikni\u0119cia",
+		"Time": "Czas",
+		"Platform": "Platforma",
+		"Device": "Urz\u0105dzenie",
+		"ManageLinks": "Linki polecaj\u0105ce"
+	}
 }

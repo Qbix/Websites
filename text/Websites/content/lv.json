@@ -1,74 +1,119 @@
 {
-    "advert": {
-        "campaign": {
-            "placeholders": {
-                "link": "Saite reklamēšanai",
-                "startDate": "Sākuma datums",
-                "startTime": "Sākuma laiks",
-                "endDate": "Beigu datums",
-                "endTime": "Beigu laiks",
-                "budget": "Budžets"
-            },
-            "interests": {
-                "Title": "Filtrēt pēc interesēm",
-                "FilterInterests": "Sāciet rakstīt interesi..."
-            },
-            "Interest": "Interese",
-            "Location": "Atrašanās vieta"
-        }
-    },
-    "webpage": {
-        "composer": {
-            "Go": "Aiziet",
-            "PasteLinkHere": "https:\/\/...",
-            "BrowseTheWeb": "Pārlūkot",
-            "WriteToStartConversation": "Uzrakstiet savas domas, lai sāktu sarunu",
-            "StartConversation": "Sāciet sarunu",
-            "GotoConversation": "Dodieties uz sadaļu Saruna",
-            "reset": "Atiestatīt",
-            "edit": "Rediģēt",
-            "link": "Saite",
-            "setUrl": "Iestatīt URL",
-            "save": "Saglabāt",
-            "setClip": "Izgriezt klipu",
-            "invalidURL": "Nederīgs URL"
-        },
-        "FileTooLarge": "Fails ir pārāk liels, lai saglabātu kešatmiņu. Maksimālais faila lielums {{size}}",
-        "InvalidPDF": "Fails nav derīgs PDF",
-        "StartTypingTitleOrKeywords": "Sāciet rakstīt virsrakstu vai atslēgvārdus..."
-    },
-    "types": {
-        "Websites\/article": {
-            "description": "HTML dokuments, ko var apskatīt un rediģēt dažādi lietotāji",
-            "displayType": "Raksts"
-        },
-        "Websites\/slide": {
-            "description": "Prezentācijas slaids var ietvert HTML, audio utt.",
-            "displayType": "Slidkalniņš"
-        },
-        "Websites\/presentation": {
-            "description": "Prezentācija, kas sastāv no dažādiem slaidiem",
-            "displayType": "Prezentācija"
-        },
-        "Websites\/advert\/unit": {
-            "description": "Reklāmas vienība tīmekļa vietnē",
-            "displayType": "Reklāmas vienība"
-        },
-        "Websites\/advert\/placement": {
-            "description": "Veids, kā grupēt reklāmas vienības zem nosaukuma",
-            "displayType": "Reklāmas izvietošana"
-        },
-        "Websites\/advert\/creative": {
-            "description": "Reklāmas saturs",
-            "displayType": "Reklāma radoši"
-        },
-        "Websites\/advert\/campaign": {
-            "description": "Reklāmas kampaņa",
-            "displayType": "Reklāmas kampaņa"
-        },
-        "Websites\/webpage": {
-            "description": "Apzīmē vietni, kuras metadati tika notīrīti",
-            "displayType": "Web lapa"
-        }
-    }
+	"advert": {
+		"campaign": {
+			"placeholders": {
+				"link": "Saite reklam\u0113\u0161anai",
+				"startDate": "S\u0101kuma datums",
+				"startTime": "S\u0101kuma laiks",
+				"endDate": "Beigu datums",
+				"endTime": "Beigu laiks",
+				"budget": "Bud\u017eets"
+			},
+			"interests": {
+				"Title": "Filtr\u0113t p\u0113c interes\u0113m",
+				"FilterInterests": "S\u0101ciet rakst\u012bt interesi..."
+			},
+			"Interest": "Interese",
+			"Location": "Atra\u0161an\u0101s vieta"
+		}
+	},
+	"webpage": {
+		"composer": {
+			"Go": "Aiziet",
+			"PasteLinkHere": "https://...",
+			"BrowseTheWeb": "P\u0101rl\u016bkot",
+			"WriteToStartConversation": "Uzrakstiet savas domas, lai s\u0101ktu sarunu",
+			"StartConversation": "S\u0101ciet sarunu",
+			"GotoConversation": "Dodieties uz sada\u013cu Saruna",
+			"reset": "Atiestat\u012bt",
+			"edit": "Redi\u0123\u0113t",
+			"link": "Saite",
+			"setUrl": "Iestat\u012bt URL",
+			"save": "Saglab\u0101t",
+			"setClip": "Izgriezt klipu",
+			"invalidURL": "Neder\u012bgs URL"
+		},
+		"FileTooLarge": "Fails ir p\u0101r\u0101k liels, lai saglab\u0101tu ke\u0161atmi\u0146u. Maksim\u0101lais faila lielums {{size}}",
+		"InvalidPDF": "Fails nav der\u012bgs PDF",
+		"StartTypingTitleOrKeywords": "S\u0101ciet rakst\u012bt virsrakstu vai atsl\u0113gv\u0101rdus..."
+	},
+	"types": {
+		"Websites/article": {
+			"description": "HTML dokuments, ko var apskat\u012bt un redi\u0123\u0113t da\u017e\u0101di lietot\u0101ji",
+			"displayType": "Raksts"
+		},
+		"Websites/slide": {
+			"description": "Prezent\u0101cijas slaids var ietvert HTML, audio utt.",
+			"displayType": "Slidkalni\u0146\u0161"
+		},
+		"Websites/presentation": {
+			"description": "Prezent\u0101cija, kas sast\u0101v no da\u017e\u0101diem slaidiem",
+			"displayType": "Prezent\u0101cija"
+		},
+		"Websites/advert/unit": {
+			"description": "Rekl\u0101mas vien\u012bba t\u012bmek\u013ca vietn\u0113",
+			"displayType": "Rekl\u0101mas vien\u012bba"
+		},
+		"Websites/advert/placement": {
+			"description": "Veids, k\u0101 grup\u0113t rekl\u0101mas vien\u012bbas zem nosaukuma",
+			"displayType": "Rekl\u0101mas izvieto\u0161ana"
+		},
+		"Websites/advert/creative": {
+			"description": "Rekl\u0101mas saturs",
+			"displayType": "Rekl\u0101ma rado\u0161i"
+		},
+		"Websites/advert/campaign": {
+			"description": "Rekl\u0101mas kampa\u0146a",
+			"displayType": "Rekl\u0101mas kampa\u0146a"
+		},
+		"Websites/webpage": {
+			"description": "Apz\u012bm\u0113 vietni, kuras metadati tika not\u012br\u012bti",
+			"displayType": "Web lapa"
+		}
+	},
+	"page": {
+		"Add": "Pievienot lapu",
+		"Title": "Lapas nosaukums",
+		"Description": "Apraksts",
+		"TitlePlaceholder": "Bez nosaukuma lapa",
+		"DescriptionPlaceholder": "Lapas apraksts..."
+	},
+	"section": {
+		"Add": "Pievienot sada\u013cu",
+		"Heading": "Virsraksts",
+		"HeadingPlaceholder": "Sada\u013cas virsraksts (p\u0113c izv\u0113les)",
+		"Layout": "Izk\u0101rtojums",
+		"Content": "Saturs",
+		"ContentPlaceholder": "Rakstiet saturu \u0161eit...",
+		"layouts": {
+			"full": "Pilns platums",
+			"two-col": "Divas kolonnas",
+			"three-col": "Tr\u012bs kolonnas",
+			"sidebar-left": "S\u0101njosla kreisaj\u0101 pus\u0113",
+			"sidebar-right": "S\u0101njosla labaj\u0101 pus\u0113"
+		}
+	},
+	"block": {
+		"Add": "Pievienot bloku",
+		"Title": "Nosaukums",
+		"TitlePlaceholder": "Bloka nosaukums (p\u0113c izv\u0113les)",
+		"Content": "Saturs",
+		"ContentPlaceholder": "Blo\u0137\u0113t saturu..."
+	},
+	"referral": {
+		"Create": "Izveidot ieteikuma saiti",
+		"Destination": "Galam\u0113r\u0137a URL",
+		"Slug": "Gliemezis",
+		"Title": "Nosaukums (p\u0113c izv\u0113les)",
+		"Copy": "Kop\u0113t",
+		"Copied": "Nokop\u0113ts!",
+		"Clicks": "Klik\u0161\u0137i",
+		"Inviter": "Uzaicin\u0101t\u0101js",
+		"Metadata": "Metadatu koplieto\u0161ana",
+		"RecentClicks": "Nesenie klik\u0161\u0137i",
+		"Time": "Laiks",
+		"Platform": "Platforma",
+		"Device": "Ier\u012bce",
+		"ManageLinks": "Ieteikumu saites"
+	}
 }

@@ -129,19 +129,13 @@
 					"writeLevel": 0,
 					"adminLevel": 0
 				},
-				"preview": {
-					"tool": "Websites/page/preview"
-				},
+				"preview": {"tool": "Websites/page/preview"},
 				"relatedTo": {
 					"Websites/sections": {
-						"preview": {
-							"tool": "Websites/section/preview"
-						},
+						"preview": {"tool": "Websites/section/preview"},
 						"sortable": true,
 						"creatable": {
-							"Websites/section": {
-								"title": "Add Section"
-							}
+							"Websites/section": {"title": "Add Section"}
 						}
 					}
 				},
@@ -159,19 +153,13 @@
 					"writeLevel": 30,
 					"adminLevel": 0
 				},
-				"preview": {
-					"tool": "Websites/section/preview"
-				},
+				"preview": {"tool": "Websites/section/preview"},
 				"relatedTo": {
 					"Websites/blocks": {
-						"preview": {
-							"tool": "Websites/block/preview"
-						},
+						"preview": {"tool": "Websites/block/preview"},
 						"sortable": true,
 						"creatable": {
-							"Websites/block": {
-								"title": "Add Block"
-							}
+							"Websites/block": {"title": "Add Block"}
 						}
 					}
 				},
@@ -189,9 +177,7 @@
 					"writeLevel": 30,
 					"adminLevel": 0
 				},
-				"preview": {
-					"tool": "Websites/block/preview"
-				},
+				"preview": {"tool": "Websites/block/preview"},
 				"canCreate": ["Users/owners", "Users/admins", "Websites/admins"]
 			},
 			"Websites/advert/unit": {
@@ -244,8 +230,8 @@
 			},
 			"Websites/webpage": {
 				"emoji": "🌐",
-				"create": true,
-				"edit": ["title", "content"],
+				"create": true, /* only PHP scrape method can create it */
+				"edit": ["title", "content"], /* cannot edit everything */
 				"participating": ["Websites/participating/webpages"],
 				"relatedFrom": {
 					"Websites/webpage": {
@@ -268,8 +254,8 @@
 			},
 			"Websites/news": {
 				"emoji": "📰",
-				"create": true,
-				"edit": ["title", "content"],
+				"create": true, /* only PHP scrape method can create it */
+				"edit": ["title", "content"], /* cannot edit everything */
 				"participating": ["Websites/participating/news"],
 				"relatedFrom": {
 					"Websites/news": {
@@ -289,6 +275,24 @@
 					}
 				},
 				"syncRelations": ["from"]
+			},
+			"Websites/referral": {
+				"emoji": "🔗",
+				"create": true,
+				"edit": ["title", "content"],
+				"defaults": {
+					"title": "Referral Link",
+					"icon": "{{Websites}}/img/icons/Websites/referral",
+					"readLevel": 40,
+					"writeLevel": 10,
+					"adminLevel": 0
+				},
+				"preview": {"tool": "Websites/referral/preview"},
+				"messages": {
+					"Websites/referral/clicked": {"description": "Referral link was clicked"},
+					"Websites/referral/converted": {"description": "Referral resulted in a conversion"}
+				},
+				"canCreate": ["Users/owners", "Users/admins", "Websites/admins"]
 			}
 		}
 	},
@@ -296,9 +300,9 @@
 		"metadataReload": true,
 		"permalinks": {
 			"enabled": false,
-			"regex": "/^[^\\/]*$/",
-			"routes": {},
-			"actions": {}
+			"regex": "/^[^\\/]*$/", /* if not null, used to filter URLs before checking permalinks */
+			"routes": {}, /* whitelist of possible destinations */
+			"actions": {} /* whitelist of possible actions */
 		},
 		"news": {
 			"provider": "newsapi"
@@ -307,22 +311,22 @@
 		"videoExtensions": ["MPG", "MP2", "MPEG", "MP4", "AVI", "WMV", "MOV", "FLV", "SWF"],
 		"audioHosts": ["soundcloud.com"],
 		"audioExtensions": ["MP3", "WAV", "AIFF", "soundcloud:sound"],
-		"cacheFileLimit": 5242880,
-		"cacheDirectoryLimit": 52428800,
+		"cacheFileLimit": 5242880, /* 5 Mb */
+		"cacheDirectoryLimit":  52428800, /* 50 Mb */
 		"theme": {
-			"scope": ":root",
-			"maxFonts": 6,
-			"browserCacheSeconds": 300,
-			"pathSegmentMaxLength": 64,
-			"pathSegmentShaLength": 8,
-			"reanalyzeRoles": ["Websites/admins", "Q/admins"],
-			"reanalyzeAllowAll": false,
-			"viewports": {
-				"mobile":  { "width": 375,  "height": 812 },
-				"tablet":  { "width": 768,  "height": 1024 },
-				"desktop": { "width": 1440, "height": 900 }
-			}
-		},
+            "scope": ":root",
+            "maxFonts": 6,
+            "browserCacheSeconds": 300,
+            "pathSegmentMaxLength": 64,
+            "pathSegmentShaLength": 8,
+            "reanalyzeRoles": ["Websites/admins", "Q/admins"],
+            "reanalyzeAllowAll": false,
+            "viewports": {
+                "mobile":  { "width": 375,  "height": 812 },
+                "tablet":  { "width": 768,  "height": 1024 },
+                "desktop": { "width": 1440, "height": 900 }
+            }
+        },
 		"page": {
 			"formats": ["html", "markdown"],
 			"defaultFormat": "html"
@@ -332,7 +336,11 @@
 			"defaultLayout": "full"
 		},
 		"block": {
-			"stackBelow": 768
+			"stackBelow": 768,
+			"tools": ["Streams/html", "Streams/markdown", "Streams/image/preview", "Streams/inplace"]
+		},
+		"referral": {
+			"slug": {"length": 8, "alphabet": "abcdefghijkmnpqrstuvwxyz"}
 		}
 	},
 	"AI": {

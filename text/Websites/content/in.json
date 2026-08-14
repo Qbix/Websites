@@ -1,74 +1,119 @@
 {
-    "advert": {
-        "campaign": {
-            "placeholders": {
-                "link": "Tautkan untuk mempromosikan",
-                "startDate": "Mulai tanggal",
-                "startTime": "Waktu mulai",
-                "endDate": "Tanggal Berakhir",
-                "endTime": "Akhir waktu",
-                "budget": "Anggaran"
-            },
-            "interests": {
-                "Title": "Saring Berdasarkan Minat",
-                "FilterInterests": "Mulailah mengetik minat..."
-            },
-            "Interest": "Minat",
-            "Location": "Lokasi"
-        }
-    },
-    "webpage": {
-        "composer": {
-            "Go": "Pergi",
-            "PasteLinkHere": "https:\/\/...",
-            "BrowseTheWeb": "Jelajahi",
-            "WriteToStartConversation": "Tulis pemikiran Anda untuk memulai percakapan",
-            "StartConversation": "Mulai Percakapan",
-            "GotoConversation": "Buka Percakapan",
-            "reset": "Mengatur ulang",
-            "edit": "Sunting",
-            "link": "Tautan",
-            "setUrl": "Tetapkan URL",
-            "save": "Menyimpan",
-            "setClip": "Potong Klip",
-            "invalidURL": "URL tidak valid"
-        },
-        "FileTooLarge": "File terlalu besar untuk di-cache. Ukuran file maks {{size}}",
-        "InvalidPDF": "File bukan PDF yang valid",
-        "StartTypingTitleOrKeywords": "Mulailah mengetik judul atau kata kunci..."
-    },
-    "types": {
-        "Websites\/article": {
-            "description": "Dokumen HTML yang dapat dilihat dan diedit oleh berbagai pengguna",
-            "displayType": "Artikel"
-        },
-        "Websites\/slide": {
-            "description": "Slide dalam presentasi, dapat menyertakan HTML, audio, dll.",
-            "displayType": "Menggeser"
-        },
-        "Websites\/presentation": {
-            "description": "Presentasi yang terdiri dari berbagai slide",
-            "displayType": "Presentasi"
-        },
-        "Websites\/advert\/unit": {
-            "description": "Unit iklan di situs web",
-            "displayType": "Unit iklan"
-        },
-        "Websites\/advert\/placement": {
-            "description": "Cara mengelompokkan unit iklan dengan nama",
-            "displayType": "Penempatan iklan"
-        },
-        "Websites\/advert\/creative": {
-            "description": "Konten untuk iklan",
-            "displayType": "Iklan kreatif"
-        },
-        "Websites\/advert\/campaign": {
-            "description": "Sebuah kampanye iklan",
-            "displayType": "Kampanye iklan"
-        },
-        "Websites\/webpage": {
-            "description": "Mewakili situs web yang metadatanya diambil",
-            "displayType": "halaman web"
-        }
-    }
+	"advert": {
+		"campaign": {
+			"placeholders": {
+				"link": "Tautkan untuk mempromosikan",
+				"startDate": "Mulai tanggal",
+				"startTime": "Waktu mulai",
+				"endDate": "Tanggal Berakhir",
+				"endTime": "Akhir waktu",
+				"budget": "Anggaran"
+			},
+			"interests": {
+				"Title": "Saring Berdasarkan Minat",
+				"FilterInterests": "Mulailah mengetik minat..."
+			},
+			"Interest": "Minat",
+			"Location": "Lokasi"
+		}
+	},
+	"webpage": {
+		"composer": {
+			"Go": "Pergi",
+			"PasteLinkHere": "https://...",
+			"BrowseTheWeb": "Jelajahi",
+			"WriteToStartConversation": "Tulis pemikiran Anda untuk memulai percakapan",
+			"StartConversation": "Mulai Percakapan",
+			"GotoConversation": "Buka Percakapan",
+			"reset": "Mengatur ulang",
+			"edit": "Sunting",
+			"link": "Tautan",
+			"setUrl": "Tetapkan URL",
+			"save": "Menyimpan",
+			"setClip": "Potong Klip",
+			"invalidURL": "URL tidak valid"
+		},
+		"FileTooLarge": "File terlalu besar untuk di-cache. Ukuran file maks {{size}}",
+		"InvalidPDF": "File bukan PDF yang valid",
+		"StartTypingTitleOrKeywords": "Mulailah mengetik judul atau kata kunci..."
+	},
+	"types": {
+		"Websites/article": {
+			"description": "Dokumen HTML yang dapat dilihat dan diedit oleh berbagai pengguna",
+			"displayType": "Artikel"
+		},
+		"Websites/slide": {
+			"description": "Slide dalam presentasi, dapat menyertakan HTML, audio, dll.",
+			"displayType": "Menggeser"
+		},
+		"Websites/presentation": {
+			"description": "Presentasi yang terdiri dari berbagai slide",
+			"displayType": "Presentasi"
+		},
+		"Websites/advert/unit": {
+			"description": "Unit iklan di situs web",
+			"displayType": "Unit iklan"
+		},
+		"Websites/advert/placement": {
+			"description": "Cara mengelompokkan unit iklan dengan nama",
+			"displayType": "Penempatan iklan"
+		},
+		"Websites/advert/creative": {
+			"description": "Konten untuk iklan",
+			"displayType": "Iklan kreatif"
+		},
+		"Websites/advert/campaign": {
+			"description": "Sebuah kampanye iklan",
+			"displayType": "Kampanye iklan"
+		},
+		"Websites/webpage": {
+			"description": "Mewakili situs web yang metadatanya diambil",
+			"displayType": "halaman web"
+		}
+	},
+	"page": {
+		"Add": "Tambahkan Halaman",
+		"Title": "Judul Halaman",
+		"Description": "Keterangan",
+		"TitlePlaceholder": "Halaman Tanpa Judul",
+		"DescriptionPlaceholder": "Deskripsi halaman..."
+	},
+	"section": {
+		"Add": "Tambahkan Bagian",
+		"Heading": "Menuju",
+		"HeadingPlaceholder": "Judul bagian (opsional)",
+		"Layout": "Tata Letak",
+		"Content": "Isi",
+		"ContentPlaceholder": "Tulis konten di sini...",
+		"layouts": {
+			"full": "Lebar penuh",
+			"two-col": "Dua kolom",
+			"three-col": "Tiga kolom",
+			"sidebar-left": "Sidebar kiri",
+			"sidebar-right": "Sidebar kanan"
+		}
+	},
+	"block": {
+		"Add": "Tambahkan Blok",
+		"Title": "Judul",
+		"TitlePlaceholder": "Judul blok (opsional)",
+		"Content": "Isi",
+		"ContentPlaceholder": "Blok konten..."
+	},
+	"referral": {
+		"Create": "Buat Tautan Referensi",
+		"Destination": "URL Tujuan",
+		"Slug": "Siput",
+		"Title": "Judul (opsional)",
+		"Copy": "Menyalin",
+		"Copied": "Disalin!",
+		"Clicks": "Klik",
+		"Inviter": "Pengundang",
+		"Metadata": "Berbagi Metadata",
+		"RecentClicks": "Klik Terbaru",
+		"Time": "Waktu",
+		"Platform": "Platform",
+		"Device": "Perangkat",
+		"ManageLinks": "Tautan Rujukan"
+	}
 }

@@ -1,74 +1,119 @@
 {
-    "advert": {
-        "campaign": {
-            "placeholders": {
-                "link": "Link zur Förderung",
-                "startDate": "Startdatum",
-                "startTime": "Startzeit",
-                "endDate": "Endtermin",
-                "endTime": "Endzeit",
-                "budget": "Budget"
-            },
-            "interests": {
-                "Title": "Nach Interesse filtern",
-                "FilterInterests": "Beginnen Sie mit der Eingabe eines Interesses..."
-            },
-            "Interest": "Interesse",
-            "Location": "Standort"
-        }
-    },
-    "webpage": {
-        "composer": {
-            "Go": "Gehen",
-            "PasteLinkHere": "https:\/\/...",
-            "BrowseTheWeb": "Durchsuche",
-            "WriteToStartConversation": "Schreiben Sie Ihre Gedanken auf, um das Gespräch zu beginnen",
-            "StartConversation": "Gespräch starten",
-            "GotoConversation": "Gehen Sie zu Konversation",
-            "reset": "Zurücksetzen",
-            "edit": "Bearbeiten",
-            "link": "Verknüpfung",
-            "setUrl": "URL festlegen",
-            "save": "Speichern",
-            "setClip": "Clip ausschneiden",
-            "invalidURL": "ungültige URL"
-        },
-        "FileTooLarge": "Datei zu groß für Caching. Maximale Dateigröße {{size}}",
-        "InvalidPDF": "Die Datei ist kein gültiges PDF",
-        "StartTypingTitleOrKeywords": "Beginnen Sie mit der Eingabe des Titels oder der Schlüsselwörter..."
-    },
-    "types": {
-        "Websites\/article": {
-            "description": "Ein HTML-Dokument, das verschiedene Benutzer anzeigen und bearbeiten können",
-            "displayType": "Artikel"
-        },
-        "Websites\/slide": {
-            "description": "Eine Folie in einer Präsentation kann HTML, Audio usw. enthalten.",
-            "displayType": "Gleiten"
-        },
-        "Websites\/presentation": {
-            "description": "Eine Präsentation bestehend aus verschiedenen Folien",
-            "displayType": "Präsentation"
-        },
-        "Websites\/advert\/unit": {
-            "description": "Eine Werbeeinheit auf einer Website",
-            "displayType": "Anzeigeneinheit"
-        },
-        "Websites\/advert\/placement": {
-            "description": "Eine Möglichkeit, Werbeeinheiten unter einem Namen zu gruppieren",
-            "displayType": "Anzeigenplatzierung"
-        },
-        "Websites\/advert\/creative": {
-            "description": "Inhalt für eine Anzeige",
-            "displayType": "Anzeige kreativ"
-        },
-        "Websites\/advert\/campaign": {
-            "description": "Eine Werbekampagne",
-            "displayType": "Werbekampagne"
-        },
-        "Websites\/webpage": {
-            "description": "Stellt eine Website dar, deren Metadaten gescraped wurden",
-            "displayType": "Website"
-        }
-    }
+	"advert": {
+		"campaign": {
+			"placeholders": {
+				"link": "Link zur F\u00f6rderung",
+				"startDate": "Startdatum",
+				"startTime": "Startzeit",
+				"endDate": "Endtermin",
+				"endTime": "Endzeit",
+				"budget": "Budget"
+			},
+			"interests": {
+				"Title": "Nach Interesse filtern",
+				"FilterInterests": "Beginnen Sie mit der Eingabe eines Interesses..."
+			},
+			"Interest": "Interesse",
+			"Location": "Standort"
+		}
+	},
+	"webpage": {
+		"composer": {
+			"Go": "Gehen",
+			"PasteLinkHere": "https://...",
+			"BrowseTheWeb": "Durchsuche",
+			"WriteToStartConversation": "Schreiben Sie Ihre Gedanken auf, um das Gespr\u00e4ch zu beginnen",
+			"StartConversation": "Gespr\u00e4ch starten",
+			"GotoConversation": "Gehen Sie zu Konversation",
+			"reset": "Zur\u00fccksetzen",
+			"edit": "Bearbeiten",
+			"link": "Verkn\u00fcpfung",
+			"setUrl": "URL festlegen",
+			"save": "Speichern",
+			"setClip": "Clip ausschneiden",
+			"invalidURL": "ung\u00fcltige URL"
+		},
+		"FileTooLarge": "Datei zu gro\u00df f\u00fcr Caching. Maximale Dateigr\u00f6\u00dfe {{size}}",
+		"InvalidPDF": "Die Datei ist kein g\u00fcltiges PDF",
+		"StartTypingTitleOrKeywords": "Beginnen Sie mit der Eingabe des Titels oder der Schl\u00fcsselw\u00f6rter..."
+	},
+	"types": {
+		"Websites/article": {
+			"description": "Ein HTML-Dokument, das verschiedene Benutzer anzeigen und bearbeiten k\u00f6nnen",
+			"displayType": "Artikel"
+		},
+		"Websites/slide": {
+			"description": "Eine Folie in einer Pr\u00e4sentation kann HTML, Audio usw. enthalten.",
+			"displayType": "Gleiten"
+		},
+		"Websites/presentation": {
+			"description": "Eine Pr\u00e4sentation bestehend aus verschiedenen Folien",
+			"displayType": "Pr\u00e4sentation"
+		},
+		"Websites/advert/unit": {
+			"description": "Eine Werbeeinheit auf einer Website",
+			"displayType": "Anzeigeneinheit"
+		},
+		"Websites/advert/placement": {
+			"description": "Eine M\u00f6glichkeit, Werbeeinheiten unter einem Namen zu gruppieren",
+			"displayType": "Anzeigenplatzierung"
+		},
+		"Websites/advert/creative": {
+			"description": "Inhalt f\u00fcr eine Anzeige",
+			"displayType": "Anzeige kreativ"
+		},
+		"Websites/advert/campaign": {
+			"description": "Eine Werbekampagne",
+			"displayType": "Werbekampagne"
+		},
+		"Websites/webpage": {
+			"description": "Stellt eine Website dar, deren Metadaten gescraped wurden",
+			"displayType": "Website"
+		}
+	},
+	"page": {
+		"Add": "Seite hinzuf\u00fcgen",
+		"Title": "Seitentitel",
+		"Description": "Beschreibung",
+		"TitlePlaceholder": "Unbetitelte Seite",
+		"DescriptionPlaceholder": "Seitenbeschreibung..."
+	},
+	"section": {
+		"Add": "Abschnitt hinzuf\u00fcgen",
+		"Heading": "\u00dcberschrift",
+		"HeadingPlaceholder": "Abschnitts\u00fcberschrift (optional)",
+		"Layout": "Layout",
+		"Content": "Inhalt",
+		"ContentPlaceholder": "Hier Inhalt eingeben...",
+		"layouts": {
+			"full": "Volle Breite",
+			"two-col": "Zwei Spalten",
+			"three-col": "Drei Spalten",
+			"sidebar-left": "Seitenleiste links",
+			"sidebar-right": "Seitenleiste rechts"
+		}
+	},
+	"block": {
+		"Add": "Block hinzuf\u00fcgen",
+		"Title": "Titel",
+		"TitlePlaceholder": "Blocktitel (optional)",
+		"Content": "Inhalt",
+		"ContentPlaceholder": "Inhalte blockieren..."
+	},
+	"referral": {
+		"Create": "Empfehlungslink erstellen",
+		"Destination": "Ziel-URL",
+		"Slug": "Nacktschnecke",
+		"Title": "Titel (optional)",
+		"Copy": "Kopie",
+		"Copied": "Kopiert!",
+		"Clicks": "Klicks",
+		"Inviter": "Einladender",
+		"Metadata": "Metadaten teilen",
+		"RecentClicks": "Letzte Klicks",
+		"Time": "Zeit",
+		"Platform": "Plattform",
+		"Device": "Ger\u00e4t",
+		"ManageLinks": "Empfehlungslinks"
+	}
 }

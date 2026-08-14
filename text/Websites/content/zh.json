@@ -1,74 +1,119 @@
 {
-    "advert": {
-        "campaign": {
-            "placeholders": {
-                "link": "推广链接",
-                "startDate": "开始日期",
-                "startTime": "开始时间",
-                "endDate": "结束日期",
-                "endTime": "时间结束",
-                "budget": "预算"
-            },
-            "interests": {
-                "Title": "按兴趣过滤",
-                "FilterInterests": "开始输入兴趣..."
-            },
-            "Interest": "兴趣",
-            "Location": "地点"
-        }
-    },
-    "webpage": {
-        "composer": {
-            "Go": "去",
-            "PasteLinkHere": "https:\/\/...",
-            "BrowseTheWeb": "浏览",
-            "WriteToStartConversation": "写下您的想法以开始对话",
-            "StartConversation": "开始对话",
-            "GotoConversation": "进入对话",
-            "reset": "重置",
-            "edit": "编辑",
-            "link": "关联",
-            "setUrl": "设置网址",
-            "save": "节省",
-            "setClip": "切出剪辑",
-            "invalidURL": "无效的网址"
-        },
-        "FileTooLarge": "文件太大，无法缓存。最大文件大小{{size}}",
-        "InvalidPDF": "文件不是有效的 PDF",
-        "StartTypingTitleOrKeywords": "开始输入标题或关键字..."
-    },
-    "types": {
-        "Websites\/article": {
-            "description": "各种用户可以查看和编辑的 HTML 文档",
-            "displayType": "文章"
-        },
-        "Websites\/slide": {
-            "description": "演示文稿中的幻灯片可以包含 HTML、音频等。",
-            "displayType": "滑动"
-        },
-        "Websites\/presentation": {
-            "description": "由各种幻灯片组成的演示文稿",
-            "displayType": "推介会"
-        },
-        "Websites\/advert\/unit": {
-            "description": "网站上的广告单元",
-            "displayType": "广告单元"
-        },
-        "Websites\/advert\/placement": {
-            "description": "一种以名称对广告单元进行分组的方法",
-            "displayType": "广告投放"
-        },
-        "Websites\/advert\/creative": {
-            "description": "广告内容",
-            "displayType": "广告创意"
-        },
-        "Websites\/advert\/campaign": {
-            "description": "广告活动",
-            "displayType": "广告活动"
-        },
-        "Websites\/webpage": {
-            "description": "表示元数据被抓取的网站",
-            "displayType": "网页"
-        }
-    }
+	"advert": {
+		"campaign": {
+			"placeholders": {
+				"link": "\u63a8\u5e7f\u94fe\u63a5",
+				"startDate": "\u5f00\u59cb\u65e5\u671f",
+				"startTime": "\u5f00\u59cb\u65f6\u95f4",
+				"endDate": "\u7ed3\u675f\u65e5\u671f",
+				"endTime": "\u65f6\u95f4\u7ed3\u675f",
+				"budget": "\u9884\u7b97"
+			},
+			"interests": {
+				"Title": "\u6309\u5174\u8da3\u8fc7\u6ee4",
+				"FilterInterests": "\u5f00\u59cb\u8f93\u5165\u5174\u8da3..."
+			},
+			"Interest": "\u5174\u8da3",
+			"Location": "\u5730\u70b9"
+		}
+	},
+	"webpage": {
+		"composer": {
+			"Go": "\u53bb",
+			"PasteLinkHere": "https://...",
+			"BrowseTheWeb": "\u6d4f\u89c8",
+			"WriteToStartConversation": "\u5199\u4e0b\u60a8\u7684\u60f3\u6cd5\u4ee5\u5f00\u59cb\u5bf9\u8bdd",
+			"StartConversation": "\u5f00\u59cb\u5bf9\u8bdd",
+			"GotoConversation": "\u8fdb\u5165\u5bf9\u8bdd",
+			"reset": "\u91cd\u7f6e",
+			"edit": "\u7f16\u8f91",
+			"link": "\u5173\u8054",
+			"setUrl": "\u8bbe\u7f6e\u7f51\u5740",
+			"save": "\u8282\u7701",
+			"setClip": "\u5207\u51fa\u526a\u8f91",
+			"invalidURL": "\u65e0\u6548\u7684\u7f51\u5740"
+		},
+		"FileTooLarge": "\u6587\u4ef6\u592a\u5927\uff0c\u65e0\u6cd5\u7f13\u5b58\u3002\u6700\u5927\u6587\u4ef6\u5927\u5c0f{{size}}",
+		"InvalidPDF": "\u6587\u4ef6\u4e0d\u662f\u6709\u6548\u7684 PDF",
+		"StartTypingTitleOrKeywords": "\u5f00\u59cb\u8f93\u5165\u6807\u9898\u6216\u5173\u952e\u5b57..."
+	},
+	"types": {
+		"Websites/article": {
+			"description": "\u5404\u79cd\u7528\u6237\u53ef\u4ee5\u67e5\u770b\u548c\u7f16\u8f91\u7684 HTML \u6587\u6863",
+			"displayType": "\u6587\u7ae0"
+		},
+		"Websites/slide": {
+			"description": "\u6f14\u793a\u6587\u7a3f\u4e2d\u7684\u5e7b\u706f\u7247\u53ef\u4ee5\u5305\u542b HTML\u3001\u97f3\u9891\u7b49\u3002",
+			"displayType": "\u6ed1\u52a8"
+		},
+		"Websites/presentation": {
+			"description": "\u7531\u5404\u79cd\u5e7b\u706f\u7247\u7ec4\u6210\u7684\u6f14\u793a\u6587\u7a3f",
+			"displayType": "\u63a8\u4ecb\u4f1a"
+		},
+		"Websites/advert/unit": {
+			"description": "\u7f51\u7ad9\u4e0a\u7684\u5e7f\u544a\u5355\u5143",
+			"displayType": "\u5e7f\u544a\u5355\u5143"
+		},
+		"Websites/advert/placement": {
+			"description": "\u4e00\u79cd\u4ee5\u540d\u79f0\u5bf9\u5e7f\u544a\u5355\u5143\u8fdb\u884c\u5206\u7ec4\u7684\u65b9\u6cd5",
+			"displayType": "\u5e7f\u544a\u6295\u653e"
+		},
+		"Websites/advert/creative": {
+			"description": "\u5e7f\u544a\u5185\u5bb9",
+			"displayType": "\u5e7f\u544a\u521b\u610f"
+		},
+		"Websites/advert/campaign": {
+			"description": "\u5e7f\u544a\u6d3b\u52a8",
+			"displayType": "\u5e7f\u544a\u6d3b\u52a8"
+		},
+		"Websites/webpage": {
+			"description": "\u8868\u793a\u5143\u6570\u636e\u88ab\u6293\u53d6\u7684\u7f51\u7ad9",
+			"displayType": "\u7f51\u9875"
+		}
+	},
+	"page": {
+		"Add": "\u6dfb\u52a0\u9875\u9762",
+		"Title": "\u9875\u9762\u6807\u9898",
+		"Description": "\u63cf\u8ff0",
+		"TitlePlaceholder": "\u65e0\u6807\u9898\u9875\u9762",
+		"DescriptionPlaceholder": "\u9875\u9762\u63cf\u8ff0\u2026\u2026"
+	},
+	"section": {
+		"Add": "\u6dfb\u52a0\u90e8\u5206",
+		"Heading": "\u6807\u9898",
+		"HeadingPlaceholder": "\u7ae0\u8282\u6807\u9898\uff08\u53ef\u9009\uff09",
+		"Layout": "\u5e03\u5c40",
+		"Content": "\u5185\u5bb9",
+		"ContentPlaceholder": "\u5728\u8fd9\u91cc\u8f93\u5165\u5185\u5bb9\u2026\u2026",
+		"layouts": {
+			"full": "\u5168\u5bbd",
+			"two-col": "\u4e24\u5217",
+			"three-col": "\u4e09\u5217",
+			"sidebar-left": "\u5de6\u4fa7\u8fb9\u680f",
+			"sidebar-right": "\u53f3\u4fa7\u8fb9\u680f"
+		}
+	},
+	"block": {
+		"Add": "\u6dfb\u52a0\u6a21\u5757",
+		"Title": "\u6807\u9898",
+		"TitlePlaceholder": "\u6807\u9898\uff08\u53ef\u9009\uff09",
+		"Content": "\u5185\u5bb9",
+		"ContentPlaceholder": "\u963b\u6b62\u5185\u5bb9..."
+	},
+	"referral": {
+		"Create": "\u521b\u5efa\u63a8\u8350\u94fe\u63a5",
+		"Destination": "\u76ee\u6807\u7f51\u5740",
+		"Slug": "\u86de\u8753",
+		"Title": "\u6807\u9898\uff08\u53ef\u9009\uff09",
+		"Copy": "\u590d\u5236",
+		"Copied": "\u5df2\u590d\u5236\uff01",
+		"Clicks": "\u70b9\u51fb",
+		"Inviter": "\u9080\u8bf7\u4eba",
+		"Metadata": "\u5171\u4eab\u5143\u6570\u636e",
+		"RecentClicks": "\u6700\u8fd1\u70b9\u51fb",
+		"Time": "\u65f6\u95f4",
+		"Platform": "\u5e73\u53f0",
+		"Device": "\u8bbe\u5907",
+		"ManageLinks": "\u63a8\u8350\u94fe\u63a5"
+	}
 }

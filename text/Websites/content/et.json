@@ -1,74 +1,119 @@
 {
-    "advert": {
-        "campaign": {
-            "placeholders": {
-                "link": "Link reklaamimiseks",
-                "startDate": "Algus kuupäev",
-                "startTime": "Algusaeg",
-                "endDate": "Lõppkuupäev",
-                "endTime": "Lõpuaeg",
-                "budget": "Eelarve"
-            },
-            "interests": {
-                "Title": "Filtreeri huvide järgi",
-                "FilterInterests": "Alustage huvi tippimist..."
-            },
-            "Interest": "Huvi",
-            "Location": "Asukoht"
-        }
-    },
-    "webpage": {
-        "composer": {
-            "Go": "Mine",
-            "PasteLinkHere": "https:\/\/...",
-            "BrowseTheWeb": "Sirvige",
-            "WriteToStartConversation": "Vestluse alustamiseks kirjutage oma mõtted",
-            "StartConversation": "Alusta vestlust",
-            "GotoConversation": "Minge jaotisse Vestlus",
-            "reset": "Lähtesta",
-            "edit": "Muuda",
-            "link": "Link",
-            "setUrl": "Määra URL",
-            "save": "Salvesta",
-            "setClip": "Lõika välja klipp",
-            "invalidURL": "vigane URL"
-        },
-        "FileTooLarge": "Fail vahemällu salvestamiseks liiga suur. Max faili suurus {{size}}",
-        "InvalidPDF": "Fail ei ole kehtiv PDF",
-        "StartTypingTitleOrKeywords": "Alustage pealkirja või märksõnade tippimist..."
-    },
-    "types": {
-        "Websites\/article": {
-            "description": "HTML-dokument, mida erinevad kasutajad saavad vaadata ja redigeerida",
-            "displayType": "Artikkel"
-        },
-        "Websites\/slide": {
-            "description": "Esitluse slaid võib sisaldada HTML-i, heli jne.",
-            "displayType": "Libisema"
-        },
-        "Websites\/presentation": {
-            "description": "Erinevatest slaididest koosnev esitlus",
-            "displayType": "Esitlus"
-        },
-        "Websites\/advert\/unit": {
-            "description": "Reklaamiüksus veebisaidil",
-            "displayType": "Reklaamiüksus"
-        },
-        "Websites\/advert\/placement": {
-            "description": "Reklaamiüksuste rühmitamise viis nime alla",
-            "displayType": "Reklaami paigutus"
-        },
-        "Websites\/advert\/creative": {
-            "description": "Reklaami sisu",
-            "displayType": "Reklaami loov"
-        },
-        "Websites\/advert\/campaign": {
-            "description": "Reklaamikampaania",
-            "displayType": "Reklaamikampaania"
-        },
-        "Websites\/webpage": {
-            "description": "Esindab veebisaiti, mille metaandmed kaabiti",
-            "displayType": "veebileht"
-        }
-    }
+	"advert": {
+		"campaign": {
+			"placeholders": {
+				"link": "Link reklaamimiseks",
+				"startDate": "Algus kuup\u00e4ev",
+				"startTime": "Algusaeg",
+				"endDate": "L\u00f5ppkuup\u00e4ev",
+				"endTime": "L\u00f5puaeg",
+				"budget": "Eelarve"
+			},
+			"interests": {
+				"Title": "Filtreeri huvide j\u00e4rgi",
+				"FilterInterests": "Alustage huvi tippimist..."
+			},
+			"Interest": "Huvi",
+			"Location": "Asukoht"
+		}
+	},
+	"webpage": {
+		"composer": {
+			"Go": "Mine",
+			"PasteLinkHere": "https://...",
+			"BrowseTheWeb": "Sirvige",
+			"WriteToStartConversation": "Vestluse alustamiseks kirjutage oma m\u00f5tted",
+			"StartConversation": "Alusta vestlust",
+			"GotoConversation": "Minge jaotisse Vestlus",
+			"reset": "L\u00e4htesta",
+			"edit": "Muuda",
+			"link": "Link",
+			"setUrl": "M\u00e4\u00e4ra URL",
+			"save": "Salvesta",
+			"setClip": "L\u00f5ika v\u00e4lja klipp",
+			"invalidURL": "vigane URL"
+		},
+		"FileTooLarge": "Fail vahem\u00e4llu salvestamiseks liiga suur. Max faili suurus {{size}}",
+		"InvalidPDF": "Fail ei ole kehtiv PDF",
+		"StartTypingTitleOrKeywords": "Alustage pealkirja v\u00f5i m\u00e4rks\u00f5nade tippimist..."
+	},
+	"types": {
+		"Websites/article": {
+			"description": "HTML-dokument, mida erinevad kasutajad saavad vaadata ja redigeerida",
+			"displayType": "Artikkel"
+		},
+		"Websites/slide": {
+			"description": "Esitluse slaid v\u00f5ib sisaldada HTML-i, heli jne.",
+			"displayType": "Libisema"
+		},
+		"Websites/presentation": {
+			"description": "Erinevatest slaididest koosnev esitlus",
+			"displayType": "Esitlus"
+		},
+		"Websites/advert/unit": {
+			"description": "Reklaami\u00fcksus veebisaidil",
+			"displayType": "Reklaami\u00fcksus"
+		},
+		"Websites/advert/placement": {
+			"description": "Reklaami\u00fcksuste r\u00fchmitamise viis nime alla",
+			"displayType": "Reklaami paigutus"
+		},
+		"Websites/advert/creative": {
+			"description": "Reklaami sisu",
+			"displayType": "Reklaami loov"
+		},
+		"Websites/advert/campaign": {
+			"description": "Reklaamikampaania",
+			"displayType": "Reklaamikampaania"
+		},
+		"Websites/webpage": {
+			"description": "Esindab veebisaiti, mille metaandmed kaabiti",
+			"displayType": "veebileht"
+		}
+	},
+	"page": {
+		"Add": "Lisa leht",
+		"Title": "Lehe pealkiri",
+		"Description": "Kirjeldus",
+		"TitlePlaceholder": "Pealkirjata leht",
+		"DescriptionPlaceholder": "Lehe kirjeldus..."
+	},
+	"section": {
+		"Add": "Lisa jaotis",
+		"Heading": "Pealkiri",
+		"HeadingPlaceholder": "Jaotise pealkiri (valikuline)",
+		"Layout": "Paigutus",
+		"Content": "Sisu",
+		"ContentPlaceholder": "Kirjuta siia sisu...",
+		"layouts": {
+			"full": "T\u00e4islaiuses",
+			"two-col": "Kaks veergu",
+			"three-col": "Kolm veergu",
+			"sidebar-left": "Vasak k\u00fclgriba",
+			"sidebar-right": "Parempoolne k\u00fclgriba"
+		}
+	},
+	"block": {
+		"Add": "Lisa plokk",
+		"Title": "Pealkiri",
+		"TitlePlaceholder": "Ploki pealkiri (valikuline)",
+		"Content": "Sisu",
+		"ContentPlaceholder": "Blokeeri sisu..."
+	},
+	"referral": {
+		"Create": "Loo suunamislink",
+		"Destination": "Sihtkoha URL",
+		"Slug": "N\u00e4lkjas",
+		"Title": "Pealkiri (valikuline)",
+		"Copy": "Kopeeri",
+		"Copied": "Kopeeritud!",
+		"Clicks": "Klikid",
+		"Inviter": "Kutsuja",
+		"Metadata": "Metaandmete jagamine",
+		"RecentClicks": "Hiljutised klikid",
+		"Time": "Aeg",
+		"Platform": "Platvorm",
+		"Device": "Seade",
+		"ManageLinks": "Soovituslingid"
+	}
 }

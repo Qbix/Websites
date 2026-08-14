@@ -1,74 +1,119 @@
 {
-    "advert": {
-        "campaign": {
-            "placeholders": {
-                "link": "Nasc le cur chun cinn",
-                "startDate": "Dáta tosaigh",
-                "startTime": "Am Tosaigh",
-                "endDate": "Dáta deiridh",
-                "endTime": "Am Deiridh",
-                "budget": "Buiséad"
-            },
-            "interests": {
-                "Title": "Scag De réir Úis",
-                "FilterInterests": "Tosaigh ag clóscríobh spéise..."
-            },
-            "Interest": "Ús",
-            "Location": "Suíomh"
-        }
-    },
-    "webpage": {
-        "composer": {
-            "Go": "Téigh",
-            "PasteLinkHere": "https:\/\/...",
-            "BrowseTheWeb": "Brabhsáil",
-            "WriteToStartConversation": "Scríobh do chuid smaointe chun tús a chur leis an gcomhrá",
-            "StartConversation": "Tosaigh Comhrá",
-            "GotoConversation": "Téigh go Comhrá",
-            "reset": "Athshocraigh",
-            "edit": "Cuir in eagar",
-            "link": "Nasc",
-            "setUrl": "Socraigh URL",
-            "save": "Sábháil",
-            "setClip": "Gearr Amach Clip",
-            "invalidURL": "URL neamhbhailí"
-        },
-        "FileTooLarge": "Comhad rómhór le haghaidh taisce. Uasmhéid comhaid {{size}}",
-        "InvalidPDF": "Ní PDF bailí é an comhad",
-        "StartTypingTitleOrKeywords": "Tosaigh ag clóscríobh teidil nó eochairfhocail..."
-    },
-    "types": {
-        "Websites\/article": {
-            "description": "Doiciméad HTML is féidir le húsáideoirí éagsúla a fheiceáil agus a chur in eagar",
-            "displayType": "Airteagal"
-        },
-        "Websites\/slide": {
-            "description": "Sleamhnán i gcur i láthair, is féidir HTML, fuaime etc.",
-            "displayType": "Sleamhnán"
-        },
-        "Websites\/presentation": {
-            "description": "Cur i láthair ina bhfuil sleamhnáin éagsúla",
-            "displayType": "cur i láthair"
-        },
-        "Websites\/advert\/unit": {
-            "description": "Aonad fógraíochta ar shuíomh Gréasáin",
-            "displayType": "Aonad fógraíochta"
-        },
-        "Websites\/advert\/placement": {
-            "description": "Bealach chun aonaid fógraíochta a ghrúpáil faoi ainm",
-            "displayType": "Socrúchán fógraí"
-        },
-        "Websites\/advert\/creative": {
-            "description": "Ábhar le haghaidh fógraíochta",
-            "displayType": "Fógra cruthaitheach"
-        },
-        "Websites\/advert\/campaign": {
-            "description": "Feachtas fógraíochta",
-            "displayType": "Feachtas fógraíochta"
-        },
-        "Websites\/webpage": {
-            "description": "Is ionann é agus suíomh Gréasáin ar scríobtar meiteashonraí air",
-            "displayType": "leathanach gréasáin"
-        }
-    }
+	"advert": {
+		"campaign": {
+			"placeholders": {
+				"link": "Nasc le cur chun cinn",
+				"startDate": "D\u00e1ta tosaigh",
+				"startTime": "Am Tosaigh",
+				"endDate": "D\u00e1ta deiridh",
+				"endTime": "Am Deiridh",
+				"budget": "Buis\u00e9ad"
+			},
+			"interests": {
+				"Title": "Scag De r\u00e9ir \u00dais",
+				"FilterInterests": "Tosaigh ag cl\u00f3scr\u00edobh sp\u00e9ise..."
+			},
+			"Interest": "\u00das",
+			"Location": "Su\u00edomh"
+		}
+	},
+	"webpage": {
+		"composer": {
+			"Go": "T\u00e9igh",
+			"PasteLinkHere": "https://...",
+			"BrowseTheWeb": "Brabhs\u00e1il",
+			"WriteToStartConversation": "Scr\u00edobh do chuid smaointe chun t\u00fas a chur leis an gcomhr\u00e1",
+			"StartConversation": "Tosaigh Comhr\u00e1",
+			"GotoConversation": "T\u00e9igh go Comhr\u00e1",
+			"reset": "Athshocraigh",
+			"edit": "Cuir in eagar",
+			"link": "Nasc",
+			"setUrl": "Socraigh URL",
+			"save": "S\u00e1bh\u00e1il",
+			"setClip": "Gearr Amach Clip",
+			"invalidURL": "URL neamhbhail\u00ed"
+		},
+		"FileTooLarge": "Comhad r\u00f3mh\u00f3r le haghaidh taisce. Uasmh\u00e9id comhaid {{size}}",
+		"InvalidPDF": "N\u00ed PDF bail\u00ed \u00e9 an comhad",
+		"StartTypingTitleOrKeywords": "Tosaigh ag cl\u00f3scr\u00edobh teidil n\u00f3 eochairfhocail..."
+	},
+	"types": {
+		"Websites/article": {
+			"description": "Doicim\u00e9ad HTML is f\u00e9idir le h\u00fas\u00e1ideoir\u00ed \u00e9ags\u00fala a fheice\u00e1il agus a chur in eagar",
+			"displayType": "Airteagal"
+		},
+		"Websites/slide": {
+			"description": "Sleamhn\u00e1n i gcur i l\u00e1thair, is f\u00e9idir HTML, fuaime etc.",
+			"displayType": "Sleamhn\u00e1n"
+		},
+		"Websites/presentation": {
+			"description": "Cur i l\u00e1thair ina bhfuil sleamhn\u00e1in \u00e9ags\u00fala",
+			"displayType": "cur i l\u00e1thair"
+		},
+		"Websites/advert/unit": {
+			"description": "Aonad f\u00f3gra\u00edochta ar shu\u00edomh Gr\u00e9as\u00e1in",
+			"displayType": "Aonad f\u00f3gra\u00edochta"
+		},
+		"Websites/advert/placement": {
+			"description": "Bealach chun aonaid f\u00f3gra\u00edochta a ghr\u00fap\u00e1il faoi ainm",
+			"displayType": "Socr\u00fach\u00e1n f\u00f3gra\u00ed"
+		},
+		"Websites/advert/creative": {
+			"description": "\u00c1bhar le haghaidh f\u00f3gra\u00edochta",
+			"displayType": "F\u00f3gra cruthaitheach"
+		},
+		"Websites/advert/campaign": {
+			"description": "Feachtas f\u00f3gra\u00edochta",
+			"displayType": "Feachtas f\u00f3gra\u00edochta"
+		},
+		"Websites/webpage": {
+			"description": "Is ionann \u00e9 agus su\u00edomh Gr\u00e9as\u00e1in ar scr\u00edobtar meiteashonra\u00ed air",
+			"displayType": "leathanach gr\u00e9as\u00e1in"
+		}
+	},
+	"page": {
+		"Add": "Cuir Leathanach leis",
+		"Title": "Teideal an Leathanaigh",
+		"Description": "Cur s\u00edos",
+		"TitlePlaceholder": "Leathanach Gan Teideal",
+		"DescriptionPlaceholder": "Cur s\u00edos ar an leathanach..."
+	},
+	"section": {
+		"Add": "Cuir Roinn leis",
+		"Heading": "Ceannteideal",
+		"HeadingPlaceholder": "Ceannteideal na rann\u00f3ige (roghnach)",
+		"Layout": "Leagan Amach",
+		"Content": "\u00c1bhar",
+		"ContentPlaceholder": "Scr\u00edobh \u00e1bhar anseo...",
+		"layouts": {
+			"full": "Leithead ioml\u00e1n",
+			"two-col": "Dh\u00e1 chol\u00fan",
+			"three-col": "Tr\u00ed chol\u00fan",
+			"sidebar-left": "Barra taobh ar chl\u00e9",
+			"sidebar-right": "Barra taobh ar dheis"
+		}
+	},
+	"block": {
+		"Add": "Cuir Bloc leis",
+		"Title": "Teideal",
+		"TitlePlaceholder": "Teideal bloc (roghnach)",
+		"Content": "\u00c1bhar",
+		"ContentPlaceholder": "Bloc\u00e1il \u00e1bhar..."
+	},
+	"referral": {
+		"Create": "Cruthaigh Nasc Tagartha",
+		"Destination": "URL Ceann Scr\u00edbe",
+		"Slug": "Seilide",
+		"Title": "Teideal (roghnach)",
+		"Copy": "C\u00f3ipe\u00e1il",
+		"Copied": "C\u00f3ipe\u00e1ilte!",
+		"Clicks": "Clice\u00e1il",
+		"Inviter": "Cuireadh",
+		"Metadata": "Meiteashonra\u00ed a Chomhroinnt",
+		"RecentClicks": "Cliceanna Le D\u00e9ana\u00ed",
+		"Time": "Am",
+		"Platform": "Ard\u00e1n",
+		"Device": "Gl\u00e9as",
+		"ManageLinks": "Naisc Tagartha"
+	}
 }

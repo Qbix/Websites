@@ -1,74 +1,119 @@
 {
-    "advert": {
-        "campaign": {
-            "placeholders": {
-                "link": "Enlace para promocionar",
-                "startDate": "Data de inicio",
-                "startTime": "Hora de inicio",
-                "endDate": "Data de finalización",
-                "endTime": "Tempo de Fin",
-                "budget": "Orzamento"
-            },
-            "interests": {
-                "Title": "Filtrar por intereses",
-                "FilterInterests": "Comeza a escribir un interese..."
-            },
-            "Interest": "Interese",
-            "Location": "Localización"
-        }
-    },
-    "webpage": {
-        "composer": {
-            "Go": "Vaia",
-            "PasteLinkHere": "https:\/\/...",
-            "BrowseTheWeb": "Explorar",
-            "WriteToStartConversation": "Escribe os teus pensamentos para comezar a conversa",
-            "StartConversation": "Iniciar conversa",
-            "GotoConversation": "Vaia a Conversa",
-            "reset": "Restablecer",
-            "edit": "Editar",
-            "link": "Ligazón",
-            "setUrl": "Establecer URL",
-            "save": "Gardar",
-            "setClip": "Recortar Clip",
-            "invalidURL": "URL non válido"
-        },
-        "FileTooLarge": "Ficheiro demasiado grande para almacenar na caché. Tamaño máximo do ficheiro {{size}}",
-        "InvalidPDF": "O ficheiro non é un PDF válido",
-        "StartTypingTitleOrKeywords": "Comeza a escribir título ou palabras clave..."
-    },
-    "types": {
-        "Websites\/article": {
-            "description": "Un documento HTML que varios usuarios poden ver e editar",
-            "displayType": "Artigo"
-        },
-        "Websites\/slide": {
-            "description": "Unha diapositiva nunha presentación pode incluír HTML, audio, etc.",
-            "displayType": "Diapositiva"
-        },
-        "Websites\/presentation": {
-            "description": "Unha presentación composta por varias diapositivas",
-            "displayType": "Presentación"
-        },
-        "Websites\/advert\/unit": {
-            "description": "Unha unidade publicitaria nun sitio web",
-            "displayType": "Unidade publicitaria"
-        },
-        "Websites\/advert\/placement": {
-            "description": "Unha forma de agrupar unidades publicitarias baixo un nome",
-            "displayType": "Colocación de anuncios"
-        },
-        "Websites\/advert\/creative": {
-            "description": "Contido para un anuncio",
-            "displayType": "Anuncio creativo"
-        },
-        "Websites\/advert\/campaign": {
-            "description": "Unha campaña publicitaria",
-            "displayType": "Campaña publicitaria"
-        },
-        "Websites\/webpage": {
-            "description": "Representa un sitio web cuxos metadatos foron eliminados",
-            "displayType": "páxina web"
-        }
-    }
+	"advert": {
+		"campaign": {
+			"placeholders": {
+				"link": "Enlace para promocionar",
+				"startDate": "Data de inicio",
+				"startTime": "Hora de inicio",
+				"endDate": "Data de finalizaci\u00f3n",
+				"endTime": "Tempo de Fin",
+				"budget": "Orzamento"
+			},
+			"interests": {
+				"Title": "Filtrar por intereses",
+				"FilterInterests": "Comeza a escribir un interese..."
+			},
+			"Interest": "Interese",
+			"Location": "Localizaci\u00f3n"
+		}
+	},
+	"webpage": {
+		"composer": {
+			"Go": "Vaia",
+			"PasteLinkHere": "https://...",
+			"BrowseTheWeb": "Explorar",
+			"WriteToStartConversation": "Escribe os teus pensamentos para comezar a conversa",
+			"StartConversation": "Iniciar conversa",
+			"GotoConversation": "Vaia a Conversa",
+			"reset": "Restablecer",
+			"edit": "Editar",
+			"link": "Ligaz\u00f3n",
+			"setUrl": "Establecer URL",
+			"save": "Gardar",
+			"setClip": "Recortar Clip",
+			"invalidURL": "URL non v\u00e1lido"
+		},
+		"FileTooLarge": "Ficheiro demasiado grande para almacenar na cach\u00e9. Tama\u00f1o m\u00e1ximo do ficheiro {{size}}",
+		"InvalidPDF": "O ficheiro non \u00e9 un PDF v\u00e1lido",
+		"StartTypingTitleOrKeywords": "Comeza a escribir t\u00edtulo ou palabras clave..."
+	},
+	"types": {
+		"Websites/article": {
+			"description": "Un documento HTML que varios usuarios poden ver e editar",
+			"displayType": "Artigo"
+		},
+		"Websites/slide": {
+			"description": "Unha diapositiva nunha presentaci\u00f3n pode inclu\u00edr HTML, audio, etc.",
+			"displayType": "Diapositiva"
+		},
+		"Websites/presentation": {
+			"description": "Unha presentaci\u00f3n composta por varias diapositivas",
+			"displayType": "Presentaci\u00f3n"
+		},
+		"Websites/advert/unit": {
+			"description": "Unha unidade publicitaria nun sitio web",
+			"displayType": "Unidade publicitaria"
+		},
+		"Websites/advert/placement": {
+			"description": "Unha forma de agrupar unidades publicitarias baixo un nome",
+			"displayType": "Colocaci\u00f3n de anuncios"
+		},
+		"Websites/advert/creative": {
+			"description": "Contido para un anuncio",
+			"displayType": "Anuncio creativo"
+		},
+		"Websites/advert/campaign": {
+			"description": "Unha campa\u00f1a publicitaria",
+			"displayType": "Campa\u00f1a publicitaria"
+		},
+		"Websites/webpage": {
+			"description": "Representa un sitio web cuxos metadatos foron eliminados",
+			"displayType": "p\u00e1xina web"
+		}
+	},
+	"page": {
+		"Add": "Engadir p\u00e1xina",
+		"Title": "T\u00edtulo da p\u00e1xina",
+		"Description": "Descrici\u00f3n",
+		"TitlePlaceholder": "P\u00e1xina sen t\u00edtulo",
+		"DescriptionPlaceholder": "Descrici\u00f3n da p\u00e1xina..."
+	},
+	"section": {
+		"Add": "Engadir secci\u00f3n",
+		"Heading": "T\u00edtulo",
+		"HeadingPlaceholder": "T\u00edtulo da secci\u00f3n (opcional)",
+		"Layout": "Maquetaci\u00f3n",
+		"Content": "Contido",
+		"ContentPlaceholder": "Escribe contido aqu\u00ed...",
+		"layouts": {
+			"full": "Ancho completo",
+			"two-col": "D\u00faas columnas",
+			"three-col": "Tres columnas",
+			"sidebar-left": "Barra lateral esquerda",
+			"sidebar-right": "Barra lateral dereita"
+		}
+	},
+	"block": {
+		"Add": "Engadir bloque",
+		"Title": "T\u00edtulo",
+		"TitlePlaceholder": "T\u00edtulo do bloque (opcional)",
+		"Content": "Contido",
+		"ContentPlaceholder": "Bloquear contido..."
+	},
+	"referral": {
+		"Create": "Crear ligaz\u00f3n de referencia",
+		"Destination": "URL de destino",
+		"Slug": "Lesma",
+		"Title": "T\u00edtulo (opcional)",
+		"Copy": "Copiar",
+		"Copied": "Copiado!",
+		"Clicks": "Clics",
+		"Inviter": "Convidante",
+		"Metadata": "Compartir metadatos",
+		"RecentClicks": "Clics recentes",
+		"Time": "Tempo",
+		"Platform": "Plataforma",
+		"Device": "Dispositivo",
+		"ManageLinks": "Ligaz\u00f3ns de referencia"
+	}
 }

@@ -1,74 +1,119 @@
 {
-    "advert": {
-        "campaign": {
-            "placeholders": {
-                "link": "קישור לקידום",
-                "startDate": "תאריך התחלה",
-                "startTime": "שעת התחלה",
-                "endDate": "תאריך סיום",
-                "endTime": "שעת סיום",
-                "budget": "תַקצִיב"
-            },
-            "interests": {
-                "Title": "סינון לפי עניין",
-                "FilterInterests": "התחל להקליד עניין..."
-            },
-            "Interest": "ריבית",
-            "Location": "מקום"
-        }
-    },
-    "webpage": {
-        "composer": {
-            "Go": "ללכת",
-            "PasteLinkHere": "https:\/\/...",
-            "BrowseTheWeb": "לְדַפדֵף",
-            "WriteToStartConversation": "כתבו את מחשבותיכם כדי להתחיל את השיחה",
-            "StartConversation": "התחל שיחה",
-            "GotoConversation": "עבור אל שיחה",
-            "reset": "אִתחוּל",
-            "edit": "לַעֲרוֹך",
-            "link": "קישור",
-            "setUrl": "הגדר כתובת URL",
-            "save": "להציל",
-            "setClip": "חתוך קליפ",
-            "invalidURL": "כתובת אתר לא חוקית"
-        },
-        "FileTooLarge": "קובץ גדול מדי לאחסון במטמון. גודל קובץ מקסימלי {{size}}",
-        "InvalidPDF": "הקובץ אינו PDF חוקי",
-        "StartTypingTitleOrKeywords": "התחל להקליד כותרת או מילות מפתח..."
-    },
-    "types": {
-        "Websites\/article": {
-            "description": "מסמך HTML שמשתמשים שונים יכולים להציג ולערוך",
-            "displayType": "מאמר"
-        },
-        "Websites\/slide": {
-            "description": "שקופית במצגת, יכולה לכלול HTML, אודיו וכו&#39;.",
-            "displayType": "שקופית"
-        },
-        "Websites\/presentation": {
-            "description": "מצגת המורכבת משקופיות שונות",
-            "displayType": "הַצָגָה"
-        },
-        "Websites\/advert\/unit": {
-            "description": "יחידת פרסום באתר אינטרנט",
-            "displayType": "יחידת פרסום"
-        },
-        "Websites\/advert\/placement": {
-            "description": "דרך לקבץ יחידות פרסום תחת שם",
-            "displayType": "מיקום מודעה"
-        },
-        "Websites\/advert\/creative": {
-            "description": "תוכן לפרסומת",
-            "displayType": "מודעה קריאייטיב"
-        },
-        "Websites\/advert\/campaign": {
-            "description": "קמפיין פרסומי",
-            "displayType": "מסע פרסום"
-        },
-        "Websites\/webpage": {
-            "description": "מייצג אתר שהמטא-נתונים שלו נגרדו",
-            "displayType": "עמוד אינטרנט"
-        }
-    }
+	"advert": {
+		"campaign": {
+			"placeholders": {
+				"link": "\u05e7\u05d9\u05e9\u05d5\u05e8 \u05dc\u05e7\u05d9\u05d3\u05d5\u05dd",
+				"startDate": "\u05ea\u05d0\u05e8\u05d9\u05da \u05d4\u05ea\u05d7\u05dc\u05d4",
+				"startTime": "\u05e9\u05e2\u05ea \u05d4\u05ea\u05d7\u05dc\u05d4",
+				"endDate": "\u05ea\u05d0\u05e8\u05d9\u05da \u05e1\u05d9\u05d5\u05dd",
+				"endTime": "\u05e9\u05e2\u05ea \u05e1\u05d9\u05d5\u05dd",
+				"budget": "\u05ea\u05b7\u05e7\u05e6\u05b4\u05d9\u05d1"
+			},
+			"interests": {
+				"Title": "\u05e1\u05d9\u05e0\u05d5\u05df \u05dc\u05e4\u05d9 \u05e2\u05e0\u05d9\u05d9\u05df",
+				"FilterInterests": "\u05d4\u05ea\u05d7\u05dc \u05dc\u05d4\u05e7\u05dc\u05d9\u05d3 \u05e2\u05e0\u05d9\u05d9\u05df..."
+			},
+			"Interest": "\u05e8\u05d9\u05d1\u05d9\u05ea",
+			"Location": "\u05de\u05e7\u05d5\u05dd"
+		}
+	},
+	"webpage": {
+		"composer": {
+			"Go": "\u05dc\u05dc\u05db\u05ea",
+			"PasteLinkHere": "https://...",
+			"BrowseTheWeb": "\u05dc\u05b0\u05d3\u05b7\u05e4\u05d3\u05b5\u05e3",
+			"WriteToStartConversation": "\u05db\u05ea\u05d1\u05d5 \u05d0\u05ea \u05de\u05d7\u05e9\u05d1\u05d5\u05ea\u05d9\u05db\u05dd \u05db\u05d3\u05d9 \u05dc\u05d4\u05ea\u05d7\u05d9\u05dc \u05d0\u05ea \u05d4\u05e9\u05d9\u05d7\u05d4",
+			"StartConversation": "\u05d4\u05ea\u05d7\u05dc \u05e9\u05d9\u05d7\u05d4",
+			"GotoConversation": "\u05e2\u05d1\u05d5\u05e8 \u05d0\u05dc \u05e9\u05d9\u05d7\u05d4",
+			"reset": "\u05d0\u05b4\u05ea\u05d7\u05d5\u05bc\u05dc",
+			"edit": "\u05dc\u05b7\u05e2\u05b2\u05e8\u05d5\u05b9\u05da",
+			"link": "\u05e7\u05d9\u05e9\u05d5\u05e8",
+			"setUrl": "\u05d4\u05d2\u05d3\u05e8 \u05db\u05ea\u05d5\u05d1\u05ea URL",
+			"save": "\u05dc\u05d4\u05e6\u05d9\u05dc",
+			"setClip": "\u05d7\u05ea\u05d5\u05da \u05e7\u05dc\u05d9\u05e4",
+			"invalidURL": "\u05db\u05ea\u05d5\u05d1\u05ea \u05d0\u05ea\u05e8 \u05dc\u05d0 \u05d7\u05d5\u05e7\u05d9\u05ea"
+		},
+		"FileTooLarge": "\u05e7\u05d5\u05d1\u05e5 \u05d2\u05d3\u05d5\u05dc \u05de\u05d3\u05d9 \u05dc\u05d0\u05d7\u05e1\u05d5\u05df \u05d1\u05de\u05d8\u05de\u05d5\u05df. \u05d2\u05d5\u05d3\u05dc \u05e7\u05d5\u05d1\u05e5 \u05de\u05e7\u05e1\u05d9\u05de\u05dc\u05d9 {{size}}",
+		"InvalidPDF": "\u05d4\u05e7\u05d5\u05d1\u05e5 \u05d0\u05d9\u05e0\u05d5 PDF \u05d7\u05d5\u05e7\u05d9",
+		"StartTypingTitleOrKeywords": "\u05d4\u05ea\u05d7\u05dc \u05dc\u05d4\u05e7\u05dc\u05d9\u05d3 \u05db\u05d5\u05ea\u05e8\u05ea \u05d0\u05d5 \u05de\u05d9\u05dc\u05d5\u05ea \u05de\u05e4\u05ea\u05d7..."
+	},
+	"types": {
+		"Websites/article": {
+			"description": "\u05de\u05e1\u05de\u05da HTML \u05e9\u05de\u05e9\u05ea\u05de\u05e9\u05d9\u05dd \u05e9\u05d5\u05e0\u05d9\u05dd \u05d9\u05db\u05d5\u05dc\u05d9\u05dd \u05dc\u05d4\u05e6\u05d9\u05d2 \u05d5\u05dc\u05e2\u05e8\u05d5\u05da",
+			"displayType": "\u05de\u05d0\u05de\u05e8"
+		},
+		"Websites/slide": {
+			"description": "\u05e9\u05e7\u05d5\u05e4\u05d9\u05ea \u05d1\u05de\u05e6\u05d2\u05ea, \u05d9\u05db\u05d5\u05dc\u05d4 \u05dc\u05db\u05dc\u05d5\u05dc HTML, \u05d0\u05d5\u05d3\u05d9\u05d5 \u05d5\u05db\u05d5&#39;.",
+			"displayType": "\u05e9\u05e7\u05d5\u05e4\u05d9\u05ea"
+		},
+		"Websites/presentation": {
+			"description": "\u05de\u05e6\u05d2\u05ea \u05d4\u05de\u05d5\u05e8\u05db\u05d1\u05ea \u05de\u05e9\u05e7\u05d5\u05e4\u05d9\u05d5\u05ea \u05e9\u05d5\u05e0\u05d5\u05ea",
+			"displayType": "\u05d4\u05b7\u05e6\u05b8\u05d2\u05b8\u05d4"
+		},
+		"Websites/advert/unit": {
+			"description": "\u05d9\u05d7\u05d9\u05d3\u05ea \u05e4\u05e8\u05e1\u05d5\u05dd \u05d1\u05d0\u05ea\u05e8 \u05d0\u05d9\u05e0\u05d8\u05e8\u05e0\u05d8",
+			"displayType": "\u05d9\u05d7\u05d9\u05d3\u05ea \u05e4\u05e8\u05e1\u05d5\u05dd"
+		},
+		"Websites/advert/placement": {
+			"description": "\u05d3\u05e8\u05da \u05dc\u05e7\u05d1\u05e5 \u05d9\u05d7\u05d9\u05d3\u05d5\u05ea \u05e4\u05e8\u05e1\u05d5\u05dd \u05ea\u05d7\u05ea \u05e9\u05dd",
+			"displayType": "\u05de\u05d9\u05e7\u05d5\u05dd \u05de\u05d5\u05d3\u05e2\u05d4"
+		},
+		"Websites/advert/creative": {
+			"description": "\u05ea\u05d5\u05db\u05df \u05dc\u05e4\u05e8\u05e1\u05d5\u05de\u05ea",
+			"displayType": "\u05de\u05d5\u05d3\u05e2\u05d4 \u05e7\u05e8\u05d9\u05d0\u05d9\u05d9\u05d8\u05d9\u05d1"
+		},
+		"Websites/advert/campaign": {
+			"description": "\u05e7\u05de\u05e4\u05d9\u05d9\u05df \u05e4\u05e8\u05e1\u05d5\u05de\u05d9",
+			"displayType": "\u05de\u05e1\u05e2 \u05e4\u05e8\u05e1\u05d5\u05dd"
+		},
+		"Websites/webpage": {
+			"description": "\u05de\u05d9\u05d9\u05e6\u05d2 \u05d0\u05ea\u05e8 \u05e9\u05d4\u05de\u05d8\u05d0-\u05e0\u05ea\u05d5\u05e0\u05d9\u05dd \u05e9\u05dc\u05d5 \u05e0\u05d2\u05e8\u05d3\u05d5",
+			"displayType": "\u05e2\u05de\u05d5\u05d3 \u05d0\u05d9\u05e0\u05d8\u05e8\u05e0\u05d8"
+		}
+	},
+	"page": {
+		"Add": "\u05d4\u05d5\u05e1\u05e3 \u05d3\u05e3",
+		"Title": "\u05db\u05d5\u05ea\u05e8\u05ea \u05d4\u05e2\u05de\u05d5\u05d3",
+		"Description": "\u05ea\u05b5\u05d0\u05d5\u05bc\u05e8",
+		"TitlePlaceholder": "\u05e2\u05de\u05d5\u05d3 \u05dc\u05dc\u05d0 \u05db\u05d5\u05ea\u05e8\u05ea",
+		"DescriptionPlaceholder": "\u05ea\u05d9\u05d0\u05d5\u05e8 \u05d4\u05d3\u05e3..."
+	},
+	"section": {
+		"Add": "\u05d4\u05d5\u05e1\u05e3 \u05de\u05d3\u05d5\u05e8",
+		"Heading": "\u05db\u05bc\u05d5\u05b9\u05ea\u05b6\u05e8\u05b6\u05ea",
+		"HeadingPlaceholder": "\u05db\u05d5\u05ea\u05e8\u05ea \u05e1\u05e2\u05d9\u05e3 (\u05d0\u05d5\u05e4\u05e6\u05d9\u05d5\u05e0\u05dc\u05d9)",
+		"Layout": "\u05de\u05b7\u05e2\u05b2\u05e8\u05b8\u05da",
+		"Content": "\u05ea\u05d5\u05b9\u05db\u05b6\u05df",
+		"ContentPlaceholder": "\u05db\u05ea\u05d1\u05d5 \u05db\u05d0\u05df \u05ea\u05d5\u05db\u05df...",
+		"layouts": {
+			"full": "\u05e8\u05d5\u05d7\u05d1 \u05de\u05dc\u05d0",
+			"two-col": "\u05e9\u05ea\u05d9 \u05e2\u05de\u05d5\u05d3\u05d5\u05ea",
+			"three-col": "\u05e9\u05dc\u05d5\u05e9 \u05e2\u05de\u05d5\u05d3\u05d5\u05ea",
+			"sidebar-left": "\u05e1\u05e8\u05d2\u05dc \u05e6\u05d3 \u05e9\u05de\u05d0\u05dc\u05d9",
+			"sidebar-right": "\u05e1\u05e8\u05d2\u05dc \u05e6\u05d3 \u05d9\u05de\u05d9\u05df"
+		}
+	},
+	"block": {
+		"Add": "\u05d4\u05d5\u05e1\u05e3 \u05d1\u05dc\u05d5\u05e7",
+		"Title": "\u05db\u05bc\u05d5\u05b9\u05ea\u05b6\u05e8\u05b6\u05ea",
+		"TitlePlaceholder": "\u05db\u05d5\u05ea\u05e8\u05ea \u05d7\u05e1\u05d5\u05de\u05d4 (\u05d0\u05d5\u05e4\u05e6\u05d9\u05d5\u05e0\u05dc\u05d9)",
+		"Content": "\u05ea\u05d5\u05b9\u05db\u05b6\u05df",
+		"ContentPlaceholder": "\u05d7\u05e1\u05d5\u05dd \u05ea\u05d5\u05db\u05df..."
+	},
+	"referral": {
+		"Create": "\u05e6\u05d5\u05e8 \u05e7\u05d9\u05e9\u05d5\u05e8 \u05d4\u05e4\u05e0\u05d9\u05d4",
+		"Destination": "\u05db\u05ea\u05d5\u05d1\u05ea \u05d0\u05ea\u05e8 \u05d9\u05e2\u05d3",
+		"Slug": "\u05e9\u05c1\u05b7\u05d1\u05bc\u05b0\u05dc\u05d5\u05bc\u05dc",
+		"Title": "\u05db\u05d5\u05ea\u05e8\u05ea (\u05d0\u05d5\u05e4\u05e6\u05d9\u05d5\u05e0\u05dc\u05d9)",
+		"Copy": "\u05dc\u05b0\u05d4\u05b7\u05e2\u05b0\u05ea\u05b4\u05d9\u05e7",
+		"Copied": "\u05de\u05d5\u05bc\u05e2\u05b2\u05ea\u05b8\u05e7!",
+		"Clicks": "\u05e7\u05dc\u05d9\u05e7\u05d9\u05dd",
+		"Inviter": "\u05de\u05b7\u05d6\u05de\u05b4\u05d9\u05df",
+		"Metadata": "\u05e9\u05d9\u05ea\u05d5\u05e3 \u05de\u05d8\u05d0-\u05e0\u05ea\u05d5\u05e0\u05d9\u05dd",
+		"RecentClicks": "\u05e7\u05dc\u05d9\u05e7\u05d9\u05dd \u05d0\u05d7\u05e8\u05d5\u05e0\u05d9\u05dd",
+		"Time": "\u05d6\u05b0\u05de\u05b7\u05df",
+		"Platform": "\u05e4\u05bc\u05dc\u05b7\u05d8\u05e4\u05d5\u05b9\u05e8\u05de\u05b8\u05d4",
+		"Device": "\u05d4\u05b6\u05ea\u05e7\u05b5\u05df",
+		"ManageLinks": "\u05e7\u05d9\u05e9\u05d5\u05e8\u05d9 \u05d4\u05e4\u05e0\u05d9\u05d4"
+	}
 }

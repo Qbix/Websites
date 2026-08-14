@@ -1,74 +1,119 @@
 {
-    "advert": {
-        "campaign": {
-            "placeholders": {
-                "link": "Sustatzeko esteka",
-                "startDate": "Hasiera data",
-                "startTime": "Hasiera Ordua",
-                "endDate": "Amaiera-data",
-                "endTime": "Amaiera Ordua",
-                "budget": "Aurrekontua"
-            },
-            "interests": {
-                "Title": "Iragazi interesen arabera",
-                "FilterInterests": "Hasi interes bat idazten..."
-            },
-            "Interest": "Interesa",
-            "Location": "Kokapena"
-        }
-    },
-    "webpage": {
-        "composer": {
-            "Go": "Zoaz",
-            "PasteLinkHere": "https:\/\/...",
-            "BrowseTheWeb": "Arakatu",
-            "WriteToStartConversation": "Idatzi zure pentsamenduak elkarrizketa hasteko",
-            "StartConversation": "Hasi elkarrizketa",
-            "GotoConversation": "Joan Elkarrizketara",
-            "reset": "Berrezarri",
-            "edit": "Editatu",
-            "link": "Esteka",
-            "setUrl": "Ezarri URLa",
-            "save": "Gorde",
-            "setClip": "Moztu Clip",
-            "invalidURL": "URL baliogabea"
-        },
-        "FileTooLarge": "Fitxategi handiegia cachean gordetzeko. Fitxategiaren gehienezko tamaina {{size}}",
-        "InvalidPDF": "Fitxategia ez da baliozko PDF bat",
-        "StartTypingTitleOrKeywords": "Hasi izenburua edo gako-hitzak idazten..."
-    },
-    "types": {
-        "Websites\/article": {
-            "description": "Hainbat erabiltzailek ikusi eta edita dezaketen HTML dokumentua",
-            "displayType": "Artikulu"
-        },
-        "Websites\/slide": {
-            "description": "Aurkezpen bateko diapositiba bat, HTML, audioa eta abar izan ditzake.",
-            "displayType": "Diapositiba"
-        },
-        "Websites\/presentation": {
-            "description": "Hainbat diapositibaz osatutako aurkezpena",
-            "displayType": "Aurkezpena"
-        },
-        "Websites\/advert\/unit": {
-            "description": "Webgune bateko iragarki-unitatea",
-            "displayType": "Iragarki-unitatea"
-        },
-        "Websites\/advert\/placement": {
-            "description": "Iragarki-unitateak izen baten azpian taldekatzeko modua",
-            "displayType": "Iragarkia jartzea"
-        },
-        "Websites\/advert\/creative": {
-            "description": "Iragarki baterako edukia",
-            "displayType": "Iragarki sortzailea"
-        },
-        "Websites\/advert\/campaign": {
-            "description": "Publizitate kanpaina bat",
-            "displayType": "Iragarki kanpaina"
-        },
-        "Websites\/webpage": {
-            "description": "Metadatuak scraped dituen webgune bat adierazten du",
-            "displayType": "web orria"
-        }
-    }
+	"advert": {
+		"campaign": {
+			"placeholders": {
+				"link": "Sustatzeko esteka",
+				"startDate": "Hasiera data",
+				"startTime": "Hasiera Ordua",
+				"endDate": "Amaiera-data",
+				"endTime": "Amaiera Ordua",
+				"budget": "Aurrekontua"
+			},
+			"interests": {
+				"Title": "Iragazi interesen arabera",
+				"FilterInterests": "Hasi interes bat idazten..."
+			},
+			"Interest": "Interesa",
+			"Location": "Kokapena"
+		}
+	},
+	"webpage": {
+		"composer": {
+			"Go": "Zoaz",
+			"PasteLinkHere": "https://...",
+			"BrowseTheWeb": "Arakatu",
+			"WriteToStartConversation": "Idatzi zure pentsamenduak elkarrizketa hasteko",
+			"StartConversation": "Hasi elkarrizketa",
+			"GotoConversation": "Joan Elkarrizketara",
+			"reset": "Berrezarri",
+			"edit": "Editatu",
+			"link": "Esteka",
+			"setUrl": "Ezarri URLa",
+			"save": "Gorde",
+			"setClip": "Moztu Clip",
+			"invalidURL": "URL baliogabea"
+		},
+		"FileTooLarge": "Fitxategi handiegia cachean gordetzeko. Fitxategiaren gehienezko tamaina {{size}}",
+		"InvalidPDF": "Fitxategia ez da baliozko PDF bat",
+		"StartTypingTitleOrKeywords": "Hasi izenburua edo gako-hitzak idazten..."
+	},
+	"types": {
+		"Websites/article": {
+			"description": "Hainbat erabiltzailek ikusi eta edita dezaketen HTML dokumentua",
+			"displayType": "Artikulu"
+		},
+		"Websites/slide": {
+			"description": "Aurkezpen bateko diapositiba bat, HTML, audioa eta abar izan ditzake.",
+			"displayType": "Diapositiba"
+		},
+		"Websites/presentation": {
+			"description": "Hainbat diapositibaz osatutako aurkezpena",
+			"displayType": "Aurkezpena"
+		},
+		"Websites/advert/unit": {
+			"description": "Webgune bateko iragarki-unitatea",
+			"displayType": "Iragarki-unitatea"
+		},
+		"Websites/advert/placement": {
+			"description": "Iragarki-unitateak izen baten azpian taldekatzeko modua",
+			"displayType": "Iragarkia jartzea"
+		},
+		"Websites/advert/creative": {
+			"description": "Iragarki baterako edukia",
+			"displayType": "Iragarki sortzailea"
+		},
+		"Websites/advert/campaign": {
+			"description": "Publizitate kanpaina bat",
+			"displayType": "Iragarki kanpaina"
+		},
+		"Websites/webpage": {
+			"description": "Metadatuak scraped dituen webgune bat adierazten du",
+			"displayType": "web orria"
+		}
+	},
+	"page": {
+		"Add": "Gehitu orria",
+		"Title": "Orriaren izenburua",
+		"Description": "Deskribapena",
+		"TitlePlaceholder": "Izenik gabeko orrialdea",
+		"DescriptionPlaceholder": "Orriaren deskribapena..."
+	},
+	"section": {
+		"Add": "Gehitu atala",
+		"Heading": "Izenburua",
+		"HeadingPlaceholder": "Atalaren izenburua (aukerakoa)",
+		"Layout": "Diseinua",
+		"Content": "Edukia",
+		"ContentPlaceholder": "Idatzi edukia hemen...",
+		"layouts": {
+			"full": "Zabalera osoa",
+			"two-col": "Bi zutabe",
+			"three-col": "Hiru zutabe",
+			"sidebar-left": "Ezkerreko alboko barra",
+			"sidebar-right": "Eskuineko alboko barra"
+		}
+	},
+	"block": {
+		"Add": "Gehitu blokea",
+		"Title": "Izenburua",
+		"TitlePlaceholder": "Blokearen izenburua (aukerakoa)",
+		"Content": "Edukia",
+		"ContentPlaceholder": "Blokeatu edukia..."
+	},
+	"referral": {
+		"Create": "Sortu erreferentzia-esteka",
+		"Destination": "Helmugako URLa",
+		"Slug": "Barraskiloa",
+		"Title": "Izenburua (aukerakoa)",
+		"Copy": "Kopiatu",
+		"Copied": "Kopiatu da!",
+		"Clicks": "Klikak",
+		"Inviter": "Gonbidatzailea",
+		"Metadata": "Metadatuak partekatzea",
+		"RecentClicks": "Azken klikak",
+		"Time": "Denbora",
+		"Platform": "Plataforma",
+		"Device": "Gailua",
+		"ManageLinks": "Erreferentzia estekak"
+	}
 }

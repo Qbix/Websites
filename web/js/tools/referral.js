@@ -136,10 +136,10 @@ function _Websites_referral(options) {
         var attrs = stream.getAllAttributes();
         var trackerId = attrs.trackerId || '';
 
-        var statsEl = tool.element.querySelector('[id$="stats"]');
-        if (!statsEl) return;
+        var statsElement = tool.element.querySelector('[id$="stats"]');
+        if (!statsElement) return;
 
-        statsEl.innerHTML =
+        statsElement.innerHTML =
             '<div class="Websites_ref_stat">'
             + '<span class="Websites_ref_stat_num">' + clickCount + '</span>'
             + '<span class="Websites_ref_stat_label">' + (text.Clicks || 'Clicks') + '</span>'

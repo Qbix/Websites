@@ -1,74 +1,119 @@
 {
-    "advert": {
-        "campaign": {
-            "placeholders": {
-                "link": "Lien à promouvoir",
-                "startDate": "Date de début",
-                "startTime": "Heure de début",
-                "endDate": "Date de fin",
-                "endTime": "Heure de fin",
-                "budget": "Budget"
-            },
-            "interests": {
-                "Title": "Filtrer par intérêt",
-                "FilterInterests": "Commencez à saisir un centre d&#39;intérêt..."
-            },
-            "Interest": "Intérêt",
-            "Location": "Emplacement"
-        }
-    },
-    "webpage": {
-        "composer": {
-            "Go": "Aller",
-            "PasteLinkHere": "https:\/\/...",
-            "BrowseTheWeb": "Parcourir",
-            "WriteToStartConversation": "Écrivez vos pensées pour démarrer la conversation",
-            "StartConversation": "Démarrer la conversation",
-            "GotoConversation": "Aller à Conversation",
-            "reset": "Réinitialiser",
-            "edit": "Modifier",
-            "link": "Lien",
-            "setUrl": "Définir l&#39;URL",
-            "save": "Sauvegarder",
-            "setClip": "Clip découpé",
-            "invalidURL": "URL invalide"
-        },
-        "FileTooLarge": "Fichier trop volumineux pour la mise en cache. Taille de fichier maximale {{size}}",
-        "InvalidPDF": "Le fichier n&#39;est pas un PDF valide",
-        "StartTypingTitleOrKeywords": "Commencez à saisir le titre ou les mots-clés..."
-    },
-    "types": {
-        "Websites\/article": {
-            "description": "Un document HTML que différents utilisateurs peuvent afficher et modifier",
-            "displayType": "Article"
-        },
-        "Websites\/slide": {
-            "description": "Une diapositive dans une présentation peut inclure du HTML, de l&#39;audio, etc.",
-            "displayType": "Glisser"
-        },
-        "Websites\/presentation": {
-            "description": "Une présentation composée de plusieurs diapositives",
-            "displayType": "Présentation"
-        },
-        "Websites\/advert\/unit": {
-            "description": "Un bloc publicitaire sur un site web",
-            "displayType": "Unité d&#39;annonce"
-        },
-        "Websites\/advert\/placement": {
-            "description": "Un moyen de regrouper des blocs publicitaires sous un nom",
-            "displayType": "Emplacement de l&#39;annonce"
-        },
-        "Websites\/advert\/creative": {
-            "description": "Contenu d&#39;une publicité",
-            "displayType": "Création publicitaire"
-        },
-        "Websites\/advert\/campaign": {
-            "description": "Une campagne publicitaire",
-            "displayType": "Campagne publicitaire"
-        },
-        "Websites\/webpage": {
-            "description": "Représente un site Web dont les métadonnées ont été récupérées",
-            "displayType": "page web"
-        }
-    }
+	"advert": {
+		"campaign": {
+			"placeholders": {
+				"link": "Lien \u00e0 promouvoir",
+				"startDate": "Date de d\u00e9but",
+				"startTime": "Heure de d\u00e9but",
+				"endDate": "Date de fin",
+				"endTime": "Heure de fin",
+				"budget": "Budget"
+			},
+			"interests": {
+				"Title": "Filtrer par int\u00e9r\u00eat",
+				"FilterInterests": "Commencez \u00e0 saisir un centre d&#39;int\u00e9r\u00eat..."
+			},
+			"Interest": "Int\u00e9r\u00eat",
+			"Location": "Emplacement"
+		}
+	},
+	"webpage": {
+		"composer": {
+			"Go": "Aller",
+			"PasteLinkHere": "https://...",
+			"BrowseTheWeb": "Parcourir",
+			"WriteToStartConversation": "\u00c9crivez vos pens\u00e9es pour d\u00e9marrer la conversation",
+			"StartConversation": "D\u00e9marrer la conversation",
+			"GotoConversation": "Aller \u00e0 Conversation",
+			"reset": "R\u00e9initialiser",
+			"edit": "Modifier",
+			"link": "Lien",
+			"setUrl": "D\u00e9finir l&#39;URL",
+			"save": "Sauvegarder",
+			"setClip": "Clip d\u00e9coup\u00e9",
+			"invalidURL": "URL invalide"
+		},
+		"FileTooLarge": "Fichier trop volumineux pour la mise en cache. Taille de fichier maximale {{size}}",
+		"InvalidPDF": "Le fichier n&#39;est pas un PDF valide",
+		"StartTypingTitleOrKeywords": "Commencez \u00e0 saisir le titre ou les mots-cl\u00e9s..."
+	},
+	"types": {
+		"Websites/article": {
+			"description": "Un document HTML que diff\u00e9rents utilisateurs peuvent afficher et modifier",
+			"displayType": "Article"
+		},
+		"Websites/slide": {
+			"description": "Une diapositive dans une pr\u00e9sentation peut inclure du HTML, de l&#39;audio, etc.",
+			"displayType": "Glisser"
+		},
+		"Websites/presentation": {
+			"description": "Une pr\u00e9sentation compos\u00e9e de plusieurs diapositives",
+			"displayType": "Pr\u00e9sentation"
+		},
+		"Websites/advert/unit": {
+			"description": "Un bloc publicitaire sur un site web",
+			"displayType": "Unit\u00e9 d&#39;annonce"
+		},
+		"Websites/advert/placement": {
+			"description": "Un moyen de regrouper des blocs publicitaires sous un nom",
+			"displayType": "Emplacement de l&#39;annonce"
+		},
+		"Websites/advert/creative": {
+			"description": "Contenu d&#39;une publicit\u00e9",
+			"displayType": "Cr\u00e9ation publicitaire"
+		},
+		"Websites/advert/campaign": {
+			"description": "Une campagne publicitaire",
+			"displayType": "Campagne publicitaire"
+		},
+		"Websites/webpage": {
+			"description": "Repr\u00e9sente un site Web dont les m\u00e9tadonn\u00e9es ont \u00e9t\u00e9 r\u00e9cup\u00e9r\u00e9es",
+			"displayType": "page web"
+		}
+	},
+	"page": {
+		"Add": "Ajouter une page",
+		"Title": "Titre de la page",
+		"Description": "Description",
+		"TitlePlaceholder": "Page sans titre",
+		"DescriptionPlaceholder": "Description de la page..."
+	},
+	"section": {
+		"Add": "Ajouter une section",
+		"Heading": "Titre",
+		"HeadingPlaceholder": "Titre de section (facultatif)",
+		"Layout": "Mise en page",
+		"Content": "Contenu",
+		"ContentPlaceholder": "Saisissez votre contenu ici...",
+		"layouts": {
+			"full": "pleine largeur",
+			"two-col": "Deux colonnes",
+			"three-col": "Trois colonnes",
+			"sidebar-left": "Barre lat\u00e9rale gauche",
+			"sidebar-right": "Barre lat\u00e9rale droite"
+		}
+	},
+	"block": {
+		"Add": "Ajouter un bloc",
+		"Title": "Titre",
+		"TitlePlaceholder": "Titre du bloc (facultatif)",
+		"Content": "Contenu",
+		"ContentPlaceholder": "Bloquer le contenu..."
+	},
+	"referral": {
+		"Create": "Cr\u00e9er un lien de parrainage",
+		"Destination": "URL de destination",
+		"Slug": "Limace",
+		"Title": "Titre (facultatif)",
+		"Copy": "Copie",
+		"Copied": "Copi\u00e9 !",
+		"Clicks": "Clics",
+		"Inviter": "Inviteur",
+		"Metadata": "Partage de m\u00e9tadonn\u00e9es",
+		"RecentClicks": "Clics r\u00e9cents",
+		"Time": "Temps",
+		"Platform": "Plate-forme",
+		"Device": "Appareil",
+		"ManageLinks": "Liens de parrainage"
+	}
 }

@@ -7,7 +7,7 @@ function Websites_referral_post()
 {
     $user = Users::loggedInUser(true);
     $communityId = Users::communityId();
-    $destination = Q_Request::requireFields('destination', true);
+    $destination = Q_Request::required('destination');
     $slug = Q::ifset($_POST, 'slug', '');
     $title = Q::ifset($_POST, 'title', '');
     $inviterId = Q::ifset($_POST, 'inviterId', '');

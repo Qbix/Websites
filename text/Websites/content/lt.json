@@ -1,74 +1,119 @@
 {
-    "advert": {
-        "campaign": {
-            "placeholders": {
-                "link": "Nuoroda reklamuoti",
-                "startDate": "Pradžios data",
-                "startTime": "Pradžios laikas",
-                "endDate": "Pabaigos data",
-                "endTime": "Pabaigos laikas",
-                "budget": "Biudžetas"
-            },
-            "interests": {
-                "Title": "Filtruoti pagal pomėgius",
-                "FilterInterests": "Pradėkite rašyti pomėgį..."
-            },
-            "Interest": "Palūkanos",
-            "Location": "Vieta"
-        }
-    },
-    "webpage": {
-        "composer": {
-            "Go": "Eik",
-            "PasteLinkHere": "https:\/\/...",
-            "BrowseTheWeb": "Naršyti",
-            "WriteToStartConversation": "Užrašykite savo mintis, kad pradėtumėte pokalbį",
-            "StartConversation": "Pradėti pokalbį",
-            "GotoConversation": "Eikite į Pokalbis",
-            "reset": "Nustatyti iš naujo",
-            "edit": "Redaguoti",
-            "link": "Nuoroda",
-            "setUrl": "Nustatyti URL",
-            "save": "Sutaupyti",
-            "setClip": "Iškirptas klipas",
-            "invalidURL": "neteisingas URL"
-        },
-        "FileTooLarge": "Failas per didelis, kad būtų galima laikyti talpykloje. Maksimalus failo dydis {{size}}",
-        "InvalidPDF": "Failas nėra tinkamas PDF",
-        "StartTypingTitleOrKeywords": "Pradėkite rašyti pavadinimą arba raktinius žodžius..."
-    },
-    "types": {
-        "Websites\/article": {
-            "description": "HTML dokumentas, kurį gali peržiūrėti ir redaguoti įvairūs vartotojai",
-            "displayType": "Straipsnis"
-        },
-        "Websites\/slide": {
-            "description": "Pristatymo skaidrėje gali būti HTML, garso ir kt.",
-            "displayType": "Skaidrė"
-        },
-        "Websites\/presentation": {
-            "description": "Pristatymas, susidedantis iš įvairių skaidrių",
-            "displayType": "Pristatymas"
-        },
-        "Websites\/advert\/unit": {
-            "description": "Reklamos vienetas svetainėje",
-            "displayType": "Reklamos vienetas"
-        },
-        "Websites\/advert\/placement": {
-            "description": "Reklamos vienetų grupavimo pagal pavadinimą būdas",
-            "displayType": "Reklamos talpinimas"
-        },
-        "Websites\/advert\/creative": {
-            "description": "Turinys reklamai",
-            "displayType": "Reklamuoti kūrybiškumą"
-        },
-        "Websites\/advert\/campaign": {
-            "description": "Reklaminė kampanija",
-            "displayType": "Reklaminė kampanija"
-        },
-        "Websites\/webpage": {
-            "description": "Nurodo svetainę, kurios metaduomenys buvo iškrapštyti",
-            "displayType": "tinklo puslapis"
-        }
-    }
+	"advert": {
+		"campaign": {
+			"placeholders": {
+				"link": "Nuoroda reklamuoti",
+				"startDate": "Prad\u017eios data",
+				"startTime": "Prad\u017eios laikas",
+				"endDate": "Pabaigos data",
+				"endTime": "Pabaigos laikas",
+				"budget": "Biud\u017eetas"
+			},
+			"interests": {
+				"Title": "Filtruoti pagal pom\u0117gius",
+				"FilterInterests": "Prad\u0117kite ra\u0161yti pom\u0117g\u012f..."
+			},
+			"Interest": "Pal\u016bkanos",
+			"Location": "Vieta"
+		}
+	},
+	"webpage": {
+		"composer": {
+			"Go": "Eik",
+			"PasteLinkHere": "https://...",
+			"BrowseTheWeb": "Nar\u0161yti",
+			"WriteToStartConversation": "U\u017era\u0161ykite savo mintis, kad prad\u0117tum\u0117te pokalb\u012f",
+			"StartConversation": "Prad\u0117ti pokalb\u012f",
+			"GotoConversation": "Eikite \u012f Pokalbis",
+			"reset": "Nustatyti i\u0161 naujo",
+			"edit": "Redaguoti",
+			"link": "Nuoroda",
+			"setUrl": "Nustatyti URL",
+			"save": "Sutaupyti",
+			"setClip": "I\u0161kirptas klipas",
+			"invalidURL": "neteisingas URL"
+		},
+		"FileTooLarge": "Failas per didelis, kad b\u016bt\u0173 galima laikyti talpykloje. Maksimalus failo dydis {{size}}",
+		"InvalidPDF": "Failas n\u0117ra tinkamas PDF",
+		"StartTypingTitleOrKeywords": "Prad\u0117kite ra\u0161yti pavadinim\u0105 arba raktinius \u017eod\u017eius..."
+	},
+	"types": {
+		"Websites/article": {
+			"description": "HTML dokumentas, kur\u012f gali per\u017ei\u016br\u0117ti ir redaguoti \u012fvair\u016bs vartotojai",
+			"displayType": "Straipsnis"
+		},
+		"Websites/slide": {
+			"description": "Pristatymo skaidr\u0117je gali b\u016bti HTML, garso ir kt.",
+			"displayType": "Skaidr\u0117"
+		},
+		"Websites/presentation": {
+			"description": "Pristatymas, susidedantis i\u0161 \u012fvairi\u0173 skaidri\u0173",
+			"displayType": "Pristatymas"
+		},
+		"Websites/advert/unit": {
+			"description": "Reklamos vienetas svetain\u0117je",
+			"displayType": "Reklamos vienetas"
+		},
+		"Websites/advert/placement": {
+			"description": "Reklamos vienet\u0173 grupavimo pagal pavadinim\u0105 b\u016bdas",
+			"displayType": "Reklamos talpinimas"
+		},
+		"Websites/advert/creative": {
+			"description": "Turinys reklamai",
+			"displayType": "Reklamuoti k\u016brybi\u0161kum\u0105"
+		},
+		"Websites/advert/campaign": {
+			"description": "Reklamin\u0117 kampanija",
+			"displayType": "Reklamin\u0117 kampanija"
+		},
+		"Websites/webpage": {
+			"description": "Nurodo svetain\u0119, kurios metaduomenys buvo i\u0161krap\u0161tyti",
+			"displayType": "tinklo puslapis"
+		}
+	},
+	"page": {
+		"Add": "Prid\u0117ti puslap\u012f",
+		"Title": "Puslapio pavadinimas",
+		"Description": "Apra\u0161ymas",
+		"TitlePlaceholder": "Be pavadinimo puslapis",
+		"DescriptionPlaceholder": "Puslapio apra\u0161ymas..."
+	},
+	"section": {
+		"Add": "Prid\u0117ti skyri\u0173",
+		"Heading": "Antra\u0161t\u0117",
+		"HeadingPlaceholder": "Skyriaus antra\u0161t\u0117 (neprivaloma)",
+		"Layout": "I\u0161d\u0117stymas",
+		"Content": "Turinys",
+		"ContentPlaceholder": "Ra\u0161ykite turin\u012f \u010dia...",
+		"layouts": {
+			"full": "Visas plotis",
+			"two-col": "Du stulpeliai",
+			"three-col": "Trys stulpeliai",
+			"sidebar-left": "\u0160onin\u0117 juosta kair\u0117je",
+			"sidebar-right": "\u0160onin\u0117 juosta de\u0161in\u0117je"
+		}
+	},
+	"block": {
+		"Add": "Prid\u0117ti blok\u0105",
+		"Title": "Pavadinimas",
+		"TitlePlaceholder": "Bloko pavadinimas (neb\u016btina)",
+		"Content": "Turinys",
+		"ContentPlaceholder": "Blokuoti turin\u012f..."
+	},
+	"referral": {
+		"Create": "Sukurti rekomendacijos nuorod\u0105",
+		"Destination": "Paskirties URL",
+		"Slug": "\u0160liu\u017eas",
+		"Title": "Pavadinimas (neb\u016btina)",
+		"Copy": "Kopijuoti",
+		"Copied": "Nukopijuota!",
+		"Clicks": "Paspaudimai",
+		"Inviter": "Kviet\u0117jas",
+		"Metadata": "Metaduomen\u0173 bendrinimas",
+		"RecentClicks": "Naujausi paspaudimai",
+		"Time": "Laikas",
+		"Platform": "Platforma",
+		"Device": "\u012erenginys",
+		"ManageLinks": "Nuorodos"
+	}
 }
